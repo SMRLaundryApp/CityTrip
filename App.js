@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
@@ -8,7 +8,7 @@ import * as Permissions from 'expo-permissions';
 
 export default class App extends React.Component {
   state = {
-    location: null,
+    location: { coords: { latitude: 52.19, longitude: 4.43}},
     errorMessage: null,
   };
 
@@ -31,29 +31,43 @@ export default class App extends React.Component {
       });
     }
 
-    let location = await Location.getCurrentPositionAsync({});
+    let location = await Location.getCurrentPositionAsync({accuracy: 6});
     this.setState({ location });
   };
 
   render() {
-    let text = 'Waiting..';
+    let longitudeD;
+    let latitudeD;
     if (this.state.errorMessage) {
       text = this.state.errorMessage;
     } else if (this.state.location) {
-      text = JSON.stringify(this.state.location);
+      longitudeD = this.state.location.coords.longitude;
+      latitudeD = this.state.location.coords.latitude;
     }
 
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>{text}</Text>
+        <Text style={styles.title}>Citrytrip inc.</Text>
+        <Text style={styles.paragraph}>{'Longitude: '}{JSON.stringify(this.state.location.coords.longitude)}</Text>
+        <Text style={styles.paragraph}>{'Latitude: '}{JSON.stringify(this.state.location.coords.latitude)}</Text>
         <MapView style={styles.mapView}
           initialRegion = {{
-            longitude: 4.4405, 
-            latitude: 52.1906,
-            longitudeDelta: 0.010,
-            latitudeDelta: 0.010,
+            longitude: longitudeD, 
+            latitude: latitudeD,
+            longitudeDelta: 1.010,
+            latitudeDelta: 1.010,
           }}
-        />
+        >
+          <Marker
+          coordinate={{
+            latitude: this.state.location.coords.latitude,
+            longitude: this.state.location.coords.longitude
+          }}
+          title={'Kaka'}
+          description={'Roekoe roekoe'}
+          />
+
+        </MapView>
       </View>
     );
   }
@@ -72,9 +86,14 @@ const styles = StyleSheet.create({
     // height: '80%'
   },
   paragraph: {
-    flex: 1,
-    margin: 5,
+    margin: 3,
     fontSize: 18,
     textAlign: 'center',
+    color: '#888',
+  },
+  title: {
+    fontSize: 30,
+    color: '#888',
+    marginTop: 40
   },
 });
