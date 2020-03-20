@@ -1,12 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import MapView from 'react-native-maps';
+import { Marker } from 'react-native-maps';
+import { StyleSheet, Text, View, Dimensions, PermissionsAndroid, Platform } from 'react-native';
+// import Geolocation from '@react-native-community/geolocation';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+
+
+export default class App extends React.Component {
+  render() {
+    
+    // Geolocation.getCurrentPosition(info => console.log(info));
+    
+    return (
+      <View style={styles.container}>
+        <MapView
+          style={styles.mapStyle}
+          initialRegion={{
+            latitude: 52.001957,
+            longitude: 4.367028,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.015,
+          }}
+        >
+
+        </MapView>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -15,5 +35,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  mapStyle: {
+    width: '100%',
+    height: '100%',
   },
 });
