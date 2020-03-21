@@ -1,15 +1,16 @@
 import React from 'react';
-import MapView from 'react-native-maps';
+import MapView, { Callout } from 'react-native-maps';
 import { Marker } from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions, PermissionsAndroid, Platform } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, PermissionsAndroid, Platform, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import userLocationPin from './images/userLocation.png';
 
 const GEOLOCATION_OPTIONS = {
-  accuracy: 3,
-  timeInterval : 5000
-  // distanceInterval: 1
+  accuracy: 6,
+  // timeInterval : 5000
+  distanceInterval: 1
 };
 const colorOfmyLocationMapMarker = 'blue';
 
@@ -39,40 +40,70 @@ export default class App extends React.Component {
       });
     }
 
+    // let location = await Location.getCurrentPositionAsync(GEOLOCATION_OPTIONS);
+    // this.setState({ location });
     Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged);
   };
 
   locationChanged = (location) => {
-    this.setState({location})
+    this.setState({ location })
   }
 
   render() {
     
+    let longitudeD;
+    let latitudeD;
+    if (this.state.location) {
+      longitudeD = this.state.location.coords.longitude;
+      latitudeD  = this.state.location.coords.latitude;
+      timestampD = this.state.location.timestamp;
+    }
+
     return (
       <View style={styles.container}>
-        <Text>Longitude: {JSON.stringify(this.state.location.coords.longitude)}</Text>
-        <Text>Latitude: {JSON.stringify(this.state.location.coords.latitude)}</Text>
-        <Text>Timestamp: {JSON.stringify(this.state.location.timestamp)}</Text>
+        <Text>Longitude: {longitudeD}</Text>
+        <Text>Latitude: {latitudeD}</Text>
+        <Text>Timestamp: {timestampD}</Text>
         <MapView
           style={styles.mapStyle}
-          initialRegion={{
-            latitude: 52.001957,
-            longitude: 4.367028,
+          region={{
+            latitude: latitudeD,
+            longitude: longitudeD,
             latitudeDelta: 0.015,
             longitudeDelta: 0.015,
           }}
         >
           <Marker
-            pinColor='violet'
-            title='My House'
-            description='This is the house where Bart lives'
-            rotation={90.0}
+            title='User Location'
+            image={userLocationPin}
             coordinate={{
               latitude: this.state.location.coords.latitude,
               longitude: this.state.location.coords.longitude
             }}>
           </Marker>
+          <Marker
+            pinColor='violet'
+            coordinate={{
+              latitude: 52.123456,
+              longitude: 4.63935
+            }}>
+            <Callout style={styles.plainView}>
+              <View>
+                <Text>This is test 1. This is test 2. This is test 3. This is test 4. This is test 5.</Text>
+              </View>
+            </Callout>
+          </Marker>
         </MapView>
+        <TouchableOpacity
+          style={styles.buttonRefreshGPS}
+          onPress={() => {
+            async () => {
+              let location = await Location.getCurrentPositionAsync(GEOLOCATION_OPTIONS);
+              this.setState({ location });
+            }
+          }}>
+          <Text>Refresh GPS</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -88,5 +119,21 @@ const styles = StyleSheet.create({
   mapStyle: {
     width: '100%',
     height: '80%',
+  },
+  buttonRefreshGPS: {
+    backgroundColor: 'red',
+    margin: 5,
+    padding: 10,
+    borderRadius: 5,
+    width: 100,
+  },
+  buttonRefreshGPSText: {
+    fontSize: 20,
+    color: '#fff',
+    alignSelf: 'center',
+  },
+  plainView: {
+    width: 260,
+    // height: 30,
   },
 });
