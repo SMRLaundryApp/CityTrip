@@ -1,7 +1,7 @@
 import React from 'react';
 import MapView, { Callout } from 'react-native-maps';
 import { Marker } from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions, PermissionsAndroid, Platform, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions, PermissionsAndroid, Platform, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
@@ -87,10 +87,16 @@ export default class App extends React.Component {
               latitude: 52.123456,
               longitude: 4.63935
             }}>
-            <Callout style={styles.plainView}>
+            <Callout
+              onPress={() => {
+                // Put some code here to change to a different view/page with the wanted information
+                alert('You pressed it! :O')
+              }}
+              style={styles.plainView}>
               <View>
                 <Text style={styles.calloutTitleText}>Weteringpad</Text>
-                <Text>This is test 1. This is test 2. This is test 3. This is test 4. This is test 5.</Text>
+                <Text>Het Weteringpad is een langgerekt groengebied ...</Text>
+                <Text style={styles.hyperlinkText}>Press to read more</Text>
               </View>
             </Callout>
           </Marker>
@@ -134,10 +140,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   plainView: {
-    width: 260,
-    // height: 30,
+    width: 165,
+    // height: 150,
   },
   calloutTitleText: {
     fontWeight: 'bold',
+  },
+  hyperlinkText: {
+    color: 'blue',
+    textDecorationLine: 'underline',
   },
 });
