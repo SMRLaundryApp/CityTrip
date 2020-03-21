@@ -4,7 +4,18 @@ import MapView, { Marker } from 'react-native-maps';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import styled from 'styled-components';
+import Categories from './Components/Categories'
+import Card from './Components/Card'
+import { ScrollView } from 'react-native';
 
+const items = [
+	{ text: 'Map' },
+  { text: 'POI Nearby' },
+  { text: 'Add POI'},
+  { text: 'Test 1'},
+  { text: 'Settings' },
+];
 
 export default class App extends React.Component {
   state = {
@@ -35,6 +46,7 @@ export default class App extends React.Component {
     this.setState({ location });
   };
 
+
   render() {
     let longitudeD;
     let latitudeD;
@@ -46,10 +58,29 @@ export default class App extends React.Component {
     }
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Citrytrip inc.</Text>
-        <Text style={styles.paragraph}>{'Longitude: '}{JSON.stringify(this.state.location.coords.longitude)}</Text>
-        <Text style={styles.paragraph}>{'Latitude: '}{JSON.stringify(this.state.location.coords.latitude)}</Text>
+      <Container>
+        <Titlebar>
+          <Avatar source={require('./assets/avatar.jpg')} />
+          <Title>Welcome back,</Title>
+          <Name>Coleslaw</Name>
+        </Titlebar>
+        
+        <ScrollView horizontal={true} style={{
+		        padding: 20,
+		        paddingLeft: 12,
+		        paddingTop: 15,
+		        flexDirection: 'row'
+	          }}
+	showsHorizontalScrollIndicator={false}>
+	      {items.map((category, index) => (
+							<Categories name={category.text} key={index} />
+						))}
+        </ScrollView>
+
+        {/* <Title style={styles.title}>Citrytrip inc.</Title>
+        <Title style={styles.paragraph}>{'Longitude: '}{JSON.stringify(this.state.location.coords.longitude)}</Title>
+        <Title style={styles.paragraph}>{'Latitude: '}{JSON.stringify(this.state.location.coords.latitude)}</Title> */}
+
         <MapView style={styles.mapView}
           initialRegion = {{
             longitude: longitudeD, 
@@ -68,32 +99,78 @@ export default class App extends React.Component {
           />
 
         </MapView>
-      </View>
+
+        <Subtitle>Rijnsburg</Subtitle>
+          <ItemsLayout>
+            <ColumnOne>
+              <Card />
+            </ColumnOne>
+            <ColumnTwo>
+              <Card />
+            </ColumnTwo>
+          </ItemsLayout>
+        
+        </Container>
     );
   }
 }
 
+const Container = styled.View`
+	flex: 1;
+	background-color: white;
+`;
+
+const Titlebar = styled.View`
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 80px;
+`;
+
+const Avatar = styled.Image`
+	width: 44px;
+	height: 44px;
+	background: black;
+	border-radius: 22px;
+	margin-left: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+`;
+
+const Title = styled.Text`
+	font-size: 20px;
+	font-weight: 500;
+	color: #b8bece;
+`;
+
+const Name = styled.Text`
+	font-size: 20px;
+	color: #3c4560;
+	font-weight: bold;
+`;
+
+const Subtitle = styled.Text`
+	font-size: 20px;
+	color: #3c4560;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 25px;
+	text-transform: uppercase;
+`;
+
+const ItemsLayout = styled.View`
+	flex-direction: row;
+	flex: 1;
+`;
+
+const ColumnOne = styled.View``;
+
+const ColumnTwo = styled.View``;
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   mapView: {
-    flex: 3,
+    flex: 60,
     width: '100%',
     // height: '80%'
-  },
-  paragraph: {
-    margin: 3,
-    fontSize: 18,
-    textAlign: 'center',
-    color: '#888',
-  },
-  title: {
-    fontSize: 30,
-    color: '#888',
-    marginTop: 40
   },
 });
