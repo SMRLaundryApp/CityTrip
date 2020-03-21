@@ -89,6 +89,7 @@ export default class App extends React.Component {
             }}>
             <Callout style={styles.plainView}>
               <View>
+                <Text style={styles.calloutTitleText}>Weteringpad</Text>
                 <Text>This is test 1. This is test 2. This is test 3. This is test 4. This is test 5.</Text>
               </View>
             </Callout>
@@ -135,5 +136,8 @@ const styles = StyleSheet.create({
   plainView: {
     width: 260,
     // height: 30,
+  },
+  calloutTitleText: {
+    fontWeight: 'bold',
   },
 });
