@@ -1,11 +1,13 @@
 import React from 'react';
-import MapView, { Callout } from 'react-native-maps';
-import { Marker } from 'react-native-maps';
+import MapView, { Callout, Marker } from 'react-native-maps';
+import { enableScreens } from 'react-native-screens';
 import { StyleSheet, Text, View, ScrollView, Dimensions, PermissionsAndroid, Platform, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import userLocationPin from './images/userLocation.png';
+
+enableScreens();
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
