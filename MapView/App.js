@@ -69,8 +69,8 @@ export default class App extends React.Component {
           region={{
             latitude: latitudeD,
             longitude: longitudeD,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.015,
+            latitudeDelta: 0.035,
+            longitudeDelta: 0.035,
           }}
         >
           <Marker
