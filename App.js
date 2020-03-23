@@ -5,10 +5,10 @@ import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import styled from 'styled-components';
-import Categories from './Components/Categories'
-import Card from './Components/Card'
+import Categories from './components/Categories'
+import Card from './components/Card'
 import { ScrollView } from 'react-native';
-import Welcombar from './Components/Welcomebar'
+import Welcombar from './components/Welcomebar'
 
 const items = [
 	{ text: 'Map' },
