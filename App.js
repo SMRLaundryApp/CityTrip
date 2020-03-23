@@ -8,12 +8,13 @@ import styled from 'styled-components';
 import Categories from './Components/Categories'
 import Card from './Components/Card'
 import { ScrollView } from 'react-native';
+import Welcombar from './Components/Welcomebar'
 
 const items = [
 	{ text: 'Map' },
   { text: 'POI Nearby' },
+  { text: 'Routes Nearby'},
   { text: 'Add POI'},
-  { text: 'Test 1'},
   { text: 'Settings' },
 ];
 
@@ -59,19 +60,21 @@ export default class App extends React.Component {
 
     return (
       <Container>
-        <Titlebar>
+        {/* <Titlebar>
           <Avatar source={require('./assets/avatar.jpg')} />
           <Title>Welcome back,</Title>
           <Name>Coleslaw</Name>
-        </Titlebar>
-        
+        </Titlebar> */}
+        <Welcombar />
+
+
         <ScrollView horizontal={true} style={{
-		        padding: 20,
+		        padding: 0,
 		        paddingLeft: 12,
-		        paddingTop: 15,
+		        paddingTop: 10,
 		        flexDirection: 'row'
 	          }}
-	showsHorizontalScrollIndicator={false}>
+	      showsHorizontalScrollIndicator={false}>
 	      {items.map((category, index) => (
 							<Categories name={category.text} key={index} />
 						))}
@@ -99,8 +102,7 @@ export default class App extends React.Component {
           />
 
         </MapView>
-
-        <Subtitle>Rijnsburg</Subtitle>
+        {/* <Subtitle>Rijnsburg</Subtitle>
           <ItemsLayout>
             <ColumnOne>
               <Card />
@@ -108,8 +110,8 @@ export default class App extends React.Component {
             <ColumnTwo>
               <Card />
             </ColumnTwo>
-          </ItemsLayout>
-        
+          </ItemsLayout> */}
+          
         </Container>
     );
   }
@@ -118,35 +120,6 @@ export default class App extends React.Component {
 const Container = styled.View`
 	flex: 1;
 	background-color: white;
-`;
-
-const Titlebar = styled.View`
-	width: 100%;
-	margin-top: 50px;
-	padding-left: 80px;
-`;
-
-const Avatar = styled.Image`
-	width: 44px;
-	height: 44px;
-	background: black;
-	border-radius: 22px;
-	margin-left: 20px;
-	position: absolute;
-	top: 0;
-	left: 0;
-`;
-
-const Title = styled.Text`
-	font-size: 20px;
-	font-weight: 500;
-	color: #b8bece;
-`;
-
-const Name = styled.Text`
-	font-size: 20px;
-	color: #3c4560;
-	font-weight: bold;
 `;
 
 const Subtitle = styled.Text`
@@ -160,7 +133,7 @@ const Subtitle = styled.Text`
 
 const ItemsLayout = styled.View`
 	flex-direction: row;
-	flex: 1;
+	flex: 50;
 `;
 
 const ColumnOne = styled.View``;
@@ -169,7 +142,7 @@ const ColumnTwo = styled.View``;
 
 const styles = StyleSheet.create({
   mapView: {
-    flex: 60,
+    flex: 50,
     width: '100%',
     // height: '80%'
   },

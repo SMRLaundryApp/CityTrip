@@ -16,13 +16,13 @@ const Card = props => (
 export default Card;
 
 const Container = styled.View`
-	background: #fff;
+	background: #888;
 	height: 200px;
 	width: 150px;
 	border-radius: 14px;
-	margin: 18px;
+	margin: 20px;
 	margin-top: 20px;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
 `;
 
 const Cover = styled.View`
@@ -46,7 +46,7 @@ const Content = styled.View`
 `;
 
 const Title = styled.Text`
-	color: #3c4560;
+	color: #FFF;
 	font-size: 20px;
 	font-weight: 600;
 `;

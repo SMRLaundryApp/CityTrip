@@ -9,8 +9,9 @@ export default Categories;
 const Container = styled.View``;
 
 const Name = styled.Text`
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 600;
-	margin-left: 15px;
+	margin-left: 10px;
+	margin-right: 15px;
 	color: #bcbece;
 `;
