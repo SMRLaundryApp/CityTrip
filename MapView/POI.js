@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, Text, View, Alert, NativeModules } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import styles from './Style';
-import data from './data/POIs.json';
+import value from './data/POIs.json';
 import cityIds from './data/CityIds.json';
 import routes from './data/Routes.json';
 
@@ -11,7 +11,7 @@ class POI extends Component {
     super(props);
 
     this.state = {
-      data
+      data: value
     };
   }
 
@@ -23,20 +23,52 @@ class POI extends Component {
 
   render() {    
 
-    let test = this.state.data.map(function(idPOI, index) {
+    let test = this.state.data.map((idPOI, index) => {
       return(
-          <Text style={styles.calloutTitleText}>{idPOI.id}</Text>
+        <Text style={styles.calloutTitleText}>{idPOI.id}</Text>
+      )
+      console.log('test');
+    });
+
+    let test2 = this.state.data.map((coordsPOI, index) => {
+      return(
+        <Marker coordinate={{latitude:coordsPOI.coords.latitude, longitude:coordsPOI.coords.longitude}} pinColor='teal' >
+          <Callout>
+            <View>
+              <Text style={styles.calloutTitleText}>{coordsPOI.name}</Text>
+            </View>
+          </Callout>
+        </Marker>
       )
     });
 
-    // let coordsPOI
+    let test3 = this.state.data.map(function(namePOI, index) {
+      return (
+        <Text>{namePOI.name}</Text>
+      )
+    });
 
     return (
+      // <Text>{count}</Text>
+
+      // { printData }
+      <MapView
+          style={styles.mapStyle}
+          region={{
+            latitude: 52.159679,
+            longitude: 4.490883,
+            latitudeDelta: 0.03,
+            longitudeDelta: 0.03,
+          }}
+        >
+      {test2}
+      </MapView>
+
       // <Marker coordinate={{latitude:this.state.dataSource.coords.latitude, longitude:this.state.dataSource.coords.longitude}} pinColor='orange' >
       //   <Callout>
-          // <View>
-            <Text /*style={styles.calloutTitleText}*/>{test}</Text>
-          // </View>
+      //     <View>
+      //       <Text>{test}</Text>
+      //     </View>
       //   </Callout>
       // </Marker>
       

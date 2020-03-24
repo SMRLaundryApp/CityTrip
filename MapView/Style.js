@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   mapStyle: {
     width: '100%',
-    height: '20%',
+    height: '80%',
   },
   buttonRefreshGPS: {
     backgroundColor: 'red',

@@ -6,7 +6,7 @@ import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import userLocationPin from './images/userLocation.png';
-// import POIs from './data/POIs.json';
+import POIs from './data/POIs.json';
 // import cityIds from './data/CityIds.json';
 // import routes from './data/Routes.json';
 import PoI from './POI';
@@ -76,6 +76,7 @@ export default class App extends React.Component {
     
     let longitudeD;
     let latitudeD;
+    let timestampD;
     if (this.state.location) {
       longitudeD = this.state.location.coords.longitude;
       latitudeD  = this.state.location.coords.latitude;
@@ -87,8 +88,8 @@ export default class App extends React.Component {
         <Text>Longitude: {longitudeD}</Text>
         <Text>Latitude: {latitudeD}</Text>
         <Text>Timestamp: {timestampD}</Text>
-        <PoI />
-        <MapView
+        {/* <PoI /> */}
+        {/* <MapView
           style={styles.mapStyle}
           region={{
             latitude: latitudeD,
@@ -96,7 +97,13 @@ export default class App extends React.Component {
             latitudeDelta: 0.035,
             longitudeDelta: 0.035,
           }}
-        >
+        > */}
+          <PoI />
+
+          {/* {this.state.data.map(dataPOI => {
+            <Marker coordinate={{latitude: dataPOI.coords.latitude, longitude: dataPOI.coords.longitude}} pinColor='teal' />
+          })} */}
+
           {/* <Marker>
             <Callout>
               <View>
@@ -107,7 +114,7 @@ export default class App extends React.Component {
 
 
 
-          <Marker
+          {/* <Marker
             title='User Location'
             image={userLocationPin}
             coordinate={{
@@ -136,7 +143,7 @@ export default class App extends React.Component {
             </Callout>
           </Marker>
 
-        </MapView>
+        </MapView> */}
         <TouchableOpacity
           style={styles.buttonRefreshGPS}
           onPress={() => {
