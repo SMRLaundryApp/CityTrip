@@ -6,13 +6,18 @@ import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import userLocationPin from './images/userLocation.png';
+// import POIs from './data/POIs.json';
+// import cityIds from './data/CityIds.json';
+// import routes from './data/Routes.json';
+import PoI from './POI';
+import styles from './Style';
 
 enableScreens();
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
   // timeInterval : 5000
-  distanceInterval: 1
+  distanceInterval: 10
 };
 const colorOfmyLocationMapMarker = 'blue';
 
@@ -22,6 +27,22 @@ export default class App extends React.Component {
     location: { coords: { latitude: 0, longitude: 0}},
     errorMessage: null,
   };
+
+  // displayPOI = POIs;
+
+  // {this.state.shops.map(shop => {
+  //   <MapView.Marker coordinate={{latitude: shop.latitude, longitude: shop.longitude}} image={require('./img/initialMarker.png')} />
+  // })}
+
+  // {this.POIs.POI.map(POI => {
+  //   <Marker coordinate={{latitude: POI.coords.latitude, longitude: POI.coords.longitude}} pinColor={"blue"}>
+  //     <Callout>
+  //       <View>
+  //         <Text style={styles.calloutTitleText}></Text>
+  //       </View>
+  //     </Callout>
+  //   </Marker>
+  // })}
 
   constructor(props) {
     super(props);
@@ -66,6 +87,7 @@ export default class App extends React.Component {
         <Text>Longitude: {longitudeD}</Text>
         <Text>Latitude: {latitudeD}</Text>
         <Text>Timestamp: {timestampD}</Text>
+        <PoI />
         <MapView
           style={styles.mapStyle}
           region={{
@@ -75,6 +97,16 @@ export default class App extends React.Component {
             longitudeDelta: 0.035,
           }}
         >
+          {/* <Marker>
+            <Callout>
+              <View>
+                <Text style={styles.calloutTitleText}></Text>
+              </View>
+            </Callout>
+          </Marker> */}
+
+
+
           <Marker
             title='User Location'
             image={userLocationPin}
@@ -83,6 +115,7 @@ export default class App extends React.Component {
               longitude: this.state.location.coords.longitude
             }}>
           </Marker>
+          
           <Marker
             pinColor='violet'
             coordinate={{
@@ -92,7 +125,7 @@ export default class App extends React.Component {
             <Callout
               onPress={() => {
                 // Put some code here to change to a different view/page with the wanted information
-                alert('You pressed it! :O')
+                // alert(JSON.stringify(POIs.POI[0]))
               }}
               style={styles.plainView}>
               <View>
@@ -102,6 +135,7 @@ export default class App extends React.Component {
               </View>
             </Callout>
           </Marker>
+
         </MapView>
         <TouchableOpacity
           style={styles.buttonRefreshGPS}
@@ -118,38 +152,4 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  mapStyle: {
-    width: '100%',
-    height: '80%',
-  },
-  buttonRefreshGPS: {
-    backgroundColor: 'red',
-    margin: 5,
-    padding: 10,
-    borderRadius: 5,
-    width: 100,
-  },
-  buttonRefreshGPSText: {
-    fontSize: 20,
-    color: '#fff',
-    alignSelf: 'center',
-  },
-  plainView: {
-    width: 165,
-    // height: 150,
-  },
-  calloutTitleText: {
-    fontWeight: 'bold',
-  },
-  hyperlinkText: {
-    color: 'blue',
-    textDecorationLine: 'underline',
-  },
-});
+
