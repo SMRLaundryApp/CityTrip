@@ -7,11 +7,11 @@ var curHr = today.getHours()
 
 function getDayTime(){
 	if (curHr < 12) {
-		console.log('Good morning,')
+		console.log('Good morning')
 	} else if (curHr < 18) {
-		console.log('Good afternoon,')
+		console.log('Good afternoon')
 	} else {
-		console.log('Good evening,')
+		console.log('Good evening')
 	}
 }
 
@@ -34,6 +34,7 @@ const Titlebar = styled.View`
 	width: 100%;
 	margin-top: 50px;
 	padding-left: 80px;
+	margin-bottom: 10px;
 `;
 
 const Avatar = styled.Image`
