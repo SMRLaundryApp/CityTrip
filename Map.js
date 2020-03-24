@@ -9,7 +9,17 @@ class Map extends Component {
   render() {
     // Function which will always be executed
     let userLocation = undefined;
-    if (this.props.userlocation !== undefined) { userLocation = <Marker  title='User location' image={userLocationPin} coordinate={{latitude: this.props.userlocation.latitude, longitude: this.props.userlocation.longitude}} /> }
+    if(this.props.userlocation !== undefined &&
+      this.props.userlocation.latitude !== undefined &&
+      this.props.userlocation.longitude !== undefined) {
+        userLocation =
+        <Marker 
+        title='User location'
+        image={userLocationPin}
+        coordinate={{
+          latitude: this.props.userlocation.latitude,
+          longitude: this.props.userlocation.longitude
+        }}/>}
 
     return (
       // Shows stuff
