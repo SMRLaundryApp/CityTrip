@@ -16,7 +16,8 @@ class Map extends Component {
 
   render() {
     // Function which will always be executed
-    // userlocation = this.props;
+    let userLocation = undefined;
+    if (this.props.userlocation !== undefined) { userLocation = <Marker  title='User location' image={userLocationPin} coordinate={{latitude: this.props.userlocation.latitude, longitude: this.props.userlocation.longitude}} /> }
 
     return (
       // Shows stuff
@@ -28,17 +29,13 @@ class Map extends Component {
         latitudeDelta: 4,
         longitudeDelta: 4
       }}>
-        <Marker
-        title='User location'
-        image={userLocationPin}
-        coordinate={{
-          // latitude: 52.124730,
-          // longitude: 4.657368
-          latitude: this.props.userlocation.latitude,
-          longitude: this.props.userlocation.longitude
-        }} />
+        {userLocation}
         {/* {POIs} */}
       </MapView>
+
+      // <View>
+      //   {marker}
+      // </View>
     )
   }
 }

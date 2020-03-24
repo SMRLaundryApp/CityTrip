@@ -18,7 +18,8 @@ export default class App extends Component {
         userlocation={{
           latitude: 52.124730,
           longitude: 4.657368
-        }}/>
+        }}
+        />
       </View>
     );
   }
