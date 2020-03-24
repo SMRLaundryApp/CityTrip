@@ -5,15 +5,16 @@ import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import styles from './Style';
+import Map from './Map';
 
 
 export default class App extends Component {
 
   render() {
-    
+
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Map />
       </View>
     );
   }
