@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Welcombar from '../components/Welcomebar';
+import Welcomebar from '../Components/Welcomebar';
 import styled from 'styled-components';
 
 
@@ -8,7 +8,7 @@ export default function Settings({ }){
 
     return (
         <Container>
-            <Welcombar />
+            <Welcomebar />
             <Message>Settings tab will be added in the near future</Message>
         </Container>
     )

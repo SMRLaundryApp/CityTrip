@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Card from '../components/Card';
-import Welcombar from '../components/Welcomebar';
+import Card from '../Components/Card';
+import Welcomebar from '../Components/Welcomebar';
 import styled from 'styled-components';
 
 
@@ -9,7 +9,7 @@ export default function Routes_list({ }){
 
     return (
         <Container>
-            <Welcombar />
+            <Welcomebar />
             <Subtitle>Rijnsburg</Subtitle>
             <ItemsLayout>
                 <ColumnOne>
@@ -40,6 +40,10 @@ const ItemsLayout = styled.View`
 	flex: 50;
 `;
 
-const ColumnOne = styled.View``;
+const ColumnOne = styled.View`
+    margin-left: 3%;
+`;
 
-const ColumnTwo = styled.View``;
+const ColumnTwo = styled.View`
+    margin-right: 3%;
+`;

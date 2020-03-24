@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import styled from 'styled-components';
-import Welcombar from '../components/Welcomebar'
+import Welcomebar from '../Components/Welcomebar'
 
 
 
@@ -51,7 +51,7 @@ export default class Home_map extends React.Component{
     
         return (
           <Container>
-            <Welcombar />
+            <Welcomebar />
             
     
             {/* <Title style={styles.title}>Citrytrip inc.</Title>
@@ -66,14 +66,14 @@ export default class Home_map extends React.Component{
                 latitudeDelta: 1.010,
               }}
             >
-              <Marker
+              {/* <Marker
               coordinate={{
                 latitude: this.state.location.coords.latitude,
                 longitude: this.state.location.coords.longitude
               }}
               title={'Kaka'}
               description={'Roekoe roekoe'}
-              />
+              /> */}
     
             </MapView>
             {/* <Subtitle>Rijnsburg</Subtitle>
@@ -116,7 +116,7 @@ export default class Home_map extends React.Component{
     
     const styles = StyleSheet.create({
       mapView: {
-        flex: 50,
+        height: '100%',
         width: '100%',
         // height: '80%'
       },

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { TouchableOpacity } from 'react-native-gesture-handler';
+ 
 const Card = props => (
+	<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
 	<Container>
 		<Cover>
 			<Image source={require('../assets/spinozahuis.jpg')} />
@@ -11,16 +13,18 @@ const Card = props => (
 			<Streetname>Rijnsburg</Streetname>
 		</Content>
 	</Container>
+	</TouchableOpacity>
 );
 
 export default Card;
 
 const Container = styled.View`
+	align-self: center;
 	background: #888;
 	height: 200px;
 	width: 150px;
 	border-radius: 14px;
-	margin: 20px;
+	margin: 5%;
 	margin-top: 20px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
 `;
