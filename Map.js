@@ -6,14 +6,6 @@ import userLocationPin from './images/userLocation.png';
 import styles from './Style';
 
 class Map extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-
-  //   };
-  // }
-
   render() {
     // Function which will always be executed
     let userLocation = undefined;
@@ -30,12 +22,7 @@ class Map extends Component {
         longitudeDelta: 4
       }}>
         {userLocation}
-        {/* {POIs} */}
       </MapView>
-
-      // <View>
-      //   {marker}
-      // </View>
     )
   }
 }
