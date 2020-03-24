@@ -7,6 +7,7 @@ import Routes_list from './screens/Routes_list';
 import Settings from './screens/Settings';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 function HomeScreen() {
   return(
@@ -37,7 +38,42 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Map') {
+              iconName = focused
+                ? 'ios-map'
+                : 'ios-map';
+            }
+            else if (route.name === 'POI Nearby'){
+              iconName = focused
+                ? 'ios-pin'
+                : 'ios-pin';
+            }
+
+            else if (route.name === 'Routes Nearby'){
+              iconName = focused
+                ? 'ios-walk'
+                : 'ios-walk';
+            } 
+            else if (route.name === 'Settings') {
+              iconName = focused 
+                ? 'ios-list-box' 
+                : 'ios-list-box';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}
+      >
         <Tab.Screen name="Map" component={HomeScreen} />
         <Tab.Screen name="POI Nearby" component={POI_Nearby} />
         <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
