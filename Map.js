@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, Alert } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import userLocationPin from './assets/userLocation.png';
-import styles from './Style';
 
 class Map extends Component {
   render() {
