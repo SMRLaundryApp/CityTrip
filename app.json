@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "CityTrip",
-    "slug": "AugmentedCityTripRvdP",
+    "slug": "CityTrip",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [

@@ -8,6 +8,7 @@ import Settings from './screens/Settings';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import Map from './Map';
 
 function HomeScreen() {
   return(
