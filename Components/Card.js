@@ -13,11 +13,11 @@ export default class Card extends Component {
 			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
 				<Container>
 					<Cover>
-						<Image source={require('../assets/spinozahuis.jpg')} />
+						<Image source={{uri:this.props.image}} />
 					</Cover>
 					<Content>
-						<Title>Spinozahuis</Title>
-						<CityName>Rijnsburg</CityName>
+						<Title>{this.props.title}</Title>
+						<CityName>{this.props.cityName}</CityName>
 					</Content>
 				</Container>
 			</TouchableOpacity>
@@ -37,7 +37,7 @@ const Container = styled.View`
 	align-self: center;
 	background: #888;
 	height: 200px;
-	width: 150px;
+	width: 100%;
 	border-radius: 14px;
 	margin: 5%;
 	margin-top: 20px;
@@ -69,8 +69,9 @@ const Content = styled.View`
 
 const Title = styled.Text`
 	color: #FFF;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 600;
+	align-items: center;
 `;
 
 const CityName = styled.Text`
