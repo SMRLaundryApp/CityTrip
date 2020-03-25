@@ -8,9 +8,6 @@ import styled from 'styled-components';
 import Welcomebar from '../Components/Welcomebar';
 import Map from '../Components/Map';
 
-
-
-
 export default class Home_map extends React.Component{
     
     
@@ -20,7 +17,7 @@ export default class Home_map extends React.Component{
           <Container>
             <Welcomebar />
             
-            <Map />
+            <Map showUserLocation={true} />
   
               
             </Container>

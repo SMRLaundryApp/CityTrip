@@ -49,6 +49,7 @@ const Subtitle = styled.Text`
 
 const ItemsLayout = styled.View`
 	flex-direction: row;
+    width: 100%;
 	flex: 50;
 `;
 
