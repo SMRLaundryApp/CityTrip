@@ -49,18 +49,15 @@ const Subtitle = styled.Text`
 
 const ItemsLayout = styled.View`
 	flex-direction: row;
-    flex: 50;
-    margin-bottom: 170;
+    margin-bottom: 170px;
 `;
 
 const ColumnOne = styled.View`
-    /* margin-left: 3%; */
     align-items: center;
     width: 50%;
 `;
 
 const ColumnTwo = styled.View`
-    /* margin-right: 3%; */
     align-items: center;
     width: 50%;
 `;
