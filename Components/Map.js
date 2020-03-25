@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Alert } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
-import userLocationPin from './assets/userLocation.png';
+import userLocationPin from '../assets/userLocation.png';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
