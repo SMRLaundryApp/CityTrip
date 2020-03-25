@@ -24,7 +24,7 @@ const Container = styled.View`
 	height: 200px;
 	width: 150px;
 	border-radius: 14px;
-	margin: 5%;
+	/* margin: 5%; */
 	margin-top: 20px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30); /*This particular line doesn't seem to do anything in android OS*/
 
