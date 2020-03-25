@@ -9,6 +9,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
+import Camera from './screens/Camera'
+
 function HomeScreen() {
   return(
     <Home_map />
@@ -30,6 +32,12 @@ function Routes_Nearby() {
 function SettingsScreen() {
   return (
     <Settings />
+  );
+}
+
+function Camera_Screen() {
+  return(
+    <Camera />
   );
 }
 
@@ -59,6 +67,13 @@ export default function App() {
                 ? 'ios-walk'
                 : 'ios-walk';
             } 
+
+            else if (route.name === 'Camera'){
+              iconName = focused
+                ? 'ios-camera'
+                : 'ios-camera';
+            } 
+
             else if (route.name === 'Settings') {
               iconName = focused 
                 ? 'ios-list-box' 
@@ -77,6 +92,7 @@ export default function App() {
         <Tab.Screen name="Map" component={HomeScreen} />
         <Tab.Screen name="POI Nearby" component={POI_Nearby} />
         <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
+        <Tab.Screen name="Camera" component={Camera_Screen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
