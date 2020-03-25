@@ -6,3 +6,4 @@
     expo install expo-constants    
     expo install expo-permissions
     react-native link
+    npm install --save styled-components
