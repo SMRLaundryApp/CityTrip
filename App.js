@@ -17,7 +17,7 @@ function HomeScreen() {
 
 function POI_Nearby() {
   return (
-    <POI_list />
+    <POI_list city = 'Leiden'/>
   );
 }
 

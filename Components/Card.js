@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
  
-const Card = props => (
-	<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
-	<Container>
-		<Cover>
-			<Image source={require('../assets/spinozahuis.jpg')} />
-		</Cover>
-		<Content>
-			<Title>Spinozahuis</Title>
-			<Streetname>Rijnsburg</Streetname>
-		</Content>
-	</Container>
-	</TouchableOpacity>
-);
 
-export default Card;
+
+export default class Card extends Component {
+	
+	render() {
+
+		let card = [];
+		card.push(
+			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
+				<Container>
+					<Cover>
+						<Image source={require('../assets/spinozahuis.jpg')} />
+					</Cover>
+					<Content>
+						<Title>Spinozahuis</Title>
+						<CityName>Rijnsburg</CityName>
+					</Content>
+				</Container>
+			</TouchableOpacity>
+		)
+
+		return (
+			<Clear>
+				{card}
+			</Clear>
+		)
+	}
+}
+
+const Clear = styled.View``;
 
 const Container = styled.View`
 	align-self: center;
@@ -58,7 +73,7 @@ const Title = styled.Text`
 	font-weight: 600;
 `;
 
-const Streetname = styled.Text`
+const CityName = styled.Text`
 	color: #b8b3c3;
 	font-size: 15px;
 	font-weight: 600;

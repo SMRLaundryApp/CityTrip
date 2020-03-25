@@ -5,30 +5,32 @@ import Welcomebar from '../Components/Welcomebar';
 import styled from 'styled-components';
 import { ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import ItemsLayout from '../Components/ItemsLayout';
 
-export default function POI_list({ }){
+export default function POI_list({ city }){
 
     return (
         <Container>
             <Welcomebar />
-            <Subtitle>Rijnsburg</Subtitle>
+            <Subtitle>{city}</Subtitle>
             <ScrollView>
-            <ItemsLayout>
-                <ColumnOne>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+            <ItemsLayout cityName={city} />
+                {/* <ColumnOne>
+                    <Card cityName={city} />
+                    <Card cityName='Leiden'/>
+                    <Card cityName='Leiden'/>
+                    <Card cityName='Leiden'/>
+                    <Card cityName='Leiden'/>
+                    <Card cityName='Leiden'/>
                 </ColumnOne>
                 <ColumnTwo>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </ColumnTwo>
-            </ItemsLayout>
+                    <Card cityName={city} />
+                    <Card cityName='Rijnsburg'/>
+                    <Card cityName='Rijnsburg'/>
+                    <Card cityName='Rijnsburg'/>
+                    <Card cityName='Rijnsburg'/>
+                    <Card cityName='Rijnsburg'/>
+                </ColumnTwo> */}
             </ScrollView>
         </Container>
     )
@@ -47,21 +49,5 @@ const Subtitle = styled.Text`
 	text-transform: uppercase;
 `;
 
-const ItemsLayout = styled.View`
-	flex-direction: row;
-    flex: 50;
-    margin-bottom: 170px;
-`;
 
-const ColumnOne = styled.View`
-    /* margin-left: 3%; */
-    align-items: center;
-    width: 50%;
-`;
-
-const ColumnTwo = styled.View`
-    /* margin-right: 3%; */
-    align-items: center;
-    width: 50%;
-`;
 
