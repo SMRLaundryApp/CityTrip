@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import Welcomebar from '../Components/Welcomebar';
 import styled from 'styled-components';
 

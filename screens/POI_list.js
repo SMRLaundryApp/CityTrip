@@ -1,10 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import Card from '../Components/Card';
 import Welcomebar from '../Components/Welcomebar';
 import styled from 'styled-components';
 import { ScrollView } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function POI_list({ }){
 

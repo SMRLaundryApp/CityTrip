@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import Home_map from './screens/Home_map';
 import POI_list from './screens/POI_list';
 import Routes_list from './screens/Routes_list';
