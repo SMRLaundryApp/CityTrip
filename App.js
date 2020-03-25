@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import MapView, { Callout, Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, ScrollView, Dimensions, PermissionsAndroid, Platform, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
-import Constants from 'expo-constants';
-import * as Location from 'expo-location';
-import * as Permissions from 'expo-permissions';
 import styles from './Style';
 import Map from './Map';
 
@@ -15,9 +11,7 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
-        <Map 
-        showUserLocation={true}
-        />
+        <Map showUserLocation={true} />
       </View>
     );
   }
