@@ -26,7 +26,8 @@ const Container = styled.View`
 	border-radius: 14px;
 	margin: 5%;
 	margin-top: 20px;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30); /*This particular line doesn't seem to do anything in android OS*/
+
 `;
 
 const Cover = styled.View`
@@ -35,6 +36,7 @@ const Cover = styled.View`
 	border-top-left-radius: 14px;
 	border-top-right-radius: 14px;
 	overflow: hidden;
+	
 `;
 
 const Image = styled.Image`
@@ -47,6 +49,7 @@ const Content = styled.View`
 	flex-direction: column;
 	align-items: center;
 	height: 60px;
+	
 `;
 
 const Title = styled.Text`
