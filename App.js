@@ -1,39 +1,32 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Home_map from './screens/Home_map';
-import POI_list from './screens/POI_list';
-import Routes_list from './screens/Routes_list';
-import Settings from './screens/Settings';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+import 'react-native-gesture-handler'
+import React from 'react'
+import Home_map from './screens/Home_map'
+import POI_list from './screens/POI_list'
+import Routes_list from './screens/Routes_list'
+import Settings from './screens/Settings'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { Ionicons } from '@expo/vector-icons'
+
+//Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
 function HomeScreen() {
-  return(
-    <Home_map />
-  )
+  return <Home_map />
 }
 
 function POI_Nearby() {
-  return (
-    <POI_list />
-  );
+  return <POI_list />
 }
 
 function Routes_Nearby() {
-  return (
-    <Routes_list />
-  );
+  return <Routes_list />
 }
 
 function SettingsScreen() {
-  return (
-    <Settings />
-  );
+  return <Settings />
 }
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
@@ -41,32 +34,20 @@ export default function App() {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
+            let iconName
 
             if (route.name === 'Map') {
-              iconName = focused
-                ? 'ios-map'
-                : 'ios-map';
-            }
-            else if (route.name === 'POI Nearby'){
-              iconName = focused
-                ? 'ios-pin'
-                : 'ios-pin';
-            }
-
-            else if (route.name === 'Routes Nearby'){
-              iconName = focused
-                ? 'ios-walk'
-                : 'ios-walk';
-            } 
-            else if (route.name === 'Settings') {
-              iconName = focused 
-                ? 'ios-list-box' 
-                : 'ios-list-box';
+              iconName = focused ? 'ios-map' : 'ios-map'
+            } else if (route.name === 'POI Nearby') {
+              iconName = focused ? 'ios-pin' : 'ios-pin'
+            } else if (route.name === 'Routes Nearby') {
+              iconName = focused ? 'ios-walk' : 'ios-walk'
+            } else if (route.name === 'Settings') {
+              iconName = focused ? 'ios-list-box' : 'ios-list-box'
             }
 
             // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Ionicons name={iconName} size={size} color={color} />
           },
         })}
         tabBarOptions={{
@@ -80,5 +61,5 @@ export default function App() {
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
-  );
+  )
 }

@@ -1,25 +1,23 @@
 {
-    "Route": [
-        {
-            "id":"#0001",
-            "name":"Leiden route 1",
-            "type":"lineair",
-            "POIs":
-            {
-                "POI1":"#0004",
-                "POI2":"#0002",
-                "POI3":"#0003",
-                "POI4":"#0001"
-            }
-        },
-        {
-            "id":"#0002",
-            "name":"Leiden route 2",
-            "type":"circular",
-            "POIs":
-            {
-                "POI1":"#"
-            }
-        }
-    ]
+  "Route": [
+    {
+      "id": "#0001",
+      "name": "Leiden route 1",
+      "type": "lineair",
+      "POIs": {
+        "POI1": "#0004",
+        "POI2": "#0002",
+        "POI3": "#0003",
+        "POI4": "#0001"
+      }
+    },
+    {
+      "id": "#0002",
+      "name": "Leiden route 2",
+      "type": "circular",
+      "POIs": {
+        "POI1": "#"
+      }
+    }
+  ]
 }

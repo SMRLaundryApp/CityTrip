@@ -1,15 +1,17 @@
 # CityTrip
 
-<p>In-app navigation: https://reactnavigation.org/docs/navigating</p>
-<p>Styled-components: https://styled-components.com/docs/basics#installation</p>
-<p>Map-view: npm install react-native-maps --save-exact</p>
+<h1>After cloning:</h1>
+<p>Directly after cloning the repository run the following command in the terminal (while located in the project folder):</p>
 
-    npm install react-native-maps --save-exact
-    expo install expo-location    
-    expo install expo-constants    
-    expo install expo-permissions
-    npm install --save styled-components
-    npm install @react-navigation/native
-    expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
-    npm install @react-navigation/bottom-tabs
-    react-native link
+    npm install
+
+
+<h1>Running the metro builder:</h1>
+<p>To try the app on your phone with expo, you need to install the expo app on your mobile phone and run the following line of code</p>
+
+    npm start
+
+<h1>Making the code 'Prettier':</h1>
+<p>When you don't care about indents and tabs code might get messy, for that an extension called prettier can be used. Just call this line in terminal to make everything pretty again.</p>
+
+    prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
