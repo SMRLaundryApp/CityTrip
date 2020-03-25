@@ -1,96 +1,62 @@
 {
-    "cityName":
-    {
-        "Leiden":
-        [
-            {
-                "id":"#0000",
-                "name":"Molen De Valk",
-                "category":
-                [
-                    "building",
-                    "windmill",
-                    "museum"
-                ],
-                "coords":
-                {
-                    "latitude":52.164451,
-                    "longitude":4.486489
-                }
-            },
-            {
-                "id":"#0001",
-                "name":"Burcht van Leiden",
-                "category":
-                [
-                    "building",
-                    "castle"
-                ],
-                "coords":
-                {
-                    "latitude":52.158979,
-                    "longitude":4.492440
-                }
-            },
-            {
-                "id":"#0002",
-                "name":"Morspoort",
-                "category":
-                [
-                    "building",
-                    "gate"
-                ],
-                "coords":
-                {
-                    "latitude":52.162057,
-                    "longitude":4.482130
-                }
-            },
-            {
-                "id":"#0003",
-                "name":"Molen De Put",
-                "category":
-                [
-                    "building",
-                    "windmill"
-                ],
-                "coords":
-                {
-                    "latitude":52.161350,
-                    "longitude":4.481973
-                }
-            },
-            {
-                "id":"#0004",
-                "name":"Station Leiden Centraal",
-                "category":
-                [
-                    "building",
-                    "station"
-                ],
-                "coords":
-                {
-                    "latitude":52.165879,
-                    "longitude":4.483116
-                }
-            }
-        ],
-        "Rijnsburg":
-        [
-            {
-                "id":"#0000",
-                "name":"Spinozahuis",
-                "category":
-                [
-                    "building",
-                    "museum"
-                ],
-                "coords":
-                {
-                    "latitude":52.191447,
-                    "longitude":4.437151
-                }
-            }
-        ]
-    }
+  "cityName": {
+    "Leiden": [
+      {
+        "id": "#0000",
+        "name": "Molen De Valk",
+        "category": ["building", "windmill", "museum"],
+        "coords": {
+          "latitude": 52.164451,
+          "longitude": 4.486489
+        }
+      },
+      {
+        "id": "#0001",
+        "name": "Burcht van Leiden",
+        "category": ["building", "castle"],
+        "coords": {
+          "latitude": 52.158979,
+          "longitude": 4.49244
+        }
+      },
+      {
+        "id": "#0002",
+        "name": "Morspoort",
+        "category": ["building", "gate"],
+        "coords": {
+          "latitude": 52.162057,
+          "longitude": 4.48213
+        }
+      },
+      {
+        "id": "#0003",
+        "name": "Molen De Put",
+        "category": ["building", "windmill"],
+        "coords": {
+          "latitude": 52.16135,
+          "longitude": 4.481973
+        }
+      },
+      {
+        "id": "#0004",
+        "name": "Station Leiden Centraal",
+        "category": ["building", "station"],
+        "coords": {
+          "latitude": 52.165879,
+          "longitude": 4.483116
+        }
+      }
+    ],
+    "Rijnsburg": [
+      {
+        "id": "#0000",
+        "name": "Spinozahuis",
+        "category": ["building", "museum"],
+        "coords": {
+          "latitude": 52.191447,
+          "longitude": 4.437151
+        }
+      }
+    ]
+  }
 }
