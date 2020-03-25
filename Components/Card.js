@@ -21,8 +21,8 @@ export default Card
 const Container = styled.View`
   align-self: center;
   background: #888;
-  height: 200px;
-  width: 150px;
+  height: 230px;
+  width: 180px;
   border-radius: 14px;
   /* margin: 5%; */
   margin-top: 20px;

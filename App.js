@@ -4,6 +4,7 @@ import Home_map from './screens/Home_map'
 import POI_list from './screens/POI_list'
 import Routes_list from './screens/Routes_list'
 import Settings from './screens/Settings'
+import Login from './screens/Loginscreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
@@ -26,6 +27,9 @@ function SettingsScreen() {
   return <Settings />
 }
 
+function loginScreen() {
+  return <Login />
+}
 const Tab = createBottomTabNavigator()
 
 export default function App() {
@@ -59,6 +63,7 @@ export default function App() {
         <Tab.Screen name="POI Nearby" component={POI_Nearby} />
         <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name ="Login" component={loginScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   )

@@ -1,20 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import Welcomebar from '../Components/Welcomebar';
-import Map from '../Components/Map';
+import React from 'react'
+import styled from 'styled-components'
+import Welcomebar from '../Components/Welcomebar'
+import Map from '../Components/Map'
 
-export default class Home_map extends React.Component{
-  render(){
+export default class Home_map extends React.Component {
+  render() {
     return (
       <Container>
         <Welcomebar />
-        <Map showUserLocation={true}/>
+        <Map showUserLocation={true} />
       </Container>
-    );
+    )
   }
 }
 
 const Container = styled.View`
   flex: 1;
   background-color: white;
-`;
+`
