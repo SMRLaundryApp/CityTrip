@@ -63,7 +63,7 @@ export default function App() {
         <Tab.Screen name="POI Nearby" component={POI_Nearby} />
         <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name ="Login" component={loginScreen} />
+        {/* <Tab.Screen name ="Login" component={loginScreen} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   )

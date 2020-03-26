@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default class Login extends React.Component{
@@ -9,7 +10,9 @@ export default class Login extends React.Component{
             <Image source={require('../assets/temp_logo.jpg')}/>
             <Appname>Citytrip</Appname>
             <Quote>Explore places!</Quote>
-            
+            <TouchableOpacity onPress={() => console.log('roekoeroekoe')}>
+              <Butoon />
+            </TouchableOpacity>
         </Container>
       );
     }
@@ -32,6 +35,7 @@ export default class Login extends React.Component{
     color: #888;
     font-size: 20px;
     font-weight: 400;
+    margin-bottom: 130px;
    `;
 
     const Image = styled.Image`
@@ -42,4 +46,11 @@ export default class Login extends React.Component{
 
     `;
 
-    
+    const Butoon = styled.View`
+    align-self: center;
+    width: 70%;
+    height: 5%;
+    background-color: #888;
+    border-radius: 100px;
+    margin: 20px;
+    `;  
