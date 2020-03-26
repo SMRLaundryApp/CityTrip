@@ -7,7 +7,7 @@ import { Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 const cardWidth = screenWidth / 2 - 20;
-
+const cardHeight = screenWidth * 0.55;
 
 
 export default class Card extends Component {
@@ -15,9 +15,12 @@ export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardWidth: screenWidth / 2 - 20,
-      cardHeight: screenWidth / 2
+      imageHeight: screenWidth / 3 + 24
     }
+  }
+
+  onLayout = event => {
+    this.setState({imageHeight: screenWidth / 3 + 24 - Math.round(event.nativeEvent.layout.height)});
   }
 	
 	render() {
@@ -25,22 +28,23 @@ export default class Card extends Component {
     let card = [];
     card.push(
 			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
-				<Container width={cardWidth} height={this.state.cardHeight}>
-					<Cover>
+				<Container width={cardWidth} height={cardHeight}>
+					<Cover height={this.state.imageHeight}>
 						<Image source={{uri:this.props.image}} />
 					</Cover>
 					<Content>
 						<Title >{this.props.title}</Title>
-						{/* <CityName>{this.props.cityName}</CityName> */}
-            <CityName>{this.state.cardHeight}</CityName>
+						<CityName>{this.props.cityName}</CityName>
 					</Content>
 				</Container>
 			</TouchableOpacity>
     );
     let titleSize = [];
     titleSize.push(
-      <Title onLayout={this.onLayout} >{this.props.title}</Title>
+      <Title onLayout={this.onLayout} style={{opacity:0}} >{this.props.title}</Title>
     )
+    
+    
 
 		return (
       <Clear>
@@ -53,11 +57,6 @@ export default class Card extends Component {
       </Clear>
     )
   }
-  
-  onLayout = event => {
-    this.setState({cardHeight: screenWidth / 2 + Math.round(event.nativeEvent.layout.height)});
-  }
-
 }
 
 const Invisible = styled.View`
@@ -78,7 +77,6 @@ const Container = styled.View`
 
 const Cover = styled.View`
   width: 100%;
-  height: 120px;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   overflow: hidden;
@@ -99,7 +97,7 @@ const Content = styled.View`
 const Title = styled.Text`
   padding-left: 5px;
   padding-right: 5px;
-  margin-top: 2px
+  margin-top: 4px;
   color: #FFF;
   font-size: 18px;
 	font-weight: 600;
