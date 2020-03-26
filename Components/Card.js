@@ -5,22 +5,32 @@ import { Dimensions } from 'react-native';
 
 // TODO: Change <Title /> to the location as the crow flies
 
-const cardWidth = Dimensions.get('window').width / 2 - 20;
+const screenWidth = Dimensions.get('window').width;
+const cardWidth = screenWidth / 2 - 20;
+let test = 0;
 
 export default class Card extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {cardHeightState: 0}
+  }
 	
 	render() {
+    
+    let cardHeight = screenWidth * 0.55;
 
 		let card = [];
 		card.push(
 			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
-				<Container width={cardWidth}>
+				<Container width={cardWidth} height={cardHeight} >
 					<Cover>
 						<Image source={{uri:this.props.image}} />
 					</Cover>
 					<Content>
-						<Title>{this.props.title}</Title>
-						<CityName>{this.props.cityName}</CityName>
+						<Title onLayout={this.onLayout} >{this.props.title}</Title>
+						{/* <CityName>{this.props.cityName}</CityName> */}
+            <CityName>{this.state.cardHeightState}</CityName>
 					</Content>
 				</Container>
 			</TouchableOpacity>
@@ -31,7 +41,13 @@ export default class Card extends Component {
 				{card}
 			</Clear>
 		)
-	}
+  }
+  
+  onLayout = event => {
+    if (this.state.cardHeightState) return;
+    this.setState({cardHeightState:event.nativeEvent.layout.height});
+  }
+
 }
 
 const Clear = styled.View``;
@@ -39,7 +55,6 @@ const Clear = styled.View``;
 const Container = styled.View`
 	align-self: center;
 	background: #888;
-	height: 200px;
 	border-radius: 14px;
 	margin: 5%;
 	margin-top: 10px;
@@ -69,6 +84,7 @@ const Content = styled.View`
 const Title = styled.Text`
   padding-left: 5px;
   padding-right: 5px;
+  margin-top: 2px
 	color: #FFF;
 	font-size: 18px;
 	font-weight: 600;
