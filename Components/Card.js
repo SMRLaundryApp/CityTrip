@@ -7,48 +7,63 @@ import { Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 const cardWidth = screenWidth / 2 - 20;
-let test = 0;
+
+
 
 export default class Card extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {cardHeightState: 0}
+    this.state = {
+      cardWidth: screenWidth / 2 - 20,
+      cardHeight: screenWidth / 2
+    }
   }
 	
 	render() {
-    
-    let cardHeight = screenWidth * 0.55;
 
-		let card = [];
-		card.push(
+    let card = [];
+    card.push(
 			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
-				<Container width={cardWidth} height={cardHeight} >
+				<Container width={cardWidth} height={this.state.cardHeight}>
 					<Cover>
 						<Image source={{uri:this.props.image}} />
 					</Cover>
 					<Content>
-						<Title onLayout={this.onLayout} >{this.props.title}</Title>
+						<Title >{this.props.title}</Title>
 						{/* <CityName>{this.props.cityName}</CityName> */}
-            <CityName>{this.state.cardHeightState}</CityName>
+            <CityName>{this.state.cardHeight}</CityName>
 					</Content>
 				</Container>
 			</TouchableOpacity>
-		)
+    );
+    let titleSize = [];
+    titleSize.push(
+      <Title onLayout={this.onLayout} >{this.props.title}</Title>
+    )
 
 		return (
-			<Clear>
-				{card}
-			</Clear>
-		)
+      <Clear>
+        <Invisible width={cardWidth} >
+          {titleSize}
+        </Invisible>
+        <Clear>
+          {card}
+        </Clear>
+      </Clear>
+    )
   }
   
   onLayout = event => {
-    if (this.state.cardHeightState) return;
-    this.setState({cardHeightState:event.nativeEvent.layout.height});
+    this.setState({cardHeight: screenWidth / 2 + Math.round(event.nativeEvent.layout.height)});
   }
 
 }
+
+const Invisible = styled.View`
+  align-self: center;
+  position: absolute;
+`;
 
 const Clear = styled.View``;
 
@@ -85,8 +100,8 @@ const Title = styled.Text`
   padding-left: 5px;
   padding-right: 5px;
   margin-top: 2px
-	color: #FFF;
-	font-size: 18px;
+  color: #FFF;
+  font-size: 18px;
 	font-weight: 600;
 	text-align: center;
 `;
