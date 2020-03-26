@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { Dimensions } from 'react-native';
 
 // TODO: Change <Title /> to the location as the crow flies
@@ -27,7 +27,7 @@ export default class Card extends Component {
 
     let card = [];
     card.push(
-			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
+			<TouchableWithoutFeedback delayPressIn={5} delayPressOut={5} delayLongPress={5} onPress={() => console.log('roekoeroekoe')}>
 				<Container width={cardWidth} height={cardHeight}>
 					<Cover height={this.state.imageHeight}>
 						<Image source={{uri:this.props.image}} />
@@ -37,7 +37,7 @@ export default class Card extends Component {
 						<CityName>{this.props.cityName}</CityName>
 					</Content>
 				</Container>
-			</TouchableOpacity>
+			</TouchableWithoutFeedback>
     );
     let titleSize = [];
     titleSize.push(
