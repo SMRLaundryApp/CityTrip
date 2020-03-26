@@ -7,7 +7,7 @@ import { Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 const cardWidth = screenWidth / 2 - 20;
-const cardHeight = screenWidth * 0.55;
+const cardHeight = screenWidth / 3 + 78;
 
 
 export default class Card extends Component {
