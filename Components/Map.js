@@ -5,7 +5,8 @@ import userLocationPin from '../assets/userLocation.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
-// import UserLocation from './UserLocation';
+
+// TODO: Use the user location from react-native-maps instead of expo-location
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
