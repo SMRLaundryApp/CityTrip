@@ -11,11 +11,16 @@ import { Ionicons } from '@expo/vector-icons'
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
 function HomeScreen() {
-  return <Home_map />
+  return(
+    <Home_map showUserLocation={true}/>
+  )
 }
 
 function POI_Nearby() {
-  return <POI_list />
+  return (
+    // TODO: use Google Maps API to get current city from longitude and latitude coordinates
+    <POI_list city = 'Leiden'/>
+  )
 }
 
 function Routes_Nearby() {

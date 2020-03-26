@@ -1,62 +1,120 @@
 {
-  "cityName": {
-    "Leiden": [
-      {
-        "id": "#0000",
-        "name": "Molen De Valk",
-        "category": ["building", "windmill", "museum"],
-        "coords": {
-          "latitude": 52.164451,
-          "longitude": 4.486489
-        }
-      },
-      {
-        "id": "#0001",
-        "name": "Burcht van Leiden",
-        "category": ["building", "castle"],
-        "coords": {
-          "latitude": 52.158979,
-          "longitude": 4.49244
-        }
-      },
-      {
-        "id": "#0002",
-        "name": "Morspoort",
-        "category": ["building", "gate"],
-        "coords": {
-          "latitude": 52.162057,
-          "longitude": 4.48213
-        }
-      },
-      {
-        "id": "#0003",
-        "name": "Molen De Put",
-        "category": ["building", "windmill"],
-        "coords": {
-          "latitude": 52.16135,
-          "longitude": 4.481973
-        }
-      },
-      {
-        "id": "#0004",
-        "name": "Station Leiden Centraal",
-        "category": ["building", "station"],
-        "coords": {
-          "latitude": 52.165879,
-          "longitude": 4.483116
-        }
-      }
-    ],
-    "Rijnsburg": [
-      {
-        "id": "#0000",
-        "name": "Spinozahuis",
-        "category": ["building", "museum"],
-        "coords": {
-          "latitude": 52.191447,
-          "longitude": 4.437151
-        }
-      }
-    ]
-  }
+	"cityName": 
+	{
+		"Leiden": 
+		[
+			{
+				"id": "#0000",
+				"name": "Molen De Valk",
+				"image":
+				{
+					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1028_2.png"
+				},
+				"category": 
+				[
+					"building",
+					"windmill",
+					"museum"
+				],
+				"coords": 
+				{
+					"latitude": 52.164451,
+					"longitude": 4.486489
+				}
+			},
+			{
+				"id": "#0001",
+				"name": "Burcht van Leiden",
+				"image":
+				{
+					"url":"https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
+				},
+				"category": 
+				[
+					"building",
+					"castle"
+				],
+				"coords": 
+				{
+					"latitude": 52.158979,
+					"longitude": 4.492440
+				}
+			},
+			{
+				"id": "#0002",
+				"name": "Morspoort",
+				"image":
+				{
+					"url":"https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
+				},
+				"category": 
+				[
+					"building",
+					"gate"
+				],
+				"coords": 
+				{
+					"latitude": 52.162057,
+					"longitude": 4.482130
+				}
+			},
+			{
+				"id": "#0003",
+				"name": "Molen De Put",
+				"image":
+				{
+					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1027_7.png"
+				},
+				"category":
+				[
+					"building",
+					"windmill"
+				],
+				"coords": 
+				{
+					"latitude": 52.161350,
+					"longitude": 4.481973
+				}
+			},
+			{
+				"id": "#0004",
+				"name": "Station Leiden Centraal",
+				"image":
+				{
+					"url":"https://sites.google.com/site/inzichtstadswandelingen/_/rsrc/1478633873361/blog/0706/1607%20Station%20Leiden%20Centraal%20039klein.JPG"
+				},
+				"category":
+				[
+					"building",
+					"station"
+				],
+				"coords": 
+				{
+					"latitude": 52.165879,
+					"longitude": 4.483116
+				}
+			}
+		],
+		"Rijnsburg":
+		[
+			{
+				"id": "#0000",
+				"name": "Spinozahuis",
+				"image":
+				{
+					"url":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Aanzicht_voor-_en_zijgevel_-_Rijnsburg_-_20187055_-_RCE.jpg"
+				},
+				"category":
+				[
+					"building",
+					"museum"
+				],
+				"coords":
+				{
+					"latitude": 52.191447,
+					"longitude": 4.437151
+				}
+			}
+		]
+	}
 }

@@ -8,7 +8,7 @@ export default class Home_map extends React.Component{
     return (
       <Container>
         <Welcomebar />
-        <Map showUserLocation={true}/>
+        <Map showUserLocation={this.props.showUserLocation}/>
       </Container>
     );
   }

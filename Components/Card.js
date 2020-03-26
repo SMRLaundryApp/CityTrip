@@ -1,33 +1,49 @@
-import React from 'react'
-import styled from 'styled-components'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+ 
 
-const Card = (props) => (
-  <TouchableOpacity onLongPress={() => console.log('roekoeroekoe')}>
-    <Container>
-      <Cover>
-        <Image source={require('../assets/spinozahuis.jpg')} />
-      </Cover>
-      <Content>
-        <Title>Spinozahuis</Title>
-        <Streetname>Rijnsburg</Streetname>
-      </Content>
-    </Container>
-  </TouchableOpacity>
-)
 
-export default Card
+export default class Card extends Component {
+	
+	render() {
+
+		let card = [];
+		card.push(
+			<TouchableOpacity  onLongPress={() => console.log('roekoeroekoe')}>
+				<Container>
+					<Cover>
+						<Image source={{uri:this.props.image}} />
+					</Cover>
+					<Content>
+						<Title>{this.props.title}</Title>
+						<CityName>{this.props.cityName}</CityName>
+					</Content>
+				</Container>
+			</TouchableOpacity>
+		)
+
+		return (
+			<Clear>
+				{card}
+			</Clear>
+		)
+	}
+}
+
+const Clear = styled.View``;
 
 const Container = styled.View`
-  align-self: center;
-  background: #888;
-  height: 200px;
-  width: 150px;
-  border-radius: 14px;
-  /* margin: 5%; */
-  margin-top: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
-`
+	align-self: center;
+	background: #888;
+	height: 200px;
+	width: 100%;
+	border-radius: 14px;
+	margin: 5%;
+	margin-top: 20px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30); /*This particular line doesn't seem to do anything in android OS*/
+
+`;
 
 const Cover = styled.View`
   width: 100%;
@@ -50,14 +66,15 @@ const Content = styled.View`
 `
 
 const Title = styled.Text`
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-`
+	color: #FFF;
+	font-size: 16px;
+	font-weight: 600;
+	align-items: center;
+`;
 
-const Streetname = styled.Text`
-  color: #b8b3c3;
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: 4px;
-`
+const CityName = styled.Text`
+	color: #b8b3c3;
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 4px;
+`;
