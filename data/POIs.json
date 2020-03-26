@@ -5,6 +5,60 @@
 		[
 			{
 				"id": "#0000",
+				"name": "Heesterboom Molen",
+				"image":
+				{
+					"url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX53_JePpL-Pss_4EQ17rJke9PS4D9yk6J92h9tePRPsAtR-By"
+				},
+				"category": 
+				[
+					"building",
+					"windmill"
+				],
+				"coords": 
+				{
+					"latitude": 52.156727,
+					"longitude": 4.472573
+				}
+			},
+			{
+				"id": "#0001",
+				"name": "Stevenshofjes Molen",
+				"image":
+				{
+					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1033_2.png"
+				},
+				"category": 
+				[
+					"building",
+					"windmill"
+				],
+				"coords": 
+				{
+					"latitude": 52.150720,
+					"longitude": 4.443234
+				}
+			},
+			{
+				"id": "#0002",
+				"name": "Molen De Herder",
+				"image":
+				{
+					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1026_2.jpg"
+				},
+				"category": 
+				[
+					"building",
+					"windmill"
+				],
+				"coords": 
+				{
+					"latitude": 52.173490,
+					"longitude": 4.489123
+				}
+			},
+			{
+				"id": "#0003",
 				"name": "Molen De Valk",
 				"image":
 				{
@@ -23,43 +77,7 @@
 				}
 			},
 			{
-				"id": "#0001",
-				"name": "Burcht van Leiden",
-				"image":
-				{
-					"url":"https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"castle"
-				],
-				"coords": 
-				{
-					"latitude": 52.158979,
-					"longitude": 4.492440
-				}
-			},
-			{
-				"id": "#0002",
-				"name": "Morspoort",
-				"image":
-				{
-					"url":"https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"gate"
-				],
-				"coords": 
-				{
-					"latitude": 52.162057,
-					"longitude": 4.482130
-				}
-			},
-			{
-				"id": "#0003",
+				"id": "#0004",
 				"name": "Molen De Put",
 				"image":
 				{
@@ -77,7 +95,7 @@
 				}
 			},
 			{
-				"id": "#0004",
+				"id": "#0005",
 				"name": "Station Leiden Centraal",
 				"image":
 				{
@@ -95,7 +113,25 @@
 				}
 			},
 			{
-				"id": "#0005",
+				"id": "#0006",
+				"name": "Morspoort",
+				"image":
+				{
+					"url":"https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
+				},
+				"category": 
+				[
+					"building",
+					"gate"
+				],
+				"coords": 
+				{
+					"latitude": 52.162057,
+					"longitude": 4.482130
+				}
+			},
+			{
+				"id": "#0007",
 				"name": "Zijlpoort",
 				"image":
 				{
@@ -113,7 +149,7 @@
 				}
 			},
 			{
-				"id": "#0006",
+				"id": "#0008",
 				"name": "Hartebrugkerk",
 				"image":
 				{
@@ -131,7 +167,7 @@
 				}
 			},
 			{
-				"id": "#0007",
+				"id": "#0009",
 				"name": "Pieterskerk",
 				"image":
 				{
@@ -149,7 +185,7 @@
 				}
 			},
 			{
-				"id": "#0008",
+				"id": "#0010",
 				"name": "Hooglandse kerk",
 				"image":
 				{
@@ -164,6 +200,24 @@
 				{
 					"latitude": 52.157914,
 					"longitude": 4.493566
+				}
+			},
+			{
+				"id": "#0011",
+				"name": "Burcht van Leiden",
+				"image":
+				{
+					"url":"https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
+				},
+				"category": 
+				[
+					"building",
+					"castle"
+				],
+				"coords": 
+				{
+					"latitude": 52.158979,
+					"longitude": 4.492440
 				}
 			}
 		],
