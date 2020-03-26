@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 function HomeScreen() {
   return(
-    <Home_map />
+    <Home_map showUserLocation={true}/>
   )
 }
 
