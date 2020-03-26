@@ -34,8 +34,7 @@ export default class Card extends Component {
 					</Cover>
 					<Content>
 						<Title >{this.props.title}</Title>
-						{/* <CityName>{this.props.cityName}</CityName> */}
-						<CityName>{cardHeight - this.state.imageHeight}</CityName>
+						<CityName>{this.props.cityName}</CityName>
 					</Content>
 				</Container>
 			</TouchableWithoutFeedback>
