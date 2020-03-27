@@ -31,9 +31,7 @@ function getDistance(userLocationLatitude, userLocationLongitude, POILocationLat
 
 function sortDistance(info) {
   let items = [0];
-  // console.log(info[0].length);
   for (let i = 0; i < info[0].length; i++) {
-    // console.log(info[0][i][0]);
     for (let j = 0; j < items.length; j++) {
       if (info[0][i][0] > items[j]) {
         items.splice(j, 0, info[0][i]);
@@ -43,7 +41,6 @@ function sortDistance(info) {
   }
   items.pop();
   items.reverse();
-  // console.log(items);
   return items;
 }
 
@@ -98,9 +95,7 @@ export default class ItemsLayout extends Component {
         return ([userDistance, POI.id]);
       }))
       let sortedPOIs = sortDistance(POIs);
-      console.log(sortedPOIs[0][1]);
       for (let i = 0; i < sortedPOIs.length; i++) {
-        console.log(Number(sortedPOIs[i][1].split('#')[1]));
         sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i][1].split('#')[1])]);
       }
       columnOne.push(sortedPointsOfInterest.map(function(POI, index) {

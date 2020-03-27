@@ -42,7 +42,7 @@ export default class Welcomebar extends Component {
         <Titlebar>
           <Avatar source={require('../assets/avatar.jpg')} />
           <Greeting />
-          <Name>Coleslaw</Name>
+          <Name>Bart</Name>
         </Titlebar>
       </Container>
     )

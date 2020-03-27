@@ -14,7 +14,7 @@ export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageHeight: screenWidth / 3 + 24,
+      imageHeight: screenWidth / 3,
       distanceToUser: undefined
     }
   }
