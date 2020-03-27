@@ -15,6 +15,7 @@ const GEOLOCATION_OPTIONS = {
 }
 
 export default class Map extends Component {
+  
   state = {
     location: { coords: { latitude: 0, longitude: 0 } },
     errorMessage: null,
@@ -48,19 +49,16 @@ export default class Map extends Component {
 
   render() {
     // Function which will always be executed
-    let UserLocation = undefined
-    if (this.props.showUserLocation) {
-      UserLocation = (
-        <Marker
-          title="User location"
-          image={userLocationPin}
-          coordinate={{
-            latitude: this.state.location.coords.latitude,
-            longitude: this.state.location.coords.longitude,
-          }}
-        />
-      )
-    }
+    UserLocation = (
+      <Marker
+        title="User location"
+        image={userLocationPin}
+        coordinate={{
+          latitude: this.state.location.coords.latitude,
+          longitude: this.state.location.coords.longitude,
+        }}
+      />
+    )
 
     return (
       // Shows stuff

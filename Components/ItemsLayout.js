@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Card from './Card';
+import Constants from 'expo-constants'
+import * as Location from 'expo-location'
+import * as Permissions from 'expo-permissions'
 
-
+const GEOLOCATION_OPTIONS = {
+  accuracy: 6,
+  // timeInterval : 5000
+  distanceInterval: 10,
+}
 
 function toRadians(degree) {
   return Math.PI / 180 * degree;
@@ -22,7 +29,37 @@ function getDistance(userLocationLatitude, userLocationLongitude, POILocationLat
 }
 
 export default class ItemsLayout extends Component {
- 
+  
+  state = {
+    location: { coords: { latitude: undefined, longitude: undefined } }
+  }
+
+  constructor(props) {
+    super(props)
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage:
+          'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      })
+    } else {
+      this._getLocationAsync()
+    }
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION)
+    if (status !== 'granted') {
+      this.setState({
+        errorMessage: 'Permission to access location was denied',
+      })
+    }
+    Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged)
+  }
+
+  locationChanged = (location) => {
+    this.setState({ location })
+  }
+
   render() {
 
     let pointsOfInterest = require('../data/POIs.json').cityName[this.props.cityName];
@@ -30,10 +67,10 @@ export default class ItemsLayout extends Component {
     let name = this.props.cityName;
     let columnOne = [];
     let columnTwo = [];
-    let location = this.props.userLocation;
+    let userLocation = this.state.location.coords;
 
     columnOne.push(pointsOfInterest.map(function(POI, index) {
-      userDistance = getDistance(location.latitude, location.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
+      userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
       if (index % 2 !== 1) {
         return (
           <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
@@ -41,7 +78,7 @@ export default class ItemsLayout extends Component {
       }
     }));
     columnTwo.push(pointsOfInterest.map(function(POI, index) {
-      userDistance = getDistance(location.latitude, location.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
+      userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
       if (index % 2 === 1) {
         return (
           <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
