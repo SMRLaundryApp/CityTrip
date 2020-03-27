@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import {
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native-gesture-handler'
 
-
-export default class Login extends Component{
-    render() {
-      return (
-        <Screen source={require('../assets/test_background.jpg')}>
+export default class Login extends Component {
+  render() {
+    return (
+      <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Image source={require('../assets/logo_citytrip.png')} />
         </Container>
@@ -47,7 +49,7 @@ const Container = styled.View`
 `
 
 const Appname = styled.Text`
-position: relative;
+  position: relative;
   align-self: center;
   color: #fff;
   font-size: 50px;
@@ -63,7 +65,6 @@ const Quote = styled.Text`
   font-weight: 400;
   margin-bottom: 10%;
   text-shadow: 2px 2px 4px #888;
-
 `
 
 const Txt = styled(Quote)`
@@ -73,7 +74,7 @@ const Txt = styled(Quote)`
 const Image = styled.Image`
   align-self: center;
   transform: scale(0.6, 0.6);
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 `
 
 const Butoon = styled.View`
