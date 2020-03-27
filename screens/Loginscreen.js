@@ -32,7 +32,7 @@ export default class Login extends React.Component{
   
    const Container = styled.View`
     flex: 1;
-    background-color:  #26734d;
+    background-color:  #19B092;
   `;
 
    const Appname = styled.Text`
@@ -76,7 +76,6 @@ export default class Login extends React.Component{
     `;  
 
     const Buttoon2 = styled(Butoon)`
-    background-color: #19B092;
     `;
 
     const Butoontext = styled.Text`
