@@ -29,6 +29,24 @@ function getDistance(userLocationLatitude, userLocationLongitude, POILocationLat
   return R * c;
 }
 
+function sortDistance(info) {
+  let items = [0];
+  // console.log(info[0].length);
+  for (let i = 0; i < info[0].length; i++) {
+    // console.log(info[0][i][0]);
+    for (let j = 0; j < items.length; j++) {
+      if (info[0][i][0] > items[j]) {
+        items.splice(j, 0, info[0][i]);
+        break;
+      }
+    }
+  }
+  items.pop();
+  items.reverse();
+  // console.log(items);
+  return items;
+}
+
 export default class ItemsLayout extends Component {
   
   state = {
@@ -71,6 +89,7 @@ export default class ItemsLayout extends Component {
     let userLocation = this.state.location.coords;
     let POIs = [];
     let load = <Text>"Loading..."</Text>
+    let sortedPointsOfInterest = [];
 
     if (this.state.location.coords.latitude !== undefined && this.state.location.coords.longitude !== undefined) {
       load = undefined;
@@ -78,9 +97,13 @@ export default class ItemsLayout extends Component {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         return ([userDistance, POI.id]);
       }))
-      // let roekoeroekoe = sortDistance(POIs);
-      load = <Text>{POIs}</Text>;
-      columnOne.push(pointsOfInterest.map(function(POI, index) {
+      let sortedPOIs = sortDistance(POIs);
+      console.log(sortedPOIs[0][1]);
+      for (let i = 0; i < sortedPOIs.length; i++) {
+        console.log(Number(sortedPOIs[i][1].split('#')[1]));
+        sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i][1].split('#')[1])]);
+      }
+      columnOne.push(sortedPointsOfInterest.map(function(POI, index) {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 !== 1) {
           return (
@@ -88,8 +111,7 @@ export default class ItemsLayout extends Component {
           )
         }
       }));
-      columnTwo = [];
-      columnTwo.push(pointsOfInterest.map(function(POI, index) {
+      columnTwo.push(sortedPointsOfInterest.map(function(POI, index) {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 === 1) {
           return (
