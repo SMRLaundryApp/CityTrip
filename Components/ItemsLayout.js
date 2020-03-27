@@ -85,7 +85,7 @@ export default class ItemsLayout extends Component {
     let columnTwo = [];
     let userLocation = this.state.location.coords;
     let POIs = [];
-    let load = <Text>"Loading..."</Text>
+    let load = <Text> Loading... </Text>
     let sortedPointsOfInterest = [];
 
     if (this.state.location.coords.latitude !== undefined && this.state.location.coords.longitude !== undefined) {
