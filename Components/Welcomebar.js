@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 //Code used to determine the time of the day, for greetings in the morning/afternoon/evening
@@ -24,7 +24,7 @@ function getDayTime() {
   return moment
 }
 
-class Greeting extends React.Component {
+class Greeting extends Component {
   render() {
     var moment_day = getDayTime()
     return (
@@ -35,7 +35,7 @@ class Greeting extends React.Component {
   }
 }
 
-export default class Welcomebar extends React.Component {
+export default class Welcomebar extends Component {
   render() {
     return (
       <Container>

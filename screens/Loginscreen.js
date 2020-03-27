@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export default class Login extends React.Component{
-    render(){
+export default class Login extends Component{
+    render() {
       return (
         <Container>
             <Image source={require('../assets/temp_logo.jpg')}/>
@@ -26,7 +26,7 @@ export default class Login extends React.Component{
 
             </TouchableOpacity>
         </Container>
-      );
+      )
     }
   }
   
