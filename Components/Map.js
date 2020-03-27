@@ -15,7 +15,7 @@ const GEOLOCATION_OPTIONS = {
 }
 
 export default class Map extends Component {
-  
+
   state = {
     location: { coords: { latitude: 0, longitude: 0 } },
     errorMessage: null,
@@ -44,7 +44,7 @@ export default class Map extends Component {
   }
 
   locationChanged = (location) => {
-    this.setState({ location })
+    this.setState({ location });
   }
 
   render() {
