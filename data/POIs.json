@@ -1,246 +1,250 @@
-{
-	"cityName": 
+[
 	{
-		"Leiden": 
+		"id": "#0000",
+		"name": "Heesterboom Molen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX53_JePpL-Pss_4EQ17rJke9PS4D9yk6J92h9tePRPsAtR-By"
+		},
+		"category": 
 		[
-			{
-				"id": "#0000",
-				"name": "Heesterboom Molen",
-				"image":
-				{
-					"url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX53_JePpL-Pss_4EQ17rJke9PS4D9yk6J92h9tePRPsAtR-By"
-				},
-				"category": 
-				[
-					"building",
-					"windmill"
-				],
-				"coords": 
-				{
-					"latitude": 52.156727,
-					"longitude": 4.472573
-				}
-			},
-			{
-				"id": "#0001",
-				"name": "Stevenshofjes Molen",
-				"image":
-				{
-					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1033_2.png"
-				},
-				"category": 
-				[
-					"building",
-					"windmill"
-				],
-				"coords": 
-				{
-					"latitude": 52.150720,
-					"longitude": 4.443234
-				}
-			},
-			{
-				"id": "#0002",
-				"name": "Molen De Herder",
-				"image":
-				{
-					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1026_2.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"windmill"
-				],
-				"coords": 
-				{
-					"latitude": 52.173490,
-					"longitude": 4.489123
-				}
-			},
-			{
-				"id": "#0003",
-				"name": "Molen De Valk",
-				"image":
-				{
-					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1028_2.png"
-				},
-				"category": 
-				[
-					"building",
-					"windmill",
-					"museum"
-				],
-				"coords": 
-				{
-					"latitude": 52.164451,
-					"longitude": 4.486489
-				}
-			},
-			{
-				"id": "#0004",
-				"name": "Molen De Put",
-				"image":
-				{
-					"url":"https://molens.hippoextranet.nl/07071954/zuidholland/1027_7.png"
-				},
-				"category":
-				[
-					"building",
-					"windmill"
-				],
-				"coords": 
-				{
-					"latitude": 52.161350,
-					"longitude": 4.481973
-				}
-			},
-			{
-				"id": "#0005",
-				"name": "Station Leiden Centraal",
-				"image":
-				{
-					"url":"https://sites.google.com/site/inzichtstadswandelingen/_/rsrc/1478633873361/blog/0706/1607%20Station%20Leiden%20Centraal%20039klein.JPG"
-				},
-				"category":
-				[
-					"building",
-					"station"
-				],
-				"coords": 
-				{
-					"latitude": 52.165879,
-					"longitude": 4.483116
-				}
-			},
-			{
-				"id": "#0006",
-				"name": "Morspoort",
-				"image":
-				{
-					"url":"https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"gate"
-				],
-				"coords": 
-				{
-					"latitude": 52.162057,
-					"longitude": 4.482130
-				}
-			},
-			{
-				"id": "#0007",
-				"name": "Zijlpoort",
-				"image":
-				{
-					"url":"https://www.zuidhollandslandschap.nl/media/cache/wide_photo/media/photopage/image/zijlpoort-leiden-1.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"gate"
-				],
-				"coords": 
-				{
-					"latitude": 52.161733,
-					"longitude": 4.504201
-				}
-			},
-			{
-				"id": "#0008",
-				"name": "Hartebrugkerk",
-				"image":
-				{
-					"url":"https://i.pinimg.com/originals/2f/1b/f6/2f1bf64d59293a0995a499a91f58caf6.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"church"
-				],
-				"coords": 
-				{
-					"latitude": 52.160334,
-					"longitude": 4.490922
-				}
-			},
-			{
-				"id": "#0009",
-				"name": "Pieterskerk",
-				"image":
-				{
-					"url":"https://media.ndtrc.nl/Images/99/9900c932-03fe-46b7-ac0c-fc40b5b93dbe/3d663fb3-a9be-44ef-a8a3-e65b8f84a96f.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"church"
-				],
-				"coords": 
-				{
-					"latitude": 52.157499,
-					"longitude": 4.486903
-				}
-			},
-			{
-				"id": "#0010",
-				"name": "Hooglandse kerk",
-				"image":
-				{
-					"url":"https://static.zoom.nl/0C126144D2D906D3E355733874B0EB98-hooglandse-kerk-vanaf-de-burcht.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"church"
-				],
-				"coords": 
-				{
-					"latitude": 52.157914,
-					"longitude": 4.493566
-				}
-			},
-			{
-				"id": "#0011",
-				"name": "Burcht van Leiden",
-				"image":
-				{
-					"url":"https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
-				},
-				"category": 
-				[
-					"building",
-					"castle"
-				],
-				"coords": 
-				{
-					"latitude": 52.158979,
-					"longitude": 4.492440
-				}
-			}
+			"building",
+			"windmill"
 		],
-		"Rijnsburg":
+		"coords": 
+		{
+			"latitude": 52.156727,
+			"longitude": 4.472573
+		}
+	},
+	{
+		"id": "#0001",
+		"name": "Stevenshofjes Molen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://molens.hippoextranet.nl/07071954/zuidholland/1033_2.png"
+		},
+		"category": 
 		[
-			{
-				"id": "#0000",
-				"name": "Spinozahuis",
-				"image":
-				{
-					"url":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Aanzicht_voor-_en_zijgevel_-_Rijnsburg_-_20187055_-_RCE.jpg"
-				},
-				"category":
-				[
-					"building",
-					"museum"
-				],
-				"coords":
-				{
-					"latitude": 52.191447,
-					"longitude": 4.437151
-				}
-			}
-		]
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.150720,
+			"longitude": 4.443234
+		}
+	},
+	{
+		"id": "#0002",
+		"name": "Molen De Herder",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://molens.hippoextranet.nl/07071954/zuidholland/1026_2.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.173490,
+			"longitude": 4.489123
+		}
+	},
+	{
+		"id": "#0003",
+		"name": "Molen De Valk",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://molens.hippoextranet.nl/07071954/zuidholland/1028_2.png"
+		},
+		"category": 
+		[
+			"building",
+			"windmill",
+			"museum"
+		],
+		"coords": 
+		{
+			"latitude": 52.164451,
+			"longitude": 4.486489
+		}
+	},
+	{
+		"id": "#0004",
+		"name": "Molen De Put",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://molens.hippoextranet.nl/07071954/zuidholland/1027_7.png"
+		},
+		"category":
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.161350,
+			"longitude": 4.481973
+		}
+	},
+	{
+		"id": "#0005",
+		"name": "Station Leiden Centraal",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://sites.google.com/site/inzichtstadswandelingen/_/rsrc/1478633873361/blog/0706/1607%20Station%20Leiden%20Centraal%20039klein.JPG"
+		},
+		"category":
+		[
+			"building",
+			"station"
+		],
+		"coords": 
+		{
+			"latitude": 52.165879,
+			"longitude": 4.483116
+		}
+	},
+	{
+		"id": "#0006",
+		"name": "Morspoort",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"gate"
+		],
+		"coords": 
+		{
+			"latitude": 52.162057,
+			"longitude": 4.482130
+		}
+	},
+	{
+		"id": "#0007",
+		"name": "Zijlpoort",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://www.zuidhollandslandschap.nl/media/cache/wide_photo/media/photopage/image/zijlpoort-leiden-1.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"gate"
+		],
+		"coords": 
+		{
+			"latitude": 52.161733,
+			"longitude": 4.504201
+		}
+	},
+	{
+		"id": "#0008",
+		"name": "Hartebrugkerk",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://i.pinimg.com/originals/2f/1b/f6/2f1bf64d59293a0995a499a91f58caf6.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"church"
+		],
+		"coords": 
+		{
+			"latitude": 52.160334,
+			"longitude": 4.490922
+		}
+	},
+	{
+		"id": "#0009",
+		"name": "Pieterskerk",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://media.ndtrc.nl/Images/99/9900c932-03fe-46b7-ac0c-fc40b5b93dbe/3d663fb3-a9be-44ef-a8a3-e65b8f84a96f.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"church"
+		],
+		"coords": 
+		{
+			"latitude": 52.157499,
+			"longitude": 4.486903
+		}
+	},
+	{
+		"id": "#0010",
+		"name": "Hooglandse kerk",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://static.zoom.nl/0C126144D2D906D3E355733874B0EB98-hooglandse-kerk-vanaf-de-burcht.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"church"
+		],
+		"coords": 
+		{
+			"latitude": 52.157914,
+			"longitude": 4.493566
+		}
+	},
+	{
+		"id": "#0011",
+		"name": "Burcht van Leiden",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"castle"
+		],
+		"coords": 
+		{
+			"latitude": 52.158979,
+			"longitude": 4.492440
+		}
+	},
+	{
+		"id": "#0012",
+		"name": "Spinozahuis",
+		"city": "Rijnsburg",
+		"image":
+		{
+			"url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Aanzicht_voor-_en_zijgevel_-_Rijnsburg_-_20187055_-_RCE.jpg"
+		},
+		"category":
+		[
+			"building",
+			"museum"
+		],
+		"coords":
+		{
+			"latitude": 52.191447,
+			"longitude": 4.437151
+		}
 	}
-}
+]

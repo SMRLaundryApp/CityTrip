@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import {  TouchableOpacity } from 'react-native-gesture-handler'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export default class Login extends React.Component {
-  render() {
-    return (
-      <Screen source={require('../assets/test_background.jpg')}>
+export default class Login extends Component{
+    render() {
+      return (
+        <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Image source={require('../assets/logo_citytrip.png')} />
         </Container>
