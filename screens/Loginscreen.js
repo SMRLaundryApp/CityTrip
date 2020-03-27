@@ -76,7 +76,7 @@ export default class Login extends React.Component{
     `;  
 
     const Buttoon2 = styled(Butoon)`
-    background-color: #61a93d;
+    background-color: #19B092;
     `;
 
     const Butoontext = styled.Text`
