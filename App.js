@@ -8,19 +8,8 @@ import Login from './screens/Loginscreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Ionicons } from '@expo/vector-icons'
-import Constants from 'expo-constants'
-import * as Location from 'expo-location'
-import * as Permissions from 'expo-permissions'
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
-
-const GEOLOCATION_OPTIONS = {
-  accuracy: 6,
-  // timeInterval : 5000
-  distanceInterval: 1,
-}
-
-let userLocation = { latitude: undefined, longitude: undefined };
 
 function HomeScreen() {
   return(
@@ -49,37 +38,6 @@ function loginScreen() {
 const Tab = createBottomTabNavigator()
 
 export default class App extends Component {
-
-  state = {
-    location: { coords: { latitude: 0, longitude: 0 } },
-    errorMessage: null,
-  }
-
-  constructor(props) {
-    super(props)
-    if (Platform.OS === 'android' && !Constants.isDevice) {
-      this.setState({
-        errorMessage:
-          'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
-      })
-    } else {
-      this._getLocationAsync()
-    }
-  }
-
-  _getLocationAsync = async () => {
-    let { status } = await Permissions.askAsync(Permissions.LOCATION)
-    if (status !== 'granted') {
-      this.setState({
-        errorMessage: 'Permission to access location was denied',
-      })
-    }
-    Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged)
-  }
-
-  locationChanged = (location) => {
-    userLocation = location;
-  }
 
   render() {
 
