@@ -70,10 +70,16 @@ export default class ItemsLayout extends Component {
     let columnTwo = [];
     let userLocation = this.state.location.coords;
     let POIs = [];
-    let load = "Loading..."
+    let load = <Text>"Loading..."</Text>
 
     if (this.state.location.coords.latitude !== undefined && this.state.location.coords.longitude !== undefined) {
       load = undefined;
+      POIs.push(pointsOfInterest.map(function(POI) {
+        let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
+        return ([userDistance, POI.id]);
+      }))
+      // let roekoeroekoe = sortDistance(POIs);
+      load = <Text>{POIs}</Text>;
       columnOne.push(pointsOfInterest.map(function(POI, index) {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 !== 1) {
@@ -95,7 +101,7 @@ export default class ItemsLayout extends Component {
 
     return (
       <Layout>
-        <Text>{load}</Text>
+        {load}
         <ColumnOne>
           {columnOne}
         </ColumnOne>
