@@ -12,15 +12,13 @@ import { Ionicons } from '@expo/vector-icons'
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
 function HomeScreen() {
-  return(
-    <Home_map showUserLocation={true}/>
-  )
+  return <Home_map showUserLocation={true} />
 }
 
 function POI_Nearby() {
   return (
     // TODO: use Google Maps API to get current city from longitude and latitude coordinates
-    <POI_list city='Leiden' />
+    <POI_list city="Leiden" />
   )
 }
 
@@ -68,7 +66,7 @@ export default function App() {
         <Tab.Screen name="POI Nearby" component={POI_Nearby} />
         <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name ="Devel-Login" component={loginScreen} />
+        <Tab.Screen name="Devel-Login" component={loginScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   )
