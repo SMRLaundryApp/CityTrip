@@ -9,13 +9,13 @@ const screenWidth = Dimensions.get('window').width;
 const cardWidth = screenWidth / 2 - 20;
 const cardHeight = screenWidth / 3 + 78;
 
-
 export default class Card extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      imageHeight: screenWidth / 3 + 24
+      imageHeight: screenWidth / 3 + 24,
+      distanceToUser: undefined
     }
   }
 
@@ -34,7 +34,7 @@ export default class Card extends Component {
 					</Cover>
 					<Content>
 						<Title >{this.props.title}</Title>
-						<CityName>{this.props.cityName}</CityName>
+						<CityName>{this.props.distance} km</CityName>
 					</Content>
 				</Container>
 			</TouchableWithoutFeedback>

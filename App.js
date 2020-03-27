@@ -20,7 +20,7 @@ function HomeScreen() {
 function POI_Nearby() {
   return (
     // TODO: use Google Maps API to get current city from longitude and latitude coordinates
-    <POI_list city = 'Leiden'/>
+    <POI_list city='Leiden' />
   )
 }
 
