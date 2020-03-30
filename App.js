@@ -23,7 +23,7 @@ function POI_Nearby() {
 }
 
 function Routes_Nearby() {
-  return <Routes_list />
+  return <Routes_list city="Leiden"/>
 }
 
 function SettingsScreen() {

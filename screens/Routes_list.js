@@ -2,21 +2,17 @@ import React, { Component } from 'react'
 import Card from '../Components/Card'
 import Welcomebar from '../Components/Welcomebar'
 import styled from 'styled-components'
+import { ScrollView } from 'react-native-gesture-handler'
 
 export default class Routes_list extends Component {
   render() {
     return (
       <Container>
         <Welcomebar />
-        <Subtitle>Rijnsburg</Subtitle>
-        <ItemsLayout>
-          <ColumnOne>
-            <Card />
-          </ColumnOne>
-          <ColumnTwo>
-            <Card />
-          </ColumnTwo>
-        </ItemsLayout>
+        <Subtitle>{this.props.city}</Subtitle>
+        <ScrollView>
+          <RoutesLayout />
+        </ScrollView>
       </Container>
     )
   }
