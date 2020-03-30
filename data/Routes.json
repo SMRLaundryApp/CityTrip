@@ -1,23 +1,26 @@
-{
-  "Route": [
-    {
-      "id": "#0001",
-      "name": "Leiden route 1",
-      "type": "lineair",
-      "POIs": {
-        "POI1": "#0004",
-        "POI2": "#0002",
-        "POI3": "#0003",
-        "POI4": "#0001"
-      }
-    },
-    {
-      "id": "#0002",
-      "name": "Leiden route 2",
-      "type": "circular",
-      "POIs": {
-        "POI1": "#"
-      }
-    }
-  ]
-}
+[
+  {
+    "id": "#0000",
+    "name": "Leiden Windmill",
+    "type": "lineair",
+    "POIs": [
+      "#0000",
+      "#0004",
+      "#0003",
+      "#0014",
+      "#0013",
+      "#0016"
+    ],
+    "length": 4.9,
+    "duration": 60,
+    "description": "This route takes you throught Leiden and shows you some of the windmills this city has to offer. The windmills that will be viewed are the Heesterboom Molen, Molen De Put, Molen De Valk, Maredijkmolen, Molen De Herder, Kikkermolen and the Stadsmolen. Molen De Herder isn't accesable, however it is visable from the Maredijkmolen. You can either start at the Stadsmolen or the Heesterboom Molen."
+  },
+  {
+    "id": "#0001",
+    "name": "Leiden route 2",
+    "type": "circular",
+    "POIs": [
+      
+    ]
+  }
+]
