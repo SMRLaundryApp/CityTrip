@@ -85,11 +85,11 @@ export default class ItemsLayout extends Component {
     let columnTwo = [];
     let userLocation = this.state.location.coords;
     let POIs = [];
-    let load = <Text> Loading... </Text>
+    let load = <Text> Getting user location... </Text>
     let sortedPointsOfInterest = [];
 
     if (this.state.location.coords.latitude !== undefined && this.state.location.coords.longitude !== undefined) {
-      load = undefined;
+      load = <Text> Sorting cards by distance... </Text>;
       POIs.push(pointsOfInterest.map(function(POI) {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         return ([userDistance, POI.id]);
@@ -114,6 +114,7 @@ export default class ItemsLayout extends Component {
           )
         }
       }));
+      load = undefined;
     }
 
     return (
