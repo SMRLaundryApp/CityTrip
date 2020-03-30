@@ -65,7 +65,7 @@ export default class Map extends Component {
         <Marker
           key = {index}
           title={POI.name}
-          pinColor='teal'
+          pinColor= '#19B092'
           coordinate= {{
             latitude: POI.coords.latitude,
             longitude: POI.coords.longitude,
