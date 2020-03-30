@@ -17,10 +17,46 @@
   },
   {
     "id": "#0001",
-    "name": "Leiden route 2",
+    "name": "Test 1",
     "type": "circular",
     "POIs": [
       
-    ]
+    ],
+    "length": 1.0,
+    "duration": 1,
+    "description": ""
+  },
+  {
+    "id": "#0002",
+    "name": "Test 2",
+    "type": "lineair",
+    "POIs": [
+      
+    ],
+    "length": 2.0,
+    "duration": 2,
+    "description": ""
+  },
+  {
+    "id": "#0003",
+    "name": "Test 3",
+    "type": "circular",
+    "POIs": [
+      
+    ],
+    "length": 3.0,
+    "duration": 3,
+    "description": ""
+  },
+  {
+    "id": "#0004",
+    "name": "Test 4",
+    "type": "lineair",
+    "POIs": [
+      
+    ],
+    "length": 4.0,
+    "duration": 4,
+    "description": ""
   }
 ]
