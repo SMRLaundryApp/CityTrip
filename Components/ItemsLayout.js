@@ -30,18 +30,19 @@ function getDistance(userLocationLatitude, userLocationLongitude, POILocationLat
 }
 
 function sortDistance(info) {
-  let items = [0];
-  for (let i = 0; i < info[0].length; i++) {
-    for (let j = 0; j < items.length; j++) {
-      if (info[0][i][0] > items[j]) {
-        items.splice(j, 0, info[0][i]);
+  let ids = [];
+  let distances = [0.0];
+  for (let i = 0; i < info.length; i++) {
+    for (let j = 0; j < distances.length; j++) {
+      if (Number(info[i][0]) > Number(distances[j])) {
+        distances.splice(j, 0, info[i][0]);
+        ids.splice(j, 0, info[i][1]);
         break;
       }
     }
   }
-  items.pop();
-  items.reverse();
-  return items;
+  ids.reverse();
+  return ids;
 }
 
 export default class ItemsLayout extends Component {
@@ -94,9 +95,12 @@ export default class ItemsLayout extends Component {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         return ([userDistance, POI.id]);
       }))
+      POIs = POIs[0];
+      load = <Text>{POIs}</Text>
       let sortedPOIs = sortDistance(POIs);
+      load = <Text>{sortedPOIs}</Text>
       for (let i = 0; i < sortedPOIs.length; i++) {
-        sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i][1].split('#')[1])]);
+        sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]);
       }
       columnOne.push(sortedPointsOfInterest.map(function(POI, index) {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);

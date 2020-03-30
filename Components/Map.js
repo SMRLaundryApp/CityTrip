@@ -45,7 +45,7 @@ export default class Map extends Component {
 
   locationChanged = (location) => {
     this.setState({ location });
-    console.log(location);
+    // console.log(location);
   }
 
   render() {
