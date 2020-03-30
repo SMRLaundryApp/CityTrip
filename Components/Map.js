@@ -48,7 +48,6 @@ export default class Map extends Component {
   }
 
   render() {
-    // Function which will always be executed
     UserLocation = (
       <Marker
         title="User location"
@@ -60,8 +59,22 @@ export default class Map extends Component {
       />
     )
 
+    let pointsOfInterest = require('../data/POIs.json');
+    let POIs = pointsOfInterest.map((POI, index) => {
+      return (
+        <Marker
+          key = {index}
+          title={POI.name}
+          pinColor='teal'
+          coordinate= {{
+            latitude: POI.coords.latitude,
+            longitude: POI.coords.longitude,
+          }}
+        />
+      )
+    });
+
     return (
-      // Shows stuff
       <MapView
         style={{ width: '100%', height: '100%' }}
         initialRegion={{
@@ -72,6 +85,7 @@ export default class Map extends Component {
         }}
       >
         {UserLocation}
+        {POIs}
       </MapView>
     )
   }

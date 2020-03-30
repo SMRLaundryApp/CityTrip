@@ -87,8 +87,7 @@ export default class ItemsLayout extends Component {
     let pointsOfInterest = require('../data/POIs.json');
 
     let name = this.props.cityName;
-    let columnOne = [];
-    let columnTwo = [];
+    let columnOne, columnTwo = undefined;
     let userLocation = this.state.location.coords;
     let POIs = [];
     let load = <Text> Getting user location... </Text>
@@ -107,22 +106,22 @@ export default class ItemsLayout extends Component {
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]);
       }
-      columnOne.push(sortedPointsOfInterest.map(function(POI, index) {
+      columnOne = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 !== 1) {
           return (
             <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
           )
         }
-      }));
-      columnTwo.push(sortedPointsOfInterest.map(function(POI, index) {
+      });
+      columnTwo = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 === 1) {
           return (
             <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
           )
         }
-      }));
+      });
       load = undefined;
     }
 
