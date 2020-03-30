@@ -12,9 +12,7 @@ import { Ionicons } from '@expo/vector-icons'
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
 function HomeScreen() {
-  return(
-    <Home_map />
-  )
+  return <Home_map />
 }
 
 function POI_Nearby() {
@@ -38,9 +36,7 @@ function loginScreen() {
 const Tab = createBottomTabNavigator()
 
 export default class App extends Component {
-
   render() {
-
     return (
       <NavigationContainer>
         <Tab.Navigator
@@ -71,7 +67,7 @@ export default class App extends Component {
           <Tab.Screen name="POI Nearby" component={POI_Nearby} />
           <Tab.Screen name="Routes Nearby" component={Routes_Nearby} />
           <Tab.Screen name="Settings" component={SettingsScreen} />
-          <Tab.Screen name ="Devel-Login" component={loginScreen} />
+          <Tab.Screen name="Devel-Login" component={loginScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     )

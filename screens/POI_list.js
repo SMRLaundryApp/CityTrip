@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import Welcomebar from '../Components/Welcomebar';
-import styled from 'styled-components';
-import { ScrollView } from 'react-native';
-import ItemsLayout from '../Components/ItemsLayout';
+import React, { Component } from 'react'
+import Welcomebar from '../Components/Welcomebar'
+import styled from 'styled-components'
+import { ScrollView } from 'react-native'
+import ItemsLayout from '../Components/ItemsLayout'
 
 export default class POI_list extends Component {
-
   render() {
-
     return (
-        <Container>
-            <Welcomebar />
-            <Subtitle>{this.props.city}</Subtitle>
-            <ScrollView>
-              <ItemsLayout cityName={this.props.city} />
-            </ScrollView>
-        </Container>
+      <Container>
+        <Welcomebar />
+        <Subtitle>{this.props.city}</Subtitle>
+        <ScrollView>
+          <ItemsLayout cityName={this.props.city} />
+        </ScrollView>
+      </Container>
     )
   }
 }

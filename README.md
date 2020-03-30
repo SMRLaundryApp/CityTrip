@@ -5,7 +5,6 @@
 
     npm install
 
-
 <h1>Running the metro builder:</h1>
 <p>To try the app on your phone with expo, you need to install the expo app on your mobile phone and run the following line of code</p>
 
