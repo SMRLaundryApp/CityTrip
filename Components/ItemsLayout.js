@@ -110,7 +110,7 @@ export default class ItemsLayout extends Component {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 !== 1) {
           return (
-            <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
+            <Card key={index} cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
           )
         }
       });
@@ -118,7 +118,7 @@ export default class ItemsLayout extends Component {
         let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
         if (index % 2 === 1) {
           return (
-            <Card cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
+            <Card key={index} cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
           )
         }
       });

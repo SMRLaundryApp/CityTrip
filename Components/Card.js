@@ -26,8 +26,7 @@ export default class Card extends Component {
   }
 
   render() {
-    let card = []
-    card.push(
+    let card = (
       <TouchableWithoutFeedback
         delayPressIn={5}
         delayPressOut={5}
@@ -44,13 +43,12 @@ export default class Card extends Component {
           </Content>
         </Container>
       </TouchableWithoutFeedback>
-    )
-    let titleSize = []
-    titleSize.push(
+    );
+    let titleSize = (
       <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
         {this.props.title}
       </Title>
-    )
+    );
 
     return (
       <Clear>
