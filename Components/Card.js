@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import { Dimensions } from 'react-native'
 
-// TODO: Change <Title /> to the location as the crow flies
-
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth / 2 - 20
 const cardHeight = screenWidth / 3 + 78
@@ -39,7 +37,7 @@ export default class Card extends Component {
           </Cover>
           <Content>
             <Title>{this.props.title}</Title>
-            <CityName>{this.props.distance} km</CityName>
+            <Distance>{this.props.distance} km</Distance>
           </Content>
         </Container>
       </TouchableWithoutFeedback>
@@ -104,7 +102,7 @@ const Title = styled.Text`
   text-align: center;
 `
 
-const CityName = styled.Text`
+const Distance = styled.Text`
   color: #b8b3c3;
   font-size: 15px;
   font-weight: 600;

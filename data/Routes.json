@@ -20,10 +20,10 @@
     "name": "Test 1",
     "type": "circular",
     "POIs": [
-      
+      "#0001"
     ],
     "length": 1.0,
-    "duration": 1,
+    "duration": 55,
     "description": ""
   },
   {
@@ -31,10 +31,10 @@
     "name": "Test 2",
     "type": "lineair",
     "POIs": [
-      
+      "#0002"
     ],
     "length": 2.0,
-    "duration": 2,
+    "duration": 65,
     "description": ""
   },
   {
@@ -42,10 +42,10 @@
     "name": "Test 3",
     "type": "circular",
     "POIs": [
-      
+      "#0003"
     ],
     "length": 3.0,
-    "duration": 3,
+    "duration": 67,
     "description": ""
   },
   {
@@ -53,10 +53,10 @@
     "name": "Test 4",
     "type": "lineair",
     "POIs": [
-      
+      "#0004"
     ],
     "length": 4.0,
-    "duration": 4,
+    "duration": 175,
     "description": ""
   }
 ]

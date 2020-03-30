@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '../Components/Card'
+import RoutesLayout from '../Components/RoutesLayout'
 import Welcomebar from '../Components/Welcomebar'
 import styled from 'styled-components'
 import { ScrollView } from 'react-native-gesture-handler'
@@ -27,17 +27,4 @@ const Subtitle = styled.Text`
   margin-top: 10px;
   margin-left: 25px;
   text-transform: uppercase;
-`
-
-const ItemsLayout = styled.View`
-  flex-direction: row;
-  flex: 50;
-`
-
-const ColumnOne = styled.View`
-  margin-left: 3%;
-`
-
-const ColumnTwo = styled.View`
-  margin-right: 3%;
 `
