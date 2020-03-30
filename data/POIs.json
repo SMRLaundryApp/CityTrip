@@ -246,5 +246,81 @@
 			"latitude": 52.191447,
 			"longitude": 4.437151
 		}
+	},
+	{
+		"id": "#0013",
+		"name": "Kikkermolen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://jacomijn.heupink.com/wp-content/uploads/2016/04/IMG_20160423_230946.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.176640,
+			"longitude": 4.487276
+		}
+	},
+	{
+		"id": "#0014",
+		"name": "Maredijkmolen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://molens.hippoextranet.nl/07071954/zuidholland/1030MaredijkmolenLeiden.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.172951,
+			"longitude": 4.487190
+		}
+	},
+	{
+		"id": "#0015",
+		"name": "Rodenburgermolen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://farm3.static.flickr.com/2193/2493269223_45e08dd898_b.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.146397,
+			"longitude": 4.503373
+		}
+	},
+	{
+		"id": "#0016",
+		"name": "Stadsmolen",
+		"city": "Leiden",
+		"image":
+		{
+			"url": "https://www.molensinleiden.nl/Stadsmolen/Stadsmolen%20oud2.jpg"
+		},
+		"category": 
+		[
+			"building",
+			"windmill"
+		],
+		"coords": 
+		{
+			"latitude": 52.172501,
+			"longitude": 4.497798
+		}
 	}
 ]
