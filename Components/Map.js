@@ -47,6 +47,10 @@ export default class Map extends Component {
     // console.log(location);
   }
 
+  // componentWillUnmount() {
+
+  // }
+
   render() {
     UserLocation = (
       <Marker
@@ -65,7 +69,7 @@ export default class Map extends Component {
         <Marker
           key = {index}
           title={POI.name}
-          pinColor='teal'
+          pinColor= '#19B092'
           coordinate= {{
             latitude: POI.coords.latitude,
             longitude: POI.coords.longitude,

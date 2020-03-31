@@ -52,7 +52,7 @@ function sortDistance(info) {
   return ids;
 }
 
-export default class ItemsLayout extends Component {
+export default class CardsLayout extends Component {
   state = {
     location: { coords: { latitude: undefined, longitude: undefined } },
   }

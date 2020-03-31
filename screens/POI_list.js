@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Welcomebar from '../Components/Welcomebar'
 import styled from 'styled-components'
 import { ScrollView } from 'react-native'
-import ItemsLayout from '../Components/ItemsLayout'
+import CardsLayout from '../Components/CardsLayout'
 
 export default class POI_list extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class POI_list extends Component {
         <Welcomebar />
         <Subtitle>{this.props.city}</Subtitle>
         <ScrollView>
-          <ItemsLayout cityName={this.props.city} />
+          <CardsLayout cityName={this.props.city} />
         </ScrollView>
       </Container>
     )

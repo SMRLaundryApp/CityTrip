@@ -11,16 +11,99 @@
       "#0013",
       "#0016"
     ],
+    "region":{
+      "latitude": 52.169771,
+      "longitude": 4.485997,
+      "latitudeDelta": 0.03,
+      "longitudeDelta": 0.03
+    },
     "length": 4.9,
     "duration": 60,
     "description": "This route takes you throught Leiden and shows you some of the windmills this city has to offer. The windmills that will be viewed are the Heesterboom Molen, Molen De Put, Molen De Valk, Maredijkmolen, Molen De Herder, Kikkermolen and the Stadsmolen. Molen De Herder isn't accesable, however it is visable from the Maredijkmolen. You can either start at the Stadsmolen or the Heesterboom Molen."
   },
   {
     "id": "#0001",
-    "name": "Leiden route 2",
+    "name": "Test 1",
     "type": "circular",
     "POIs": [
-      
-    ]
+      "#0001"
+    ],
+    "region":{
+      "latitude": 52.167751,
+      "longitude": 4.485977,
+      "latitudeDelta": 0.01,
+      "longitudeDelta": 0.01
+    },
+    "length": 1.0,
+    "duration": 55,
+    "description": ""
+  },
+  {
+    "id": "#0002",
+    "name": "Test 2",
+    "type": "lineair",
+    "POIs": [
+      "#0002"
+    ],
+    "region":{
+      "latitude": 52.167751,
+      "longitude": 4.485977,
+      "latitudeDelta": 0.01,
+      "longitudeDelta": 0.01
+    },
+    "length": 2.0,
+    "duration": 65,
+    "description": ""
+  },
+  {
+    "id": "#0003",
+    "name": "Test 3",
+    "type": "circular",
+    "POIs": [
+      "#0003"
+    ],
+    "region":{
+      "latitude": 52.167751,
+      "longitude": 4.485977,
+      "latitudeDelta": 0.01,
+      "longitudeDelta": 0.01
+    },
+    "length": 3.0,
+    "duration": 67,
+    "description": ""
+  },
+  {
+    "id": "#0004",
+    "name": "Test 4",
+    "type": "lineair",
+    "POIs": [
+      "#0004"
+    ],
+    "region":{
+      "latitude": 52.167751,
+      "longitude": 4.485977,
+      "latitudeDelta": 0.01,
+      "longitudeDelta": 0.01
+    },
+    "length": 4.0,
+    "duration": 175,
+    "description": ""
+  },
+  {
+    "id": "#0005",
+    "name": "Test 5",
+    "type": "lineair",
+    "POIs": [
+      "#0005"
+    ],
+    "region":{
+      "latitude": 52.167751,
+      "longitude": 4.485977,
+      "latitudeDelta": 0.01,
+      "longitudeDelta": 0.01
+    },
+    "length": 15.6,
+    "duration": 195,
+    "description": ""
   }
 ]
