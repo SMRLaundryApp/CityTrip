@@ -18,5 +18,3 @@ export default class Routes_list extends Component {
 }
 
 const Container = styled.View``
-
-

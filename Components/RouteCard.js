@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import styled from 'styled-components'
 import { Dimensions } from 'react-native'
-import Modal from 'react-native-modal';
+import Modal from 'react-native-modal'
 import RoutePopup from './RoutePopup'
 
 const screenWidth = Dimensions.get('window').width
@@ -11,14 +11,13 @@ const cardHeight = screenWidth / 4
 const imageWidth = screenWidth / 3
 
 export default class RouteCard extends Component {
-
   state = {
     isModalVisible: false,
-    id: Number(this.props.id.split("#")[1])
+    id: Number(this.props.id.split('#')[1]),
   }
 
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   openModal = () => {
@@ -30,15 +29,15 @@ export default class RouteCard extends Component {
   }
 
   render() {
-    let durationHours = Math.floor((this.props.duration / 5).toFixed(0) / 12);
-    let durationMinutes = (this.props.duration / 5).toFixed(0) % 12 * 5;
-    let duration = "";
+    let durationHours = Math.floor((this.props.duration / 5).toFixed(0) / 12)
+    let durationMinutes = ((this.props.duration / 5).toFixed(0) % 12) * 5
+    let duration = ''
     if (durationHours >= 1) {
-      duration += durationHours.toString() + " hour";
-      if (durationHours > 1) duration += "s";
-      duration += " ";
+      duration += durationHours.toString() + ' hour'
+      if (durationHours > 1) duration += 's'
+      duration += ' '
     }
-    if (durationMinutes > 0) duration += durationMinutes.toString() + " minutes";
+    if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
 
     return (
       <Clear>
@@ -47,17 +46,23 @@ export default class RouteCard extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            console.log('roekoeroekoe');
-            this.openModal();
+            console.log('roekoeroekoe')
+            this.openModal()
           }}
         >
           <Container width={cardWidth} height={cardHeight}>
             <Cover width={imageWidth}>
-              <Image source={{uri: this.props.image}} />
+              <Image source={{ uri: this.props.image }} />
             </Cover>
-            <Content left={imageWidth} height={cardHeight} width={cardWidth - imageWidth} >
+            <Content
+              left={imageWidth}
+              height={cardHeight}
+              width={cardWidth - imageWidth}
+            >
               <Title>{this.props.title}</Title>
-              <Info>{this.props.length} km  |  {duration}</Info>
+              <Info>
+                {this.props.length} km | {duration}
+              </Info>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
@@ -105,7 +110,7 @@ const Image = styled.Image`
 `
 
 const Content = styled.View`
-justify-content: center;
+  justify-content: center;
   position: absolute;
   flex-direction: column;
   align-items: center;

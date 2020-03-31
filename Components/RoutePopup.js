@@ -7,49 +7,49 @@ import MapViewDirections from 'react-native-maps-directions'
 import GOOGLE_MAPS_APIKEY from '../private'
 
 export default class RoutePopup extends Component {
-
   state = {
-    id: Number(this.props.id.split("#")[1])
+    id: Number(this.props.id.split('#')[1]),
   }
 
   constructor(props) {
-    super(props);
+    super(props)
     // this.setState({ id: Number(this.props.id.split("#")[1]) })
   }
 
   render() {
-
-    let pointsOfInterest = require('../data/POIs.json');
-    let routes = require('../data/Routes.json');
+    let pointsOfInterest = require('../data/POIs.json')
+    let routes = require('../data/Routes.json')
 
     let POIs = routes[this.state.id].POIs.map((route, index) => {
       return (
         <Marker
-          key = {index}
-          title={pointsOfInterest[Number(route.split("#")[1])].name}
-          pinColor= '#19B092'
-          coordinate= {{
-            latitude: pointsOfInterest[Number(route.split("#")[1])].coords.latitude,
-            longitude: pointsOfInterest[Number(route.split("#")[1])].coords.longitude,
+          key={index}
+          title={pointsOfInterest[Number(route.split('#')[1])].name}
+          pinColor="#19B092"
+          coordinate={{
+            latitude:
+              pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
+            longitude:
+              pointsOfInterest[Number(route.split('#')[1])].coords.longitude,
           }}
         />
       )
-    });
+    })
 
-    let mapPOIs = [];
-    mapPOIs.push(routes[this.state.id].POIs.map((route) => {
-      return(
-        [pointsOfInterest[Number(route.split("#")[1])].coords]
-      )
-    }));
-    mapPOIs = mapPOIs[0];
-    let mapWayPoints = [];
+    let mapPOIs = []
+    mapPOIs.push(
+      routes[this.state.id].POIs.map((route) => {
+        return [pointsOfInterest[Number(route.split('#')[1])].coords]
+      })
+    )
+    mapPOIs = mapPOIs[0]
+    let mapWayPoints = []
     for (let i = 1; i < mapPOIs.length - 1; i++) {
-      mapWayPoints.push(mapPOIs[i]);
+      mapWayPoints.push(mapPOIs[i])
     }
-    let mapDirections = undefined;
+    let mapDirections = undefined
     // mapDirections = (
-    //   <MapViewDirections 
+    //   <MapViewDirections
     //     origin={mapPOIs[0]}
     //     waypoints={mapWayPoints}
     //     destination={mapPOIs[mapPOIs.length - 1]}
@@ -73,10 +73,10 @@ export default class RoutePopup extends Component {
           <Text style={{textAlign:'center', textAlignVertical:'center', color:'white', height:'100%', fontSize:12, fontWeight:'bold'}}>Close</Text>
         </TouchableOpacity> */}
         <Title>{routes[this.state.id].name} Route</Title>
-        <MapView 
+        <MapView
           style={{
-            width:'100%',
-            height:'50%'
+            width: '100%',
+            height: '50%',
           }}
           initialRegion={routes[this.state.id].region}
           moveOnMarkerPress={false}
@@ -89,15 +89,45 @@ export default class RoutePopup extends Component {
           {POIs}
           {mapDirections}
         </MapView>
-        <Text style={{ color: 'white' }}>{routes[this.state.id].description}</Text>
-        <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontWeight: 'bold', marginTop: 15 }}>Start at:</Text>
+        <Text style={{ color: 'white' }}>
+          {routes[this.state.id].description}
+        </Text>
+        <Text
+          style={{
+            textAlign: 'center',
+            color: 'white',
+            fontSize: 15,
+            fontWeight: 'bold',
+            marginTop: 15,
+          }}
+        >
+          Start at:
+        </Text>
         <Clear>
-          <TouchableOpacity style={{ backgroundColor: '#19B092', padding: 10 }} >
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[0].split("#")[1])].name}</ButtonText>
+          <TouchableOpacity style={{ backgroundColor: '#19B092', padding: 10 }}>
+            <ButtonText>
+              {
+                pointsOfInterest[
+                  Number(routes[this.state.id].POIs[0].split('#')[1])
+                ].name
+              }
+            </ButtonText>
           </TouchableOpacity>
-          <Text style={{ textAlign: 'center', color: 'white', margin: 5 }}>or</Text>
-          <TouchableOpacity style={{ backgroundColor: '#19B092', padding: 10 }} >
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[routes[this.state.id].POIs.length - 1].split("#")[1])].name}</ButtonText>
+          <Text style={{ textAlign: 'center', color: 'white', margin: 5 }}>
+            or
+          </Text>
+          <TouchableOpacity style={{ backgroundColor: '#19B092', padding: 10 }}>
+            <ButtonText>
+              {
+                pointsOfInterest[
+                  Number(
+                    routes[this.state.id].POIs[
+                      routes[this.state.id].POIs.length - 1
+                    ].split('#')[1]
+                  )
+                ].name
+              }
+            </ButtonText>
           </TouchableOpacity>
         </Clear>
       </View>

@@ -6,33 +6,31 @@ import {
 } from 'react-native-gesture-handler'
 
 export default ({ navigation }) => (
-      <Screen source={require('../assets/test_background.jpg')}>
-        <Container>
-          <Image source={require('../assets/logo_citytrip.png')} />
-        </Container>
-        <Container>
-          <Appname>Citytrip</Appname>
-          <Quote>Explore places!</Quote>
-          <TouchableOpacity
-            onPress={() => navigation.push('SignUp')}
-          >
-            <Butoon>
-              <Butoontext>Sign up</Butoontext>
-            </Butoon>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.push('App')}>
-            <Buttoon2>
-              <Butoontext>Sign in</Butoontext>
-            </Buttoon2>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => console.log('Forgot my password pressed')}
-          >
-            <Txt>I forgot my password</Txt>
-          </TouchableOpacity>
-        </Container>
-      </Screen>
-);
+  <Screen source={require('../assets/test_background.jpg')}>
+    <Container>
+      <Image source={require('../assets/logo_citytrip.png')} />
+    </Container>
+    <Container>
+      <Appname>Citytrip</Appname>
+      <Quote>Explore places!</Quote>
+      <TouchableOpacity onPress={() => navigation.push('SignUp')}>
+        <Butoon>
+          <Butoontext>Sign up</Butoontext>
+        </Butoon>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.push('App')}>
+        <Buttoon2>
+          <Butoontext>Sign in</Butoontext>
+        </Buttoon2>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => console.log('Forgot my password pressed')}
+      >
+        <Txt>I forgot my password</Txt>
+      </TouchableOpacity>
+    </Container>
+  </Screen>
+)
 
 const Screen = styled.ImageBackground`
   flex: 1;

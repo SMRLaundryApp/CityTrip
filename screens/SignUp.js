@@ -8,20 +8,19 @@ import { TextInput } from 'react-native'
 import { CheckBox } from 'react-native-elements'
 
 export default ({ navigation }) => (
-      <Screen source={require('../assets/test_background.jpg')}>
-        <Container >
-          <Title>Sign-up</Title>
-          <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'E-mail address'}/>
-          <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'Password'}/>
-          <InputTitle>Repeat password:</InputTitle>
-          <Inputfield placeholder={'Repeat password'}/>
-          <CheckBox center title="I agree with the terms of use" 
-          />
-        </Container>
-      </Screen>
-);
+  <Screen source={require('../assets/test_background.jpg')}>
+    <Container>
+      <Title>Sign-up</Title>
+      <InputTitle>E-mail address:</InputTitle>
+      <Inputfield placeholder={'E-mail address'} />
+      <InputTitle>Password:</InputTitle>
+      <Inputfield placeholder={'Password'} />
+      <InputTitle>Repeat password:</InputTitle>
+      <Inputfield placeholder={'Repeat password'} />
+      <CheckBox center title="I agree with the terms of use" />
+    </Container>
+  </Screen>
+)
 
 const Screen = styled.ImageBackground`
   flex: 1;
@@ -49,7 +48,7 @@ const Title = styled.Text`
   color: #fff;
   font-size: 40px;
   font-weight: 400;
-  margin: 20px;;
+  margin: 20px;
   text-shadow: 2px 2px 4px #000;
 `
 
@@ -61,7 +60,6 @@ const InputTitle = styled.Text`
   font-size: 20px;
   font-weight: 400;
   text-shadow: 1px 1px 2px #000;
-
 `
 
 const Butoon = styled.View`

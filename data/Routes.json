@@ -3,15 +3,8 @@
     "id": "#0000",
     "name": "Leiden Windmill",
     "type": "lineair",
-    "POIs": [
-      "#0000",
-      "#0004",
-      "#0003",
-      "#0014",
-      "#0013",
-      "#0016"
-    ],
-    "region":{
+    "POIs": ["#0000", "#0004", "#0003", "#0014", "#0013", "#0016"],
+    "region": {
       "latitude": 52.169771,
       "longitude": 4.485997,
       "latitudeDelta": 0.03,
@@ -25,10 +18,8 @@
     "id": "#0001",
     "name": "Test 1",
     "type": "circular",
-    "POIs": [
-      "#0001"
-    ],
-    "region":{
+    "POIs": ["#0001"],
+    "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
       "latitudeDelta": 0.01,
@@ -42,10 +33,8 @@
     "id": "#0002",
     "name": "Test 2",
     "type": "lineair",
-    "POIs": [
-      "#0002"
-    ],
-    "region":{
+    "POIs": ["#0002"],
+    "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
       "latitudeDelta": 0.01,
@@ -59,10 +48,8 @@
     "id": "#0003",
     "name": "Test 3",
     "type": "circular",
-    "POIs": [
-      "#0003"
-    ],
-    "region":{
+    "POIs": ["#0003"],
+    "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
       "latitudeDelta": 0.01,
@@ -76,10 +63,8 @@
     "id": "#0004",
     "name": "Test 4",
     "type": "lineair",
-    "POIs": [
-      "#0004"
-    ],
-    "region":{
+    "POIs": ["#0004"],
+    "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
       "latitudeDelta": 0.01,
@@ -93,10 +78,8 @@
     "id": "#0005",
     "name": "Test 5",
     "type": "lineair",
-    "POIs": [
-      "#0005"
-    ],
-    "region":{
+    "POIs": ["#0005"],
+    "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
       "latitudeDelta": 0.01,
