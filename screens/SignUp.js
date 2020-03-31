@@ -5,10 +5,20 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler'
 import { TextInput } from 'react-native'
+import { CheckBox } from 'react-native-elements'
 
 export default ({ navigation }) => (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container >
+          <Title>Sign-up</Title>
+          <InputTitle>E-mail address:</InputTitle>
+          <Inputfield placeholder={'E-mail address'}/>
+          <InputTitle>Password:</InputTitle>
+          <Inputfield placeholder={'Password'}/>
+          <InputTitle>Repeat password:</InputTitle>
+          <Inputfield placeholder={'Repeat password'}/>
+          <CheckBox center title="I agree with the terms of use" 
+          />
         </Container>
       </Screen>
 );
@@ -26,33 +36,32 @@ const Container = styled.View`
   opacity: 0.8;
 `
 
-const Appname = styled.Text`
-  position: relative;
+const Inputfield = styled.TextInput`
+  background-color: white;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  height: 40px;
+`
+
+const Title = styled.Text`
   align-self: center;
   color: #fff;
-  font-size: 50px;
-  font-weight: 600;
-  margin-top: 1%;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 20px;;
   text-shadow: 2px 2px 4px #000;
 `
 
-const Quote = styled.Text`
-  align-self: center;
+const InputTitle = styled.Text`
+  align-self: auto;
   color: #fff;
+  margin-left: 20px;
+  margin-bottom: 5px;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 10%;
-  text-shadow: 2px 2px 4px #888;
-`
+  text-shadow: 1px 1px 2px #000;
 
-const Txt = styled(Quote)`
-  margin-bottom: 0px;
-`
-
-const Image = styled.Image`
-  align-self: center;
-  transform: scale(0.6, 0.6);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 `
 
 const Butoon = styled.View`
