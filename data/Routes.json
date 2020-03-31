@@ -12,10 +12,10 @@
       "#0016"
     ],
     "region":{
-      "latitude": 52.167751,
-      "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitude": 52.169771,
+      "longitude": 4.485997,
+      "latitudeDelta": 0.03,
+      "longitudeDelta": 0.03
     },
     "length": 4.9,
     "duration": 60,
