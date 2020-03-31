@@ -5,9 +5,7 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler'
 
-export default class Login extends Component {
-  render() {
-    return (
+export default ({ navigation }) => (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Image source={require('../assets/logo_citytrip.png')} />
@@ -22,9 +20,7 @@ export default class Login extends Component {
               <Butoontext>Sign up</Butoontext>
             </Butoon>
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => console.log('Sign_in button pressed')}
-          >
+          <TouchableOpacity onPress={() => navigation.push('App')}>
             <Buttoon2>
               <Butoontext>Sign in</Butoontext>
             </Buttoon2>
@@ -36,9 +32,7 @@ export default class Login extends Component {
           </TouchableOpacity>
         </Container>
       </Screen>
-    )
-  }
-}
+);
 
 const Screen = styled.ImageBackground`
   flex: 1;

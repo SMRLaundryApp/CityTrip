@@ -43,12 +43,12 @@ export default class Card extends Component {
           </Content>
         </Container>
       </TouchableWithoutFeedback>
-    );
+    )
     let titleSize = (
       <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
         {this.props.title}
       </Title>
-    );
+    )
 
     return (
       <Clear>
