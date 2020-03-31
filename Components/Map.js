@@ -47,6 +47,10 @@ export default class Map extends Component {
     // console.log(location);
   }
 
+  // componentWillUnmount() {
+
+  // }
+
   render() {
     UserLocation = (
       <Marker
