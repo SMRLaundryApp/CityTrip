@@ -9,7 +9,6 @@ export default class Routes_list extends Component {
     return (
       <Container>
         <Welcomebar />
-        <Subtitle>{this.props.city}</Subtitle>
         <ScrollView>
           <RoutesLayout />
         </ScrollView>
@@ -20,11 +19,4 @@ export default class Routes_list extends Component {
 
 const Container = styled.View``
 
-const Subtitle = styled.Text`
-  font-size: 20px;
-  color: #3c4560;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-left: 25px;
-  text-transform: uppercase;
-`
+

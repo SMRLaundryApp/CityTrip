@@ -9,7 +9,6 @@ export default class POI_list extends Component {
     return (
       <Container>
         <Welcomebar />
-        <Subtitle>{this.props.city}</Subtitle>
         <ScrollView>
           <CardsLayout cityName={this.props.city} />
         </ScrollView>
@@ -20,12 +19,4 @@ export default class POI_list extends Component {
 
 const Container = styled.View``
 
-const Subtitle = styled.Text`
-  font-size: 20px;
-  color: #3c4560;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-`
+

@@ -37,19 +37,19 @@ function getDistance(
 }
 
 function sortDistance(info) {
-  let ids = [];
-  let distances = [0.0];
+  let ids = []
+  let distances = [0.0]
   for (let i = 0; i < info.length; i++) {
     for (let j = 0; j < distances.length; j++) {
       if (Number(info[i][0]) > Number(distances[j])) {
-        distances.splice(j, 0, info[i][0]);
-        ids.splice(j, 0, info[i][1]);
-        break;
+        distances.splice(j, 0, info[i][0])
+        ids.splice(j, 0, info[i][1])
+        break
       }
     }
   }
-  ids.reverse();
-  return ids;
+  ids.reverse()
+  return ids
 }
 
 export default class CardsLayout extends Component {
@@ -84,45 +84,80 @@ export default class CardsLayout extends Component {
   }
 
   render() {
-    let pointsOfInterest = require('../data/POIs.json');
+    let pointsOfInterest = require('../data/POIs.json')
 
-    let name = this.props.cityName;
-    let columnOne, columnTwo = undefined;
-    let userLocation = this.state.location.coords;
-    let POIs = [];
+    let name = this.props.cityName
+    let columnOne,
+      columnTwo = undefined
+    let userLocation = this.state.location.coords
+    let POIs = []
     let load = <Text> Getting user location... </Text>
-    let sortedPointsOfInterest = [];
+    let sortedPointsOfInterest = []
 
-    if (this.state.location.coords.latitude !== undefined && this.state.location.coords.longitude !== undefined) {
-      load = <Text> Sorting cards by distance... </Text>;
-      POIs.push(pointsOfInterest.map(function(POI) {
-        let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
-        return ([userDistance, POI.id]);
-      }))
-      POIs = POIs[0];
+    if (
+      this.state.location.coords.latitude !== undefined &&
+      this.state.location.coords.longitude !== undefined
+    ) {
+      load = <Text> Sorting cards by distance... </Text>
+      POIs.push(
+        pointsOfInterest.map(function (POI) {
+          let userDistance = getDistance(
+            userLocation.latitude,
+            userLocation.longitude,
+            POI.coords.latitude,
+            POI.coords.longitude
+          ).toFixed(2)
+          return [userDistance, POI.id]
+        })
+      )
+      POIs = POIs[0]
       load = <Text>{POIs}</Text>
-      let sortedPOIs = sortDistance(POIs);
+      let sortedPOIs = sortDistance(POIs)
       load = <Text>{sortedPOIs}</Text>
       for (let i = 0; i < sortedPOIs.length; i++) {
-        sortedPointsOfInterest.push(pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]);
+        sortedPointsOfInterest.push(
+          pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]
+        )
       }
       columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
+        let userDistance = getDistance(
+          userLocation.latitude,
+          userLocation.longitude,
+          POI.coords.latitude,
+          POI.coords.longitude
+        ).toFixed(2)
         if (index % 2 !== 1) {
           return (
-            <Card key={index} cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
+            <Card
+              key={index}
+              cityName={name}
+              title={POI.name}
+              image={POI.image.url}
+              distance={userDistance}
+            />
           )
         }
-      });
+      })
       columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = getDistance(userLocation.latitude, userLocation.longitude, POI.coords.latitude, POI.coords.longitude).toFixed(2);
+        let userDistance = getDistance(
+          userLocation.latitude,
+          userLocation.longitude,
+          POI.coords.latitude,
+          POI.coords.longitude
+        ).toFixed(2)
         if (index % 2 === 1) {
           return (
-            <Card key={index} cityName={name} title={POI.name} image={POI.image.url} distance={userDistance} />
+            <Card
+              key={index}
+              cityName={name}
+              title={POI.name}
+              image={POI.image.url}
+              distance={userDistance}
+            />
           )
         }
-      });
-      load = undefined;
+      })
+      load = undefined
     }
 
     return (

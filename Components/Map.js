@@ -43,7 +43,7 @@ export default class Map extends Component {
   }
 
   locationChanged = (location) => {
-    this.setState({ location });
+    this.setState({ location })
     // console.log(location);
   }
 
@@ -63,11 +63,11 @@ export default class Map extends Component {
       />
     )
 
-    let pointsOfInterest = require('../data/POIs.json');
+    let pointsOfInterest = require('../data/POIs.json')
     let POIs = pointsOfInterest.map((POI, index) => {
       return (
         <Marker
-          key = {index}
+          key={index}
           title={POI.name}
           pinColor= '#19B092'
           coordinate= {{
@@ -76,7 +76,7 @@ export default class Map extends Component {
           }}
         />
       )
-    });
+    })
 
     return (
       <MapView
