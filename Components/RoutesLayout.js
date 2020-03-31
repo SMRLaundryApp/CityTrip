@@ -20,7 +20,8 @@ export default class RoutesLayout extends Component {
           length={route.length}
           duration={route.duration}
           title={route.name}
-          image={image} 
+          image={image}
+          id={route.id}
         /> // distance={1.2} />
       )
     })

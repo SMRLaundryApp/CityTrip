@@ -28,11 +28,14 @@ export default class RouteCard extends Component {
           delayPressIn={5}
           delayPressOut={5}
           delayLongPress={5}
-          onPress={() => console.log('roekoeroekoe')}
+          onPress={() => {
+            
+            console.log('roekoeroekoe');
+          }}
         >
           <Container width={cardWidth} height={cardHeight}>
             <Cover width={imageWidth}>
-              <Image source={{ uri: this.props.image }} />
+              <Image source={{uri: this.props.image}} />
             </Cover>
             <Content left={imageWidth} height={cardHeight} width={cardWidth - imageWidth} >
               <Title>{this.props.title}</Title>
