@@ -4,32 +4,11 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from 'react-native-gesture-handler'
+import { TextInput } from 'react-native'
 
 export default ({ navigation }) => (
       <Screen source={require('../assets/test_background.jpg')}>
-        <Container>
-          <Image source={require('../assets/logo_citytrip.png')} />
-        </Container>
-        <Container>
-          <Appname>Citytrip</Appname>
-          <Quote>Explore places!</Quote>
-          <TouchableOpacity
-            onPress={() => navigation.push('SignUp')}
-          >
-            <Butoon>
-              <Butoontext>Sign up</Butoontext>
-            </Butoon>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.push('App')}>
-            <Buttoon2>
-              <Butoontext>Sign in</Butoontext>
-            </Buttoon2>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => console.log('Forgot my password pressed')}
-          >
-            <Txt>I forgot my password</Txt>
-          </TouchableOpacity>
+        <Container >
         </Container>
       </Screen>
 );
@@ -39,7 +18,12 @@ const Screen = styled.ImageBackground`
 `
 
 const Container = styled.View`
-  flex: 1;
+  background-color: #888;
+  height: 85%;
+  width: 90%;
+  align-self: center;
+  margin-top: 20%;
+  opacity: 0.8;
 `
 
 const Appname = styled.Text`

@@ -5,6 +5,7 @@ import POI_list from '../screens/POI_list'
 import Routes_list from '../screens/Routes_list'
 import Settings from '../screens/Settings'
 import Login from '../screens/Loginscreen'
+import SignUp from '../screens/SignUp'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -51,7 +52,8 @@ const TabScreen = () => (
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator screenOptions={{headerShown: false}}>
-    <AuthStack.Screen name="Login" component={Login} />
+    <AuthStack.Screen name="Login" component={Login} options={{animationEnabled: false}} />
+    <AuthStack.Screen name="SignUp" component={SignUp} options={{animationEnabled: false}} />
   </AuthStack.Navigator>
 );
 
