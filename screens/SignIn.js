@@ -7,28 +7,22 @@ import {
 import { TextInput, Linking } from 'react-native'
 import { CheckBox, Input } from 'react-native-elements'
 
-var state = {
-  checked: false
-}
-
 export default ({ navigation }) => (
 
   <Screen source={require('../assets/test_background.jpg')}>
     <Container>
-      <Title>Sign-up</Title>
+      <Title>Sign-in</Title>
       <InputTitle>E-mail address:</InputTitle>
       <Inputfield placeholder={'E-mail address'} />
       <InputTitle>Password:</InputTitle>
       <Inputfield placeholder={'Password'} secureTextEntry={true} />
-      <InputTitle>Repeat password:</InputTitle>
-      <Inputfield placeholder={'Repeat password'} secureTextEntry={true}/>
       <CheckBox 
       center 
-      title="I agree with the terms of use" 
+      title="Remember password" 
       onPress={() => alert("You stupid?!")}
       />
       <Butoon>
-        <Butoontext onPress={() => navigation.navigate("App")}>Sign-up</Butoontext>
+        <Butoontext onPress={() => navigation.navigate("App")}>Sign-in</Butoontext>
       </Butoon>
     </Container>
   </Screen>

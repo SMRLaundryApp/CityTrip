@@ -6,6 +6,7 @@ import Routes_list from '../screens/Routes_list'
 import Settings from '../screens/Settings'
 import Login from '../screens/Loginscreen'
 import SignUp from '../screens/SignUp'
+import SignIn from '../screens/SignIn'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -59,6 +60,11 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name="SignUp"
       component={SignUp}
+      options={{ animationEnabled: false }}
+    />
+    <AuthStack.Screen
+      name="SignIn"
+      component={SignIn}
       options={{ animationEnabled: false }}
     />
   </AuthStack.Navigator>

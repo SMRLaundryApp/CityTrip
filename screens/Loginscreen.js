@@ -18,7 +18,7 @@ export default ({ navigation }) => (
           <Butoontext>Sign up</Butoontext>
         </Butoon>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.push('App')}>
+      <TouchableOpacity onPress={() => navigation.push('SignIn')}>
         <Buttoon2>
           <Butoontext>Sign in</Butoontext>
         </Buttoon2>
