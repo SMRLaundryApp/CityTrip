@@ -14,4 +14,3 @@
 <p>When you don't care about indents and tabs code might get messy, for that an extension called prettier can be used. Just call this line in terminal to make everything pretty again.</p>
 
     prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
-
