@@ -27,9 +27,11 @@ export default ({ navigation }) => (
       title="I agree with the terms of use" 
       onPress={() => alert("You stupid?!")}
       />
+      <TouchableOpacity onPress={() => navigation.navigate("App")}>
       <Butoon>
-        <Butoontext onPress={() => navigation.navigate("App")}>Sign-up</Butoontext>
+        <Butoontext >Sign-up</Butoontext>
       </Butoon>
+      </TouchableOpacity>
     </Container>
   </Screen>
 )

@@ -21,9 +21,11 @@ export default ({ navigation }) => (
       title="Remember password" 
       onPress={() => alert("You stupid?!")}
       />
+      <TouchableOpacity onPress={() => navigation.navigate("App")}>
       <Butoon>
-        <Butoontext onPress={() => navigation.navigate("App")}>Sign-in</Butoontext>
+        <Butoontext >Sign-in</Butoontext>
       </Butoon>
+      </TouchableOpacity>
     </Container>
   </Screen>
 )
