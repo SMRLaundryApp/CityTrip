@@ -23,13 +23,13 @@ const TabScreen = () => (
         let iconName
 
         if (route.name === 'Map') {
-          iconName = focused ? 'ios-map' : 'ios-map'
+          iconName = 'ios-map'
         } else if (route.name === 'POI Nearby') {
-          iconName = focused ? 'ios-pin' : 'ios-pin'
+          iconName = 'ios-pin'
         } else if (route.name === 'Routes Nearby') {
-          iconName = focused ? 'ios-walk' : 'ios-walk'
+          iconName = 'ios-walk'
         } else if (route.name === 'Settings') {
-          iconName = focused ? 'ios-list-box' : 'ios-list-box'
+          iconName = 'ios-list-box'
         }
 
         // You can return any component that you like here!
