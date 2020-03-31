@@ -71,7 +71,7 @@ export default class RouteCard extends Component {
           animationOut="slideOutRight"
           isVisible={this.state.isModalVisible}
           style={{
-            backgroudColor: 'white',
+            backgroudColor: '#888',
             //maxHeight: Dimensions.get('window').height * 0.8
           }}
           onBackdropPress={() => this.closeModal()}
