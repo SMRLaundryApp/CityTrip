@@ -18,6 +18,7 @@ function GoToButton({ App }) {
 
 export default class SignUp extends Component {
   state = {
+    name: null,
     mail: null,
     password: null,
     tof: false,
@@ -28,6 +29,8 @@ export default class SignUp extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign up</Title>
+          <InputTitle>First name:</InputTitle>
+          <Inputfield placeholder={'  First name'} />
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield placeholder={'  E-mail address'} />
           <InputTitle>Password:</InputTitle>
@@ -79,7 +82,7 @@ const Title = styled.Text`
   font-weight: 400;
   margin: 20px;
   text-shadow: 2px 2px 4px #4d4d4d;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 `
 
 const InputTitle = styled.Text`

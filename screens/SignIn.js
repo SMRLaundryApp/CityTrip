@@ -73,7 +73,7 @@ const Title = styled.Text`
   font-weight: 400;
   margin: 20px;
   text-shadow: 2px 2px 4px #4d4d4d;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 `
 
 const InputTitle = styled.Text`
