@@ -7,7 +7,7 @@ import MapViewDirections from 'react-native-maps-directions'
 import GOOGLE_MAPS_APIKEY from '../private'
 import { Dimensions } from 'react-native'
 
-const screenWidth = Dimensions.get('window').width;
+const screenWidth = Dimensions.get('window').width
 
 export default class RoutePopup extends Component {
   state = {
@@ -42,10 +42,12 @@ export default class RoutePopup extends Component {
     let mapPOIs = []
     mapPOIs.push(
       routes[this.state.id].POIs.map((route) => {
-        return ({
-          latitude: pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
-          longitude:pointsOfInterest[Number(route.split('#')[1])].coords.longitude
-        })
+        return {
+          latitude:
+            pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
+          longitude:
+            pointsOfInterest[Number(route.split('#')[1])].coords.longitude,
+        }
       })
     )
     mapPOIs = mapPOIs[0]
@@ -60,10 +62,10 @@ export default class RoutePopup extends Component {
         destination={mapPOIs[mapPOIs.length - 1]}
         apikey={GOOGLE_MAPS_APIKEY}
         strokeWidth={3}
-        strokeColor='hotpink'
-        mode='WALKING'
+        strokeColor="hotpink"
+        mode="WALKING"
       />
-    );
+    )
 
     return (
       <Container>
@@ -87,12 +89,42 @@ export default class RoutePopup extends Component {
         <Description>{routes[this.state.id].description}</Description>
         <StartAt>Start at:</StartAt>
         <Clear>
-          <TouchableOpacity style={{ borderRadius: 100, backgroundColor: '#19B092', padding: 10, width: screenWidth * 0.7 }}>
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[0].split('#')[1])].name}</ButtonText>
+          <TouchableOpacity
+            style={{
+              borderRadius: 100,
+              backgroundColor: '#19B092',
+              padding: 10,
+              width: screenWidth * 0.7,
+            }}
+          >
+            <ButtonText>
+              {
+                pointsOfInterest[
+                  Number(routes[this.state.id].POIs[0].split('#')[1])
+                ].name
+              }
+            </ButtonText>
           </TouchableOpacity>
           <OrText>or</OrText>
-          <TouchableOpacity style={{ borderRadius: 100, backgroundColor: '#19B092', padding: 10, width: screenWidth * 0.7 }}>
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[routes[this.state.id].POIs.length - 1].split('#')[1])].name}</ButtonText>
+          <TouchableOpacity
+            style={{
+              borderRadius: 100,
+              backgroundColor: '#19B092',
+              padding: 10,
+              width: screenWidth * 0.7,
+            }}
+          >
+            <ButtonText>
+              {
+                pointsOfInterest[
+                  Number(
+                    routes[this.state.id].POIs[
+                      routes[this.state.id].POIs.length - 1
+                    ].split('#')[1]
+                  )
+                ].name
+              }
+            </ButtonText>
           </TouchableOpacity>
         </Clear>
       </Container>

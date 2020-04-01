@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native-gesture-handler'
-import { TextInput, Linking } from 'react-native'
-import { CheckBox, Input } from 'react-native-elements'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
-
 function GoToButton({ App }) {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
-  return(
-    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate('App')}>
       <Butoon>
         <Butoontext>Sign up</Butoontext>
       </Butoon>
@@ -21,15 +16,15 @@ function GoToButton({ App }) {
   )
 }
 
-export default class SignUp extends Component{
+export default class SignUp extends Component {
   state = {
     mail: null,
     password: null,
     tof: false,
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign up</Title>
@@ -38,14 +33,17 @@ export default class SignUp extends Component{
           <InputTitle>Password:</InputTitle>
           <Inputfield placeholder={'  Password'} secureTextEntry={true} />
           <InputTitle>Repeat password:</InputTitle>
-          <Inputfield placeholder={'  Repeat password'} secureTextEntry={true}/>
-          <CheckBox 
-          center 
-          title="I agree with the terms of use" 
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-          checked={this.state.tof}
-          onPress={() => this.setState({tof: !this.state.tof})}
+          <Inputfield
+            placeholder={'  Repeat password'}
+            secureTextEntry={true}
+          />
+          <CheckBox
+            center
+            title="I agree with the terms of use"
+            checkedIcon="dot-circle-o"
+            uncheckedIcon="circle-o"
+            checked={this.state.tof}
+            onPress={() => this.setState({ tof: !this.state.tof })}
           />
           <GoToButton />
         </Container>
@@ -53,7 +51,6 @@ export default class SignUp extends Component{
     )
   }
 }
-
 
 const Screen = styled.ImageBackground`
   flex: 1;
