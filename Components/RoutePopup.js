@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import MapView, { Marker } from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions'

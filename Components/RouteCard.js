@@ -72,11 +72,7 @@ export default class RouteCard extends Component {
           isVisible={this.state.isModalVisible}
           style={{
             backgroudColor: '#888',
-            //maxHeight: Dimensions.get('window').height * 0.8
           }}
-          // onBackdropPress={() => this.closeModal()}
-          // onSwipeComplete={() => this.closeModal()}
-          // swipeDirection="right"
         >
           <Container style={{ padding: 4 }}>
             <TouchableOpacity
@@ -87,7 +83,7 @@ export default class RouteCard extends Component {
                 width: 20,
                 borderRadius: 10
               }}
-              onPress={() => {this.setState({ isModalVisible: false })}}
+              onPress={() => {this.closeModal()}}
             >
               <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
             </TouchableOpacity>

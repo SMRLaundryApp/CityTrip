@@ -86,7 +86,6 @@ export default class CardsLayout extends Component {
   render() {
     let pointsOfInterest = require('../data/POIs.json')
 
-    let name = this.props.cityName
     let columnOne,
       columnTwo = undefined
     let userLocation = this.state.location.coords
@@ -130,7 +129,7 @@ export default class CardsLayout extends Component {
           return (
             <Card
               key={index}
-              cityName={name}
+              city={POI.city}
               title={POI.name}
               image={POI.image.url}
               distance={userDistance}
@@ -149,7 +148,7 @@ export default class CardsLayout extends Component {
           return (
             <Card
               key={index}
-              cityName={name}
+              city={POI.city}
               title={POI.name}
               image={POI.image.url}
               distance={userDistance}

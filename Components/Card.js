@@ -1,19 +1,33 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
-import { Dimensions } from 'react-native'
+import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
+import { Dimensions, Text } from 'react-native'
+import Modal from 'react-native-modal'
+import POIPopup from './POIPopup'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth / 2 - 20
 const cardHeight = screenWidth / 3 + 78
 
 export default class Card extends Component {
+  state = {
+    isModalVisible: false,
+  }
+
   constructor(props) {
     super(props)
     this.state = {
       imageHeight: screenWidth / 3,
       distanceToUser: undefined,
     }
+  }
+
+  openModal = () => {
+    this.setState({ isModalVisible: true })
+  }
+
+  closeModal = () => {
+    this.setState({ isModalVisible: false })
   }
 
   onLayout = (event) => {
@@ -29,7 +43,7 @@ export default class Card extends Component {
         delayPressIn={5}
         delayPressOut={5}
         delayLongPress={5}
-        onPress={() => console.log('roekoeroekoe')}
+        onPress={() => {this.openModal()}}
       >
         <Container width={cardWidth} height={cardHeight}>
           <Cover height={this.state.imageHeight}>
@@ -52,6 +66,30 @@ export default class Card extends Component {
       <Clear>
         <Invisible width={cardWidth}>{titleSize}</Invisible>
         <Clear>{card}</Clear>
+        <Modal
+          animationIn="slideInRight"
+          animationOut="slideOutRight"
+          isVisible={this.state.isModalVisible}
+          style={{
+            backgroudColor: '#888',
+          }}
+        >
+          <Container style={{ padding: 4, margin: 0, marginTop: 0, width: screenWidth - 20 }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#19B092',
+                alignSelf: 'flex-end',
+                height: 20,
+                width: 20,
+                borderRadius: 10
+              }}
+              onPress={() => {this.closeModal()}}
+            >
+              <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
+            </TouchableOpacity>
+            <POIPopup image={this.props.image} title={this.props.title} distance={this.props.distance} city={this.props.city} />
+          </Container>
+        </Modal>
       </Clear>
     )
   }
