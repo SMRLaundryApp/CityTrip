@@ -15,7 +15,7 @@ export default ({ navigation }) => (
 
   <Screen source={require('../assets/test_background.jpg')}>
     <Container>
-      <Title>Sign-up</Title>
+      <Title>Sign up</Title>
       <InputTitle>E-mail address:</InputTitle>
       <Inputfield placeholder={'E-mail address'} />
       <InputTitle>Password:</InputTitle>
