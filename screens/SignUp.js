@@ -34,11 +34,11 @@ export default class SignUp extends Component{
         <Container>
           <Title>Sign up</Title>
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'E-mail address'} />
+          <Inputfield placeholder={'  E-mail address'} />
           <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'Password'} secureTextEntry={true} />
+          <Inputfield placeholder={'  Password'} secureTextEntry={true} />
           <InputTitle>Repeat password:</InputTitle>
-          <Inputfield placeholder={'Repeat password'} secureTextEntry={true}/>
+          <Inputfield placeholder={'  Repeat password'} secureTextEntry={true}/>
           <CheckBox 
           center 
           title="I agree with the terms of use" 
@@ -60,12 +60,10 @@ const Screen = styled.ImageBackground`
 `
 
 const Container = styled.View`
-  background-color: #888;
   height: 85%;
   width: 90%;
   align-self: center;
   margin-top: 20%;
-  opacity: 0.9;
 `
 
 const Inputfield = styled.TextInput`
@@ -74,6 +72,7 @@ const Inputfield = styled.TextInput`
   margin-bottom: 20px;
   margin-right: 10px;
   height: 40px;
+  border-radius: 2px;
 `
 
 const Title = styled.Text`
@@ -82,7 +81,7 @@ const Title = styled.Text`
   font-size: 60px;
   font-weight: 400;
   margin: 20px;
-  text-shadow: 2px 2px 4px #000;
+  text-shadow: 2px 2px 4px #4d4d4d;
   margin-bottom: 80px;
 `
 
@@ -93,7 +92,7 @@ const InputTitle = styled.Text`
   margin-bottom: 5px;
   font-size: 20px;
   font-weight: 400;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 2px #4d4d4d;
 `
 
 const Butoon = styled.View`
