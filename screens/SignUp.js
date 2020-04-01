@@ -29,7 +29,7 @@ export default ({ navigation }) => (
       />
       <TouchableOpacity onPress={() => navigation.navigate("App")}>
       <Butoon>
-        <Butoontext >Sign-up</Butoontext>
+        <Butoontext >Sign up</Butoontext>
       </Butoon>
       </TouchableOpacity>
     </Container>
