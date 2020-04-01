@@ -6,35 +6,54 @@ import {
 } from 'react-native-gesture-handler'
 import { TextInput, Linking } from 'react-native'
 import { CheckBox, Input } from 'react-native-elements'
+import { useNavigation } from '@react-navigation/native'
 
-var state = {
-  checked: false
+
+function GoToButton({ App }) {
+  const navigation = useNavigation();
+
+  return(
+    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
+      <Butoon>
+        <Butoontext>Sign up</Butoontext>
+      </Butoon>
+    </TouchableOpacity>
+  )
 }
 
-export default ({ navigation }) => (
+export default class SignUp extends Component{
+  state = {
+    mail: null,
+    password: null,
+    tof: false,
+  }
 
-  <Screen source={require('../assets/test_background.jpg')}>
-    <Container>
-      <Title>Sign up</Title>
-      <InputTitle>E-mail address:</InputTitle>
-      <Inputfield placeholder={'E-mail address'} />
-      <InputTitle>Password:</InputTitle>
-      <Inputfield placeholder={'Password'} secureTextEntry={true} />
-      <InputTitle>Repeat password:</InputTitle>
-      <Inputfield placeholder={'Repeat password'} secureTextEntry={true}/>
-      <CheckBox 
-      center 
-      title="I agree with the terms of use" 
-      onPress={() => alert("You stupid?!")}
-      />
-      <TouchableOpacity onPress={() => navigation.navigate("App")}>
-      <Butoon>
-        <Butoontext >Sign up</Butoontext>
-      </Butoon>
-      </TouchableOpacity>
-    </Container>
-  </Screen>
-)
+  render(){
+    return(
+      <Screen source={require('../assets/test_background.jpg')}>
+        <Container>
+          <Title>Sign up</Title>
+          <InputTitle>E-mail address:</InputTitle>
+          <Inputfield placeholder={'E-mail address'} />
+          <InputTitle>Password:</InputTitle>
+          <Inputfield placeholder={'Password'} secureTextEntry={true} />
+          <InputTitle>Repeat password:</InputTitle>
+          <Inputfield placeholder={'Repeat password'} secureTextEntry={true}/>
+          <CheckBox 
+          center 
+          title="I agree with the terms of use" 
+          checkedIcon='dot-circle-o'
+          uncheckedIcon='circle-o'
+          checked={this.state.tof}
+          onPress={() => this.setState({tof: !this.state.tof})}
+          />
+          <GoToButton />
+        </Container>
+      </Screen>
+    )
+  }
+}
+
 
 const Screen = styled.ImageBackground`
   flex: 1;

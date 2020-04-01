@@ -6,29 +6,49 @@ import {
 } from 'react-native-gesture-handler'
 import { TextInput, Linking } from 'react-native'
 import { CheckBox, Input } from 'react-native-elements'
+import { useNavigation } from '@react-navigation/native'
 
-export default ({ navigation }) => (
+function GoToButton({ App }) {
+  const navigation = useNavigation();
 
-  <Screen source={require('../assets/test_background.jpg')}>
-    <Container>
-      <Title>Sign in</Title>
-      <InputTitle>E-mail address:</InputTitle>
-      <Inputfield placeholder={'E-mail address'} />
-      <InputTitle>Password:</InputTitle>
-      <Inputfield placeholder={'Password'} secureTextEntry={true} />
-      <CheckBox 
-      center 
-      title="Remember password" 
-      onPress={() => alert("You stupid?!")}
-      />
-      <TouchableOpacity onPress={() => navigation.navigate("App")}>
+  return(
+    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
       <Butoon>
-        <Butoontext >Sign in</Butoontext>
+        <Butoontext>Sign in</Butoontext>
       </Butoon>
-      </TouchableOpacity>
-    </Container>
-  </Screen>
-)
+    </TouchableOpacity>
+  )
+}
+
+export default class SignIn extends Component {
+  state = { 
+    rp: false 
+  }
+  
+  render(){
+    return(
+      <Screen source={require('../assets/test_background.jpg')}>
+        <Container>
+          <Title>Sign in</Title>
+          <InputTitle>E-mail address:</InputTitle>
+          <Inputfield placeholder={'E-mail address'} />
+          <InputTitle>Password:</InputTitle>
+          <Inputfield placeholder={'Password'} secureTextEntry={true} />
+          <CheckBox 
+          center 
+          title="Remember password" 
+          checkedIcon='dot-circle-o'
+          uncheckedIcon='circle-o'
+          checked={this.state.rp}
+          onPress={() => this.setState({rp: !this.state.rp})}
+          />
+          <GoToButton />
+        </Container>
+      </Screen>
+    )
+  }
+}
+
 
 const Screen = styled.ImageBackground`
   flex: 1;

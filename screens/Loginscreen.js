@@ -24,7 +24,7 @@ export default ({ navigation }) => (
         </Buttoon2>
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => console.log('Forgot my password pressed')}
+        onPress={() => navigation.navigate("App")}
       >
         <Txt>I forgot my password</Txt>
       </TouchableOpacity>
