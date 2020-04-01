@@ -179,7 +179,7 @@
       "latitude": 52.191447,
       "longitude": 4.437151
     },
-    "description": ""
+    "description": "The  world famous philosopher Spinoza was born in the year 1632 in Amsterdam. Spinoza moved to Rijnsburg in 1661. At the time, this village was known as a meeting place for collegiate students, an Anabaptist sect, among which Spinoza had friends.\nIn the house of the surgeon Herman Homan, he had a small room as a boarder, where he dragged lenses for optical instruments and where he wrote down his musings with the goose pen."
   },
   {
     "id": "#0013",
@@ -193,7 +193,7 @@
       "latitude": 52.17664,
       "longitude": 4.487276
     },
-    "description": ""
+    "description": "The Kikkermolen, was built in 1752 and is draining the Kikkerpolder for more the 250 years now. Its predecessor was built in 1698, but burned down in 1747.\nSince there wasn't any money available at the time, the Kikkerpolder was connected to the Maredijkerpolder. So the mills of the Maredijkermpolder could also drain the Kikkerpolder.\nThe unique thing about this mill is that it is the smallest 'wipmolen' (a type of mill) in the Netherlands."
   },
   {
     "id": "#0014",
@@ -207,11 +207,11 @@
       "latitude": 52.172951,
       "longitude": 4.48719
     },
-    "description": ""
+    "description": "The Maredijkmolen, was built in 1735 and was around 1840 moved 100 meters, because of the construction of a railroad. The mill drains the Maredijkerpolder.\nFrom 1748 to 1753 the Maredijkerpolder was connected to the Kikkerpolder. So then it also drained the Kikkerpolder."
   },
   {
     "id": "#0015",
-    "name": "Rodenburger Molen",
+    "name": "Rodenburger molen",
     "city": "Leiden",
     "image": {
       "url": "https://farm3.static.flickr.com/2193/2493269223_45e08dd898_b.jpg"
@@ -221,7 +221,7 @@
       "latitude": 52.146397,
       "longitude": 4.503373
     },
-    "description": ""
+    "description": "The Rodenburgermolen was built in 1704. In 1893 the mill was struck by lightning and burnt out completely. After this, the mill was rebuilt.\nThe mill used to drain the Rodenburgerpolder and the Cronesteinse polder."
   },
   {
     "id": "#0016",
@@ -235,6 +235,6 @@
       "latitude": 52.172501,
       "longitude": 4.497798
     },
-    "description": ""
+    "description": "The Stadsmolen was built in 1856. It had several predecessors; the last was a wooden mill built in 1804, which had to be torn down becasue it had subsided a lot.\nThe unique thing about this mill is its bottleshape. No other mill in the Netherlands had such a clear presence as here."
   }
 ]
