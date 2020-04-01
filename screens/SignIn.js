@@ -4,11 +4,11 @@ import {  TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
-function GoToButton({ App }) {
+function GoToButton({ App, state }) {
   const navigation = useNavigation();
 
   return(
-    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
+    <TouchableOpacity onPress ={() => {navigation.navigate('App'), console.log(state.mail, state.password, state.rp)}}>
       <Butoon>
         <Butoontext>Sign in</Butoontext>
       </Butoon>
@@ -18,7 +18,9 @@ function GoToButton({ App }) {
 
 export default class SignIn extends Component {
   state = { 
-    rp: false 
+    mail: null,
+    password: null,
+    rp: false, 
   }
   
   render(){
@@ -27,18 +29,18 @@ export default class SignIn extends Component {
         <Container>
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'} />
+          <Inputfield placeholder={'  E-mail address'} value={this.state.mail} onChangeText={mail => this.setState({ mail })} />
           <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true} />
+          <Inputfield placeholder={'  Password'} secureTextEntry={true} value={this.state.password} onChangeText={password => this.setState({ password })} />
           <CheckBox 
           center 
           title="Remember password" 
           checkedIcon='dot-circle-o'
           uncheckedIcon='circle-o'
           checked={this.state.rp}
-          onPress={() => this.setState({rp: !this.state.rp})}
+          onPress={() => {this.setState({rp: !this.state.rp})}}
           />
-          <GoToButton />
+          <GoToButton state={this.state} />
         </Container>
       </Screen>
     )
