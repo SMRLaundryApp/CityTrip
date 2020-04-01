@@ -23,7 +23,7 @@ export default ({ navigation }) => (
           <Butoontext>Sign in</Butoontext>
         </Buttoon2>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('App')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Forgot_pw')}>
         <Txt>I forgot my password</Txt>
       </TouchableOpacity>
     </Container>
