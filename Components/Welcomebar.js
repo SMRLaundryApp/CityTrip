@@ -24,6 +24,16 @@ function getDayTime() {
   return moment
 }
 
+function getName() {
+  if(global.name === null){
+    return ("Lazy user")
+}
+          
+  if(global.name != ""){
+    return global.name
+}
+}
+
 class Greeting extends Component {
   render() {
     var moment_day = getDayTime()
@@ -37,9 +47,10 @@ class Greeting extends Component {
 
 class Name extends Component {
   render(){
+    var inputName = getName()
     return(
       <Container>
-        <UserName>{global.name}</UserName>
+        <UserName>{inputName}</UserName>
       </Container>
     )
   }
