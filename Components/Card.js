@@ -87,7 +87,7 @@ export default class Card extends Component {
             >
               <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
             </TouchableOpacity>
-            <POIPopup image={this.props.image} title={this.props.title} distance={this.props.distance} city={this.props.city} />
+            <POIPopup image={this.props.image} title={this.props.title} distance={this.props.distance} city={this.props.city} description={this.props.description} />
           </Container>
         </Modal>
       </Clear>

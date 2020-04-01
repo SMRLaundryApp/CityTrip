@@ -1,7 +1,7 @@
 [
   {
     "id": "#0000",
-    "name": "Heesterboom Molen",
+    "name": "De Heesterboom mill",
     "city": "Leiden",
     "image": {
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX53_JePpL-Pss_4EQ17rJke9PS4D9yk6J92h9tePRPsAtR-By"
@@ -10,11 +10,12 @@
     "coords": {
       "latitude": 52.156727,
       "longitude": 4.472573
-    }
+    },
+    "description": "De Heesterboom, was built in 1804 on the site where two predecessors previously stood: De Ruyter and De Valk. De Heesterboom mill was used to cut wood. It can be found on the site of the Noordman timber trade on the Leidse Rijn. In the past, there were two more wood sawmills on the mill yard: De Eendracht and De Jonge Pauline.\nThe unique thing about De Heesterboom is that it is the only sawmill with an authentic binnenvang-inrichting. A binnenvang-inrichting is a device which makes it possible to stop the mill from the saw floor by means of a special lever construction."
   },
   {
     "id": "#0001",
-    "name": "Stevenshofjes Molen",
+    "name": "Stevenshofjes molen",
     "city": "Leiden",
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1033_2.png"
@@ -23,11 +24,12 @@
     "coords": {
       "latitude": 52.15072,
       "longitude": 4.443234
-    }
+    },
+    "description": "The Stevenshofjesmolen, was built in 1797 after the predecessor was destroyed by a fire in December 1796. Until 1981, the mill drained the Stevenshofjespolder which was around 150 ha. The construction of the new Leiden residential area 'Stevenshof' largely ended this; now the mill can still drain 40 ha."
   },
   {
     "id": "#0002",
-    "name": "Molen De Herder",
+    "name": "De Herder",
     "city": "Leiden",
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1026_2.jpg"
@@ -36,7 +38,8 @@
     "coords": {
       "latitude": 52.17349,
       "longitude": 4.489123
-    }
+    },
+    "description": "De Herder, was built in 1884 after the predecessor was destroyed by lightning on September 5 1883. The sawmill De Kat, dating from 1755 and for sale for demolition, was transferred from Amsterdam to Oegstgeest (Leiden was still entirely within the canals as a municipality) for the reconstruction."
   },
   {
     "id": "#0003",
@@ -49,7 +52,8 @@
     "coords": {
       "latitude": 52.164451,
       "longitude": 4.486489
-    }
+    },
+    "description": "Molen De Valk, was built in 1743 and was used to grind grain. This mill had two predecessors: the first 'Valck' was built in 1612 and remained in use until 1667. In 1667, this mill was replaced by a new mill with more couples of millstones and a house. The current mill was built in no less than 11 weeks. It's a lot higher that its predecessors, to ensure the windmill catches enough wind to operate."
   },
   {
     "id": "#0004",
@@ -62,20 +66,22 @@
     "coords": {
       "latitude": 52.16135,
       "longitude": 4.481973
-    }
+    },
+    "description": "Molen De Put is a replica of the wooden grain mill from 1619 by Jan Janszn. Put and was built in 1987. The original mill burned down in 1640 and was rebuilt soon after.\nIn 1729, the original post mill was replaced by a high tower mill, comparable to the still existing De Valk mill in Leiden, and named De Korenmolen. This mill was demolished in 1817 and was not replaced on site by another mill.\nIn 1982, archaeologists found the post foundations of the original grain mill. On the occasion of the 25th anniversary of the Rijnlandse Molenstichting in 1983, the idea was launched to rebuild a post mill on the former bastion."
   },
   {
     "id": "#0005",
     "name": "Station Leiden Centraal",
     "city": "Leiden",
     "image": {
-      "url": "https://sites.google.com/site/inzichtstadswandelingen/_/rsrc/1478633873361/blog/0706/1607%20Station%20Leiden%20Centraal%20039klein.JPG"
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ErfgoedLeiden_LEI001013300_Station_Leiden%2C_Stationsplein_1.jpg/1024px-ErfgoedLeiden_LEI001013300_Station_Leiden%2C_Stationsplein_1.jpg"
     },
     "category": ["building", "station"],
     "coords": {
       "latitude": 52.165879,
       "longitude": 4.483116
-    }
+    },
+    "description": "Station Leiden Centraal has changed a lot over the years. The first station was opened on June 15 1843. The original station was replaced in 1879. In 1955 was the railroad raised and the station replaced again for a new one. The build of the current station was in 1996 finished and was very futuristic for its time."
   },
   {
     "id": "#0006",
@@ -88,7 +94,8 @@
     "coords": {
       "latitude": 52.162057,
       "longitude": 4.48213
-    }
+    },
+    "description": "The Morspoort is the western city gate of Leiden, located on the Morssingel. The stone gate was built in Mannerist style in 1669 according to a design by the Leiden architect Willem van der Helm.\nThe current Morspoort is where a wooden structure once stood, which was founded around 1611 when Leiden expanded to the north.\nThe Morspoort and Zijlpoort are the only ones left of the original eight city gates."
   },
   {
     "id": "#0007",
@@ -101,7 +108,8 @@
     "coords": {
       "latitude": 52.161733,
       "longitude": 4.504201
-    }
+    },
+    "description": "The Zijlpoort was built in classicist style in 1667 according to a design by the Leiden architect Willem van der Helm and features a sculpture by Rombout Verhulst.\nBecause the gate had to connect to both the city wall and the bridge before it, the building has the shape of a parallelogram.\nThe Morspoort and the Zijlpoort are the only two remaining of the originally eight gates.\nAlong the Zijlpoort, the Oude Rijn flows into the city of Leiden from the nearby Zijl river."
   },
   {
     "id": "#0008",
@@ -114,7 +122,8 @@
     "coords": {
       "latitude": 52.160334,
       "longitude": 4.490922
-    }
+    },
+    "description": "The Hartebrugkerk is a church build in 1836. This was the first Catholic church build in Leiden when religious freedom was established. At that time, the major churches in Leiden were all Protestant."
   },
   {
     "id": "#0009",
@@ -127,7 +136,8 @@
     "coords": {
       "latitude": 52.157499,
       "longitude": 4.486903
-    }
+    },
+    "description": "The Pieterskerk is a late-Gothic church in Leiden dedicated to Saint Peter. It is known today as the church of the Pilgrim Fathers, where the pastor John Robinson was buried. It is also the burial place of the scientist Willebrord Snellius.\nIn around 1100 the site held the county chapel of the counts of Holland, rebuilt in 1121. The present building took approximately 180 years to build, starting in 1390.\nThe Pieterskerk used to have a church tower, the Westtoren (west tower) from 1290 on. It was nicknamed 'Coningh der Zee' (king of the sea), and was completed in stages, eventually reaching 110 metres. It collapsed in the night of 5 March 1512. The tower was not restored and the church remains towerless."
   },
   {
     "id": "#0010",
@@ -140,7 +150,8 @@
     "coords": {
       "latitude": 52.157914,
       "longitude": 4.493566
-    }
+    },
+    "description": "Hooglandse Kerk is a Gothic church in Leiden dating from the fifteenth century. The brick church is dedicated to St. Pancras and today serves parishioners of the Protestant Church in the Netherlands.\nThe Bishop of Utrecht ordered the construction of a wooden chapel on December 20, 1314. By 1377 the population and economic prosperity of Leiden called for a larger structure, and construction began on the current structure. The sanctuary was finished in 1391 and the ambulatory in 1415."
   },
   {
     "id": "#0011",
@@ -153,7 +164,8 @@
     "coords": {
       "latitude": 52.158979,
       "longitude": 4.49244
-    }
+    },
+    "description": "The Burcht van Leiden (Fort of Leiden) is an old shell keep in Leiden constructed in the 11th century. It is located at the spot where two tributaries of the Rhine come together, the Oude Rijn and the Nieuwe Rijn. The structure is on top of a motte, and is today a public park."
   },
   {
     "id": "#0012",
@@ -166,7 +178,8 @@
     "coords": {
       "latitude": 52.191447,
       "longitude": 4.437151
-    }
+    },
+    "description": ""
   },
   {
     "id": "#0013",
@@ -179,7 +192,8 @@
     "coords": {
       "latitude": 52.17664,
       "longitude": 4.487276
-    }
+    },
+    "description": ""
   },
   {
     "id": "#0014",
@@ -192,7 +206,8 @@
     "coords": {
       "latitude": 52.172951,
       "longitude": 4.48719
-    }
+    },
+    "description": ""
   },
   {
     "id": "#0015",
@@ -205,7 +220,8 @@
     "coords": {
       "latitude": 52.146397,
       "longitude": 4.503373
-    }
+    },
+    "description": ""
   },
   {
     "id": "#0016",
@@ -218,6 +234,7 @@
     "coords": {
       "latitude": 52.172501,
       "longitude": 4.497798
-    }
+    },
+    "description": ""
   }
 ]

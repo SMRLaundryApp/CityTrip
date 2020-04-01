@@ -15,6 +15,7 @@ export default class POIPopup extends Component {
             <ColumnOne><ColumnText>{this.props.distance} km</ColumnText></ColumnOne>
             <ColumnTwo><ColumnText>{this.props.city}</ColumnText></ColumnTwo>
           </Table>
+          <Description>{this.props.description}</Description>
         </Content>
       </Clear>
     )
@@ -64,4 +65,11 @@ const ColumnText = styled.Text`
   font-size: 15px;
   font-weight: 600;
   margin-top: 4px;
+`
+
+const Description = styled.Text`
+  margin-top: 5px;
+  padding: 5px;
+  color: white;
+  text-align: justify;
 `

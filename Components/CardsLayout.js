@@ -133,6 +133,7 @@ export default class CardsLayout extends Component {
               title={POI.name}
               image={POI.image.url}
               distance={userDistance}
+              description={POI.description}
             />
           )
         }
@@ -152,6 +153,7 @@ export default class CardsLayout extends Component {
               title={POI.name}
               image={POI.image.url}
               distance={userDistance}
+              description={POI.description}
             />
           )
         }
