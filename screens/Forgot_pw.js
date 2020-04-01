@@ -4,11 +4,11 @@ import {  TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
-function GoToButton({ App }) {
+function GoToButton({ App, state }) {
   const navigation = useNavigation();
 
   return(
-    <TouchableOpacity onPress ={() => {navigation.navigate('Login'), alert("Sucks for you")}}>
+    <TouchableOpacity onPress ={() => {navigation.navigate('Login'), console.log(state.mail), alert("Sucks for you")}}>
       <Butoon>
         <Butoontext>Recover password</Butoontext>
       </Butoon>
@@ -17,15 +17,19 @@ function GoToButton({ App }) {
 }
 
 export default class Forgot_pw extends Component { 
+  state = {
+    mail: null,
+  }
+
   render(){
     return(
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'} />
+          <Inputfield placeholder={'  E-mail address'} value={this.state.mail} onChangeText={mail => this.setState({ mail })} />
          
-          <GoToButton />
+          <GoToButton state={this.state} />
         </Container>
       </Screen>
     )

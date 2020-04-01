@@ -4,11 +4,15 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
-function GoToButton({ App }) {
+function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
+  if(state.password === state.password_check){
+    console.log("Great succes")
+  }
+
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('App')}>
+    <TouchableOpacity onPress={() => {navigation.navigate('App'),console.log(state.name, state.mail, state.password, state.password_check, state.tof)}}>
       <Butoon>
         <Butoontext>Sign up</Butoontext>
       </Butoon>
@@ -21,6 +25,7 @@ export default class SignUp extends Component {
     name: null,
     mail: null,
     password: null,
+    password_check: null,
     tof: false,
   }
 
@@ -30,15 +35,16 @@ export default class SignUp extends Component {
         <Container>
           <Title>Sign up</Title>
           <InputTitle>First name:</InputTitle>
-          <Inputfield placeholder={'  First name'} />
+          <Inputfield placeholder={'  First name'}  value={this.state.name} onChangeText={name => this.setState({ name })} />
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'} />
+          <Inputfield placeholder={'  E-mail address'}  value={this.state.mail} onChangeText={mail => this.setState({ mail })}/>
           <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true} />
+          <Inputfield placeholder={'  Password'} secureTextEntry={true}  value={this.state.password} onChangeText={password => this.setState({ password })}/>
           <InputTitle>Repeat password:</InputTitle>
           <Inputfield
             placeholder={'  Repeat password'}
             secureTextEntry={true}
+            secureTextEntry={true}  value={this.state.password_check} onChangeText={password_check => this.setState({ password_check })}
           />
           <CheckBox
             center
@@ -48,7 +54,7 @@ export default class SignUp extends Component {
             checked={this.state.tof}
             onPress={() => this.setState({ tof: !this.state.tof })}
           />
-          <GoToButton />
+          <GoToButton state={this.state} />
         </Container>
       </Screen>
     )
