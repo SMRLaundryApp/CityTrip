@@ -9,9 +9,9 @@ function GoToButton({ App, state }) {
   const navigation = useNavigation()
   global.name = state.name
 
-  if(state.password === state.password_check){
-    console.log("Great succes")
-  }
+  // if(state.password === state.password_check){
+  //   console.log("Great succes")
+  // }
 
   return (
     <TouchableOpacity onPress={() => {navigation.navigate('App'),console.log(state.name, state.mail, state.password, state.password_check, state.tof)}}>
