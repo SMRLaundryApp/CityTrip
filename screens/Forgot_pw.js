@@ -8,19 +8,15 @@ function GoToButton({ App }) {
   const navigation = useNavigation();
 
   return(
-    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
+    <TouchableOpacity onPress ={() => {navigation.navigate('Login'), alert("Sucks for you")}}>
       <Butoon>
-        <Butoontext>Sign in</Butoontext>
+        <Butoontext>Recover password</Butoontext>
       </Butoon>
     </TouchableOpacity>
   )
 }
 
-export default class SignIn extends Component {
-  state = { 
-    rp: false 
-  }
-  
+export default class Forgot_pw extends Component { 
   render(){
     return(
       <Screen source={require('../assets/test_background.jpg')}>
@@ -28,16 +24,7 @@ export default class SignIn extends Component {
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield placeholder={'  E-mail address'} />
-          <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true} />
-          <CheckBox 
-          center 
-          title="Remember password" 
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-          checked={this.state.rp}
-          onPress={() => this.setState({rp: !this.state.rp})}
-          />
+         
           <GoToButton />
         </Container>
       </Screen>

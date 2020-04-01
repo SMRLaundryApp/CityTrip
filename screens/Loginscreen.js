@@ -23,9 +23,7 @@ export default ({ navigation }) => (
           <Butoontext>Sign in</Butoontext>
         </Buttoon2>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => console.log('Forgot my password pressed')}
-      >
+      <TouchableOpacity onPress={() => navigation.navigate('Forgot_pw')}>
         <Txt>I forgot my password</Txt>
       </TouchableOpacity>
     </Container>
@@ -47,7 +45,7 @@ const Appname = styled.Text`
   font-size: 50px;
   font-weight: 600;
   margin-top: 1%;
-  text-shadow: 2px 2px 4px #000;
+  text-shadow: 2px 2px 4px #4d4d4d;
 `
 
 const Quote = styled.Text`
@@ -56,7 +54,7 @@ const Quote = styled.Text`
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 10%;
-  text-shadow: 2px 2px 4px #888;
+  text-shadow: 2px 2px 4px #4d4d4d;
 `
 
 const Txt = styled(Quote)`
@@ -73,13 +71,13 @@ const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #88c868;
-  border-radius: 100px;
+  background-color: #1dc9a6;
+  border-radius: 5px;
   margin: 10px;
 `
 
 const Buttoon2 = styled(Butoon)`
-  background-color: #61a93d;
+  background-color:  #19B092;
 `
 
 const Butoontext = styled.Text`
@@ -87,5 +85,4 @@ const Butoontext = styled.Text`
   font-size: 28px;
   font-weight: 400;
   color: #fff;
-  text-shadow: 2px 2px 4px #888;
 `

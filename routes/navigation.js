@@ -12,6 +12,7 @@ import Settings from '../screens/Settings'
 import Login from '../screens/Loginscreen'
 import SignUp from '../screens/SignUp'
 import SignIn from '../screens/SignIn'
+import Forgot_pw from '../screens/Forgot_pw'
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
@@ -65,6 +66,11 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
+      options={{ animationEnabled: false }}
+    />
+    <AuthStack.Screen
+      name="Forgot_pw"
+      component={Forgot_pw}
       options={{ animationEnabled: false }}
     />
   </AuthStack.Navigator>
