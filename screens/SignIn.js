@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native-gesture-handler'
-import { TextInput, Linking } from 'react-native'
-import { CheckBox, Input } from 'react-native-elements'
+import {  TouchableOpacity } from 'react-native-gesture-handler'
+import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 function GoToButton({ App }) {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate('App')}>
+  return(
+    <TouchableOpacity onPress ={() => navigation.navigate('App')}>
       <Butoon>
         <Butoontext>Sign in</Butoontext>
       </Butoon>
@@ -21,12 +17,12 @@ function GoToButton({ App }) {
 }
 
 export default class SignIn extends Component {
-  state = {
-    rp: false,
+  state = { 
+    rp: false 
   }
-
-  render() {
-    return (
+  
+  render(){
+    return(
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
@@ -34,13 +30,13 @@ export default class SignIn extends Component {
           <Inputfield placeholder={'  E-mail address'} />
           <InputTitle>Password:</InputTitle>
           <Inputfield placeholder={'  Password'} secureTextEntry={true} />
-          <CheckBox
-            center
-            title="Remember password"
-            checkedIcon="dot-circle-o"
-            uncheckedIcon="circle-o"
-            checked={this.state.rp}
-            onPress={() => this.setState({ rp: !this.state.rp })}
+          <CheckBox 
+          center 
+          title="Remember password" 
+          checkedIcon='dot-circle-o'
+          uncheckedIcon='circle-o'
+          checked={this.state.rp}
+          onPress={() => this.setState({rp: !this.state.rp})}
           />
           <GoToButton />
         </Container>
@@ -48,6 +44,7 @@ export default class SignIn extends Component {
     )
   }
 }
+
 
 const Screen = styled.ImageBackground`
   flex: 1;
@@ -93,8 +90,8 @@ const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #88c868;
-  border-radius: 100px;
+  background-color: #19B092;
+  border-radius: 5px;
   margin: 10px;
   margin-top: 20%;
 `
@@ -104,5 +101,4 @@ const Butoontext = styled.Text`
   font-size: 28px;
   font-weight: 400;
   color: #fff;
-  text-shadow: 2px 2px 4px #888;
 `

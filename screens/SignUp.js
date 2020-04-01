@@ -96,8 +96,8 @@ const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #88c868;
-  border-radius: 100px;
+  background-color: #19B092;
+  border-radius: 5px;
   margin: 10px;
   margin-top: 20%;
 `
@@ -107,5 +107,4 @@ const Butoontext = styled.Text`
   font-size: 28px;
   font-weight: 400;
   color: #fff;
-  text-shadow: 2px 2px 4px #888;
 `
