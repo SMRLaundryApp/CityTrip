@@ -35,6 +35,15 @@ class Greeting extends Component {
   }
 }
 
+class Name extends Component {
+  render(){
+    return(
+      <Container>
+        <UserName>{global.name}</UserName>
+      </Container>
+    )
+  }
+}
 export default class Welcomebar extends Component {
   render() {
     return (
@@ -42,7 +51,7 @@ export default class Welcomebar extends Component {
         <Titlebar>
           <Avatar source={require('../assets/avatar.jpg')} />
           <Greeting />
-          <Name>Bart</Name>
+          <Name />
         </Titlebar>
       </Container>
     )
@@ -75,7 +84,7 @@ const Title = styled.Text`
   color: #b8bece;
 `
 
-const Name = styled.Text`
+const UserName = styled.Text`
   font-size: 20px;
   color: #3c4560;
   font-weight: bold;

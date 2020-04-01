@@ -4,8 +4,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
+  global.name = state.name
 
   if(state.password === state.password_check){
     console.log("Great succes")
