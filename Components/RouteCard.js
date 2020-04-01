@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
-import { Dimensions } from 'react-native'
+import { Dimensions, Text, View } from 'react-native'
 import Modal from 'react-native-modal'
 import RoutePopup from './RoutePopup'
 
@@ -74,11 +74,25 @@ export default class RouteCard extends Component {
             backgroudColor: '#888',
             //maxHeight: Dimensions.get('window').height * 0.8
           }}
-          onBackdropPress={() => this.closeModal()}
-          onSwipeComplete={() => this.closeModal()}
-          swipeDirection="right"
+          // onBackdropPress={() => this.closeModal()}
+          // onSwipeComplete={() => this.closeModal()}
+          // swipeDirection="right"
         >
-          <RoutePopup id={this.props.id} />
+          <Container style={{ padding: 4 }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#19B092',
+                alignSelf: 'flex-end',
+                height: 20,
+                width: 20,
+                borderRadius: 10
+              }}
+              onPress={() => {this.setState({ isModalVisible: false })}}
+            >
+              <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
+            </TouchableOpacity>
+            <RoutePopup id={this.props.id} />
+          </Container>
         </Modal>
       </Clear>
     )
