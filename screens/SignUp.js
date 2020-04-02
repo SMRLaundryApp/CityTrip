@@ -5,7 +5,6 @@ import { CheckBox, Input } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 import { Linking } from 'react-native'
 
-
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
   global.name = state.name
@@ -15,7 +14,18 @@ function GoToButton({ App, state }) {
   // }
 
   return (
-    <TouchableOpacity onPress={() => {navigation.navigate('App'),console.log(state.name, state.mail, state.password, state.password_check, state.tof)}}>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('App'),
+          console.log(
+            state.name,
+            state.mail,
+            state.password,
+            state.password_check,
+            state.tof
+          )
+      }}
+    >
       <Butoon>
         <Butoontext>Sign up</Butoontext>
       </Butoon>
@@ -41,22 +51,43 @@ export default class SignUp extends Component {
         <Container>
           <Title>Sign up</Title>
           <InputTitle>First name:</InputTitle>
-          <Inputfield placeholder={'  First name'}  value={this.state.name} onChangeText={name => this.setState({ name })} />
+          <Inputfield
+            placeholder={'  First name'}
+            value={this.state.name}
+            onChangeText={(name) => this.setState({ name })}
+          />
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'}  value={this.state.mail} onChangeText={mail => this.setState({ mail })}/>
+          <Inputfield
+            placeholder={'  E-mail address'}
+            value={this.state.mail}
+            onChangeText={(mail) => this.setState({ mail })}
+          />
           <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true}  value={this.state.password} onChangeText={password => this.setState({ password })}/>
+          <Inputfield
+            placeholder={'  Password'}
+            secureTextEntry={true}
+            value={this.state.password}
+            onChangeText={(password) => this.setState({ password })}
+          />
           <InputTitle>Repeat password:</InputTitle>
           <Inputfield
             placeholder={'  Repeat password'}
             secureTextEntry={true}
-            secureTextEntry={true}  value={this.state.password_check} onChangeText={password_check => this.setState({ password_check })}
+            secureTextEntry={true}
+            value={this.state.password_check}
+            onChangeText={(password_check) => this.setState({ password_check })}
           />
           <Footer>
-            By signing up, you agree to Citytrips 
-            <Link onPress={()=> Linking.openURL(this.links.ToF)}> Terms of Use</Link>
+            By signing up, you agree to Citytrips
+            <Link onPress={() => Linking.openURL(this.links.ToF)}>
+              {' '}
+              Terms of Use
+            </Link>
             <Footer> and </Footer>
-            <Link onPress={()=> Linking.openURL(this.links.PP)}> Privacy policy.</Link> 
+            <Link onPress={() => Linking.openURL(this.links.PP)}>
+              {' '}
+              Privacy policy.
+            </Link>
           </Footer>
           <GoToButton state={this.state} />
         </Container>
@@ -110,17 +141,16 @@ const Footer = styled(InputTitle)`
 `
 
 const Link = styled(Footer)`
-  color: #19B092;
+  color: #19b092;
   text-decoration: underline;
   text-shadow: 1px 1px 0px #fff;
-
 `
 
 const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #19B092;
+  background-color: #19b092;
   border-radius: 5px;
   margin: 10px;
   margin-top: 15%;

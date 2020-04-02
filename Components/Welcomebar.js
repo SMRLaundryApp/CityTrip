@@ -25,13 +25,13 @@ function getDayTime() {
 }
 
 function getName() {
-  if(global.name === null){
-    return ("Lazy user")
-}
-          
-  if(global.name != ""){
+  if (global.name === null) {
+    return 'Lazy user'
+  }
+
+  if (global.name != '') {
     return global.name
-}
+  }
 }
 
 class Greeting extends Component {
@@ -46,9 +46,9 @@ class Greeting extends Component {
 }
 
 class Name extends Component {
-  render(){
+  render() {
     var inputName = getName()
-    return(
+    return (
       <Container>
         <UserName>{inputName}</UserName>
       </Container>

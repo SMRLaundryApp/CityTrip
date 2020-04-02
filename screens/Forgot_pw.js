@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {  TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 function GoToButton({ App, state }) {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
-  return(
-    <TouchableOpacity onPress ={() => {navigation.navigate('Login'), console.log(state.mail), alert("Sucks for you")}}>
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Login'),
+          console.log(state.mail),
+          alert('Sucks for you')
+      }}
+    >
       <Butoon>
         <Butoontext>Recover password</Butoontext>
       </Butoon>
@@ -16,26 +22,29 @@ function GoToButton({ App, state }) {
   )
 }
 
-export default class Forgot_pw extends Component { 
+export default class Forgot_pw extends Component {
   state = {
     mail: null,
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'} value={this.state.mail} onChangeText={mail => this.setState({ mail })} />
-         
+          <Inputfield
+            placeholder={'  E-mail address'}
+            value={this.state.mail}
+            onChangeText={(mail) => this.setState({ mail })}
+          />
+
           <GoToButton state={this.state} />
         </Container>
       </Screen>
     )
   }
 }
-
 
 const Screen = styled.ImageBackground`
   flex: 1;
@@ -81,7 +90,7 @@ const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #19B092;
+  background-color: #19b092;
   border-radius: 5px;
   margin: 10px;
   margin-top: 20%;
