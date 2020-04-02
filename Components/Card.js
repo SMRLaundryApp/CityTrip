@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
-import { Dimensions, Text } from 'react-native'
+import { Dimensions } from 'react-native'
 import Modal from 'react-native-modal'
 import POIPopup from './POIPopup'
 
@@ -57,9 +57,7 @@ export default class Card extends Component {
       </TouchableWithoutFeedback>
     )
     let titleSize = (
-      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-        {this.props.title}
-      </Title>
+      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>{this.props.title}</Title>
     )
 
     return (
@@ -85,7 +83,7 @@ export default class Card extends Component {
               }}
               onPress={() => {this.closeModal()}}
             >
-              <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
+              <CloseButton>×</CloseButton>
             </TouchableOpacity>
             <POIPopup image={this.props.image} title={this.props.title} distance={this.props.distance} city={this.props.city} description={this.props.description} hyperlink={this.props.hyperlink} />
           </Container>
@@ -145,4 +143,10 @@ const Distance = styled.Text`
   font-size: 15px;
   font-weight: 600;
   margin-top: 4px;
+`
+
+const CloseButton = styeld.Text`
+  text-align: center;
+  color: white;
+  font-weight: bold;
 `

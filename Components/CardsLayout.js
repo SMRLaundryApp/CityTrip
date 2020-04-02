@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableHighlightBase } from 'react-native'
 import styled from 'styled-components'
 import Card from './Card'
 import Constants from 'expo-constants'
@@ -8,7 +7,6 @@ import * as Permissions from 'expo-permissions'
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
-  // timeInterval : 5000
   distanceInterval: 10,
 }
 
@@ -90,14 +88,14 @@ export default class CardsLayout extends Component {
       columnTwo = undefined
     let userLocation = this.state.location.coords
     let POIs = []
-    let load = <Text> Getting user location... </Text>
+    let load = <Loading> Getting user location... </Loading>
     let sortedPointsOfInterest = []
 
     if (
       this.state.location.coords.latitude !== undefined &&
       this.state.location.coords.longitude !== undefined
     ) {
-      load = <Text> Sorting cards by distance... </Text>
+      load = <Loading> Sorting cards by distance... </Loading>
       POIs.push(
         pointsOfInterest.map(function (POI) {
           let userDistance = getDistance(
@@ -110,9 +108,7 @@ export default class CardsLayout extends Component {
         })
       )
       POIs = POIs[0]
-      load = <Text>{POIs}</Text>
       let sortedPOIs = sortDistance(POIs)
-      load = <Text>{sortedPOIs}</Text>
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(
           pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]
@@ -187,3 +183,5 @@ const ColumnTwo = styled.View`
   align-items: center;
   width: 50%;
 `
+
+const Loading = styled.Text``

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableHighlightBase } from 'react-native'
 import styled from 'styled-components'
 import RouteCard from './RouteCard'
 
@@ -15,6 +14,7 @@ export default class RoutesLayout extends Component {
       let image =
         pointsOfInterest[Number(route.POIs[0].split('#')[1])].image.url
       return (
+        // Give route POIs with RouteCard and let the coordinates of those POIs be imported in RoutePopup
         <RouteCard
           key={index}
           length={route.length}
@@ -22,14 +22,12 @@ export default class RoutesLayout extends Component {
           title={route.name}
           image={image}
           id={route.id}
-        /> // distance={1.2} />
+        />
       )
     })
 
     return (
       <Layout>
-        {/* {load} */}
-        {/* <Text> lol</Text> */}
         <Column>{routesList}</Column>
       </Layout>
     )
