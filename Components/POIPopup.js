@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Linking } from 'react-native'
 
 export default class POIPopup extends Component {
   render() {
