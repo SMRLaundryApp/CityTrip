@@ -31,7 +31,7 @@ export default class Forgot_pw extends Component {
     return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
-          <Title>Sign in</Title>
+          <Title>Forgot password</Title>
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield
             placeholder={'  E-mail address'}
@@ -69,11 +69,11 @@ const Inputfield = styled.TextInput`
 const Title = styled.Text`
   align-self: center;
   color: #fff;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 400;
   margin: 20px;
   text-shadow: 2px 2px 4px #4d4d4d;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `
 
 const InputTitle = styled.Text`
