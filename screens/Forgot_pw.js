@@ -8,21 +8,19 @@ function GoToButton({ App, state }) {
   const navigation = useNavigation();
 
   return(
-    <TouchableOpacity onPress ={() => {navigation.navigate('App'), console.log(state.mail, state.password, state.rp)}}>
+    <TouchableOpacity onPress ={() => {navigation.navigate('Login'), console.log(state.mail), alert("Sucks for you")}}>
       <Butoon>
-        <Butoontext>Sign in</Butoontext>
+        <Butoontext>Recover password</Butoontext>
       </Butoon>
     </TouchableOpacity>
   )
 }
 
-export default class SignIn extends Component {
-  state = { 
+export default class Forgot_pw extends Component { 
+  state = {
     mail: null,
-    password: null,
-    rp: false, 
   }
-  
+
   render(){
     return(
       <Screen source={require('../assets/test_background.jpg')}>
@@ -30,16 +28,7 @@ export default class SignIn extends Component {
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield placeholder={'  E-mail address'} value={this.state.mail} onChangeText={mail => this.setState({ mail })} />
-          <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true} value={this.state.password} onChangeText={password => this.setState({ password })} />
-          <CheckBox 
-          center 
-          title="Remember password" 
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-          checked={this.state.rp}
-          onPress={() => {this.setState({rp: !this.state.rp})}}
-          />
+         
           <GoToButton state={this.state} />
         </Container>
       </Screen>

@@ -6,7 +6,7 @@ import MapViewDirections from 'react-native-maps-directions'
 import GOOGLE_MAPS_APIKEY from '../private'
 import { Dimensions } from 'react-native'
 
-const screenWidth = Dimensions.get('window').width;
+const screenWidth = Dimensions.get('window').width
 
 export default class RoutePopup extends Component {
   state = {
@@ -40,10 +40,12 @@ export default class RoutePopup extends Component {
     let mapPOIs = []
     mapPOIs.push(
       routes[this.state.id].POIs.map((route) => {
-        return ({
-          latitude: pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
-          longitude:pointsOfInterest[Number(route.split('#')[1])].coords.longitude
-        })
+        return {
+          latitude:
+            pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
+          longitude:
+            pointsOfInterest[Number(route.split('#')[1])].coords.longitude,
+        }
       })
     )
     mapPOIs = mapPOIs[0]
@@ -58,10 +60,10 @@ export default class RoutePopup extends Component {
         destination={mapPOIs[mapPOIs.length - 1]}
         apikey={GOOGLE_MAPS_APIKEY}
         strokeWidth={3}
-        strokeColor='hotpink'
-        mode='WALKING'
+        strokeColor="hotpink"
+        mode="WALKING"
       />
-    );
+    )
 
     return (
       <Clear>

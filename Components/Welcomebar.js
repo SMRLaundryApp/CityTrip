@@ -24,6 +24,16 @@ function getDayTime() {
   return moment
 }
 
+function getName() {
+  if(global.name === null){
+    return ("Lazy user")
+}
+          
+  if(global.name != ""){
+    return global.name
+}
+}
+
 class Greeting extends Component {
   render() {
     var moment_day = getDayTime()
@@ -35,6 +45,16 @@ class Greeting extends Component {
   }
 }
 
+class Name extends Component {
+  render(){
+    var inputName = getName()
+    return(
+      <Container>
+        <UserName>{inputName}</UserName>
+      </Container>
+    )
+  }
+}
 export default class Welcomebar extends Component {
   render() {
     return (
@@ -42,7 +62,7 @@ export default class Welcomebar extends Component {
         <Titlebar>
           <Avatar source={require('../assets/avatar.jpg')} />
           <Greeting />
-          <Name>Bart</Name>
+          <Name />
         </Titlebar>
       </Container>
     )
@@ -75,7 +95,7 @@ const Title = styled.Text`
   color: #b8bece;
 `
 
-const Name = styled.Text`
+const UserName = styled.Text`
   font-size: 20px;
   color: #3c4560;
   font-weight: bold;
