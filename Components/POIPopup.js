@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import { View } from 'react-native';
 
 export default class POIPopup extends Component {
   render() {
@@ -16,6 +15,8 @@ export default class POIPopup extends Component {
             <ColumnTwo><ColumnText>{this.props.city}</ColumnText></ColumnTwo>
           </Table>
           <Description>{this.props.description}</Description>
+          {/* <Hyperlink linkDefault={true} ><Text>{this.props.hyperlink}</Text></Hyperlink> */}
+          <Hyperlink onPress={() => Linking.openURL(this.props.hyperlink)} >Read more</Hyperlink>
         </Content>
       </Clear>
     )
@@ -68,8 +69,15 @@ const ColumnText = styled.Text`
 `
 
 const Description = styled.Text`
-  margin-top: 5px;
   padding: 5px;
+  padding-bottom: 0px;
   color: white;
   text-align: justify;
+`
+
+const Hyperlink = styled.Text`
+  color: blue;
+  margin-bottom: 5px;
+  text-align: center;
+  text-decoration: underline;
 `
