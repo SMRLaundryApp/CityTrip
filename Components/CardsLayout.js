@@ -52,7 +52,7 @@ function sortDistance(info) {
 
 export default class CardsLayout extends Component {
   state = {
-    location: { coords: { latitude: undefined, longitude: undefined } },
+    location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
   }
 
   constructor(props) {
