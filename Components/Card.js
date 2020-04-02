@@ -145,7 +145,7 @@ const Distance = styled.Text`
   margin-top: 4px;
 `
 
-const CloseButton = styeld.Text`
+const CloseButton = styled.Text`
   text-align: center;
   color: white;
   font-weight: bold;
