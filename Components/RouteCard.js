@@ -81,11 +81,21 @@ export default class RouteCard extends Component {
                 alignSelf: 'flex-end',
                 height: 20,
                 width: 20,
-                borderRadius: 10
+                borderRadius: 10,
               }}
-              onPress={() => {this.closeModal()}}
+              onPress={() => {
+                this.closeModal()
+              }}
             >
-              <Text style={{ textAlign:'center', color:'white', fontWeight:'bold' }}>×</Text>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontWeight: 'bold',
+                }}
+              >
+                ×
+              </Text>
             </TouchableOpacity>
             <RoutePopup id={this.props.id} />
           </Container>

@@ -5,10 +5,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 function GoToButton({ App }) {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
-  return(
-    <TouchableOpacity onPress ={() => navigation.navigate('Login')}>
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
       <Butoon>
         <Butoontext>Sign out</Butoontext>
       </Butoon>
@@ -43,7 +43,6 @@ const Butoon = styled.View`
   border-radius: 5px;
   margin: 10px;
 `
-
 
 const Butoontext = styled.Text`
   align-self: center;

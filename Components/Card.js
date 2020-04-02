@@ -43,7 +43,9 @@ export default class Card extends Component {
         delayPressIn={5}
         delayPressOut={5}
         delayLongPress={5}
-        onPress={() => {this.openModal()}}
+        onPress={() => {
+          this.openModal()
+        }}
       >
         <Container width={cardWidth} height={cardHeight}>
           <Cover height={this.state.imageHeight}>
@@ -57,7 +59,9 @@ export default class Card extends Component {
       </TouchableWithoutFeedback>
     )
     let titleSize = (
-      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>{this.props.title}</Title>
+      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+        {this.props.title}
+      </Title>
     )
 
     return (
@@ -72,20 +76,36 @@ export default class Card extends Component {
             backgroudColor: '#888',
           }}
         >
-          <Container style={{ padding: 4, margin: 0, marginTop: 0, width: screenWidth - 20 }}>
+          <Container
+            style={{
+              padding: 4,
+              margin: 0,
+              marginTop: 0,
+              width: screenWidth - 20,
+            }}
+          >
             <TouchableOpacity
               style={{
                 backgroundColor: '#19B092',
                 alignSelf: 'flex-end',
                 height: 20,
                 width: 20,
-                borderRadius: 10
+                borderRadius: 10,
               }}
-              onPress={() => {this.closeModal()}}
+              onPress={() => {
+                this.closeModal()
+              }}
             >
               <CloseButton>×</CloseButton>
             </TouchableOpacity>
-            <POIPopup image={this.props.image} title={this.props.title} distance={this.props.distance} city={this.props.city} description={this.props.description} hyperlink={this.props.hyperlink} />
+            <POIPopup
+              image={this.props.image}
+              title={this.props.title}
+              distance={this.props.distance}
+              city={this.props.city}
+              description={this.props.description}
+              hyperlink={this.props.hyperlink}
+            />
           </Container>
         </Modal>
       </Clear>

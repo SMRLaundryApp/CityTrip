@@ -7,16 +7,22 @@ export default class POIPopup extends Component {
     return (
       <Clear>
         <Cover>
-          <Image source={{ uri: this.props.image }}/>
+          <Image source={{ uri: this.props.image }} />
         </Cover>
         <Content>
           <Title>{this.props.title}</Title>
           <Table>
-            <ColumnOne><ColumnText>{this.props.distance} km</ColumnText></ColumnOne>
-            <ColumnTwo><ColumnText>{this.props.city}</ColumnText></ColumnTwo>
+            <ColumnOne>
+              <ColumnText>{this.props.distance} km</ColumnText>
+            </ColumnOne>
+            <ColumnTwo>
+              <ColumnText>{this.props.city}</ColumnText>
+            </ColumnTwo>
           </Table>
           <Description>{this.props.description}</Description>
-          <Hyperlink onPress={() => Linking.openURL(this.props.hyperlink)} >Read more</Hyperlink>
+          <Hyperlink onPress={() => Linking.openURL(this.props.hyperlink)}>
+            Read more
+          </Hyperlink>
         </Content>
       </Clear>
     )
@@ -36,9 +42,7 @@ const Image = styled.Image`
   border-radius: 14px;
 `
 
-const Content = styled.View`
-
-`
+const Content = styled.View``
 
 const Title = styled.Text`
   color: white;

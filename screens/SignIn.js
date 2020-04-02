@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {  TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 function GoToButton({ App, state }) {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
-  return(
-    <TouchableOpacity onPress ={() => {navigation.navigate('App'), console.log(state.mail, state.password, state.rp)}}>
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('App'),
+          console.log(state.mail, state.password, state.rp)
+      }}
+    >
       <Butoon>
         <Butoontext>Sign in</Butoontext>
       </Butoon>
@@ -17,28 +22,39 @@ function GoToButton({ App, state }) {
 }
 
 export default class SignIn extends Component {
-  state = { 
+  state = {
     mail: null,
     password: null,
-    rp: false, 
+    rp: false,
   }
-  
-  render(){
-    return(
+
+  render() {
+    return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
           <InputTitle>E-mail address:</InputTitle>
-          <Inputfield placeholder={'  E-mail address'} value={this.state.mail} onChangeText={mail => this.setState({ mail })} />
+          <Inputfield
+            placeholder={'  E-mail address'}
+            value={this.state.mail}
+            onChangeText={(mail) => this.setState({ mail })}
+          />
           <InputTitle>Password:</InputTitle>
-          <Inputfield placeholder={'  Password'} secureTextEntry={true} value={this.state.password} onChangeText={password => this.setState({ password })} />
-          <CheckBox 
-          center 
-          title="Remember password" 
-          checkedIcon='dot-circle-o'
-          uncheckedIcon='circle-o'
-          checked={this.state.rp}
-          onPress={() => {this.setState({rp: !this.state.rp})}}
+          <Inputfield
+            placeholder={'  Password'}
+            secureTextEntry={true}
+            value={this.state.password}
+            onChangeText={(password) => this.setState({ password })}
+          />
+          <CheckBox
+            center
+            title="Remember password"
+            checkedIcon="dot-circle-o"
+            uncheckedIcon="circle-o"
+            checked={this.state.rp}
+            onPress={() => {
+              this.setState({ rp: !this.state.rp })
+            }}
           />
           <GoToButton state={this.state} />
         </Container>
@@ -46,7 +62,6 @@ export default class SignIn extends Component {
     )
   }
 }
-
 
 const Screen = styled.ImageBackground`
   flex: 1;
@@ -92,7 +107,7 @@ const Butoon = styled.View`
   align-self: center;
   width: 80%;
   height: 42px;
-  background-color: #19B092;
+  background-color: #19b092;
   border-radius: 5px;
   margin: 10px;
   margin-top: 20%;

@@ -77,7 +77,7 @@ const Butoon = styled.View`
 `
 
 const Buttoon2 = styled(Butoon)`
-  background-color:  #19B092;
+  background-color: #19b092;
 `
 
 const Butoontext = styled.Text`
