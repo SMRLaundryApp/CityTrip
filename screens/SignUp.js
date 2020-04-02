@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { CheckBox } from 'react-native-elements'
+import { CheckBox, Input } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
+import { Linking } from 'react-native'
 
 
 function GoToButton({ App, state }) {
@@ -23,12 +24,15 @@ function GoToButton({ App, state }) {
 }
 
 export default class SignUp extends Component {
+  links = {
+    ToF: 'https://youtu.be/zvkmLnS4sAQ',
+    PP: 'https://youtu.be/-9SXtQqVp9Q',
+  }
   state = {
     name: null,
     mail: null,
     password: null,
     password_check: null,
-    tof: false,
   }
 
   render() {
@@ -48,14 +52,12 @@ export default class SignUp extends Component {
             secureTextEntry={true}
             secureTextEntry={true}  value={this.state.password_check} onChangeText={password_check => this.setState({ password_check })}
           />
-          <CheckBox
-            center
-            title="I agree with the terms of use"
-            checkedIcon="dot-circle-o"
-            uncheckedIcon="circle-o"
-            checked={this.state.tof}
-            onPress={() => this.setState({ tof: !this.state.tof })}
-          />
+          <Footer>
+            By signing up, you agree to Citytrips 
+            <Link onPress={()=> Linking.openURL(this.links.ToF)}> Terms of Use</Link>
+            <Footer> and </Footer>
+            <Link onPress={()=> Linking.openURL(this.links.PP)}> Privacy policy.</Link> 
+          </Footer>
           <GoToButton state={this.state} />
         </Container>
       </Screen>
@@ -103,6 +105,17 @@ const InputTitle = styled.Text`
   text-shadow: 1px 1px 2px #4d4d4d;
 `
 
+const Footer = styled(InputTitle)`
+  font-size: 14px;
+`
+
+const Link = styled(Footer)`
+  color: #19B092;
+  text-decoration: underline;
+  text-shadow: 1px 1px 0px #fff;
+
+`
+
 const Butoon = styled.View`
   align-self: center;
   width: 80%;
@@ -110,7 +123,7 @@ const Butoon = styled.View`
   background-color: #19B092;
   border-radius: 5px;
   margin: 10px;
-  margin-top: 20%;
+  margin-top: 15%;
 `
 
 const Butoontext = styled.Text`
