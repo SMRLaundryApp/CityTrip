@@ -5,20 +5,24 @@ import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 const axios = require('axios').default;
-
-function postLogin({state}){
-  axios.post('https://citytrip.trifall.net/api/login', {username: state.mail, password: state.password})
-  .then(function (response) { console.log(response.data.Token); })
-  .catch(function (error) { console.log(error)});
-}
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
 
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
+  postLogin = () => { 
+  let name = state.login
+  let pw = state.password
+  axios.post('/login', {username: name, password: pw})
+  .then(function (response) { global.name = response.data.Token.user.username , navigation.navigate('App') })
+  .catch(function (error) { alert(error)});
+  //Add badge
+  }
+
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('App'), postLogin()
+        postLogin()
           // console.log(state.mail, state.password, state.rp)
       }}
     >
@@ -31,8 +35,8 @@ function GoToButton({ App, state }) {
 
 export default class SignIn extends Component {
   state = {
-    mail: null,
-    password: null,
+    login: '',
+    password: '',
     rp: false,
   }
 
@@ -41,15 +45,15 @@ export default class SignIn extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
-          <InputTitle>E-mail address:</InputTitle>
+          <InputTitle>Username:</InputTitle>
           <Inputfield
-            placeholder={'  E-mail address'}
+            placeholder={'  Enter your username or e-mail address'}
             value={this.state.mail}
-            onChangeText={(mail) => this.setState({ mail })}
+            onChangeText={(login) => this.setState({ login })}
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Password'}
+            placeholder={'  Enter your password'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}

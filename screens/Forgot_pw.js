@@ -4,16 +4,23 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
+const axios = require('axios').default;
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
+  postForgotPW = () => {
+    let email = state.mail
+
+    axios.post('', {email: email})
+    .then(function(response) {console.log(response),navigation.navigate('Login')})
+    .catch(function (error) { alert(error) })
+  }
+
   return (
     <TouchableOpacity
-      onPress={() => {
-        navigation.navigate('Login'),
-          console.log(state.mail),
-          alert('Sucks for you')
-      }}
+      onPress={() => { postForgotPW() }}
     >
       <Butoon>
         <Butoontext>Recover password</Butoontext>
@@ -24,14 +31,14 @@ function GoToButton({ App, state }) {
 
 export default class Forgot_pw extends Component {
   state = {
-    mail: null,
+    mail: '',
   }
 
   render() {
     return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
-          <Title>Sign in</Title>
+          <Title>Forgot password</Title>
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield
             placeholder={'  E-mail address'}
@@ -69,11 +76,11 @@ const Inputfield = styled.TextInput`
 const Title = styled.Text`
   align-self: center;
   color: #fff;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 400;
   margin: 20px;
   text-shadow: 2px 2px 4px #4d4d4d;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `
 
 const InputTitle = styled.Text`
