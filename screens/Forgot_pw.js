@@ -4,16 +4,23 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
+const axios = require('axios').default;
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
+  postForgotPW = () => {
+    let email = state.mail
+
+    axios.post('', {email: email})
+    .then(function(response) {console.log(response),navigation.navigate('Login')})
+    .catch(function (error) { alert(error) })
+  }
+
   return (
     <TouchableOpacity
-      onPress={() => {
-        navigation.navigate('Login'),
-          console.log(state.mail),
-          alert('Sucks for you')
-      }}
+      onPress={() => { postForgotPW() }}
     >
       <Butoon>
         <Butoontext>Recover password</Butoontext>
@@ -24,7 +31,7 @@ function GoToButton({ App, state }) {
 
 export default class Forgot_pw extends Component {
   state = {
-    mail: null,
+    mail: '',
   }
 
   render() {
