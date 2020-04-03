@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
-import { Dimensions, Text, View } from 'react-native'
-import Modal from 'react-native-modal'
-import RoutePopup from './RoutePopup'
+import { Dimensions } from 'react-native'
+import RouteExtension from './RouteExtension'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth - 20
@@ -13,7 +12,8 @@ const imageWidth = screenWidth / 3
 export default class RouteCard extends Component {
   state = {
     isModalVisible: false,
-    id: Number(this.props.id.split('#')[1]),
+    isRouteVisible: false,
+    id: this.props.id,
   }
 
   constructor(props) {
@@ -28,6 +28,10 @@ export default class RouteCard extends Component {
     this.setState({ isModalVisible: false })
   }
 
+  toggleRoute = () => {
+    this.setState({ isRouteVisible: !this.state.isRouteVisible })
+  }
+
   render() {
     let durationHours = Math.floor((this.props.duration / 5).toFixed(0) / 12)
     let durationMinutes = ((this.props.duration / 5).toFixed(0) % 12) * 5
@@ -39,6 +43,21 @@ export default class RouteCard extends Component {
     }
     if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
 
+    let routeExtension = undefined;
+    let radius = 14;
+
+    if (this.state.isRouteVisible) {
+      routeExtension = (
+        <RouteContainer width={cardWidth} >
+          <RouteExtension id={this.props.id} />
+        </RouteContainer>
+      )
+      radius = 0;
+    }
+    else {
+      radius = 14;
+    }
+
     return (
       <Clear>
         <TouchableWithoutFeedback
@@ -46,60 +65,20 @@ export default class RouteCard extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            console.log('roekoeroekoe')
-            this.openModal()
+            this.toggleRoute()
           }}
         >
-          <Container width={cardWidth} height={cardHeight}>
-            <Cover width={imageWidth}>
+          <Container style={{ borderBottomRightRadius: radius }} width={cardWidth} height={cardHeight}>
+            <Cover style={{ borderBottomLeftRadius: radius }} width={imageWidth}>
               <Image source={{ uri: this.props.image }} />
             </Cover>
-            <Content
-              left={imageWidth}
-              height={cardHeight}
-              width={cardWidth - imageWidth}
-            >
+            <Content left={imageWidth} height={cardHeight} width={cardWidth - imageWidth} >
               <Title>{this.props.title}</Title>
-              <Info>
-                {this.props.length} km | {duration}
-              </Info>
+              <Info>{this.props.length} km | {duration}</Info>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
-        <Modal
-          animationIn="slideInRight"
-          animationOut="slideOutRight"
-          isVisible={this.state.isModalVisible}
-          style={{
-            backgroudColor: '#888',
-          }}
-        >
-          <Container style={{ padding: 4 }}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: '#19B092',
-                alignSelf: 'flex-end',
-                height: 20,
-                width: 20,
-                borderRadius: 10,
-              }}
-              onPress={() => {
-                this.closeModal()
-              }}
-            >
-              <Text
-                style={{
-                  textAlign: 'center',
-                  color: 'white',
-                  fontWeight: 'bold',
-                }}
-              >
-                ×
-              </Text>
-            </TouchableOpacity>
-            <RoutePopup id={this.props.id} />
-          </Container>
-        </Modal>
+        {routeExtension}
       </Clear>
     )
   }
@@ -111,7 +90,6 @@ const Container = styled.View`
   align-self: center;
   background: #888;
   border-radius: 14px;
-  margin: 0%;
   margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
 `
@@ -120,7 +98,6 @@ const Cover = styled.View`
   position: absolute;
   height: 100%;
   border-top-left-radius: 14px;
-  border-bottom-left-radius: 14px;
   overflow: hidden;
 `
 
@@ -149,4 +126,12 @@ const Info = styled.Text`
   font-size: 15px;
   font-weight: 600;
   margin-top: 4px;
+`
+
+const RouteContainer = styled.View`
+  padding: 10px;
+  padding-bottom: 0px;
+  background-color: #aaa;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 `

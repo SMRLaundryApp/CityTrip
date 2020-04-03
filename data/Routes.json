@@ -1,9 +1,9 @@
 [
   {
-    "id": "#0000",
+    "id": 0,
     "name": "Leiden Windmill",
     "type": "lineair",
-    "POIs": ["#0000", "#0004", "#0003", "#0014", "#0013", "#0016"],
+    "POIs": [0, 4, 3, 14, 13, 16],
     "region": {
       "latitude": 52.169771,
       "longitude": 4.485997,
@@ -15,10 +15,10 @@
     "description": "This route takes you throught Leiden and shows you some of the windmills this city has to offer. The windmills that will be viewed are the Heesterboom Molen, Molen De Put, Molen De Valk, Maredijkmolen, Molen De Herder, Kikkermolen and the Stadsmolen. Molen De Herder isn't accesable, however it is visable from the Maredijkmolen. You can either start at the Stadsmolen or the Heesterboom Molen."
   },
   {
-    "id": "#0001",
+    "id": 1,
     "name": "Test 1",
     "type": "circular",
-    "POIs": ["#0001"],
+    "POIs": [1],
     "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
@@ -30,10 +30,10 @@
     "description": ""
   },
   {
-    "id": "#0002",
+    "id": 2,
     "name": "Test 2",
     "type": "lineair",
-    "POIs": ["#0002"],
+    "POIs": [2],
     "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
@@ -45,10 +45,10 @@
     "description": ""
   },
   {
-    "id": "#0003",
+    "id": 3,
     "name": "Test 3",
     "type": "circular",
-    "POIs": ["#0003"],
+    "POIs": [3],
     "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
@@ -60,10 +60,10 @@
     "description": ""
   },
   {
-    "id": "#0004",
+    "id": 4,
     "name": "Test 4",
     "type": "lineair",
-    "POIs": ["#0004"],
+    "POIs": [4],
     "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
@@ -75,10 +75,10 @@
     "description": ""
   },
   {
-    "id": "#0005",
+    "id": 5,
     "name": "Test 5",
     "type": "lineair",
-    "POIs": ["#0005"],
+    "POIs": [5],
     "region": {
       "latitude": 52.167751,
       "longitude": 4.485977,
