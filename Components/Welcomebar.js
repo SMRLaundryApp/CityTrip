@@ -60,7 +60,7 @@ export default class Welcomebar extends Component {
     return (
       <Container>
         <Titlebar>
-          <Avatar source={require('../assets/avatar.jpg')} />
+          <Avatar source={require('../assets/icon_new.png')} />
           <Greeting />
           <Name />
         </Titlebar>
