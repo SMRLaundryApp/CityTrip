@@ -166,7 +166,7 @@ const CloseButton = styled.Text`
 const RouteContainer = styled.View`
   padding: 10px;
   padding-bottom: 0px;
-  backgroundColor: #888;
+  backgroundColor: #999;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `

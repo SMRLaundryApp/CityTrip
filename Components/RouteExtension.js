@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Text } from 'react-native'
 import styled from 'styled-components'
-import MapView, { Marker } from 'react-native-maps'
+import MapView, { Marker, Callout } from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions'
 import GOOGLE_MAPS_APIKEY from '../private'
 import userLocationPin from '../assets/userLocation.png'
@@ -20,12 +20,43 @@ const GEOLOCATION_OPTIONS = {
   distanceInterval: 10,
 }
 
+function toRadians(degree) {
+  return (Math.PI / 180) * degree
+}
+
+function getDistance(
+  userLocationLatitude,
+  userLocationLongitude,
+  POILocationLatitude,
+  POILocationLongitude
+) {
+  let R = 6371
+  let lat1 = toRadians(userLocationLatitude)
+  let lat2 = toRadians(POILocationLatitude)
+  let dLat = toRadians(POILocationLatitude - userLocationLatitude)
+  let dLng = toRadians(POILocationLongitude - userLocationLongitude)
+
+  let a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) * Math.sin(dLng / 2)
+  let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+
+  return R * c
+}
+
 export default class RouteExtension extends Component {
   state = {
     id: this.props.id,
     region: undefined,
     location: { coords: { latitude: 0, longitude: 0 } },
     errorMessage: null,
+    isModalVisible: false,
+    image: undefined,
+    title: undefined,
+    distance: undefined,
+    city: undefined,
+    description: undefined,
+    hyperlink: undefined
   }
 
   constructor(props) {
@@ -55,6 +86,10 @@ export default class RouteExtension extends Component {
     // console.log(location);
   }
 
+  closeModal = () => {
+    this.setState({ isModalVisible: false })
+  }
+
   render() {
     let userLocation = (
       <Marker
@@ -74,7 +109,7 @@ export default class RouteExtension extends Component {
       return (
         <Marker
           key={index}
-          title={pointsOfInterest[route].name}
+          // title={pointsOfInterest[route].name}
           pinColor="#19B092"
           coordinate={{
             latitude:
@@ -82,13 +117,29 @@ export default class RouteExtension extends Component {
             longitude:
               pointsOfInterest[route].coords.longitude,
           }}
-          onPress={() => {
-            console.log('roekoeroekoe')
-            this.setState({
-              image: pointsOfInterest[route].image
-            })
-          }}
-        />
+        >
+          <Callout
+            onPress={() => {
+              this.setState({
+                image: pointsOfInterest[route].image.url,
+                title: pointsOfInterest[route].name,
+                distance: getDistance(
+                  this.state.location.coords.latitude,
+                  this.state.location.coords.longitude,
+                  pointsOfInterest[route].coords.latitude,
+                  pointsOfInterest[route].coords.longitude
+                ).toFixed(2),
+                city: pointsOfInterest[route].city,
+                description: pointsOfInterest[route].description,
+                hyperlink: pointsOfInterest[route].hyperlink,
+                isModalVisible: true
+              })
+            }}
+          >
+            <MarkerTitle>{pointsOfInterest[route].name}</MarkerTitle>
+            <MarkerInfo>Press to show POI information</MarkerInfo>
+          </Callout>
+        </Marker>
       )
     })
 
@@ -246,14 +297,6 @@ const CloseButton = styled.Text`
   font-weight: bold;
 `
 
-const Title = styled.Text`
-  padding-bottom: 10px;
-  color: #fff;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-`
-
 const Description = styled.Text`
   margin-top: 5px;
   margin-bottom: 0px;
@@ -264,5 +307,14 @@ const Description = styled.Text`
 const ZoomButton = styled.Text`
   color: white;
   font-weight: bold;
+  text-align: center;
+`
+
+const MarkerTitle = styled.Text`
+  text-align: center;
+  font-weight: bold;
+`
+
+const MarkerInfo = styled.Text`
   text-align: center;
 `
