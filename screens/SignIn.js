@@ -35,8 +35,8 @@ function GoToButton({ App, state }) {
 
 export default class SignIn extends Component {
   state = {
-    login: null,
-    password: null,
+    login: '',
+    password: '',
     rp: false,
   }
 

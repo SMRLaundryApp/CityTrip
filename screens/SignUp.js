@@ -5,25 +5,32 @@ import { CheckBox, Input } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 import { Linking } from 'react-native'
 
+const axios = require('axios').default;
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
-  global.name = state.name
 
-  // if(state.password === state.password_check){
-  //   console.log("Great succes")
-  // }
+  postSignup = () => {
+    let name = state.username
+    let email = state.mail
+    let pw = state.password 
+    let pw_check = state.password_check 
+    
+    if(pw != pw_check){
+      alert('Passwords do not match')
+    }
+    else {
+      axios.post('/users/maker', {Username: name, Email: email, Password: pw})
+      .then(function (response) {navigation.navigate('App')})
+      .catch(function (error) { alert(error)});
+    }
+  }
 
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('App'),
-          console.log(
-            state.name,
-            state.mail,
-            state.password,
-            state.password_check,
-            state.tof
-          )
+        postSignup()
       }}
     >
       <Butoon>
@@ -39,10 +46,10 @@ export default class SignUp extends Component {
     PP: 'https://youtu.be/-9SXtQqVp9Q',
   }
   state = {
-    name: null,
-    mail: null,
-    password: null,
-    password_check: null,
+    username: '',
+    mail: '',
+    password: '',
+    password_check: '',
   }
 
   render() {
@@ -50,28 +57,28 @@ export default class SignUp extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign up</Title>
-          <InputTitle>First name:</InputTitle>
+          <InputTitle>Username:</InputTitle>
           <Inputfield
-            placeholder={'  First name'}
+            placeholder={'  Enter username:'}
             value={this.state.name}
-            onChangeText={(name) => this.setState({ name })}
+            onChangeText={(username) => this.setState({ username })}
           />
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield
-            placeholder={'  E-mail address'}
+            placeholder={'  Enter e-mail address:'}
             value={this.state.mail}
             onChangeText={(mail) => this.setState({ mail })}
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Password'}
+            placeholder={'  Enter password:'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
           />
           <InputTitle>Repeat password:</InputTitle>
           <Inputfield
-            placeholder={'  Repeat password'}
+            placeholder={'  Repeat password:'}
             secureTextEntry={true}
             secureTextEntry={true}
             value={this.state.password_check}

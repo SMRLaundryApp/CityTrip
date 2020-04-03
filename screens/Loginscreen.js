@@ -41,9 +41,10 @@ const Container = styled.View`
 const Appname = styled.Text`
   position: relative;
   align-self: center;
+  text-transform: uppercase;
   color: #fff;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 45px;
+  font-weight: 900;
   margin-top: 1%;
   text-shadow: 2px 2px 4px #4d4d4d;
 `
