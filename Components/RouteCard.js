@@ -3,7 +3,7 @@ import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { Dimensions } from 'react-native'
 import Modal from 'react-native-modal'
-import RoutePopup from './RoutePopup'
+import RouteExtension from './RouteExtension'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth - 20
@@ -44,13 +44,13 @@ export default class RouteCard extends Component {
     }
     if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
 
-    let route = undefined;
+    let routeExtension = undefined;
     let radius = 14;
 
     if (this.state.isRouteVisible) {
-      route = (
+      routeExtension = (
         <RouteContainer width={cardWidth} >
-          <RoutePopup id={this.props.id} />
+          <RouteExtension id={this.props.id} />
         </RouteContainer>
       )
       radius = 0;
@@ -81,8 +81,8 @@ export default class RouteCard extends Component {
             </Content>
           </Container>
         </TouchableWithoutFeedback>
-        {route}
-        <Modal
+        {routeExtension}
+        {/* <Modal
           animationIn="slideInRight"
           animationOut="slideOutRight"
           isVisible={this.state.isModalVisible}
@@ -107,7 +107,7 @@ export default class RouteCard extends Component {
             </TouchableOpacity>
             <RoutePopup id={this.props.id} />
           </Container>
-        </Modal>
+        </Modal> */}
       </Clear>
     )
   }

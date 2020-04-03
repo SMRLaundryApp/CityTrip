@@ -15,7 +15,7 @@ const GEOLOCATION_OPTIONS = {
   distanceInterval: 10,
 }
 
-export default class RoutePopup extends Component {
+export default class RouteExtension extends Component {
   state = {
     id: Number(this.props.id.split('#')[1]),
     region: undefined,
