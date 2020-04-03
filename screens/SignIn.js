@@ -13,8 +13,8 @@ function GoToButton({ App, state }) {
   postLogin = () => { 
   let name = state.login
   let pw = state.password
-  axios.post('/login', {username: name, password: pw})
-  .then(function (response) { global.name = response.data.Token.user.username , navigation.navigate('App') })
+  axios.post('/login', {email: name, password: pw})
+  .then(function (response) { global.name = response.data.user.username , navigation.navigate('App') })
   .catch(function (error) { alert(error)});
   //Add badge
   }
@@ -45,9 +45,9 @@ export default class SignIn extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
-          <InputTitle>Username:</InputTitle>
+          <InputTitle>E-mail address:</InputTitle>
           <Inputfield
-            placeholder={'  Enter your username or e-mail address'}
+            placeholder={'  Enter your e-mail address'}
             value={this.state.mail}
             onChangeText={(login) => this.setState({ login })}
           />
