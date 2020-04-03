@@ -10,7 +10,7 @@ function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
   postLogin = () => { 
-  let name = state.mail
+  let name = state.login
   let pw = state.password
   axios.post('https://citytrip.trifall.net/api/login', {username: name, password: pw})
   .then(function (response) { console.log(response.data.Token), navigation.navigate('App') })
@@ -34,7 +34,7 @@ function GoToButton({ App, state }) {
 
 export default class SignIn extends Component {
   state = {
-    mail: null,
+    login: null,
     password: null,
     rp: false,
   }
@@ -44,15 +44,15 @@ export default class SignIn extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
-          <InputTitle>E-mail address:</InputTitle>
+          <InputTitle>Username:</InputTitle>
           <Inputfield
-            placeholder={'  E-mail address'}
+            placeholder={'  Enter your username or e-mail address'}
             value={this.state.mail}
-            onChangeText={(mail) => this.setState({ mail })}
+            onChangeText={(login) => this.setState({ login })}
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Password'}
+            placeholder={'  Enter your password'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
