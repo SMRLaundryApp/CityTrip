@@ -67,7 +67,6 @@ export default class RoutePopup extends Component {
 
     return (
       <Clear>
-        <Title>{routes[this.state.id].name}</Title>
         <MapView
           style={{
             width: '100%',

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Dimensions, Text, View } from 'react-native'
 import Modal from 'react-native-modal'
 import RoutePopup from './RoutePopup'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth - 20
@@ -13,6 +14,7 @@ const imageWidth = screenWidth / 3
 export default class RouteCard extends Component {
   state = {
     isModalVisible: false,
+    isRouteVisible: false,
     id: Number(this.props.id.split('#')[1]),
   }
 
@@ -28,6 +30,10 @@ export default class RouteCard extends Component {
     this.setState({ isModalVisible: false })
   }
 
+  toggleRoute = () => {
+    this.setState({ isRouteVisible: !this.state.isRouteVisible })
+  }
+
   render() {
     let durationHours = Math.floor((this.props.duration / 5).toFixed(0) / 12)
     let durationMinutes = ((this.props.duration / 5).toFixed(0) % 12) * 5
@@ -39,6 +45,23 @@ export default class RouteCard extends Component {
     }
     if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
 
+    let route = undefined;
+    let radius = 14;
+
+    if (this.state.isRouteVisible) {
+      route = (
+        <RouteContainer width={cardWidth} >
+          {/* <ScrollView > */}
+            <RoutePopup id={this.props.id} />
+          {/* </ScrollView> */}
+        </RouteContainer>
+      )
+      radius = 0;
+    }
+    else {
+      radius = 14;
+    }
+
     return (
       <Clear>
         <TouchableWithoutFeedback
@@ -47,25 +70,21 @@ export default class RouteCard extends Component {
           delayLongPress={5}
           onPress={() => {
             console.log('roekoeroekoe')
-            this.openModal()
+            // this.openModal()
+            this.toggleRoute()
           }}
         >
-          <Container width={cardWidth} height={cardHeight}>
-            <Cover width={imageWidth}>
+          <Container style={{ borderBottomRightRadius: radius }} width={cardWidth} height={cardHeight}>
+            <Cover style={{ borderBottomLeftRadius: radius }} width={imageWidth}>
               <Image source={{ uri: this.props.image }} />
             </Cover>
-            <Content
-              left={imageWidth}
-              height={cardHeight}
-              width={cardWidth - imageWidth}
-            >
+            <Content left={imageWidth} height={cardHeight} width={cardWidth - imageWidth} >
               <Title>{this.props.title}</Title>
-              <Info>
-                {this.props.length} km | {duration}
-              </Info>
+              <Info>{this.props.length} km | {duration}</Info>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
+        {route}
         <Modal
           animationIn="slideInRight"
           animationOut="slideOutRight"
@@ -87,15 +106,7 @@ export default class RouteCard extends Component {
                 this.closeModal()
               }}
             >
-              <Text
-                style={{
-                  textAlign: 'center',
-                  color: 'white',
-                  fontWeight: 'bold',
-                }}
-              >
-                ×
-              </Text>
+              <CloseButton>×</CloseButton>
             </TouchableOpacity>
             <RoutePopup id={this.props.id} />
           </Container>
@@ -120,7 +131,6 @@ const Cover = styled.View`
   position: absolute;
   height: 100%;
   border-top-left-radius: 14px;
-  border-bottom-left-radius: 14px;
   overflow: hidden;
 `
 
@@ -149,4 +159,18 @@ const Info = styled.Text`
   font-size: 15px;
   font-weight: 600;
   margin-top: 4px;
+`
+
+const CloseButton = styled.Text`
+  text-align: center;
+  color: white;
+  font-weight: bold;
+`
+
+const RouteContainer = styled.View`
+  padding: 5px;
+  backgroundColor: #888;
+  height: 500px; 
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 `
