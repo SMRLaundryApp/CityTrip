@@ -5,6 +5,7 @@ import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 const axios = require('axios').default;
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
 
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
@@ -12,8 +13,8 @@ function GoToButton({ App, state }) {
   postLogin = () => { 
   let name = state.login
   let pw = state.password
-  axios.post('https://citytrip.trifall.net/api/login', {username: name, password: pw})
-  .then(function (response) { console.log(response.data.Token), navigation.navigate('App') })
+  axios.post('/login', {username: name, password: pw})
+  .then(function (response) { global.name = response.data.Token.user.username , navigation.navigate('App') })
   .catch(function (error) { alert(error)});
   //Add badge
   }
