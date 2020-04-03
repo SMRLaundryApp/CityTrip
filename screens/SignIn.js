@@ -4,14 +4,22 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
+const axios = require('axios').default;
+
+function postLogin({state}){
+  axios.post('https://citytrip.trifall.net/api/login', {username: state.mail, password: state.password})
+  .then(function (response) { console.log(response.data.Token); })
+  .catch(function (error) { console.log(error)});
+}
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('App'),
-          console.log(state.mail, state.password, state.rp)
+        navigation.navigate('App'), postLogin()
+          // console.log(state.mail, state.password, state.rp)
       }}
     >
       <Butoon>
