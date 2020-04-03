@@ -52,7 +52,7 @@ export default class Map extends Component {
   // }
 
   render() {
-    UserLocation = (
+    let userLocation = (
       <Marker
         title="User location"
         image={userLocationPin}
@@ -88,7 +88,7 @@ export default class Map extends Component {
           longitudeDelta: 4,
         }}
       >
-        {UserLocation}
+        {userLocation}
         {POIs}
       </MapView>
     )

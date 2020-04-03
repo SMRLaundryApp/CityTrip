@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import RouteCard from './RouteCard'
+import { ScrollView } from 'react-native-gesture-handler'
 
 export default class RoutesLayout extends Component {
   render() {
@@ -27,17 +28,12 @@ export default class RoutesLayout extends Component {
     })
 
     return (
-      <Layout>
-        <Column>{routesList}</Column>
-      </Layout>
+        <ScrollView style={{ marginBottom: 120, overflow: 'scroll' }} pinchGestureEnabled={false} >
+          <Column>{routesList}</Column>
+        </ScrollView>
     )
   }
 }
-
-const Layout = styled.View`
-  flex-direction: row;
-  margin-bottom: 170px;
-`
 
 const Column = styled.View`
   align-items: center;

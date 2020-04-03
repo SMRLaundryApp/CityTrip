@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
-import { Dimensions, Text, View } from 'react-native'
+import { Dimensions } from 'react-native'
 import Modal from 'react-native-modal'
 import RoutePopup from './RoutePopup'
-import { ScrollView } from 'react-native-gesture-handler'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth - 20
@@ -51,9 +50,7 @@ export default class RouteCard extends Component {
     if (this.state.isRouteVisible) {
       route = (
         <RouteContainer width={cardWidth} >
-          {/* <ScrollView > */}
-            <RoutePopup id={this.props.id} />
-          {/* </ScrollView> */}
+          <RoutePopup id={this.props.id} />
         </RouteContainer>
       )
       radius = 0;
@@ -122,7 +119,6 @@ const Container = styled.View`
   align-self: center;
   background: #888;
   border-radius: 14px;
-  margin: 0%;
   margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
 `
@@ -168,9 +164,9 @@ const CloseButton = styled.Text`
 `
 
 const RouteContainer = styled.View`
-  padding: 5px;
+  padding: 10px;
+  padding-bottom: 0px;
   backgroundColor: #888;
-  height: 500px; 
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `
