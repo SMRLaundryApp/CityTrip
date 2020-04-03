@@ -43,19 +43,18 @@ export default class RouteCard extends Component {
     }
     if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
 
-    let routeExtension = undefined;
-    let radius = 14;
+    let routeExtension = undefined
+    let radius = 14
 
     if (this.state.isRouteVisible) {
       routeExtension = (
-        <RouteContainer width={cardWidth} >
+        <RouteContainer width={cardWidth}>
           <RouteExtension id={this.props.id} />
         </RouteContainer>
       )
-      radius = 0;
-    }
-    else {
-      radius = 14;
+      radius = 0
+    } else {
+      radius = 14
     }
 
     return (
@@ -68,13 +67,26 @@ export default class RouteCard extends Component {
             this.toggleRoute()
           }}
         >
-          <Container style={{ borderBottomRightRadius: radius }} width={cardWidth} height={cardHeight}>
-            <Cover style={{ borderBottomLeftRadius: radius }} width={imageWidth}>
+          <Container
+            style={{ borderBottomRightRadius: radius }}
+            width={cardWidth}
+            height={cardHeight}
+          >
+            <Cover
+              style={{ borderBottomLeftRadius: radius }}
+              width={imageWidth}
+            >
               <Image source={{ uri: this.props.image }} />
             </Cover>
-            <Content left={imageWidth} height={cardHeight} width={cardWidth - imageWidth} >
+            <Content
+              left={imageWidth}
+              height={cardHeight}
+              width={cardWidth - imageWidth}
+            >
               <Title>{this.props.title}</Title>
-              <Info>{this.props.length} km | {duration}</Info>
+              <Info>
+                {this.props.length} km | {duration}
+              </Info>
             </Content>
           </Container>
         </TouchableWithoutFeedback>

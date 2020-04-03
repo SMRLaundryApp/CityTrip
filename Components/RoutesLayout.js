@@ -27,9 +27,12 @@ export default class RoutesLayout extends Component {
     })
 
     return (
-        <ScrollView style={{ marginBottom: 120, overflow: 'scroll' }} pinchGestureEnabled={false} >
-          <Column>{routesList}</Column>
-        </ScrollView>
+      <ScrollView
+        style={{ marginBottom: 120, overflow: 'scroll' }}
+        pinchGestureEnabled={false}
+      >
+        <Column>{routesList}</Column>
+      </ScrollView>
     )
   }
 }

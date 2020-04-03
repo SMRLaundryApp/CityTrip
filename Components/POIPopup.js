@@ -80,7 +80,7 @@ const Description = styled.Text`
 `
 
 const Hyperlink = styled.Text`
-  color: #19B092;
+  color: #19b092;
   margin-bottom: 5px;
   text-align: center;
   text-decoration: underline;

@@ -56,7 +56,7 @@ export default class RouteExtension extends Component {
     distance: undefined,
     city: undefined,
     description: undefined,
-    hyperlink: undefined
+    hyperlink: undefined,
   }
 
   constructor(props) {
@@ -111,10 +111,8 @@ export default class RouteExtension extends Component {
           // title={pointsOfInterest[route].name}
           pinColor="#19B092"
           coordinate={{
-            latitude:
-              pointsOfInterest[route].coords.latitude,
-            longitude:
-              pointsOfInterest[route].coords.longitude,
+            latitude: pointsOfInterest[route].coords.latitude,
+            longitude: pointsOfInterest[route].coords.longitude,
           }}
         >
           <Callout
@@ -131,7 +129,7 @@ export default class RouteExtension extends Component {
                 city: pointsOfInterest[route].city,
                 description: pointsOfInterest[route].description,
                 hyperlink: pointsOfInterest[route].hyperlink,
-                isModalVisible: true
+                isModalVisible: true,
               })
             }}
           >
@@ -146,10 +144,8 @@ export default class RouteExtension extends Component {
     mapPOIs.push(
       routes[this.state.id].POIs.map((route) => {
         return {
-          latitude:
-            pointsOfInterest[route].coords.latitude,
-          longitude:
-            pointsOfInterest[route].coords.longitude,
+          latitude: pointsOfInterest[route].coords.latitude,
+          longitude: pointsOfInterest[route].coords.longitude,
         }
       })
     )
@@ -175,10 +171,12 @@ export default class RouteExtension extends Component {
         <MapView
           style={{
             width: '100%',
-            height: 250
+            height: 250,
           }}
           initialRegion={routes[this.state.id].region}
-          onRegionChangeComplete={(region) => {this.setState({region: region})}}
+          onRegionChangeComplete={(region) => {
+            this.setState({ region: region })
+          }}
           region={this.state.region}
           zoomEnabled={false}
         >
@@ -188,14 +186,14 @@ export default class RouteExtension extends Component {
         </MapView>
         <TouchableOpacity
           style={{
-            backgroundColor:'#19B092',
+            backgroundColor: '#19B092',
             width: 25,
             height: 25,
             borderRadius: 100,
             position: 'absolute',
             justifyContent: 'center',
             right: 5,
-            top: 5
+            top: 5,
           }}
           onPress={() => {
             this.setState({
@@ -203,8 +201,8 @@ export default class RouteExtension extends Component {
                 latitude: this.state.region.latitude,
                 longitude: this.state.region.longitude,
                 latitudeDelta: this.state.region.latitudeDelta * 0.5,
-                longitudeDelta: this.state.region.longitudeDelta * 0.5
-              }
+                longitudeDelta: this.state.region.longitudeDelta * 0.5,
+              },
             })
           }}
         >
@@ -212,14 +210,14 @@ export default class RouteExtension extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            backgroundColor:'#19B092',
+            backgroundColor: '#19B092',
             width: 25,
             height: 25,
             borderRadius: 100,
             position: 'absolute',
             justifyContent: 'center',
             right: 5,
-            top: 35
+            top: 35,
           }}
           onPress={() => {
             this.setState({
@@ -227,8 +225,8 @@ export default class RouteExtension extends Component {
                 latitude: this.state.region.latitude,
                 longitude: this.state.region.longitude,
                 latitudeDelta: this.state.region.latitudeDelta * 2,
-                longitudeDelta: this.state.region.longitudeDelta * 2
-              }
+                longitudeDelta: this.state.region.longitudeDelta * 2,
+              },
             })
           }}
         >

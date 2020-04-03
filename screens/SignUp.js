@@ -5,8 +5,8 @@ import { CheckBox, Input } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 import { Linking } from 'react-native'
 
-const axios = require('axios').default;
-axios.defaults.baseURL = 'https://citytrip.trifall.net/api';
+const axios = require('axios').default
+axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
 
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
@@ -14,23 +14,25 @@ function GoToButton({ App, state }) {
   postSignup = () => {
     let u_name = state.username
     let email = state.mail
-    let pw = state.password 
-    let pw_check = state.password_check 
-    
-    if(pw != pw_check){
+    let pw = state.password
+    let pw_check = state.password_check
+
+    if (pw != pw_check) {
       alert('Passwords do not match')
-    }
-    else {
-      axios.post('/Users/maker', {username: u_name, email: email, password: pw})
-      .then(function (response) {
-        if(response.data.user.username===u_name){
-          global.name = response.data.user.username,
-          navigation.navigate('App')}
-        
-        else if(response.data.error){
-          alert(response.data.error)
-        } })
-      .catch(function (error) { alert(error)});
+    } else {
+      axios
+        .post('/Users/maker', { username: u_name, email: email, password: pw })
+        .then(function (response) {
+          if (response.data.user.username === u_name) {
+            ;(global.name = response.data.user.username),
+              navigation.navigate('App')
+          } else if (response.data.error) {
+            alert(response.data.error)
+          }
+        })
+        .catch(function (error) {
+          alert(error)
+        })
     }
   }
 

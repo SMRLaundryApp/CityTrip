@@ -110,9 +110,7 @@ export default class CardsLayout extends Component {
       POIs = POIs[0]
       let sortedPOIs = sortDistance(POIs)
       for (let i = 0; i < sortedPOIs.length; i++) {
-        sortedPointsOfInterest.push(
-          pointsOfInterest[sortedPOIs[i]]
-        )
+        sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
       }
       columnOne = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = getDistance(
