@@ -12,7 +12,7 @@ function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
   postSignup = () => {
-    let name = state.username
+    let u_name = state.username
     let email = state.mail
     let pw = state.password 
     let pw_check = state.password_check 
@@ -21,8 +21,15 @@ function GoToButton({ App, state }) {
       alert('Passwords do not match')
     }
     else {
-      axios.post('/users/maker', {Username: name, Email: email, Password: pw})
-      .then(function (response) {navigation.navigate('App')})
+      axios.post('/Users/maker', {username: u_name, email: email, password: pw})
+      .then(function (response) {
+        if(response.data.user.username===u_name){
+          global.name = response.data.user.username,
+          navigation.navigate('App')}
+        
+        else if(response.data.error){
+          alert(response.data.error)
+        } })
       .catch(function (error) { alert(error)});
     }
   }
