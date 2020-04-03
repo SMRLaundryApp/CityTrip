@@ -83,7 +83,6 @@ export default class RouteExtension extends Component {
 
   locationChanged = (location) => {
     this.setState({ location })
-    // console.log(location);
   }
 
   closeModal = () => {
@@ -166,7 +165,7 @@ export default class RouteExtension extends Component {
         destination={mapPOIs[mapPOIs.length - 1]}
         apikey={GOOGLE_MAPS_APIKEY}
         strokeWidth={3}
-        strokeColor="hotpink"
+        strokeColor="#13866f"
         mode="WALKING"
       />
     )

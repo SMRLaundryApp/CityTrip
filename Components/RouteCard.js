@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { Dimensions } from 'react-native'
-import Modal from 'react-native-modal'
 import RouteExtension from './RouteExtension'
 
 const screenWidth = Dimensions.get('window').width
@@ -66,8 +65,6 @@ export default class RouteCard extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            console.log('roekoeroekoe')
-            // this.openModal()
             this.toggleRoute()
           }}
         >
@@ -82,32 +79,6 @@ export default class RouteCard extends Component {
           </Container>
         </TouchableWithoutFeedback>
         {routeExtension}
-        {/* <Modal
-          animationIn="slideInRight"
-          animationOut="slideOutRight"
-          isVisible={this.state.isModalVisible}
-          style={{
-            backgroudColor: '#888',
-          }}
-        >
-          <Container style={{ padding: 4 }}>
-            <TouchableOpacity
-              style={{
-                backgroundColor: '#19B092',
-                alignSelf: 'flex-end',
-                height: 20,
-                width: 20,
-                borderRadius: 10,
-              }}
-              onPress={() => {
-                this.closeModal()
-              }}
-            >
-              <CloseButton>×</CloseButton>
-            </TouchableOpacity>
-            <RoutePopup id={this.props.id} />
-          </Container>
-        </Modal> */}
       </Clear>
     )
   }
@@ -157,16 +128,10 @@ const Info = styled.Text`
   margin-top: 4px;
 `
 
-const CloseButton = styled.Text`
-  text-align: center;
-  color: white;
-  font-weight: bold;
-`
-
 const RouteContainer = styled.View`
   padding: 10px;
   padding-bottom: 0px;
-  backgroundColor: #999;
+  background-color: #aaa;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `

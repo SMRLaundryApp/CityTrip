@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Alert } from 'react-native'
-import MapView, { Callout, Marker } from 'react-native-maps'
+import MapView, { Marker } from 'react-native-maps'
 import userLocationPin from '../assets/userLocation.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
@@ -44,7 +43,6 @@ export default class Map extends Component {
 
   locationChanged = (location) => {
     this.setState({ location })
-    // console.log(location);
   }
 
   // componentWillUnmount() {
