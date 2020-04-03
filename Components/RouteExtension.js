@@ -8,6 +8,11 @@ import userLocationPin from '../assets/userLocation.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
+import Modal from 'react-native-modal'
+import { Dimensions } from 'react-native'
+import POIPopup from './POIPopup'
+
+const screenWidth = Dimensions.get('window').width
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
@@ -17,7 +22,7 @@ const GEOLOCATION_OPTIONS = {
 
 export default class RouteExtension extends Component {
   state = {
-    id: Number(this.props.id.split('#')[1]),
+    id: this.props.id,
     region: undefined,
     location: { coords: { latitude: 0, longitude: 0 } },
     errorMessage: null,
@@ -69,13 +74,19 @@ export default class RouteExtension extends Component {
       return (
         <Marker
           key={index}
-          title={pointsOfInterest[Number(route.split('#')[1])].name}
+          title={pointsOfInterest[route].name}
           pinColor="#19B092"
           coordinate={{
             latitude:
-              pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
+              pointsOfInterest[route].coords.latitude,
             longitude:
-              pointsOfInterest[Number(route.split('#')[1])].coords.longitude,
+              pointsOfInterest[route].coords.longitude,
+          }}
+          onPress={() => {
+            console.log('roekoeroekoe')
+            this.setState({
+              image: pointsOfInterest[route].image
+            })
           }}
         />
       )
@@ -86,9 +97,9 @@ export default class RouteExtension extends Component {
       routes[this.state.id].POIs.map((route) => {
         return {
           latitude:
-            pointsOfInterest[Number(route.split('#')[1])].coords.latitude,
+            pointsOfInterest[route].coords.latitude,
           longitude:
-            pointsOfInterest[Number(route.split('#')[1])].coords.longitude,
+            pointsOfInterest[route].coords.longitude,
         }
       })
     )
@@ -119,11 +130,7 @@ export default class RouteExtension extends Component {
           initialRegion={routes[this.state.id].region}
           onRegionChangeComplete={(region) => {this.setState({region: region})}}
           region={this.state.region}
-          // moveOnMarkerPress={false}
-          // zoomControlEnabled={false}
           zoomEnabled={false}
-          // zoomTapEnabled={false}
-          // rotateEnabled={false}
         >
           {POIs}
           {mapDirections}
@@ -151,7 +158,7 @@ export default class RouteExtension extends Component {
             })
           }}
         >
-          <Text style={{ color:'white', fontWeight: 'bold', textAlign: 'center' }}>+</Text>
+          <ZoomButton>+</ZoomButton>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
@@ -175,41 +182,69 @@ export default class RouteExtension extends Component {
             })
           }}
         >
-          <Text style={{ color:'white', fontWeight: 'bold', textAlign: 'center' }}>-</Text>
+          <ZoomButton>-</ZoomButton>
         </TouchableOpacity>
         <Description>{routes[this.state.id].description}</Description>
-        {/* <StartAt>Start at:</StartAt>
-        <Clear>
-          <TouchableOpacity
+        <Modal
+          animationIn="slideInRight"
+          animationOut="slideOutRight"
+          isVisible={this.state.isModalVisible}
+          style={{
+            backgroudColor: '#888',
+          }}
+        >
+          <Container
             style={{
-              alignSelf: 'center',
-              borderRadius: 100,
-              backgroundColor: '#19B092',
-              padding: 10,
-              width: screenWidth * 0.7,
+              padding: 4,
+              margin: 0,
+              marginTop: 0,
+              width: screenWidth - 20,
             }}
           >
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[0].split('#')[1])].name}</ButtonText>
-          </TouchableOpacity>
-          <OrText>or</OrText>
-          <TouchableOpacity
-            style={{
-              alignSelf: 'center',
-              borderRadius: 100,
-              backgroundColor: '#19B092',
-              padding: 10,
-              width: screenWidth * 0.7,
-            }}
-          >
-            <ButtonText>{pointsOfInterest[Number(routes[this.state.id].POIs[routes[this.state.id].POIs.length - 1].split('#')[1])].name}</ButtonText>
-          </TouchableOpacity>
-        </Clear> */}
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#19B092',
+                alignSelf: 'flex-end',
+                height: 20,
+                width: 20,
+                borderRadius: 10,
+              }}
+              onPress={() => {
+                this.closeModal()
+              }}
+            >
+              <CloseButton>×</CloseButton>
+            </TouchableOpacity>
+            <POIPopup
+              image={this.state.image}
+              title={this.state.title}
+              distance={this.state.distance}
+              city={this.state.city}
+              description={this.state.description}
+              hyperlink={this.state.hyperlink}
+            />
+          </Container>
+        </Modal>
       </Clear>
     )
   }
 }
 
 const Clear = styled.View``
+
+const Container = styled.View`
+  align-self: center;
+  background: #888;
+  border-radius: 14px;
+  margin-top: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
+`
+
+const CloseButton = styled.Text`
+  text-align: center;
+  color: white;
+  font-weight: bold;
+`
 
 const Title = styled.Text`
   padding-bottom: 10px;
@@ -226,22 +261,8 @@ const Description = styled.Text`
   text-align: justify;
 `
 
-const StartAt = styled.Text`
-  text-align: center;
+const ZoomButton = styled.Text`
   color: white;
-  font-weight: bold;
-  margin-bottom: 5px;
-`
-
-const OrText = styled.Text`
-  text-align: center;
-  color: white;
-  margin: 5px;
-`
-
-const ButtonText = styled.Text`
-  color: white;
-  font-size: 20px;
   font-weight: bold;
   text-align: center;
 `

@@ -1,6 +1,6 @@
 [
   {
-    "id": "#0000",
+    "id": 0,
     "name": "De Heesterboom mill",
     "city": "Leiden",
     "image": {
@@ -15,7 +15,7 @@
     "description": "De Heesterboom, was built in 1804 on the site where two predecessors previously stood: De Ruyter and De Valk. De Heesterboom mill was used to cut wood. It can be found on the site of the Noordman timber trade on the Leidse Rijn. In the past, there were two more wood sawmills on the mill yard: De Eendracht and De Jonge Pauline.\nThe unique thing about De Heesterboom is that it is the only sawmill with an authentic binnenvang-inrichting. A binnenvang-inrichting is a device which makes it possible to stop the mill from the saw floor by means of a special lever construction."
   },
   {
-    "id": "#0001",
+    "id": 1,
     "name": "Stevenshofjes molen",
     "city": "Leiden",
     "image": {
@@ -30,7 +30,7 @@
     "description": "The Stevenshofjesmolen, was built in 1797 after the predecessor was destroyed by a fire in December 1796. Until 1981, the mill drained the Stevenshofjespolder which was around 150 ha. The construction of the new Leiden residential area 'Stevenshof' largely ended this; now the mill can still drain 40 ha."
   },
   {
-    "id": "#0002",
+    "id": 2,
     "name": "De Herder",
     "city": "Leiden",
     "image": {
@@ -45,7 +45,7 @@
     "description": "De Herder, was built in 1884 after the predecessor was destroyed by lightning on September 5 1883. The sawmill De Kat, dating from 1755 and for sale for demolition, was transferred from Amsterdam to Oegstgeest (Leiden was still entirely within the canals as a municipality) for the reconstruction."
   },
   {
-    "id": "#0003",
+    "id": 3,
     "name": "Molen De Valk",
     "city": "Leiden",
     "image": {
@@ -60,7 +60,7 @@
     "description": "Molen De Valk, was built in 1743 and was used to grind grain. This mill had two predecessors: the first 'Valck' was built in 1612 and remained in use until 1667. In 1667, this mill was replaced by a new mill with more couples of millstones and a house. The current mill was built in no less than 11 weeks. It's a lot higher that its predecessors, to ensure the windmill catches enough wind to operate."
   },
   {
-    "id": "#0004",
+    "id": 4,
     "name": "Molen De Put",
     "city": "Leiden",
     "image": {
@@ -75,7 +75,7 @@
     "description": "Molen De Put is a replica of the wooden grain mill from 1619 by Jan Janszn. Put and was built in 1987. The original mill burned down in 1640 and was rebuilt soon after.\nIn 1729, the original post mill was replaced by a high tower mill, comparable to the still existing De Valk mill in Leiden, and named De Korenmolen. This mill was demolished in 1817 and was not replaced on site by another mill.\nIn 1982, archaeologists found the post foundations of the original grain mill. On the occasion of the 25th anniversary of the Rijnlandse Molenstichting in 1983, the idea was launched to rebuild a post mill on the former bastion."
   },
   {
-    "id": "#0005",
+    "id": 5,
     "name": "Station Leiden Centraal",
     "city": "Leiden",
     "image": {
@@ -90,7 +90,7 @@
     "description": "Station Leiden Centraal has changed a lot over the years. The first station was opened on June 15 1843. The original station was replaced in 1879. In 1955 was the railroad raised and the station replaced again for a new one. The build of the current station was in 1996 finished and was very futuristic for its time."
   },
   {
-    "id": "#0006",
+    "id": 6,
     "name": "Morspoort",
     "city": "Leiden",
     "image": {
@@ -105,7 +105,7 @@
     "description": "The Morspoort is the western city gate of Leiden, located on the Morssingel. The stone gate was built in Mannerist style in 1669 according to a design by the Leiden architect Willem van der Helm.\nThe current Morspoort is where a wooden structure once stood, which was founded around 1611 when Leiden expanded to the north.\nThe Morspoort and Zijlpoort are the only ones left of the original eight city gates."
   },
   {
-    "id": "#0007",
+    "id": 7,
     "name": "Zijlpoort",
     "city": "Leiden",
     "image": {
@@ -120,7 +120,7 @@
     "description": "The Zijlpoort was built in classicist style in 1667 according to a design by the Leiden architect Willem van der Helm and features a sculpture by Rombout Verhulst.\nBecause the gate had to connect to both the city wall and the bridge before it, the building has the shape of a parallelogram.\nThe Morspoort and the Zijlpoort are the only two remaining of the originally eight gates.\nAlong the Zijlpoort, the Oude Rijn flows into the city of Leiden from the nearby Zijl river."
   },
   {
-    "id": "#0008",
+    "id": 8,
     "name": "Hartebrugkerk",
     "city": "Leiden",
     "image": {
@@ -135,7 +135,7 @@
     "description": "The Hartebrugkerk is a church build in 1836. This was the first Catholic church build in Leiden when religious freedom was established. At that time, the major churches in Leiden were all Protestant."
   },
   {
-    "id": "#0009",
+    "id": 9,
     "name": "Pieterskerk",
     "city": "Leiden",
     "image": {
@@ -150,7 +150,7 @@
     "description": "The Pieterskerk is a late-Gothic church in Leiden dedicated to Saint Peter. It is known today as the church of the Pilgrim Fathers, where the pastor John Robinson was buried. It is also the burial place of the scientist Willebrord Snellius.\nIn around 1100 the site held the county chapel of the counts of Holland, rebuilt in 1121. The present building took approximately 180 years to build, starting in 1390.\nThe Pieterskerk used to have a church tower, the Westtoren (west tower) from 1290 on. It was nicknamed 'Coningh der Zee' (king of the sea), and was completed in stages, eventually reaching 110 metres. It collapsed in the night of 5 March 1512. The tower was not restored and the church remains towerless."
   },
   {
-    "id": "#0010",
+    "id": 10,
     "name": "Hooglandse kerk",
     "city": "Leiden",
     "image": {
@@ -165,7 +165,7 @@
     "description": "Hooglandse Kerk is a Gothic church in Leiden dating from the fifteenth century. The brick church is dedicated to St. Pancras and today serves parishioners of the Protestant Church in the Netherlands.\nThe Bishop of Utrecht ordered the construction of a wooden chapel on December 20, 1314. By 1377 the population and economic prosperity of Leiden called for a larger structure, and construction began on the current structure. The sanctuary was finished in 1391 and the ambulatory in 1415."
   },
   {
-    "id": "#0011",
+    "id": 11,
     "name": "Burcht van Leiden",
     "city": "Leiden",
     "image": {
@@ -180,7 +180,7 @@
     "description": "The Burcht van Leiden (Fort of Leiden) is an old shell keep in Leiden constructed in the 11th century. It is located at the spot where two tributaries of the Rhine come together, the Oude Rijn and the Nieuwe Rijn. The structure is on top of a motte, and is today a public park."
   },
   {
-    "id": "#0012",
+    "id": 12,
     "name": "Spinozahuis",
     "city": "Rijnsburg",
     "image": {
@@ -195,7 +195,7 @@
     "description": "The world famous philosopher Spinoza was born in the year 1632 in Amsterdam. Spinoza moved to Rijnsburg in 1661.\nAt the time, this village was known as a meeting place for collegiate students, an Anabaptist sect, among which Spinoza had friends.\nIn the house of the surgeon Herman Homan, he had a small room as a boarder, where he dragged lenses for optical instruments and where he wrote down his musings with the goose pen."
   },
   {
-    "id": "#0013",
+    "id": 13,
     "name": "Kikkermolen",
     "city": "Leiden",
     "image": {
@@ -210,7 +210,7 @@
     "description": "The Kikkermolen, was built in 1752 and is draining the Kikkerpolder for more the 250 years now. Its predecessor was built in 1698, but burned down in 1747.\nSince there wasn't any money available at the time, the Kikkerpolder was connected to the Maredijkerpolder. So the mills of the Maredijkermpolder could also drain the Kikkerpolder.\nThe unique thing about this mill is that it is the smallest 'wipmolen' (a type of mill) in the Netherlands."
   },
   {
-    "id": "#0014",
+    "id": 14,
     "name": "Maredijkmolen",
     "city": "Leiden",
     "image": {
@@ -225,7 +225,7 @@
     "description": "The Maredijkmolen, was built in 1735 and was around 1840 moved 100 meters, because of the construction of a railroad. The mill drains the Maredijkerpolder.\nFrom 1748 to 1753 the Maredijkerpolder was connected to the Kikkerpolder. So then it also drained the Kikkerpolder."
   },
   {
-    "id": "#0015",
+    "id": 15,
     "name": "Rodenburger molen",
     "city": "Leiden",
     "image": {
@@ -240,7 +240,7 @@
     "description": "The Rodenburgermolen was built in 1704. In 1893 the mill was struck by lightning and burnt out completely. After this, the mill was rebuilt.\nThe mill used to drain the Rodenburgerpolder and the Cronesteinse polder."
   },
   {
-    "id": "#0016",
+    "id": 16,
     "name": "Stadsmolen",
     "city": "Leiden",
     "image": {

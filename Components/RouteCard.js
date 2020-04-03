@@ -14,7 +14,7 @@ export default class RouteCard extends Component {
   state = {
     isModalVisible: false,
     isRouteVisible: false,
-    id: Number(this.props.id.split('#')[1]),
+    id: this.props.id,
   }
 
   constructor(props) {

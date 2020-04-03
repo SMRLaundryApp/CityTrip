@@ -111,7 +111,7 @@ export default class CardsLayout extends Component {
       let sortedPOIs = sortDistance(POIs)
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(
-          pointsOfInterest[Number(sortedPOIs[i].split('#')[1])]
+          pointsOfInterest[sortedPOIs[i]]
         )
       }
       columnOne = sortedPointsOfInterest.map((POI, index) => {
