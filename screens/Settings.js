@@ -16,11 +16,24 @@ function GoToButton({ App }) {
   )
 }
 
+function ChangePref({ App }) {
+  const navigation = useNavigation()
+
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate('Interest_clicker')}>
+      <Butoon>
+        <Butoontext>Edit POI preferences</Butoontext>
+      </Butoon>
+    </TouchableOpacity>
+  )
+}
+
 export default class Settings extends Component {
   render() {
     return (
       <Container>
         <Welcomebar />
+        <ChangePref />
         <GoToButton />
       </Container>
     )
@@ -41,7 +54,7 @@ const Butoon = styled.View`
   background-color: #1dc9a6;
   border-radius: 5px;
   margin: 10px;
-  margin-top: 300px;
+  margin-top: 150px;
 `
 
 const Butoontext = styled.Text`
