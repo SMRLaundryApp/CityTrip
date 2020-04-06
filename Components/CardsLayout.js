@@ -18,16 +18,16 @@ function toRadians(degree) {
 }
 
 function getPOIs() {
-  let POIs = undefined
+  // let POIs = undefined
   axios
     .get('/point_of_interests')
     .then(function (response) {
-      global.POIs = response.data['hydra:member']
-      // console.log(POIs)
+      ;(global.POIs = response.data['hydra:member'])
     })
     .catch(function (error) {
       console.log(error)
     })
+    // console.log(global.POIs)
     return global.POIs
   //Add badge
 
@@ -84,6 +84,7 @@ function sortDistance(info) {
 export default class CardsLayout extends Component {
   state = {
     location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
+    gotPOIs: false
   }
 
   constructor(props) {
@@ -112,9 +113,16 @@ export default class CardsLayout extends Component {
     this.setState({ location })
   }
 
+  componentDidMount() {
+    this.setState({ gotPOIs: true })
+  }
+
   render() {
-    let PointsOfInterest = getPOIs();
-    console.log(PointsOfInterest)
+    let PointsOfInterest = undefined;
+    if (this.state.gotPOIs === true) {
+      PointsOfInterest = getPOIs();
+    }
+    // console.log(PointsOfInterest)
     let pointsOfInterest = require('../data/POIs.json');
 
     let columnOne = undefined
@@ -124,13 +132,20 @@ export default class CardsLayout extends Component {
     let load = <Loading> Getting user location... </Loading>
     let sortedPointsOfInterest = []
 
-    let addPOI = <Card title="Add POI" />
+    let addPOI = undefined
+
+    // if (this.state.gotPOIs === false && PointsOfInterest !== undefined) {
+    //   this.setState({ gotPOIs: true })
+    // }
 
     if (
       this.state.location.coords.latitude !== undefined &&
-      this.state.location.coords.longitude !== undefined
+      this.state.location.coords.longitude !== undefined &&
+      this.state.gotPOIs === true &&
+      PointsOfInterest !== undefined
     ) {
-      load = <Loading> Sorting cards by distance... </Loading>
+      load = undefined
+      addPOI = <Card title="Add POI" />
       POIs.push(
         pointsOfInterest.map(function (POI) {
           let userDistance = getDistance(
@@ -149,7 +164,6 @@ export default class CardsLayout extends Component {
         sortedPointsOfInterest.push(PointsOfInterest[sortedPOIs[i]])
 
       }
-      // columnTwo = sortedPointsOfInterest.map()
       columnTwo = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = POIs[index][0]
         if (index % 2 !== 1) {
@@ -214,7 +228,6 @@ export default class CardsLayout extends Component {
       //     )
       //   }
       // })
-      load = undefined
     }
 
     return (
