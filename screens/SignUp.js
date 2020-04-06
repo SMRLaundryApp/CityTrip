@@ -75,26 +75,26 @@ export default class SignUp extends Component {
           <Title>Sign up</Title>
           <InputTitle>Username:</InputTitle>
           <Inputfield
-            placeholder={'  Enter username:'}
+            placeholder={'Enter username:'}
             value={this.state.name}
             onChangeText={(username) => this.setState({ username })}
           />
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield
-            placeholder={'  Enter e-mail address:'}
+            placeholder={'Enter e-mail address:'}
             value={this.state.mail}
             onChangeText={(mail) => this.setState({ mail })}
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Enter password (must contain at least 8 characters):'}
+            placeholder={'Enter password (must contain at least 8 characters):'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
           />
           <InputTitle>Repeat password:</InputTitle>
           <Inputfield
-            placeholder={'  Repeat password:'}
+            placeholder={'Repeat password:'}
             secureTextEntry={true}
             secureTextEntry={true}
             value={this.state.password_check}
@@ -137,6 +137,7 @@ const Inputfield = styled.TextInput`
   margin-right: 10px;
   height: 40px;
   border-radius: 2px;
+  padding: 5px;
 `
 
 const Title = styled.Text`
