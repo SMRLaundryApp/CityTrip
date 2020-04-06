@@ -19,7 +19,11 @@ function GoToButton({ App, state }) {
 
     if (pw != pw_check) {
       alert('Passwords do not match')
-    } else {
+    }
+    else if (!email.includes('@')) {
+      alert('E-mail address is not an address')
+    } 
+    else {
       axios
         .post('/Users/maker', { username: u_name, email: email, password: pw })
         .then(function (response) {
