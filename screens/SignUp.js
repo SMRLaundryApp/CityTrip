@@ -32,7 +32,7 @@ function GoToButton({ App, state }) {
         .then(function (response) {
           if (response.data.user.username === u_name) {
             ;(global.name = response.data.user.username),
-              navigation.navigate('App')
+              navigation.navigate('Interest_clicker')
           } else if (response.data.error) {
             alert(response.data.error)
           }

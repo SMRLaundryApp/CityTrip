@@ -13,6 +13,7 @@ import Login from '../screens/Loginscreen'
 import SignUp from '../screens/SignUp'
 import SignIn from '../screens/SignIn'
 import Forgot_pw from '../screens/Forgot_pw'
+import Interests from '../screens/Interest_clicker'
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
@@ -54,6 +55,11 @@ const AuthStack = createStackNavigator()
 const AuthStackScreen = () => (
   <AuthStack.Navigator screenOptions={{ headerShown: false }}>
     <AuthStack.Screen
+      name="Interest_clicker"
+      component={Interests}
+      options={{ animationEnabled: false }}
+    />
+    <AuthStack.Screen
       name="Login"
       component={Login}
       options={{ animationEnabled: false }}
@@ -63,6 +69,7 @@ const AuthStackScreen = () => (
       component={SignUp}
       options={{ animationEnabled: false }}
     />
+    
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
