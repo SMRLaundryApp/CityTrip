@@ -87,7 +87,7 @@ export default class SignUp extends Component {
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Enter password:'}
+            placeholder={'  Enter password (must contain at least 8 characters):'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
