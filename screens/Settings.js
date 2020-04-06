@@ -21,7 +21,6 @@ export default class Settings extends Component {
     return (
       <Container>
         <Welcomebar />
-        <Message>Settings tab will be added in the near future</Message>
         <GoToButton />
       </Container>
     )
@@ -42,6 +41,7 @@ const Butoon = styled.View`
   background-color: #1dc9a6;
   border-radius: 5px;
   margin: 10px;
+  margin-top: 300px;
 `
 
 const Butoontext = styled.Text`
