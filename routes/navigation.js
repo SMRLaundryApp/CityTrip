@@ -55,11 +55,6 @@ const AuthStack = createStackNavigator()
 const AuthStackScreen = () => (
   <AuthStack.Navigator screenOptions={{ headerShown: false }}>
     <AuthStack.Screen
-      name="Interest_clicker"
-      component={Interests}
-      options={{ animationEnabled: false }}
-    />
-    <AuthStack.Screen
       name="Login"
       component={Login}
       options={{ animationEnabled: false }}
@@ -69,7 +64,11 @@ const AuthStackScreen = () => (
       component={SignUp}
       options={{ animationEnabled: false }}
     />
-    
+    <AuthStack.Screen
+      name="Interest_clicker"
+      component={Interests}
+      options={{ animationEnabled: false }}
+    /> 
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}

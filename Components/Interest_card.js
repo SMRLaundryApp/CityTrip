@@ -8,11 +8,13 @@ const cardWidth = screenWidth - 20
 const cardHeight = screenWidth / 4
 const imageWidth = screenWidth / 3
 
+
 export default class Interest_card extends Component {
   state = {
     image: this.props.image,
     title: this.props.title,
-    subtitle: this.props.subtitle
+    subtitle: this.props.subtitle,
+    bg_color: '#888'
   }
 
   constructor(props) {
@@ -27,11 +29,11 @@ export default class Interest_card extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            alert('Kaka')
+            this.setState({bg_color: (this.state.bg_color === '#888') ? '#19B092' : '#888'})
           }}
         >
           <Container
-            style={{ borderBottomRightRadius: 14 }}
+            style={{ borderBottomRightRadius: 14, backgroundColor: this.state.bg_color }}
             width={cardWidth}
             height={cardHeight}
           >
@@ -60,7 +62,6 @@ const Clear = styled.View``
 
 const Container = styled.View`
   align-self: center;
-  background: #888;
   border-radius: 14px;
   margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
@@ -94,7 +95,7 @@ const Title = styled.Text`
 `
 
 const Info = styled.Text`
-  color: #b8b3c3;
+  color: #ddd;
   font-size: 15px;
   font-weight: 600;
   margin-top: 0px;
