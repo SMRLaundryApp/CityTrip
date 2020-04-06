@@ -20,6 +20,9 @@ function GoToButton({ App, state }) {
     if (pw != pw_check) {
       alert('Passwords do not match')
     }
+    else if (pw.split('').length < 8){
+      alert('Password is too short (must at least contain 8 characters)')
+    }
     else if (!email.includes('@')) {
       alert('E-mail address is not an address')
     } 
