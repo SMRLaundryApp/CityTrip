@@ -79,8 +79,8 @@ const AuthStackScreen = () => (
 const RootStack = createStackNavigator()
 const RootStackScreen = ({ userToken }) => (
   <RootStack.Navigator screenOptions={{ headerShown: false }}>
-    <RootStack.Screen name="App" component={TabScreen} />
     <RootStack.Screen name="Auth" component={AuthStackScreen} />
+    <RootStack.Screen name="App" component={TabScreen} />
   </RootStack.Navigator>
 )
 
