@@ -38,31 +38,81 @@ export default class Card extends Component {
   }
 
   render() {
-    let card = (
-      <TouchableWithoutFeedback
-        delayPressIn={5}
-        delayPressOut={5}
-        delayLongPress={5}
-        onPress={() => {
-          this.openModal()
-        }}
-      >
-        <Container width={cardWidth} height={cardHeight}>
-          <Cover height={this.state.imageHeight}>
-            <Image source={{ uri: this.props.image }} />
-          </Cover>
-          <Content>
-            <Title>{this.props.title}</Title>
-            <Distance>{this.props.distance} km</Distance>
-          </Content>
-        </Container>
-      </TouchableWithoutFeedback>
-    )
-    let titleSize = (
-      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-        {this.props.title}
-      </Title>
-    )
+    let card = undefined
+    let titleSize = undefined
+    let popup = undefined
+
+    if (this.props.title !== "Add POI") {
+      card = (
+        <TouchableWithoutFeedback
+          delayPressIn={5}
+          delayPressOut={5}
+          delayLongPress={5}
+          onPress={() => {
+            this.openModal()
+          }}
+        >
+          <Container width={cardWidth} height={cardHeight}>
+            <Cover height={this.state.imageHeight}>
+              <Image source={{ uri: this.props.image }} />
+            </Cover>
+            <Content>
+              <Title>{this.props.title}</Title>
+              <Distance>{this.props.distance} km</Distance>
+            </Content>
+          </Container>
+        </TouchableWithoutFeedback>
+      )
+      titleSize = (
+        <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+          {this.props.title}
+        </Title>
+      )
+      popup = (
+        <POIPopup
+          image={this.props.image}
+          title={this.props.title}
+          distance={this.props.distance}
+          city={this.props.city}
+          description={this.props.description}
+          hyperlink={this.props.hyperlink}
+        />
+      )
+    }
+    else {
+      card = (
+        <TouchableWithoutFeedback
+          delayPressIn={5}
+          delayPressOut={5}
+          delayLongPress={5}
+          onPress={() => {
+            this.openModal()
+          }}
+        >
+          <Container width={cardWidth} height={cardHeight}>
+            <Cover height={this.state.imageHeight}>
+              <Image source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU" }} />
+            </Cover>
+            <Content>
+              <Title>{this.props.title}</Title>
+              <Distance>&lt;0.2 km</Distance>
+            </Content>
+          </Container>
+        </TouchableWithoutFeedback>
+      )
+      titleSize = (
+        <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+          {this.props.title}
+        </Title>
+      )
+      popup = (
+        <POIPopup
+          image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU"
+          title={this.props.title}
+          distance="&lt;0.2"
+        />
+      )
+    }
 
     return (
       <Clear>
@@ -98,14 +148,7 @@ export default class Card extends Component {
             >
               <CloseButton>×</CloseButton>
             </TouchableOpacity>
-            <POIPopup
-              image={this.props.image}
-              title={this.props.title}
-              distance={this.props.distance}
-              city={this.props.city}
-              description={this.props.description}
-              hyperlink={this.props.hyperlink}
-            />
+            {popup}
           </Container>
         </Modal>
       </Clear>

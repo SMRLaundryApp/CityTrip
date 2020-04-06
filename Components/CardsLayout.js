@@ -84,12 +84,14 @@ export default class CardsLayout extends Component {
   render() {
     let pointsOfInterest = require('../data/POIs.json')
 
-    let columnOne,
-      columnTwo = undefined
+    let columnOne = undefined
+    let columnTwo = undefined
     let userLocation = this.state.location.coords
     let POIs = []
     let load = <Loading> Getting user location... </Loading>
     let sortedPointsOfInterest = []
+
+    let addPOI = <Card title="Add POI" />
 
     if (
       this.state.location.coords.latitude !== undefined &&
@@ -112,7 +114,7 @@ export default class CardsLayout extends Component {
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
       }
-      columnOne = sortedPointsOfInterest.map((POI, index) => {
+      columnTwo = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = getDistance(
           userLocation.latitude,
           userLocation.longitude,
@@ -133,7 +135,7 @@ export default class CardsLayout extends Component {
           )
         }
       })
-      columnTwo = sortedPointsOfInterest.map((POI, index) => {
+      columnOne = sortedPointsOfInterest.map((POI, index) => {
         let userDistance = getDistance(
           userLocation.latitude,
           userLocation.longitude,
@@ -160,7 +162,7 @@ export default class CardsLayout extends Component {
     return (
       <Layout>
         {load}
-        <ColumnOne>{columnOne}</ColumnOne>
+        <ColumnOne>{addPOI}{columnOne}</ColumnOne>
         <ColumnTwo>{columnTwo}</ColumnTwo>
       </Layout>
     )
