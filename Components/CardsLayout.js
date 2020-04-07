@@ -6,7 +6,7 @@ import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
 
 const axios = require('axios').default
-axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
+axios.defaults.baseURL = 'https://citytrip.trifall.net'
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
@@ -20,7 +20,7 @@ function toRadians(degree) {
 function getPOIs() {
   // let POIs = undefined
   axios
-    .get('/point_of_interests')
+    .get('/api/point_of_interests')
     .then(function (response) {
       ;(global.POIs = response.data['hydra:member'])
     })
@@ -78,13 +78,17 @@ function sortDistance(info) {
     }
   }
   ids.reverse()
+  // distances.reverse()
+  // distances.shift()
   return ids
 }
 
 export default class CardsLayout extends Component {
   state = {
     location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
-    gotPOIs: false
+    gotPOIs: false,
+    points_of_interest: undefined,
+    coordinates: undefined
   }
 
   constructor(props) {
@@ -114,7 +118,40 @@ export default class CardsLayout extends Component {
   }
 
   componentDidMount() {
-    this.setState({ gotPOIs: true })
+
+    let categories = global.userData.user.categories
+    console.log(categories)
+
+    categories.map((categorie, index) => {
+      axios
+        .get(categorie)
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(error => console.log(error))
+    })
+
+    axios
+      .get('/api/point_of_interests')
+      .then(response => {
+        this.setState({points_of_interest: response.data})
+      })
+      .catch(error => console.log('point_of_interests ', error))
+    
+    axios
+      .get('/api/coordinates')
+      .then(response => {
+        this.setState({coordinates: response.data})
+      })
+      .catch(error => console.log('coordinates ', error))
+
+    axios
+      .get('/api/categories')
+      .then(response => {
+        this.setState({categories: response.data})
+      })
+      .catch(error => console.log('categories ', error))
+
   }
 
   render() {
@@ -140,9 +177,9 @@ export default class CardsLayout extends Component {
 
     if (
       this.state.location.coords.latitude !== undefined &&
-      this.state.location.coords.longitude !== undefined &&
-      this.state.gotPOIs === true &&
-      PointsOfInterest !== undefined
+      this.state.location.coords.longitude !== undefined 
+      // this.state.gotPOIs === true &&
+      // PointsOfInterest !== undefined
     ) {
       load = undefined
       addPOI = <Card title="Add POI" />
@@ -160,42 +197,9 @@ export default class CardsLayout extends Component {
       POIs = POIs[0]
       let sortedPOIs = sortDistance(POIs)
       for (let i = 0; i < sortedPOIs.length; i++) {
-        // sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
-        sortedPointsOfInterest.push(PointsOfInterest[sortedPOIs[i]])
-
+        sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
+        // sortedPointsOfInterest.push(PointsOfInterest[sortedPOIs[i]])
       }
-      columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[index][0]
-        if (index % 2 !== 1) {
-          return (
-            <Card
-              key={index}
-              city={POI.city}
-              title={POI.name}
-              image={POI.image}
-              distance={userDistance}
-              description={POI.description}
-              hyperlink={POI.link}
-            />
-          )
-        }
-      })
-      columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[index][0]
-        if (index % 2 === 1) {
-          return (
-            <Card
-              key={index}
-              city={POI.city}
-              title={POI.name}
-              image={POI.image}
-              distance={userDistance}
-              description={POI.description}
-              hyperlink={POI.link}
-            />
-          )
-        }
-      })
       // columnTwo = sortedPointsOfInterest.map((POI, index) => {
       //   let userDistance = POIs[index][0]
       //   if (index % 2 !== 1) {
@@ -204,10 +208,10 @@ export default class CardsLayout extends Component {
       //         key={index}
       //         city={POI.city}
       //         title={POI.name}
-      //         image={POI.image.url}
+      //         image={POI.image}
       //         distance={userDistance}
       //         description={POI.description}
-      //         hyperlink={POI.hyperlink}
+      //         hyperlink={POI.link}
       //       />
       //     )
       //   }
@@ -220,14 +224,46 @@ export default class CardsLayout extends Component {
       //         key={index}
       //         city={POI.city}
       //         title={POI.name}
-      //         image={POI.image.url}
+      //         image={POI.image}
       //         distance={userDistance}
       //         description={POI.description}
-      //         hyperlink={POI.hyperlink}
+      //         hyperlink={POI.link}
       //       />
       //     )
       //   }
       // })
+      columnTwo = sortedPointsOfInterest.map((POI, index) => {
+        let userDistance = POIs[sortedPOIs[index]][0]
+        if (index % 2 !== 1) {
+          return (
+            <Card
+              key={index}
+              city={POI.city}
+              title={POI.name}
+              image={POI.image.url}
+              distance={userDistance}
+              description={POI.description}
+              hyperlink={POI.hyperlink}
+            />
+          )
+        }
+      })
+      columnOne = sortedPointsOfInterest.map((POI, index) => {
+        let userDistance = POIs[sortedPOIs[index]][0]
+        if (index % 2 === 1) {
+          return (
+            <Card
+              key={index}
+              city={POI.city}
+              title={POI.name}
+              image={POI.image.url}
+              distance={userDistance}
+              description={POI.description}
+              hyperlink={POI.hyperlink}
+            />
+          )
+        }
+      })
     }
 
     return (
