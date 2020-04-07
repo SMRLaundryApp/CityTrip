@@ -95,7 +95,7 @@ export default class Card extends Component {
             </Cover>
             <Content>
               <Title>{this.props.title}</Title>
-              <Distance>&lt;0.2 km</Distance>
+              <Distance>Current location</Distance>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
@@ -109,7 +109,6 @@ export default class Card extends Component {
         <POIPopup
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU"
           title={this.props.title}
-          distance="&lt;0.2"
         />
       )
     }
