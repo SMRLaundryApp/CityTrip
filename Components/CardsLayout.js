@@ -4,6 +4,7 @@ import Card from './Card'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const axios = require('axios').default
 axios.defaults.baseURL = 'https://citytrip.trifall.net'
@@ -120,37 +121,46 @@ export default class CardsLayout extends Component {
   componentDidMount() {
 
     let categories = global.userData.user.categories
-    console.log(categories)
+    // console.log(categories)
+    console.log('\n')
 
+    global.poi = []
     categories.map((categorie, index) => {
       axios
         .get(categorie)
         .then(response => {
-          console.log(response.data)
+          response.data.pointOfInterests.map((point) => {
+            global.poi.push(point)
+          })
+          // index === 0 ? global.poi.push(response.data.pointOfInterests) : global.poi.push(response.data.pointOfInterests)
+          // global.poi += response.data.pointOfInterests
+          this.setState({points_of_interest: global.poi})
         })
-        .catch(error => console.log(error))
+        .catch(error => console.log('categories1 ', error))
+      // console.log(this.state.points_of_interest)
     })
+    console.log(global.poi.sort())
 
-    axios
-      .get('/api/point_of_interests')
-      .then(response => {
-        this.setState({points_of_interest: response.data})
-      })
-      .catch(error => console.log('point_of_interests ', error))
+    // axios
+    //   .get('/api/point_of_interests')
+    //   .then(response => {
+    //     this.setState({points_of_interest: response.data})
+    //   })
+    //   .catch(error => console.log('point_of_interests ', error))
     
-    axios
-      .get('/api/coordinates')
-      .then(response => {
-        this.setState({coordinates: response.data})
-      })
-      .catch(error => console.log('coordinates ', error))
+    // axios
+    //   .get('/api/coordinates')
+    //   .then(response => {
+    //     this.setState({coordinates: response.data})
+    //   })
+    //   .catch(error => console.log('coordinates ', error))
 
-    axios
-      .get('/api/categories')
-      .then(response => {
-        this.setState({categories: response.data})
-      })
-      .catch(error => console.log('categories ', error))
+    // axios
+    //   .get('/api/categories')
+    //   .then(response => {
+    //     this.setState({categories: response.data})
+    //   })
+    //   .catch(error => console.log('categories ', error))
 
   }
 
@@ -268,6 +278,25 @@ export default class CardsLayout extends Component {
 
     return (
       <Layout>
+        <TouchableOpacity 
+          onPress={() => {
+            let temp = this.state.points_of_interest.sort();
+            let Delete = [];
+            Delete = temp.map((value, index) => {
+              if (index !== temp.length) {
+                if (value === temp[index + 1]) {
+                  return index
+                }
+              }
+            })
+            Delete.map((value) => {
+              if (value !== undefined) {
+                temp.splice(value, 1)
+              }
+            })
+            this.setState({points_of_interest: temp})
+            console.log('lol ', this.state.points_of_interest)}}
+          style={{backgroundColor:'black', height:50, width: 50}} />
         {load}
         <ColumnOne>{addPOI}{columnOne}</ColumnOne>
         <ColumnTwo>{columnTwo}</ColumnTwo>
