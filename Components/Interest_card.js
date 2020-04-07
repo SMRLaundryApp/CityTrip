@@ -101,7 +101,7 @@ const Info = styled.Text`
   margin-top: 0px;
   padding-left: 10px;
   padding-right: 10px;
-  text-align: justify;
+  text-align: center;
 `
 
 const RouteContainer = styled.View`

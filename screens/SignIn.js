@@ -50,15 +50,15 @@ export default class SignIn extends Component {
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
           <Title>Sign in</Title>
-          <InputTitle>E-mail address:</InputTitle>
+          <InputTitle>Username:</InputTitle>
           <Inputfield
-            placeholder={'  Enter your e-mail address'}
+            placeholder={'Enter your username'}
             value={this.state.mail}
             onChangeText={(login) => this.setState({ login })}
           />
           <InputTitle>Password:</InputTitle>
           <Inputfield
-            placeholder={'  Enter your password'}
+            placeholder={'Enter your password'}
             secureTextEntry={true}
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
@@ -98,6 +98,7 @@ const Inputfield = styled.TextInput`
   margin-right: 10px;
   height: 40px;
   border-radius: 2px;
+  padding: 5px;
 `
 
 const Title = styled.Text`
