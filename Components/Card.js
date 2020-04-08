@@ -15,16 +15,8 @@ const cardHeight = screenWidth / 3 + 78
 export default class Card extends Component {
   state = {
     isModalVisible: false,
-    api: undefined,
     imageHeight: screenWidth / 3,
     distanceToUser: undefined,
-    title: undefined,
-    distance: undefined,
-    image: undefined,
-    city: undefined,
-    description: undefined,
-    link: undefined,
-    distance: undefined
   }
 
   constructor(props) {
@@ -46,124 +38,48 @@ export default class Card extends Component {
     })
   }
 
-  componentDidMount() {
-    // console.log('test')
-    // console.log(this.props.api)
-    // if (this.state.api !== this.state.oldApi) {
-    //   this.setState({oldApi: this.state.api})
-    //   axios
-    //     .get(baseURL + this.state.api)
-    //     .then(response => {
-    //       console.log(response.data.id)
-    //     })
-    //     .catch(error => console.log("Card api error:", error))
-    // }
-  }
-
   render() {
     let card = undefined
     let titleSize = undefined
     let popup = undefined
-    // console.log('card', this.props.api)
-
-    if (this.state.api !== this.state.oldApi) {
-      this.setState({oldApi: this.state.api})
-      axios
-        .get(baseURL + this.state.api)
-        .then(response => {
-          this.setState({
-            title: response.data.name,
-            image: response.data.image,
-            distance: response.data.id,
-            city: response.data.city,
-            description: response.data.description,
-            link: response.data.link
-          })
-          // console.log(response.data.name)
-        })
-        .catch(error => console.log("Card api error:", error))
-    }
 
     if (this.props.title !== "Add POI") {
-      // console.log('card', this.props.api)
-      // if (this.props.api === undefined) {
-      //   card = (
-      //     <TouchableWithoutFeedback
-      //       delayPressIn={5}
-      //       delayPressOut={5}
-      //       delayLongPress={5}
-      //       onPress={() => {
-      //         this.openModal()
-      //       }}
-      //     >
-      //       <Container width={cardWidth} height={cardHeight}>
-      //         <Cover height={this.state.imageHeight}>
-      //           <Image source={{ uri: this.props.image }} />
-      //         </Cover>
-      //         <Content>
-      //           <Title>{this.props.title}</Title>
-      //           <Distance>{this.props.distance} km</Distance>
-      //         </Content>
-      //       </Container>
-      //     </TouchableWithoutFeedback>
-      //   )
-      //   titleSize = (
-      //     <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-      //       {this.props.title}
-      //     </Title>
-      //   )
-      //   popup = (
-      //     <POIPopup
-      //       image={this.props.image}
-      //       title={this.props.title}
-      //       distance={this.props.distance}
-      //       city={this.props.city}
-      //       description={this.props.description}
-      //       hyperlink={this.props.hyperlink}
-      //     />
-      //   )
-      // }
-      // else {
-        if (this.state.api === undefined) {
-          this.setState({api: this.props.api})
-        }
-        card = (
-          <TouchableWithoutFeedback
-            delayPressIn={5}
-            delayPressOut={5}
-            delayLongPress={5}
-            onPress={() => {
-              this.openModal()
-            }}
-          >
-            <Container width={cardWidth} height={cardHeight}>
-              <Cover height={this.state.imageHeight}>
-                <Image source={{ uri: this.state.image }} />
-              </Cover>
-              <Content>
-                <Title>{this.state.title}</Title>
-                <Distance>{this.state.distance} km</Distance>
-              </Content>
-            </Container>
-          </TouchableWithoutFeedback>
-        )
-        titleSize = (
-          <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-            {this.state.title}
-          </Title>
-        )
-        popup = (
-          <POIPopup
-            image={this.state.image}
-            title={this.state.title}
-            distance={this.state.distance}
-            city={this.state.city}
-            description={this.state.description}
-            hyperlink={this.state.link}
-          />
-        )
-      }
-    // }
+      card = (
+        <TouchableWithoutFeedback
+          delayPressIn={5}
+          delayPressOut={5}
+          delayLongPress={5}
+          onPress={() => {
+            this.openModal()
+          }}
+        >
+          <Container width={cardWidth} height={cardHeight}>
+            <Cover height={this.state.imageHeight}>
+              <Image source={{ uri: this.props.image }} />
+            </Cover>
+            <Content>
+              <Title>{this.props.title}</Title>
+              <Distance>{this.props.distance} km</Distance>
+            </Content>
+          </Container>
+        </TouchableWithoutFeedback>
+      )
+      titleSize = (
+        <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+          {this.props.title}
+        </Title>
+      )
+      popup = (
+        <POIPopup
+          image={this.props.image}
+          title={this.props.title}
+          distance={this.props.distance}
+          city={this.props.city}
+          description={this.props.description}
+          hyperlink={this.props.hyperlink}
+        />
+      )
+    }
     else {
       card = (
         <TouchableWithoutFeedback
