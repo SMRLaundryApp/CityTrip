@@ -7,7 +7,7 @@ import * as Permissions from 'expo-permissions'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const axios = require('axios').default
-axios.defaults.baseURL = 'https://citytrip.trifall.net'
+const baseURL = 'https://citytrip.trifall.net'
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
@@ -88,8 +88,8 @@ export default class CardsLayout extends Component {
   state = {
     location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
     gotPOIs: false,
-    points_of_interest: undefined,
-    coordinates: undefined
+    points_of_interest: [],
+    coordinates: undefined,
   }
 
   constructor(props) {
@@ -118,50 +118,40 @@ export default class CardsLayout extends Component {
     this.setState({ location })
   }
 
-  async componentDidMount() {
+  componentDidMount = () => {
 
-    await let categories = global.userData.user.categories
+    let categories = global.userData.user.categories
     // console.log(categories)
     console.log('\n')
 
     global.poi = []
-    await categories.map((categorie, index) => {
+    global.coordinates = []
+    categories.map((categorie, index) => {
       axios
-        .get(categorie)
+        .get(baseURL + categorie)
         .then(response => {
           response.data.pointOfInterests.map((point) => {
-            global.poi.push(point)
+            let alreadyAdded = false
+            global.poi.map((poi, index) => {
+              if (poi === point) alreadyAdded = true
+            })
+            if (alreadyAdded === false) {
+              global.poi.push(point)
+              axios
+                .get(baseURL + point)
+                .then(response => {
+                  global.coordinates.push(response.data.coordinates[0])
+                })  
+              // this.setState({points_of_interest: global.poi.sort()})
+            }
+            
           })
-          // index === 0 ? global.poi.push(response.data.pointOfInterests) : global.poi.push(response.data.pointOfInterests)
-          // global.poi += response.data.pointOfInterests
-          this.setState({points_of_interest: global.poi})
         })
-        .catch(response => console.log('categories1 ', response))
-      
-      // console.log(this.state.points_of_interest)
+        .catch(error => console.log('categories ', error))
+      if (index + 1 === categories.length) {
+        this.setState({points_of_interest: global.poi.sort()})
+      }
     })
-    console.log(global.poi.sort())
-
-    // axios
-    //   .get('/api/point_of_interests')
-    //   .then(response => {
-    //     this.setState({points_of_interest: response.data})
-    //   })
-    //   .catch(error => console.log('point_of_interests ', error))
-    
-    // axios
-    //   .get('/api/coordinates')
-    //   .then(response => {
-    //     this.setState({coordinates: response.data})
-    //   })
-    //   .catch(error => console.log('coordinates ', error))
-
-    // axios
-    //   .get('/api/categories')
-    //   .then(response => {
-    //     this.setState({categories: response.data})
-    //   })
-    //   .catch(error => console.log('categories ', error))
 
   }
 
@@ -177,10 +167,14 @@ export default class CardsLayout extends Component {
 
     let addPOI = undefined
 
+    // if (this.state.points_of_interest !== undefined) console.log('testing ', this.state.points_of_interest)
+
     if (
       this.state.location.coords.latitude !== undefined &&
-      this.state.location.coords.longitude !== undefined
+      this.state.location.coords.longitude !== undefined &&
+      this.state.points_of_interest.length > 0
     ) {
+      console.log('pois:', this.state.points_of_interest.length)
       load = undefined
       addPOI = <Card title="Add POI" />
       POIs.push(
@@ -200,75 +194,68 @@ export default class CardsLayout extends Component {
         sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
         // sortedPointsOfInterest.push(PointsOfInterest[sortedPOIs[i]])
       }
+
+      columnTwo = this.state.points_of_interest.map((POI, index) => {
+        // let userDistance = POIs[index][0]
+        if (index % 2 !== 1) {
+          return (
+            <Card
+              key={index}
+              api={POI}
+            />
+          )
+        }
+      })
+
+      columnOne = this.state.points_of_interest.map((POI, index) => {
+        // let userDistance = POIs[index][0]
+        if (index % 2 === 1) {
+          return (
+            <Card
+              key={index}
+              api={POI}
+            />
+          )
+        }
+      })
+
       // columnTwo = sortedPointsOfInterest.map((POI, index) => {
-      //   let userDistance = POIs[index][0]
+      //   let userDistance = POIs[sortedPOIs[index]][0]
       //   if (index % 2 !== 1) {
       //     return (
       //       <Card
       //         key={index}
       //         city={POI.city}
       //         title={POI.name}
-      //         image={POI.image}
+      //         image={POI.image.url}
       //         distance={userDistance}
       //         description={POI.description}
-      //         hyperlink={POI.link}
+      //         hyperlink={POI.hyperlink}
       //       />
       //     )
       //   }
       // })
       // columnOne = sortedPointsOfInterest.map((POI, index) => {
-      //   let userDistance = POIs[index][0]
+      //   let userDistance = POIs[sortedPOIs[index]][0]
       //   if (index % 2 === 1) {
       //     return (
       //       <Card
       //         key={index}
       //         city={POI.city}
       //         title={POI.name}
-      //         image={POI.image}
+      //         image={POI.image.url}
       //         distance={userDistance}
       //         description={POI.description}
-      //         hyperlink={POI.link}
+      //         hyperlink={POI.hyperlink}
       //       />
       //     )
       //   }
       // })
-      columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[sortedPOIs[index]][0]
-        if (index % 2 !== 1) {
-          return (
-            <Card
-              key={index}
-              city={POI.city}
-              title={POI.name}
-              image={POI.image.url}
-              distance={userDistance}
-              description={POI.description}
-              hyperlink={POI.hyperlink}
-            />
-          )
-        }
-      })
-      columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[sortedPOIs[index]][0]
-        if (index % 2 === 1) {
-          return (
-            <Card
-              key={index}
-              city={POI.city}
-              title={POI.name}
-              image={POI.image.url}
-              distance={userDistance}
-              description={POI.description}
-              hyperlink={POI.hyperlink}
-            />
-          )
-        }
-      })
     }
 
     return (
       <Layout>
-        <TouchableOpacity 
+        {/* <TouchableOpacity 
           onPress={() => {
             let temp = this.state.points_of_interest.sort();
             let Delete = [];
@@ -285,8 +272,12 @@ export default class CardsLayout extends Component {
               }
             })
             this.setState({points_of_interest: temp})
-            console.log('lol ', this.state.points_of_interest)}}
-          style={{backgroundColor:'black', height:50, width: 50}} />
+            console.log('lol ', this.state.points_of_interest)
+            console.log('test', global.coordinates)
+          }}
+            
+          style={{backgroundColor:'black', height:50, width: 50}}
+        /> */}
         {load}
         <ColumnOne>{addPOI}{columnOne}</ColumnOne>
         <ColumnTwo>{columnTwo}</ColumnTwo>
