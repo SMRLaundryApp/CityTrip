@@ -20,7 +20,11 @@ export default class Card extends Component {
     distanceToUser: undefined,
     title: undefined,
     distance: undefined,
-    image: undefined
+    image: undefined,
+    city: undefined,
+    description: undefined,
+    link: undefined,
+    distance: undefined
   }
 
   constructor(props) {
@@ -70,7 +74,10 @@ export default class Card extends Component {
           this.setState({
             title: response.data.name,
             image: response.data.image,
-            distance: response.data.id
+            distance: response.data.id,
+            city: response.data.city,
+            description: response.data.description,
+            link: response.data.link
           })
           // console.log(response.data.name)
         })
@@ -144,6 +151,16 @@ export default class Card extends Component {
           <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
             {this.state.title}
           </Title>
+        )
+        popup = (
+          <POIPopup
+            image={this.state.image}
+            title={this.state.title}
+            distance={this.state.distance}
+            city={this.state.city}
+            description={this.state.description}
+            hyperlink={this.state.link}
+          />
         )
       }
     }
