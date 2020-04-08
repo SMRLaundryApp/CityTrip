@@ -86,44 +86,44 @@ export default class Card extends Component {
 
     if (this.props.title !== "Add POI") {
       // console.log('card', this.props.api)
-      if (this.props.api === undefined) {
-        card = (
-          <TouchableWithoutFeedback
-            delayPressIn={5}
-            delayPressOut={5}
-            delayLongPress={5}
-            onPress={() => {
-              this.openModal()
-            }}
-          >
-            <Container width={cardWidth} height={cardHeight}>
-              <Cover height={this.state.imageHeight}>
-                <Image source={{ uri: this.props.image }} />
-              </Cover>
-              <Content>
-                <Title>{this.props.title}</Title>
-                <Distance>{this.props.distance} km</Distance>
-              </Content>
-            </Container>
-          </TouchableWithoutFeedback>
-        )
-        titleSize = (
-          <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-            {this.props.title}
-          </Title>
-        )
-        popup = (
-          <POIPopup
-            image={this.props.image}
-            title={this.props.title}
-            distance={this.props.distance}
-            city={this.props.city}
-            description={this.props.description}
-            hyperlink={this.props.hyperlink}
-          />
-        )
-      }
-      else {
+      // if (this.props.api === undefined) {
+      //   card = (
+      //     <TouchableWithoutFeedback
+      //       delayPressIn={5}
+      //       delayPressOut={5}
+      //       delayLongPress={5}
+      //       onPress={() => {
+      //         this.openModal()
+      //       }}
+      //     >
+      //       <Container width={cardWidth} height={cardHeight}>
+      //         <Cover height={this.state.imageHeight}>
+      //           <Image source={{ uri: this.props.image }} />
+      //         </Cover>
+      //         <Content>
+      //           <Title>{this.props.title}</Title>
+      //           <Distance>{this.props.distance} km</Distance>
+      //         </Content>
+      //       </Container>
+      //     </TouchableWithoutFeedback>
+      //   )
+      //   titleSize = (
+      //     <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+      //       {this.props.title}
+      //     </Title>
+      //   )
+      //   popup = (
+      //     <POIPopup
+      //       image={this.props.image}
+      //       title={this.props.title}
+      //       distance={this.props.distance}
+      //       city={this.props.city}
+      //       description={this.props.description}
+      //       hyperlink={this.props.hyperlink}
+      //     />
+      //   )
+      // }
+      // else {
         if (this.state.api === undefined) {
           this.setState({api: this.props.api})
         }
@@ -163,7 +163,7 @@ export default class Card extends Component {
           />
         )
       }
-    }
+    // }
     else {
       card = (
         <TouchableWithoutFeedback

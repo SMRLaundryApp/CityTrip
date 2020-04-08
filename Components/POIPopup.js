@@ -32,9 +32,11 @@ export default class POIPopup extends Component {
             </ColumnTwo>
           </Table>
           <Description>{this.props.description}</Description>
-          <Hyperlink onPress={() => Linking.openURL(this.props.hyperlink)} style={{ visible }}>
-            Read more
-          </Hyperlink>
+          <Clear style={{ visible }}>
+            <Hyperlink onPress={() => Linking.openURL(this.props.hyperlink)}>
+              Read more
+            </Hyperlink>
+          </Clear>
         </Clear>
       )
     }
