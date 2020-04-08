@@ -8,21 +8,20 @@ const cardWidth = screenWidth - 20
 const cardHeight = screenWidth / 4
 const imageWidth = screenWidth / 3
 
-
 export default class Interest_card extends Component {
   state = {
     image: this.props.image,
     title: this.props.title,
     subtitle: this.props.subtitle,
     pressed: this.props.pressed,
-    bg_color: '#888'
+    bg_color: '#888',
   }
 
   constructor(props) {
-    super(props);
+    super(props)
   }
 
-  render(){
+  render() {
     return (
       <Clear>
         <TouchableWithoutFeedback
@@ -30,18 +29,23 @@ export default class Interest_card extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            (this.setState({bg_color: (this.state.bg_color === '#888') ? '#19B092' : '#888'}), this.setState({pressed: (this.state.pressed === false) ? true : false}))
+            this.setState({
+              bg_color: this.state.bg_color === '#888' ? '#19B092' : '#888',
+            }),
+              this.setState({
+                pressed: this.state.pressed === false ? true : false,
+              })
           }}
         >
           <Container
-            style={{ borderBottomRightRadius: 14, backgroundColor: this.state.bg_color }}
+            style={{
+              borderBottomRightRadius: 14,
+              backgroundColor: this.state.bg_color,
+            }}
             width={cardWidth}
             height={cardHeight}
           >
-            <Cover
-              style={{ borderBottomLeftRadius: 14 }}
-              width={imageWidth}
-            >
+            <Cover style={{ borderBottomLeftRadius: 14 }} width={imageWidth}>
               <Image source={{ uri: this.state.image }} />
             </Cover>
             <Content
