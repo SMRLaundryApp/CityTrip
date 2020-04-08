@@ -100,7 +100,7 @@ const Clear = styled.View``
 
 const Container = styled.View`
   align-self: center;
-  background: #888;
+  background: #5e6e5e;
   border-radius: 14px;
   margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
@@ -143,7 +143,7 @@ const Info = styled.Text`
 const RouteContainer = styled.View`
   padding: 10px;
   padding-bottom: 0px;
-  background-color: #aaa;
+  background-color: #758a75;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `
