@@ -118,14 +118,14 @@ export default class CardsLayout extends Component {
     this.setState({ location })
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
-    let categories = global.userData.user.categories
+    await let categories = global.userData.user.categories
     // console.log(categories)
     console.log('\n')
 
     global.poi = []
-    categories.map((categorie, index) => {
+    await categories.map((categorie, index) => {
       axios
         .get(categorie)
         .then(response => {
@@ -136,7 +136,8 @@ export default class CardsLayout extends Component {
           // global.poi += response.data.pointOfInterests
           this.setState({points_of_interest: global.poi})
         })
-        .catch(error => console.log('categories1 ', error))
+        .catch(response => console.log('categories1 ', response))
+      
       // console.log(this.state.points_of_interest)
     })
     console.log(global.poi.sort())
@@ -165,11 +166,6 @@ export default class CardsLayout extends Component {
   }
 
   render() {
-    let PointsOfInterest = undefined;
-    if (this.state.gotPOIs === true) {
-      PointsOfInterest = getPOIs();
-    }
-    // console.log(PointsOfInterest)
     let pointsOfInterest = require('../data/POIs.json');
 
     let columnOne = undefined
@@ -181,15 +177,9 @@ export default class CardsLayout extends Component {
 
     let addPOI = undefined
 
-    // if (this.state.gotPOIs === false && PointsOfInterest !== undefined) {
-    //   this.setState({ gotPOIs: true })
-    // }
-
     if (
       this.state.location.coords.latitude !== undefined &&
-      this.state.location.coords.longitude !== undefined 
-      // this.state.gotPOIs === true &&
-      // PointsOfInterest !== undefined
+      this.state.location.coords.longitude !== undefined
     ) {
       load = undefined
       addPOI = <Card title="Add POI" />
