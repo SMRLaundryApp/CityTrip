@@ -17,6 +17,8 @@ import Interests from '../screens/Interest_clicker'
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
+let isLoggedIn = true;
+
 const Tab = createBottomTabNavigator()
 const TabScreen = () => (
   <Tab.Navigator
@@ -85,8 +87,11 @@ const AuthStackScreen = () => (
 const RootStack = createStackNavigator()
 const RootStackScreen = ({ userToken }) => (
   <RootStack.Navigator screenOptions={{ headerShown: false }}>
-    <RootStack.Screen name="Auth" component={AuthStackScreen} />
-    <RootStack.Screen name="App" component={TabScreen} />
+    {isLoggedIn ? (
+      <RootStack.Screen name="App" component={TabScreen} />
+    ):(
+      <RootStack.Screen name="Auth" component={AuthStackScreen} />
+    )}
   </RootStack.Navigator>
 )
 

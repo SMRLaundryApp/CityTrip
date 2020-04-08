@@ -14,6 +14,7 @@ export default class Interest_card extends Component {
     image: this.props.image,
     title: this.props.title,
     subtitle: this.props.subtitle,
+    pressed: this.props.pressed,
     bg_color: '#888'
   }
 
@@ -29,7 +30,7 @@ export default class Interest_card extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            this.setState({bg_color: (this.state.bg_color === '#888') ? '#19B092' : '#888'})
+            (this.setState({bg_color: (this.state.bg_color === '#888') ? '#19B092' : '#888'}), this.setState({pressed: (this.state.pressed === false) ? true : false}))
           }}
         >
           <Container
