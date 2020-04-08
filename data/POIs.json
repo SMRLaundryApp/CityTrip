@@ -6,7 +6,7 @@
     "image": {
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX53_JePpL-Pss_4EQ17rJke9PS4D9yk6J92h9tePRPsAtR-By"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.156727,
       "longitude": 4.472573
@@ -21,7 +21,7 @@
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1033_2.png"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.15072,
       "longitude": 4.443234
@@ -36,7 +36,7 @@
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1026_2.jpg"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.17349,
       "longitude": 4.489123
@@ -51,7 +51,7 @@
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1028_2.png"
     },
-    "category": ["building", "windmill", "museum"],
+    "category": ["mills", "museums"],
     "coords": {
       "latitude": 52.164451,
       "longitude": 4.486489
@@ -66,7 +66,7 @@
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1027_7.png"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.16135,
       "longitude": 4.481973
@@ -81,7 +81,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ErfgoedLeiden_LEI001013300_Station_Leiden%2C_Stationsplein_1.jpg/1024px-ErfgoedLeiden_LEI001013300_Station_Leiden%2C_Stationsplein_1.jpg"
     },
-    "category": ["building", "station"],
+    "category": ["architecture"],
     "coords": {
       "latitude": 52.165879,
       "longitude": 4.483116
@@ -96,7 +96,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
     },
-    "category": ["building", "gate"],
+    "category": ["castle"],
     "coords": {
       "latitude": 52.162057,
       "longitude": 4.48213
@@ -111,7 +111,7 @@
     "image": {
       "url": "https://www.zuidhollandslandschap.nl/media/cache/wide_photo/media/photopage/image/zijlpoort-leiden-1.jpg"
     },
-    "category": ["building", "gate"],
+    "category": ["castle"],
     "coords": {
       "latitude": 52.161733,
       "longitude": 4.504201
@@ -126,7 +126,7 @@
     "image": {
       "url": "https://i.pinimg.com/originals/2f/1b/f6/2f1bf64d59293a0995a499a91f58caf6.jpg"
     },
-    "category": ["building", "church"],
+    "category": ["placesofworship"],
     "coords": {
       "latitude": 52.160334,
       "longitude": 4.490922
@@ -141,7 +141,7 @@
     "image": {
       "url": "https://media.ndtrc.nl/Images/99/9900c932-03fe-46b7-ac0c-fc40b5b93dbe/3d663fb3-a9be-44ef-a8a3-e65b8f84a96f.jpg"
     },
-    "category": ["building", "church"],
+    "category": ["placesofworship"],
     "coords": {
       "latitude": 52.157499,
       "longitude": 4.486903
@@ -156,7 +156,7 @@
     "image": {
       "url": "https://static.zoom.nl/0C126144D2D906D3E355733874B0EB98-hooglandse-kerk-vanaf-de-burcht.jpg"
     },
-    "category": ["building", "church"],
+    "category": ["placesofworship"],
     "coords": {
       "latitude": 52.157914,
       "longitude": 4.493566
@@ -171,7 +171,7 @@
     "image": {
       "url": "https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
     },
-    "category": ["building", "castle"],
+    "category": ["castle"],
     "coords": {
       "latitude": 52.158979,
       "longitude": 4.49244
@@ -186,7 +186,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Aanzicht_voor-_en_zijgevel_-_Rijnsburg_-_20187055_-_RCE.jpg"
     },
-    "category": ["building", "museum"],
+    "category": ["museums"],
     "coords": {
       "latitude": 52.191447,
       "longitude": 4.437151
@@ -201,7 +201,7 @@
     "image": {
       "url": "https://jacomijn.heupink.com/wp-content/uploads/2016/04/IMG_20160423_230946.jpg"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.17664,
       "longitude": 4.487276
@@ -216,7 +216,7 @@
     "image": {
       "url": "https://molens.hippoextranet.nl/07071954/zuidholland/1030MaredijkmolenLeiden.jpg"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.172951,
       "longitude": 4.48719
@@ -231,7 +231,7 @@
     "image": {
       "url": "https://farm3.static.flickr.com/2193/2493269223_45e08dd898_b.jpg"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.146397,
       "longitude": 4.503373
@@ -246,7 +246,7 @@
     "image": {
       "url": "https://www.molensinleiden.nl/Stadsmolen/Stadsmolen%20oud2.jpg"
     },
-    "category": ["building", "windmill"],
+    "category": ["mills"],
     "coords": {
       "latitude": 52.172501,
       "longitude": 4.497798
