@@ -5,6 +5,9 @@ import { Dimensions } from 'react-native'
 import Modal from 'react-native-modal'
 import POIPopup from './POIPopup'
 
+const axios = require('axios').default
+const baseURL = 'https://citytrip.trifall.net'
+
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth / 2 - 20
 const cardHeight = screenWidth / 3 + 78
@@ -12,14 +15,12 @@ const cardHeight = screenWidth / 3 + 78
 export default class Card extends Component {
   state = {
     isModalVisible: false,
+    imageHeight: screenWidth / 3,
+    distanceToUser: undefined,
   }
 
   constructor(props) {
     super(props)
-    this.state = {
-      imageHeight: screenWidth / 3,
-      distanceToUser: undefined,
-    }
   }
 
   openModal = () => {
@@ -38,31 +39,80 @@ export default class Card extends Component {
   }
 
   render() {
-    let card = (
-      <TouchableWithoutFeedback
-        delayPressIn={5}
-        delayPressOut={5}
-        delayLongPress={5}
-        onPress={() => {
-          this.openModal()
-        }}
-      >
-        <Container width={cardWidth} height={cardHeight}>
-          <Cover height={this.state.imageHeight}>
-            <Image source={{ uri: this.props.image }} />
-          </Cover>
-          <Content>
-            <Title>{this.props.title}</Title>
-            <Distance>{this.props.distance} km</Distance>
-          </Content>
-        </Container>
-      </TouchableWithoutFeedback>
-    )
-    let titleSize = (
-      <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
-        {this.props.title}
-      </Title>
-    )
+    let card = undefined
+    let titleSize = undefined
+    let popup = undefined
+
+    if (this.props.title !== "Add POI") {
+      card = (
+        <TouchableWithoutFeedback
+          delayPressIn={5}
+          delayPressOut={5}
+          delayLongPress={5}
+          onPress={() => {
+            this.openModal()
+          }}
+        >
+          <Container width={cardWidth} height={cardHeight}>
+            <Cover height={this.state.imageHeight}>
+              <Image source={{ uri: this.props.image }} />
+            </Cover>
+            <Content>
+              <Title>{this.props.title}</Title>
+              <Distance>{this.props.distance} km</Distance>
+            </Content>
+          </Container>
+        </TouchableWithoutFeedback>
+      )
+      titleSize = (
+        <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+          {this.props.title}
+        </Title>
+      )
+      popup = (
+        <POIPopup
+          image={this.props.image}
+          title={this.props.title}
+          distance={this.props.distance}
+          city={this.props.city}
+          description={this.props.description}
+          hyperlink={this.props.hyperlink}
+        />
+      )
+    }
+    else {
+      card = (
+        <TouchableWithoutFeedback
+          delayPressIn={5}
+          delayPressOut={5}
+          delayLongPress={5}
+          onPress={() => {
+            this.openModal()
+          }}
+        >
+          <Container width={cardWidth} height={cardHeight}>
+            <Cover height={this.state.imageHeight}>
+              <Image source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU" }} />
+            </Cover>
+            <Content>
+              <Title>{this.props.title}</Title>
+              <Distance>Current location</Distance>
+            </Content>
+          </Container>
+        </TouchableWithoutFeedback>
+      )
+      titleSize = (
+        <Title onLayout={this.onLayout} style={{ opacity: 0 }}>
+          {this.props.title}
+        </Title>
+      )
+      popup = (
+        <POIPopup
+          image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU"
+          title={this.props.title}
+        />
+      )
+    }
 
     return (
       <Clear>
@@ -98,14 +148,7 @@ export default class Card extends Component {
             >
               <CloseButton>×</CloseButton>
             </TouchableOpacity>
-            <POIPopup
-              image={this.props.image}
-              title={this.props.title}
-              distance={this.props.distance}
-              city={this.props.city}
-              description={this.props.description}
-              hyperlink={this.props.hyperlink}
-            />
+            {popup}
           </Container>
         </Modal>
       </Clear>

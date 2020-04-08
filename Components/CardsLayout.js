@@ -82,20 +82,23 @@ export default class CardsLayout extends Component {
   }
 
   render() {
-    let pointsOfInterest = require('../data/POIs.json')
+    let pointsOfInterest = require('../data/POIs.json');
 
-    let columnOne,
-      columnTwo = undefined
+    let columnOne = undefined
+    let columnTwo = undefined
     let userLocation = this.state.location.coords
     let POIs = []
     let load = <Loading> Getting user location... </Loading>
     let sortedPointsOfInterest = []
 
+    let addPOI = undefined
+
     if (
       this.state.location.coords.latitude !== undefined &&
       this.state.location.coords.longitude !== undefined
     ) {
-      load = <Loading> Sorting cards by distance... </Loading>
+      load = undefined
+      // addPOI = <Card title="Add POI" />
       POIs.push(
         pointsOfInterest.map(function (POI) {
           let userDistance = getDistance(
@@ -112,13 +115,9 @@ export default class CardsLayout extends Component {
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
       }
+
       columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = getDistance(
-          userLocation.latitude,
-          userLocation.longitude,
-          POI.coords.latitude,
-          POI.coords.longitude
-        ).toFixed(2)
+        let userDistance = POIs[sortedPOIs[index]][0]
         if (index % 2 !== 1) {
           return (
             <Card
@@ -134,12 +133,7 @@ export default class CardsLayout extends Component {
         }
       })
       columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = getDistance(
-          userLocation.latitude,
-          userLocation.longitude,
-          POI.coords.latitude,
-          POI.coords.longitude
-        ).toFixed(2)
+        let userDistance = POIs[sortedPOIs[index]][0]
         if (index % 2 === 1) {
           return (
             <Card
@@ -154,13 +148,12 @@ export default class CardsLayout extends Component {
           )
         }
       })
-      load = undefined
     }
 
     return (
       <Layout>
         {load}
-        <ColumnOne>{columnOne}</ColumnOne>
+        <ColumnOne>{addPOI}{columnOne}</ColumnOne>
         <ColumnTwo>{columnTwo}</ColumnTwo>
       </Layout>
     )
