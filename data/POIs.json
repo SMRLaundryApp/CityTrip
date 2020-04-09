@@ -366,7 +366,7 @@
     "image": {
       "url": "https://d2h37djvgj7smg.cloudfront.net/60f08bc9e9cf665427f590f261cac3ac3deff05a/329637.767x451x16919/element-offices-level-leiden.jpg"
     },
-    "category": ["Architecture"],
+    "category": ["architecture"],
     "coords": {
       "latitude":  52.166120, 
       "longitude": 4.480680 
@@ -381,7 +381,7 @@
     "image": {
       "url": "http://indebuurt.nl/leiden/wp-content/uploads/2018/04/kamerlingh-onnes-gebouw.jpg"
     },
-    "category": ["Architecture"],
+    "category": ["architecture"],
     "coords": {
       "latitude":  52.156269,
       "longitude":  4.489895 
@@ -463,5 +463,95 @@
     },
     "hyperlink": "",
     "description": ""
-  }  
+  },
+  {
+    "id": 31,
+    "name": "Archeon",
+    "city": "Alphen aan den Rijn",
+    "image": {
+      "url": "https://www.events.nl/sites/default/files/Archeon-romeinen5.jpg"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  52.114494, 
+      "longitude": 4.651653 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 32,
+    "name": "Duinrell",
+    "city": "Wassenaar",
+    "image": {
+      "url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.omroepwest.nl%2Fnieuws%2F3833930%2FMoeder-beschuldigt-medewerker-Duinrell-van-ongewenste-intimiteiten&psig=AOvVaw3ApI8vPKJgowUUIKWJxS01&ust=1586514614308000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCqp9WR2-gCFQAAAAAdAAAAABAD"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  52.147518, 
+      "longitude": 4.384285 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 33,
+    "name": "Avifauna",
+    "city": "Alphen aan den Rijn",
+    "image": {
+      "url": "https://www.leukvoorkids.nl/wp-content/uploads/avifauna.jpg"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  52.141825, 
+      "longitude": 4.650065 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 34,
+    "name": "Blijdorp",
+    "city": "Rotterdam",
+    "image": {
+      "url": "https://www.schooltours.nl/wp-content/uploads/DB-gorilla-Bokito-met-familie.jpg"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  51.928184, 
+      "longitude": 4.444015 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 35,
+    "name": "Familiepark Drievliet",
+    "city": "Den Haag",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Familiepark_Drievliet_%282012%29_foto_05.jpg"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  52.051881, 
+      "longitude": 4.352819 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 36,
+    "name": "Madurodam",
+    "city": "Den Haag",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Madurodam_pays_bas.JPG/1200px-Madurodam_pays_bas.JPG"
+    },
+    "category": ["amusementparks"],
+    "coords": {
+      "latitude":  52.099522, 
+      "longitude": 4.296952 
+    },
+    "hyperlink": "",
+    "description": ""
+  }
 ]
