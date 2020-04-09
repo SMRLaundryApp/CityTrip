@@ -253,5 +253,215 @@
     },
     "hyperlink": "https://en.molendatabase.nl/nederland/molen.php?nummer=1032",
     "description": "The Stadsmolen was built in 1856. It had several predecessors; the last was a wooden mill built in 1804, which had to be torn down becasue it had subsided a lot.\nThe unique thing about this mill is its bottleshape. No other mill in the Netherlands had such a clear presence as here."
-  }
+  },
+  {
+    "id": 17,
+    "name": "St. Joris and the Dragon",
+    "city": "Leiden",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Leiden_kunstwerk_st_joris_en_de_draak.jpg"
+    },
+    "category": ["statues"],
+    "coords": { 
+      "latitude": 52.158746,
+      "longitude": 4.483178
+    },
+    "hyperlink": "https://nl.wikipedia.org/wiki/Doelenpoort",
+    "description": "The gate is located near the northern start of the Sebastiaansdoelen, a street parallel to the Doelengracht. The gate provides acces to the the territory where the Doelenkazerne was located from 1818 till 1980."
+  },
+  {
+    "id": 18,
+    "name": "Herman Boerhaave",
+    "city": "Leiden",
+    "image": {
+      "url": "https://standbeelden.vanderkrogt.net/Foto/ZH/ZH33aj.jpg"
+    },
+    "category": ["statues"],
+    "coords": {
+      "latitude": 52.104,
+      "longitude": 4.2853 
+    },
+    "hyperlink": "https://standbeelden.vanderkrogt.net/object.php?record=ZH33aj",
+    "description": "The statue of Herman Boerhaave"
+  },
+  {
+    "id": 19,
+    "name": "Rembrandt van Rijn",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.erfgoedleiden.nl/component/lei_files/download/id/2729"
+    },
+    "category": ["statues"],
+    "coords": {
+      "latitude":  52.160605, 
+      "longitude": 4.481960 
+    },
+    "hyperlink": "https://www.visitleiden.nl/nl/ontdek-leiden/specials/jonge-rembrandt",
+    "description": "Statue of Rembrandt van Rijn"
+  },
+  {
+    "id": 20,
+    "name": "Naturalis",
+    "city": "Leiden",
+    "image": {
+      "url": "https://daf9627eib4jq.cloudfront.net/app/uploads/2019/05/JP-van-Eesteren-levert-Naturalis-op-foto-Bert-Rietberg-3.jpg"
+    },
+    "category": ["museums", "architecture"],
+    "coords": {
+      "latitude":  52.164767, 
+      "longitude": 4.473077
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 21,
+    "name": "Nucleus building",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.baseclear.com/wp-content/uploads/10-PTSA-Nucleus-Building-22-2018111636-1024x683.jpg"
+    },
+    "category": ["architecture"],
+    "coords": {
+      "latitude":  52.168724, 
+      "longitude": 4.467902 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 22,
+    "name": "The Lakenhal",
+    "city": "Leiden",
+    "image": {
+      "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.museum.nl%2Fcards%2F700x394%2Fb6eb0325-0ae8-43dd-80fb-f3f48b616ac9%2FMuseumDeLakenhal-.jpg&f=1&nofb=1"
+    },
+    "category": ["museums", "architecture"],
+    "coords": {
+      "latitude":  52.162959,
+      "longitude":  4.487565 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 23,
+    "name": "Joop van der Reijdenbrug",
+    "city": "Valkenburg",
+    "image": {
+      "url": "https://www.rapleiden.nl/wp-content/uploads/2019/09/01.jpg"
+    },
+    "category": ["architecture"],
+    "coords": {
+      "latitude":  52.178043, 
+      "longitude": 4.447506 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 24,
+    "name": "Level",
+    "city": "Leiden",
+    "image": {
+      "url": "https://d2h37djvgj7smg.cloudfront.net/60f08bc9e9cf665427f590f261cac3ac3deff05a/329637.767x451x16919/element-offices-level-leiden.jpg"
+    },
+    "category": ["Architecture"],
+    "coords": {
+      "latitude":  52.166120, 
+      "longitude": 4.480680 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 25,
+    "name": "Kamerlingh Onnes building",
+    "city": "Leiden",
+    "image": {
+      "url": "http://indebuurt.nl/leiden/wp-content/uploads/2018/04/kamerlingh-onnes-gebouw.jpg"
+    },
+    "category": ["Architecture"],
+    "coords": {
+      "latitude":  52.156269,
+      "longitude":  4.489895 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 26,
+    "name": "Boerhaave Museum",
+    "city": "Leiden",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/BoerhaaveMuseum2.jpg"
+    },
+    "category": ["museums"],
+    "coords": {
+      "latitude":  52.161506,
+      "longitude":  4.488951 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 27,
+    "name": "Japanmuseum Sieboldhuis",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.sieboldhuis.org/public/bestanden/algemeen/Pand/Gevel_logo.jpg"
+    },
+    "category": ["museums"],
+    "coords": {
+      "latitude":  52.159791, 
+      "longitude": 4.484609 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 28,
+    "name": "Corpus",
+    "city": "Leiden",
+    "image": {
+      "url": "https://media.insiders.nl/nwm/files/image/8d4307421c9c7e00fde23321873196762b74654b.jpg"
+    },
+    "category": ["museum"],
+    "coords": {
+      "latitude":  52.152101, 
+      "longitude": 4.489228 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 29,
+    "name": "Hortus Botanicus",
+    "city": "Leiden",
+    "image": {
+      "url": "https://cdn.museum.nl/cards/700x394/4cc82c9d-097e-4341-954b-4d64076248e3/hortus.jpg"
+    },
+    "category": ["museums"],
+    "coords": {
+      "latitude":  52.156863, 
+      "longitude": 4.483725 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 30,
+    "name": "Museum Volkenkunde",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.volkenkunde.nl/sites/default/files/styles/teaser_/public/volkenkunde%20geschiedenis_0.jpg?h=57bc7b4f&itok=zI-4HoBj"
+    },
+    "category": ["museums"],
+    "coords": {
+      "latitude":  52.163325,
+      "longitude":  4.482489 
+    },
+    "hyperlink": "",
+    "description": ""
+  }  
 ]

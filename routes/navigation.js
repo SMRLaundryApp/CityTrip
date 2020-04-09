@@ -15,6 +15,7 @@ import SignIn from '../screens/SignIn'
 import Forgot_pw from '../screens/Forgot_pw'
 import Interests from '../screens/Interest_clicker'
 
+
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
 
 global.isLoggedIn = false
@@ -83,6 +84,7 @@ const AuthStackScreen = () => (
     />
   </AuthStack.Navigator>
 )
+
 
 const RootStack = createStackNavigator()
 const RootStackScreen = ({ userToken }) => (
