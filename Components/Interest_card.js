@@ -13,7 +13,7 @@ export default class Interest_card extends Component {
     image: this.props.image,
     title: this.props.title,
     subtitle: this.props.subtitle,
-    pressed: this.props.pressed,
+    pressed: undefined,
     bg_color: '#888',
   }
 
@@ -22,9 +22,17 @@ export default class Interest_card extends Component {
   }
 
   render() {
+
+    console.log('Pressed:', this.props.pressed)
+
+    if (this.props.pressed !== this.state.pressed) {
+      this.setState({pressed: this.props.pressed})
+      this.setState({bg_color: (this.props.pressed) ? '#888' : '#19B092' })
+    }
+
     return (
       <Clear>
-        <TouchableWithoutFeedback
+        {/* <TouchableWithoutFeedback
           delayPressIn={5}
           delayPressOut={5}
           delayLongPress={5}
@@ -36,7 +44,7 @@ export default class Interest_card extends Component {
                 pressed: this.state.pressed === false ? true : false,
               })
           }}
-        >
+        > */}
           <Container
             style={{
               borderBottomRightRadius: 14,
@@ -57,7 +65,7 @@ export default class Interest_card extends Component {
               <Info>{this.state.subtitle}</Info>
             </Content>
           </Container>
-        </TouchableWithoutFeedback>
+        {/* </TouchableWithoutFeedback> */}
       </Clear>
     )
   }

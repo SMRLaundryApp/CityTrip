@@ -96,7 +96,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Morspoort-Leiden.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude": 52.162057,
       "longitude": 4.48213
@@ -111,7 +111,7 @@
     "image": {
       "url": "https://www.zuidhollandslandschap.nl/media/cache/wide_photo/media/photopage/image/zijlpoort-leiden-1.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude": 52.161733,
       "longitude": 4.504201
@@ -171,7 +171,7 @@
     "image": {
       "url": "https://i.pinimg.com/originals/aa/a1/fa/aaa1fa2be6f4e9c40d2376f480f98e38.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude": 52.158979,
       "longitude": 4.49244
