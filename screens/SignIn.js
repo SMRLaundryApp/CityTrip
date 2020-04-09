@@ -16,7 +16,7 @@ function GoToButton({ App, state }) {
     axios
       .post('/login', { login: name, password: pw })
       .then(function (response) {
-        ;(global.name = response.data.user.username), navigation.navigate('App')
+        ;(global.name = response.data.user.username), navigation.navigate("App")
       })
       .catch(function (error) {
         alert(error)

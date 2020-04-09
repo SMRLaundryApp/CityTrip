@@ -15,7 +15,7 @@ function GoToButton({ App, state }) {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('App'), console.log(state.pressed)
+        navigation.navigate("App"), console.log(state.pressed)
       }}
     >
       <Butoon>
