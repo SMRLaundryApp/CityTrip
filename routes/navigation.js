@@ -13,8 +13,11 @@ import Login from '../screens/Loginscreen'
 import SignUp from '../screens/SignUp'
 import SignIn from '../screens/SignIn'
 import Forgot_pw from '../screens/Forgot_pw'
+import Interests from '../screens/Interest_clicker'
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
+
+global.isLoggedIn = false
 
 const Tab = createBottomTabNavigator()
 const TabScreen = () => (
@@ -40,7 +43,7 @@ const TabScreen = () => (
     })}
     tabBarOptions={{
       activeTintColor: '#19B092',
-      inactiveTintColor: 'gray',
+      inactiveTintColor: '#888',
     }}
   >
     <Tab.Screen name="Map" component={Home_map} />
@@ -61,6 +64,11 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name="SignUp"
       component={SignUp}
+      options={{ animationEnabled: false }}
+    />
+    <AuthStack.Screen
+      name="Interest_clicker"
+      component={Interests}
       options={{ animationEnabled: false }}
     />
     <AuthStack.Screen

@@ -165,7 +165,7 @@ const Clear = styled.View``
 
 const Container = styled.View`
   align-self: center;
-  background: #888;
+  background: #5e6e5e;
   border-radius: 14px;
   margin: 5%;
   margin-top: 10px;

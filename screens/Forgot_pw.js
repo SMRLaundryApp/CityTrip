@@ -48,7 +48,7 @@ export default class Forgot_pw extends Component {
           <Title>Forgot password</Title>
           <InputTitle>E-mail address:</InputTitle>
           <Inputfield
-            placeholder={'  E-mail address'}
+            placeholder={'E-mail address'}
             value={this.state.mail}
             onChangeText={(mail) => this.setState({ mail })}
           />
@@ -78,6 +78,7 @@ const Inputfield = styled.TextInput`
   margin-right: 10px;
   height: 40px;
   border-radius: 2px;
+  padding: 5px;
 `
 
 const Title = styled.Text`

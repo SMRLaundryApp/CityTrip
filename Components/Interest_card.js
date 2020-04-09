@@ -2,61 +2,26 @@ import React, { Component } from 'react'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { Dimensions } from 'react-native'
-import RouteExtension from './RouteExtension'
 
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth - 20
 const cardHeight = screenWidth / 4
 const imageWidth = screenWidth / 3
 
-export default class RouteCard extends Component {
+export default class Interest_card extends Component {
   state = {
-    isModalVisible: false,
-    isRouteVisible: false,
-    id: this.props.id,
+    image: this.props.image,
+    title: this.props.title,
+    subtitle: this.props.subtitle,
+    pressed: this.props.pressed,
+    bg_color: '#888',
   }
 
   constructor(props) {
     super(props)
   }
 
-  openModal = () => {
-    this.setState({ isModalVisible: true })
-  }
-
-  closeModal = () => {
-    this.setState({ isModalVisible: false })
-  }
-
-  toggleRoute = () => {
-    this.setState({ isRouteVisible: !this.state.isRouteVisible })
-  }
-
   render() {
-    let durationHours = Math.floor((this.props.duration / 5).toFixed(0) / 12)
-    let durationMinutes = ((this.props.duration / 5).toFixed(0) % 12) * 5
-    let duration = ''
-    if (durationHours >= 1) {
-      duration += durationHours.toString() + ' hour'
-      if (durationHours > 1) duration += 's'
-      duration += ' '
-    }
-    if (durationMinutes > 0) duration += durationMinutes.toString() + ' minutes'
-
-    let routeExtension = undefined
-    let radius = 14
-
-    if (this.state.isRouteVisible) {
-      routeExtension = (
-        <RouteContainer width={cardWidth}>
-          <RouteExtension id={this.props.id} />
-        </RouteContainer>
-      )
-      radius = 0
-    } else {
-      radius = 14
-    }
-
     return (
       <Clear>
         <TouchableWithoutFeedback
@@ -64,33 +29,35 @@ export default class RouteCard extends Component {
           delayPressOut={5}
           delayLongPress={5}
           onPress={() => {
-            this.toggleRoute()
+            this.setState({
+              bg_color: this.state.bg_color === '#888' ? '#19B092' : '#888',
+            }),
+              this.setState({
+                pressed: this.state.pressed === false ? true : false,
+              })
           }}
         >
           <Container
-            style={{ borderBottomRightRadius: radius }}
+            style={{
+              borderBottomRightRadius: 14,
+              backgroundColor: this.state.bg_color,
+            }}
             width={cardWidth}
             height={cardHeight}
           >
-            <Cover
-              style={{ borderBottomLeftRadius: radius }}
-              width={imageWidth}
-            >
-              <Image source={{ uri: this.props.image }} />
+            <Cover style={{ borderBottomLeftRadius: 14 }} width={imageWidth}>
+              <Image source={{ uri: this.state.image }} />
             </Cover>
             <Content
               left={imageWidth}
               height={cardHeight}
               width={cardWidth - imageWidth}
             >
-              <Title>{this.props.title}</Title>
-              <Info>
-                {this.props.length} km | {duration}
-              </Info>
+              <Title>{this.state.title}</Title>
+              <Info>{this.state.subtitle}</Info>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
-        {routeExtension}
       </Clear>
     )
   }
@@ -100,7 +67,6 @@ const Clear = styled.View``
 
 const Container = styled.View`
   align-self: center;
-  background: #5e6e5e;
   border-radius: 14px;
   margin-top: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /*This particular line doesn't seem to do anything in android OS*/
@@ -134,16 +100,19 @@ const Title = styled.Text`
 `
 
 const Info = styled.Text`
-  color: #b8b3c3;
+  color: #ddd;
   font-size: 15px;
   font-weight: 600;
-  margin-top: 4px;
+  margin-top: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
 `
 
 const RouteContainer = styled.View`
   padding: 10px;
   padding-bottom: 0px;
-  background-color: #758a75;
+  background-color: #aaa;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 `
