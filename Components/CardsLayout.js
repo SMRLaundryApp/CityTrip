@@ -50,6 +50,21 @@ function sortDistance(info) {
   return ids
 }
 
+function filterCategories() {
+  let userCategories = global.userData.user.categories.map((categoryAPI) => {
+    if   (categoryAPI === '/api/categories/2')  {return ('statues')}
+    else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
+    else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
+    else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
+    else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
+    else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
+    else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
+    else {if (categoryAPI === '/api/categories/9')  {return ('food')}
+    else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
+  })
+  return userCategories
+}
+
 export default class CardsLayout extends Component {
   state = {
     location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
@@ -101,23 +116,43 @@ export default class CardsLayout extends Component {
       // addPOI = <Card title="Add POI" />
       POIs.push(
         pointsOfInterest.map(function (POI) {
-          let userDistance = getDistance(
-            userLocation.latitude,
-            userLocation.longitude,
-            POI.coords.latitude,
-            POI.coords.longitude
-          ).toFixed(2)
+          let pass = false
+          let userCategories = filterCategories()
+          for (let i = 0; i < userCategories.length; i++) {
+            for (let j = 0; j < POI.category.length; j++) {
+              if (POI.category[j] === userCategories[i]) {
+                pass = true
+              }
+            }
+          }
+          if (pass) {
+            let userDistance = getDistance(
+              userLocation.latitude,
+              userLocation.longitude,
+              POI.coords.latitude,
+              POI.coords.longitude
+            ).toFixed(2)
           return [userDistance, POI.id]
-        })
+        }})
       )
       POIs = POIs[0]
+      for (let i = POIs.length; i >= 0; i--) {
+        if (POIs[i] === undefined) {
+          POIs.splice(i, 1)
+        }
+      }
       let sortedPOIs = sortDistance(POIs)
       for (let i = 0; i < sortedPOIs.length; i++) {
         sortedPointsOfInterest.push(pointsOfInterest[sortedPOIs[i]])
       }
 
       columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[sortedPOIs[index]][0]
+        let userDistance = 0;
+        for (let i = 0; i < POIs.length; i++) {
+          if (POIs[i][1] === sortedPOIs[index]) {
+            userDistance = POIs[i][0]
+          }
+        }
         if (index % 2 !== 1) {
           return (
             <Card
@@ -133,7 +168,12 @@ export default class CardsLayout extends Component {
         }
       })
       columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = POIs[sortedPOIs[index]][0]
+        let userDistance = 0;
+        for (let i = 0; i < POIs.length; i++) {
+          if (POIs[i][1] === sortedPOIs[index]) {
+            userDistance = POIs[i][0]
+          }
+        }
         if (index % 2 === 1) {
           return (
             <Card
