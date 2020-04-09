@@ -13,6 +13,21 @@ const GEOLOCATION_OPTIONS = {
   distanceInterval: 10,
 }
 
+function filterCategories() {
+  let userCategories = global.userData.user.categories.map((categoryAPI) => {
+    if   (categoryAPI === '/api/categories/2')  {return ('statues')}
+    else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
+    else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
+    else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
+    else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
+    else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
+    else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
+    else {if (categoryAPI === '/api/categories/9')  {return ('food')}
+    else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
+  })
+  return userCategories
+}
+
 export default class Map extends Component {
   state = {
     location: { coords: { latitude: 0, longitude: 0 } },
@@ -63,17 +78,28 @@ export default class Map extends Component {
 
     let pointsOfInterest = require('../data/POIs.json')
     let POIs = pointsOfInterest.map((POI, index) => {
-      return (
-        <Marker
-          key={index}
-          title={POI.name}
-          pinColor="#19B092"
-          coordinate={{
-            latitude: POI.coords.latitude,
-            longitude: POI.coords.longitude,
-          }}
-        />
-      )
+      let pass = false
+      let userCategories = filterCategories()
+      for (let i = 0; i < userCategories.length; i++) {
+        for (let j = 0; j < POI.category.length; j++) {
+          if (POI.category[j] === userCategories[i]) {
+            pass = true
+          }
+        }
+      }
+      if (pass) {
+        return (
+          <Marker
+            key={index}
+            title={POI.name}
+            pinColor="#19B092"
+            coordinate={{
+              latitude: POI.coords.latitude,
+              longitude: POI.coords.longitude,
+            }}
+          />
+        )
+      }
     })
 
     return (
