@@ -1,9 +1,10 @@
 [
   {
     "id": 0,
-    "name": "Leiden Windmill",
+    "name": "Windmill Leiden",
     "type": "lineair",
-    "POIs": [0, 4, 3, 14, 13, 16],
+    "category": "mills",
+    "POIs": [0, 4, 3, 14, 13, 2, 16],
     "region": {
       "latitude": 52.169771,
       "longitude": 4.485997,
@@ -12,81 +13,102 @@
     },
     "length": 4.9,
     "duration": 60,
-    "description": "This route takes you throught Leiden and shows you some of the windmills this city has to offer. The windmills that will be viewed are the Heesterboom Molen, Molen De Put, Molen De Valk, Maredijkmolen, Molen De Herder, Kikkermolen and the Stadsmolen. Molen De Herder isn't accesable, however it is visable from the Maredijkmolen. You can either start at the Stadsmolen or the Heesterboom Molen."
+    "description": "This route takes you through Leiden and shows you some of the windmills this city has to offer.\nThe windmills that will be viewed are the Heesterboom Molen, Molen De Put, Molen De Valk, Maredijkmolen, Molen De Herder, Kikkermolen and the Stadsmolen. Molen De Herder isn't accesable, however it is visable from the Maredijkmolen."
   },
   {
     "id": 1,
-    "name": "Leiden Architecture",
-    "type": "circular",
-    "POIs": [20,21,22,23,24,25],
+    "name": "Architecture Leiden",
+    "type": "lineair",
+    "category": "architecture",
+    "POIs": [23, 21, 20, 24, 5, 22, 25],
     "region": {
-      "latitude": 52.167751,
-      "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitude": 52.169338,
+      "longitude": 4.469647,
+      "latitudeDelta": 0.03,
+      "longitudeDelta": 0.03
     },
-    "length": 1.0,
-    "duration": 55,
-    "description": ""
+    "length": 5.7,
+    "duration": 71,
+    "description": "This route takes you through Leiden and shows you part of the beautiful architecture that this city has to offer.\nThe architecture that will be viewed are the Joop van der Reijdenbrug, Nucleus building, Naturalis, Level, Station Leiden Centraal, Lakenhal and Kamerlingh Onnes Gebouw. Naturalis and Lakenhal are not only beautiful buildings, but also museums."
   },
   {
     "id": 2,
-    "name": "Leiden Pubcrawl",
-    "type": "circular",
-    "POIs": [52,53,54,55],
+    "name": "Pubcrawl Leiden",
+    "type": "lineair",
+    "category": "nightlife",
+    "POIs": [53, 54, 52, 55],
     "region": {
-      "latitude": 52.167751,
-      "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitude": 52.159007,
+      "longitude": 4.489561,
+      "latitudeDelta": 0.015,
+      "longitudeDelta": 0.015
     },
-    "length": 2.0,
-    "duration": 65,
-    "description": ""
+    "length": 2.1,
+    "duration": 53,
+    "description": "This route takes you through Leiden and shows you part of the nightlife Leiden has to offer.\nIf you don't like the pub you're in, you can always go to the next one on the route.\nThe nightlife which is walked by are COC de Kroon, De Hut van Ome Henne, De Next and Marrakech Lounge.\nWe are not responsible for the amount of alcohol you consume at any of these places."
   },
   {
     "id": 3,
-    "name": "Castles Zuid-Holland",
-    "type": "circular",
-    "POIs": [48,49,50,51],
+    "name": "Castles South-Holland",
+    "type": "lineair",
+    "category": "castles",
+    "POIs": [51, 48, 49, 50],
     "region": {
-      "latitude": 52.167751,
+      "latitude": 52.207751,
       "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitudeDelta": 0.2,
+      "longitudeDelta": 0.2
     },
-    "length": 3.0,
-    "duration": 67,
-    "description": ""
+    "length": 24.5,
+    "duration": 304,
+    "description": "This route takes you through South-Holland and shows you some of the castles this province has to offer.\nThe castles on this route are Castle Keukenhof, Castle Oud Poelgeest, Castle Endegeest and Castle Duivenvoorde. The route shown and estimated time is based on going by foot, however it is highly advised to go by car."
   },
   {
     "id": 4,
-    "name": "Leiden museums",
-    "type": "circular",
-    "POIs": [3,20,22,26,27,29,30],
+    "name": "Museums Leiden",
+    "type": "lineair",
+    "category": "museums",
+    "POIs": [28, 20, 30, 3, 22, 26, 27, 56, 29],
     "region": {
-      "latitude": 52.167751,
-      "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitude": 52.165251,
+      "longitude": 4.470977,
+      "latitudeDelta": 0.025,
+      "longitudeDelta": 0.025
     },
-    "length": 4.0,
-    "duration": 175,
-    "description": ""
+    "length": 4.7,
+    "duration": 58,
+    "description": "This route takes you through Leiden and you pass a number of museums Leiden has to offer.\nThe museums on this route are CORPUS, Naturalis, Museum Volkenkunde, Molen De Valk, Lakenhal, Boerhaave Museum, Japanmuseum Sieboldhuis, Rijksmuseum van Oudheden and Hortus Botanicus Leiden."
   },
   {
     "id": 5,
-    "name": "Leiden Places of Worship",
-    "type": "circular",
-    "POIs": [8,9,10,37,38,39,40],
+    "name": "Churches Leiden",
+    "type": "lineair",
+    "category": "placesofworship",
+    "POIs": [9, 10, 8, 37],
     "region": {
-      "latitude": 52.167751,
-      "longitude": 4.485977,
-      "latitudeDelta": 0.01,
-      "longitudeDelta": 0.01
+      "latitude": 52.160313,
+      "longitude": 4.490040,
+      "latitudeDelta": 0.0075,
+      "longitudeDelta": 0.0075
     },
-    "length": 15.6,
-    "duration": 195,
-    "description": ""
+    "length": 1.2,
+    "duration": 15,
+    "description": "This route takes you through the city center of Leiden and shows you some of the churches this city has to offer.\nThe churches on this route are Marekerk, Hartebrugkerk, Hooglandse kerk and Pieterskerk."
+  },
+  {
+    "id": 6,
+    "name": "Mosques Leiden",
+    "type": "lineair",
+    "category": "placesofworship",
+    "POIs": [38, 39, 40],
+    "region": {
+      "latitude": 52.163996,
+      "longitude": 4.489720,
+      "latitudeDelta": 0.025,
+      "longitudeDelta": 0.025
+    },
+    "length": 3.6,
+    "duration": 46,
+    "description": "This route takes you through Leiden and shows you the mosques this city has to offer.\nThe mosques on this route are Al Hijra, Imam Malik and Mimar Sinan."
   }
 ]

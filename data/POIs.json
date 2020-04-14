@@ -331,7 +331,7 @@
   },
   {
     "id": 22,
-    "name": "The Lakenhal",
+    "name": "Lakenhal",
     "city": "Leiden",
     "image": {
       "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.museum.nl%2Fcards%2F700x394%2Fb6eb0325-0ae8-43dd-80fb-f3f48b616ac9%2FMuseumDeLakenhal-.jpg&f=1&nofb=1"
@@ -721,12 +721,12 @@
   },
   {
     "id": 48,
-    "name": "Oud Poelgeest Castle",
+    "name": "Castle Oud Poelgeest",
     "city": "Oegstgeest",
     "image": {
       "url": "https://cdn.theperfectwedding.nl/uploads/kasteel-oudpoelgeest-junni-2015-2556.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude":  52.180412, 
       "longitude": 4.484057 
@@ -741,7 +741,7 @@
     "image": {
       "url": "https://imgw.rgcdn.nl/14dea138dc964ae1997d38e038687a00/opener/Kasteel-Endegeest-Foto-gemeente-Leiden.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude":  52.172759, 
       "longitude": 4.463199 
@@ -756,7 +756,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Kasteel_Duivenvoorde_015.jpg/1200px-Kasteel_Duivenvoorde_015.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude":  52.111356, 
       "longitude": 4.417433 
@@ -771,7 +771,7 @@
     "image": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Kasteel_keukenhof.jpg"
     },
-    "category": ["castle"],
+    "category": ["castles"],
     "coords": {
       "latitude":  52.266467, 
       "longitude": 4.539662 
@@ -838,5 +838,20 @@
     },
     "hyperlink": "https://www.facebook.com/MarrakechLoungeLeiden/",
     "description": "Marrakech Lounge is a hookah lounge located in Leiden."
+  },
+  {
+    "id": 56,
+    "name": "Rijksmuseum van Oudheden",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.rmo.nl/wp-content/uploads/2018/10/Gevel3_Rijksmuseum_van_Oudheden_2018_800p.jpg"
+    },
+    "category": ["museums"],
+    "coords": {
+      "latitude":  52.15846, 
+      "longitude": 4.485458
+    },
+    "hyperlink": "https://www.rmo.nl/en/",
+    "description": "Rijksmuseum van Oudheden is an archaeological museum about ancient Egypt and Near East, the Classical world and the Netherlands in prehistoric times, Roman times and the Middle Ages.\nIn 2018, the museum existed for two hundred years."
   }
 ]

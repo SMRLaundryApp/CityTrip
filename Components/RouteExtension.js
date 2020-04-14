@@ -296,7 +296,7 @@ const CloseButton = styled.Text`
 
 const Description = styled.Text`
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 8px;
   color: white;
   text-align: justify;
 `
