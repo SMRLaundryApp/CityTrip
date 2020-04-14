@@ -52,7 +52,7 @@ function sortDistance(info) {
 
 function filterCategories() {
   let userCategories = global.userData.user.categories.map((categoryAPI) => {
-    if   (categoryAPI === '/api/categories/2')  {return ('statues')}
+    if       (categoryAPI === '/api/categories/2')  {return ('statues')}
     else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
     else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
     else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}

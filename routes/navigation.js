@@ -14,6 +14,7 @@ import SignUp from '../screens/SignUp'
 import SignIn from '../screens/SignIn'
 import Forgot_pw from '../screens/Forgot_pw'
 import Interests from '../screens/Interest_clicker'
+import Loading from '../screens/Loading'
 
 
 //Prettier command: prettier --print-width 80 --no-semi --single-quote --trailing-comma es5 --write ./App.js
@@ -70,6 +71,11 @@ const AuthStackScreen = () => (
     <AuthStack.Screen
       name="Interest_clicker"
       component={Interests}
+      options={{ animationEnabled: false }}
+    />
+    <AuthStack.Screen
+      name="Loading"
+      component={Loading}
       options={{ animationEnabled: false }}
     />
     <AuthStack.Screen
