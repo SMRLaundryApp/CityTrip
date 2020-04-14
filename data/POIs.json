@@ -553,5 +553,230 @@
     },
     "hyperlink": "",
     "description": ""
+  },
+  {
+    "id": 37,
+    "name": "Marekerk",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.anwb.nl/binaries/content/gallery/anwb/portal/landvananwb/1520x855-marekerk-leiden-visitleiden.jpg"
+    },
+    "category": ["placesofworship"],
+    "coords": {
+      "latitude":   52.162052,   
+      "longitude":  4.490665
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 38,
+    "name": "Imam Malik",
+    "city": "Leiden",
+    "image": {
+      "url": "https://rijnsdorp.nl/web/wp-content/uploads/2016/02/rijnsdorp_architect-leiden.1.jpg"
+    },
+    "category": ["placesofworship"],
+    "coords": {
+      "latitude":   52.168617,  
+      "longitude":  4.498079 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 39,
+    "name": "Al Hijra",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.oasaarchitecten.nl/wp-content/uploads/DSC_0790.jpg"
+    },
+    "category": ["placesofworship"],
+    "coords": {
+      "latitude":   52.156118,  
+      "longitude":  4.473463 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 40,
+    "name": "Mimar Sinan",
+    "city": "Leiden",
+    "image": {
+      "url": "https://eus-www.sway-cdn.com/s/BvwoMTHEFUFIvTad/images/bx_rqd7DZ6MY36?quality=960&allowAnimation=false"
+    },
+    "category": ["placesofworship"],
+    "coords": {
+      "latitude":   52.167008,  
+      "longitude":  4.507713 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 41,
+    "name": "Waag",
+    "city": "Leiden",
+    "image": {
+      "url": "https://media-cdn.tripadvisor.com/media/photo-s/08/79/de/eb/getlstd-property-photo.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.159254, 
+      "longitude":  4.490252 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 42,
+    "name": "City Hall",
+    "city": "Leiden",
+    "image": {
+      "url": "https://media-cdn.tripadvisor.com/media/photo-s/15/9e/c7/a7/middenin-het-historische.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.157966, 
+      "longitude":  4.490995 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 43,
+    "name": "Einstein",
+    "city": "Leiden",
+    "image": {
+      "url": "https://einstein.nu/wp-content/uploads/2019/11/einstein_leiden_images_980x482_8.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":   52.158332, 
+      "longitude":  4.491993 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 44,
+    "name": "The Bishop",
+    "city": "Leiden",
+    "image": {
+      "url": "https://c.tfstatic.com/q_auto,f_auto,w_612,h_344/restaurant_photos/433/259433/169/612/the-bishop-interieur-f4d0c.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.157636, 
+      "longitude": 4.494673 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 45,
+    "name": "Fratelli",
+    "city": "Leiden",
+    "image": {
+      "url": ""
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.160525, 
+      "longitude": 4.491365 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 46,
+    "name": "Happy Tosti",
+    "city": "Leiden",
+    "image": {
+      "url": "https://www.happytosti.nl/wp-content/uploads/2020/02/HAPPY_TOSTI_LDN_VDB_9-1024x683.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.158642, 
+      "longitude": 4.490564 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 47,
+    "name": "Grand Café De Vriend",
+    "city": "Leiden",
+    "image": {
+      "url": "https://watervakantie.nl/wp-content/uploads/grand_cafe_restaurant_de_vriend.jpg"
+    },
+    "category": ["food"],
+    "coords": {
+      "latitude":  52.153842, 
+      "longitude": 4.489490 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 48,
+    "name": "Castle Oud Poelgeest",
+    "city": "Oegstgeest",
+    "image": {
+      "url": "https://cdn.theperfectwedding.nl/uploads/kasteel-oudpoelgeest-junni-2015-2556.jpg"
+    },
+    "category": ["castle"],
+    "coords": {
+      "latitude":  52.180412, 
+      "longitude": 4.484057 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 49,
+    "name": "Castle Endegeest",
+    "city": "Oegstgeest",
+    "image": {
+      "url": "https://imgw.rgcdn.nl/14dea138dc964ae1997d38e038687a00/opener/Kasteel-Endegeest-Foto-gemeente-Leiden.jpg"
+    },
+    "category": ["castle"],
+    "coords": {
+      "latitude":  52.172759, 
+      "longitude": 4.463199 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 50,
+    "name": "Castle Duivenvoorde",
+    "city": "Voorschoten",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Kasteel_Duivenvoorde_015.jpg/1200px-Kasteel_Duivenvoorde_015.jpg"
+    },
+    "category": ["castle"],
+    "coords": {
+      "latitude":  52.111356, 
+      "longitude": 4.417433 
+    },
+    "hyperlink": "",
+    "description": ""
+  },
+  {
+    "id": 51,
+    "name": "Castle Keukenhof",
+    "city": "Lisse",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Kasteel_keukenhof.jpg"
+    },
+    "category": ["castle"],
+    "coords": {
+      "latitude":  52.266467, 
+      "longitude": 4.539662 
+    },
+    "hyperlink": "",
+    "description": ""
   }
 ]
