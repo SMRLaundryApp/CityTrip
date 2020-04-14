@@ -27,7 +27,8 @@ function GoToButton({ App, state }) {
   return (
     <TouchableOpacity
       onPress={() => {
-        postLogin()
+        // postLogin()
+        navigation.navigate('App')
         // console.log(state.mail, state.password, state.rp)
       }}
     >
@@ -46,6 +47,10 @@ export default class SignIn extends Component {
   }
 
   render() {
+
+    // global.cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    global.cards = []
+
     return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>
