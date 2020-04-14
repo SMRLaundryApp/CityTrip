@@ -426,7 +426,7 @@
     "image": {
       "url": "https://media.insiders.nl/nwm/files/image/8d4307421c9c7e00fde23321873196762b74654b.jpg"
     },
-    "category": ["museum"],
+    "category": ["museums"],
     "coords": {
       "latitude":  52.152101, 
       "longitude": 4.489228 
@@ -679,7 +679,7 @@
     "name": "Fratelli",
     "city": "Leiden",
     "image": {
-      "url": ""
+      "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fratelli.nl%2Fwp-content%2Fuploads%2F2018%2F02%2FIMG_2260-copy_compressed.jpg&f=1&nofb=1"
     },
     "category": ["food"],
     "coords": {
