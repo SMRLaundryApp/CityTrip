@@ -14,28 +14,28 @@ const GEOLOCATION_OPTIONS = {
 }
 
 function filterCategories() {
-  // let userCategories = global.userData.user.categories.map((categoryAPI) => {
-  //   if       (categoryAPI === '/api/categories/2')  {return ('statues')}
-  //   else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
-  //   else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
-  //   else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
-  //   else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
-  //   else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
-  //   else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
-  //   else {if (categoryAPI === '/api/categories/9')  {return ('food')}
-  //   else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
-  // })
-  let userCategories = global.cards.map((categoryAPI) => {
-    if       (categoryAPI === '2')  {return ('statues')}
-    else {if (categoryAPI === '3')  {return ('architecture')}
-    else {if (categoryAPI === '4')  {return ('museums')}
-    else {if (categoryAPI === '5')  {return ('amusementparks')}
-    else {if (categoryAPI === '6')  {return ('mills')}
-    else {if (categoryAPI === '7')  {return ('nightlife')}
-    else {if (categoryAPI === '8')  {return ('placesofworship')}
-    else {if (categoryAPI === '9')  {return ('food')}
-    else {if (categoryAPI === '10') {return ('castles')}}}}}}}}}
+  let userCategories = global.userData.user.categories.map((categoryAPI) => {
+    if       (categoryAPI === '/api/categories/2')  {return ('statues')}
+    else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
+    else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
+    else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
+    else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
+    else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
+    else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
+    else {if (categoryAPI === '/api/categories/9')  {return ('food')}
+    else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
   })
+  // let userCategories = global.cards.map((categoryAPI) => {
+  //   if       (categoryAPI === '2')  {return ('statues')}
+  //   else {if (categoryAPI === '3')  {return ('architecture')}
+  //   else {if (categoryAPI === '4')  {return ('museums')}
+  //   else {if (categoryAPI === '5')  {return ('amusementparks')}
+  //   else {if (categoryAPI === '6')  {return ('mills')}
+  //   else {if (categoryAPI === '7')  {return ('nightlife')}
+  //   else {if (categoryAPI === '8')  {return ('placesofworship')}
+  //   else {if (categoryAPI === '9')  {return ('food')}
+  //   else {if (categoryAPI === '10') {return ('castles')}}}}}}}}}
+  // })
   return userCategories
 }
 

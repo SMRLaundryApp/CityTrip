@@ -48,17 +48,17 @@ function GoToButton({ App, state }) {
         // let test = global.userData.user
         // test.categories = state
         // test.email = "test@test.com"
-        // // console.log(roekoeroekoe)
+        // console.log(roekoeroekoe)
+        axios
+          .post('https://citytrip.trifall.net/api/CategoryAdding/' + global.userData.user.id.toString(10), { categories: global.cards } )
+          .then(response => {console.log(response.data), global.userData = response.data})
+          .catch(error => console.log(error))
         // axios
-        //   .post('https://citytrip.trifall.net/api/CategoryAdding/' + global.userData.user.id.toString(10), { categories: global.cards } )
-        //   .then(response => {console.log(response.data), global.userData = response.data})
-        //   .catch(error => console.log(error))
-        // // axios
-        // //   // .patch('/api/users/' + global.userData.user.id.toString(10), { categories: state })
-        // //   .patch('https://citytrip.trifall.net/api/users/16', { roekoeroekoe }, config )
-        // //   .then(response => {console.log(response.data), global.userData.user = response.data})
-        // //   .catch(error => console.log('Error:', error))
-        // // console.log(global.userData.user.id)
+        //   // .patch('/api/users/' + global.userData.user.id.toString(10), { categories: state })
+        //   .patch('https://citytrip.trifall.net/api/users/16', { roekoeroekoe }, config )
+        //   .then(response => {console.log(response.data), global.userData.user = response.data})
+        //   .catch(error => console.log('Error:', error))
+        // console.log(global.userData.user.id)
         navigation.navigate("App")
       }}
     >
@@ -105,6 +105,21 @@ export default class Interests extends Component {
       }
       global.cards.push(value)
       return true
+    }
+
+    if (this.state.first === undefined) {
+      this.setState({first: true})
+      global.cards.map((category, index) => {
+        if      (category === '2')  {this.setState({statues: true})}
+        else{ if(category === '3')  {this.setState({architecture: true})}
+        else{ if(category === '4')  {this.setState({museums: true})}
+        else{ if(category === '5')  {this.setState({amusementparks: true})}
+        else{ if(category === '6')  {this.setState({mills: true})}
+        else{ if(category === '7')  {this.setState({nightlife: true})}
+        else{ if(category === '8')  {this.setState({placesofworship: true})}
+        else{ if(category === '9')  {this.setState({food: true})}
+        else{ if(category === '10') {this.setState({castles: true})}}}}}}}}}
+      })
     }
 
     return (

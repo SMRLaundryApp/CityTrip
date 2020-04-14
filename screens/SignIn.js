@@ -7,6 +7,32 @@ import { useNavigation } from '@react-navigation/native'
 const axios = require('axios').default
 axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
 
+function filterCategories() {
+  let userCategories = global.userData.user.categories.map((categoryAPI) => {
+    if       (categoryAPI === '/api/categories/2')  {return ('2')}
+    else {if (categoryAPI === '/api/categories/3')  {return ('3')}
+    else {if (categoryAPI === '/api/categories/4')  {return ('4')}
+    else {if (categoryAPI === '/api/categories/5')  {return ('5')}
+    else {if (categoryAPI === '/api/categories/6')  {return ('6')}
+    else {if (categoryAPI === '/api/categories/7')  {return ('7')}
+    else {if (categoryAPI === '/api/categories/8')  {return ('8')}
+    else {if (categoryAPI === '/api/categories/9')  {return ('9')}
+    else {if (categoryAPI === '/api/categories/10') {return ('10')}}}}}}}}}
+  })
+  // let userCategories = global.cards.map((categoryAPI) => {
+  //   if       (categoryAPI === '2')  {return ('statues')}
+  //   else {if (categoryAPI === '3')  {return ('architecture')}
+  //   else {if (categoryAPI === '4')  {return ('museums')}
+  //   else {if (categoryAPI === '5')  {return ('amusementparks')}
+  //   else {if (categoryAPI === '6')  {return ('mills')}
+  //   else {if (categoryAPI === '7')  {return ('nightlife')}
+  //   else {if (categoryAPI === '8')  {return ('placesofworship')}
+  //   else {if (categoryAPI === '9')  {return ('food')}
+  //   else {if (categoryAPI === '10') {return ('castles')}}}}}}}}}
+  // })
+  return userCategories
+}
+
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
 
@@ -16,7 +42,7 @@ function GoToButton({ App, state }) {
     axios
       .post('/login', { login: name, password: pw })
       .then(function (response) {
-        ; (global.userData = response.data), (global.name = response.data.user.username), navigation.navigate('App')
+        ; (global.userData = response.data), (global.cards = filterCategories()), (global.name = response.data.user.username), navigation.navigate('App')
       })
       .catch(function (error) {
         alert(error)
@@ -27,8 +53,8 @@ function GoToButton({ App, state }) {
   return (
     <TouchableOpacity
       onPress={() => {
-        // postLogin()
-        navigation.navigate('App')
+        postLogin()
+        // navigation.navigate('App')
         // console.log(state.mail, state.password, state.rp)
       }}
     >
@@ -49,7 +75,7 @@ export default class SignIn extends Component {
   render() {
 
     // global.cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    global.cards = []
+    // global.cards = []
 
     return (
       <Screen source={require('../assets/test_background.jpg')}>
