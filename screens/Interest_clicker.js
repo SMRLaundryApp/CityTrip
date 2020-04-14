@@ -52,14 +52,15 @@ function GoToButton({ App, state }) {
         axios
           .post('https://citytrip.trifall.net/api/CategoryAdding/' + global.userData.user.id.toString(10), { categories: global.cards } )
           .then(response => {console.log(response.data), global.userData = response.data})
-          .catch(error => console.log(error))
+          .catch(error => console.log("Error:", error))
         // axios
         //   // .patch('/api/users/' + global.userData.user.id.toString(10), { categories: state })
         //   .patch('https://citytrip.trifall.net/api/users/16', { roekoeroekoe }, config )
         //   .then(response => {console.log(response.data), global.userData.user = response.data})
         //   .catch(error => console.log('Error:', error))
         // console.log(global.userData.user.id)
-        navigation.navigate("App")
+        // navigation.navigate("App")
+        navigation.navigate("Loading")
       }}
     >
       <Butoon>
@@ -94,7 +95,7 @@ export default class Interests extends Component {
     //     return card.split("/api/categories/")[1]
     //   }
     // })
-    console.log("Cards:", global.cards)
+    // console.log("Cards:", global.cards)
 
     function checkCategory(value) {
       for (let i = 0; i < global.cards.length; i++) {

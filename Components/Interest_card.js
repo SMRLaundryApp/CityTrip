@@ -23,7 +23,7 @@ export default class Interest_card extends Component {
 
   render() {
 
-    console.log('Pressed:', this.props.pressed)
+    // console.log('Pressed:', this.props.pressed)
 
     if (this.props.pressed !== this.state.pressed) {
       this.setState({pressed: this.props.pressed})
