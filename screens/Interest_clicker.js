@@ -7,59 +7,17 @@ import Welcomebar from '../Components/Welcomebar'
 import Interest_card from '../Components/Interest_card'
 
 const axios = require('axios').default
-// axios.defaults.baseURL = 'https://citytrip.trifall.net'
 
-function GoToButton({ App, state }) {
+function GoToButton({ App }) {
   const navigation = useNavigation()
 
   return (
     <TouchableOpacity
       onPress={() => {
-        // Do some API stuff to push the state (userCategories) to the user
-        // console.log(state)
-        // let data = new FormData()
-        // console.log(data)
-
-        // axios({
-        //   method: 'patch',
-        //   url: '/api/users/' + global.userData.user.id.toString(10),
-        //   data: {
-        //     email: "test@test.com"
-        //   }
-        // }).then(response => console.log(response.data))
-        //   .catch(error => console.log('Error:', error))
-        
-        // let roekoeroekoe = {
-        //   email: "test@test.com",
-        //   // id: global.userData.user.id,
-        //   categories: global.userData.user.categories
-        // }
-
-        // axios.defaults.headers.patch['Content-Type'] = 'application/json'
-        // axios.defaults.headers.patch['Accept'] = 'application/json'
-
-        // let config = {
-        //   headers: {
-        //     "Accept": "application/json",
-        //     "Content-Type": "application/json"
-        //   }
-        // }
-
-        // let test = global.userData.user
-        // test.categories = state
-        // test.email = "test@test.com"
-        // console.log(roekoeroekoe)
         axios
           .post('https://citytrip.trifall.net/api/CategoryAdding/' + global.userData.user.id.toString(10), { categories: global.cards } )
           .then(response => {console.log(response.data), global.userData = response.data})
           .catch(error => console.log("Error:", error))
-        // axios
-        //   // .patch('/api/users/' + global.userData.user.id.toString(10), { categories: state })
-        //   .patch('https://citytrip.trifall.net/api/users/16', { roekoeroekoe }, config )
-        //   .then(response => {console.log(response.data), global.userData.user = response.data})
-        //   .catch(error => console.log('Error:', error))
-        // console.log(global.userData.user.id)
-        // navigation.navigate("App")
         navigation.navigate("Loading")
       }}
     >
@@ -71,31 +29,9 @@ function GoToButton({ App, state }) {
 }
 
 export default class Interests extends Component {
-  state = {
-    // statues: false,
-    // architecture: false,
-    // museums: false,
-    // amusementparks: false,
-    // mills: false,
-    // nightlife: false,
-    // placesofworship: false,
-    // food: false,
-    // castles: false,
-  }
+  state = { }
 
   render() {
-    // global.cards = global.userData.user.categories.map((category) => {
-    //   // console.log(category)
-    //   if (category !== undefined) {return category.split("/api/categories/")[1]}
-    // })
-
-
-    // cards = cards.map((card) => {
-    //   if (card !== undefined) {
-    //     return card.split("/api/categories/")[1]
-    //   }
-    // })
-    // console.log("Cards:", global.cards)
 
     function checkCategory(value) {
       for (let i = 0; i < global.cards.length; i++) {
@@ -188,7 +124,6 @@ export default class Interests extends Component {
               image={'https://images1.persgroep.net/rcs/CYMrgquSDpMRtfw7TneHCCJdktg/diocontent/70656713/_fitwidth/763?appId=2dc96dd3f167e919913d808324cbfeb2&quality=0.8'}
               title={'Amusement parks'}
               subtitle={'Rollercoasters | History parks'}
-              // pressed={true}
               pressed={this.state.amusementparks}
             />
           </TouchableWithoutFeedback>
@@ -268,7 +203,7 @@ export default class Interests extends Component {
             />
           </TouchableWithoutFeedback>
         </ScrollView>
-        <GoToButton state={cards} />
+        <GoToButton />
       </Screen>
     )
   }

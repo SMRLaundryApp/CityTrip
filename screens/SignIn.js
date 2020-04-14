@@ -19,17 +19,6 @@ function filterCategories() {
     else {if (categoryAPI === '/api/categories/9')  {return ('9')}
     else {if (categoryAPI === '/api/categories/10') {return ('10')}}}}}}}}}
   })
-  // let userCategories = global.cards.map((categoryAPI) => {
-  //   if       (categoryAPI === '2')  {return ('statues')}
-  //   else {if (categoryAPI === '3')  {return ('architecture')}
-  //   else {if (categoryAPI === '4')  {return ('museums')}
-  //   else {if (categoryAPI === '5')  {return ('amusementparks')}
-  //   else {if (categoryAPI === '6')  {return ('mills')}
-  //   else {if (categoryAPI === '7')  {return ('nightlife')}
-  //   else {if (categoryAPI === '8')  {return ('placesofworship')}
-  //   else {if (categoryAPI === '9')  {return ('food')}
-  //   else {if (categoryAPI === '10') {return ('castles')}}}}}}}}}
-  // })
   return userCategories
 }
 
@@ -54,7 +43,6 @@ function GoToButton({ App, state }) {
     <TouchableOpacity
       onPress={() => {
         postLogin()
-        // navigation.navigate('App')
         // console.log(state.mail, state.password, state.rp)
       }}
     >
@@ -73,9 +61,6 @@ export default class SignIn extends Component {
   }
 
   render() {
-
-    // global.cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    // global.cards = []
 
     return (
       <Screen source={require('../assets/test_background.jpg')}>

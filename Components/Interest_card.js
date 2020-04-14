@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { Dimensions } from 'react-native'
 
@@ -23,8 +22,6 @@ export default class Interest_card extends Component {
 
   render() {
 
-    // console.log('Pressed:', this.props.pressed)
-
     if (this.props.pressed !== this.state.pressed) {
       this.setState({pressed: this.props.pressed})
       this.setState({bg_color: (this.props.pressed) ? '#19B092' : '#888' })
@@ -32,40 +29,26 @@ export default class Interest_card extends Component {
 
     return (
       <Clear>
-        {/* <TouchableWithoutFeedback
-          delayPressIn={5}
-          delayPressOut={5}
-          delayLongPress={5}
-          onPress={() => {
-            this.setState({
-              bg_color: this.state.bg_color === '#888' ? '#19B092' : '#888',
-            }),
-              this.setState({
-                pressed: this.state.pressed === false ? true : false,
-              })
+        <Container
+          style={{
+            borderBottomRightRadius: 14,
+            backgroundColor: this.state.bg_color,
           }}
-        > */}
-          <Container
-            style={{
-              borderBottomRightRadius: 14,
-              backgroundColor: this.state.bg_color,
-            }}
-            width={cardWidth}
+          width={cardWidth}
+          height={cardHeight}
+        >
+          <Cover style={{ borderBottomLeftRadius: 14 }} width={imageWidth}>
+            <Image source={{ uri: this.state.image }} />
+          </Cover>
+          <Content
+            left={imageWidth}
             height={cardHeight}
+            width={cardWidth - imageWidth}
           >
-            <Cover style={{ borderBottomLeftRadius: 14 }} width={imageWidth}>
-              <Image source={{ uri: this.state.image }} />
-            </Cover>
-            <Content
-              left={imageWidth}
-              height={cardHeight}
-              width={cardWidth - imageWidth}
-            >
-              <Title>{this.state.title}</Title>
-              <Info>{this.state.subtitle}</Info>
-            </Content>
-          </Container>
-        {/* </TouchableWithoutFeedback> */}
+            <Title>{this.state.title}</Title>
+            <Info>{this.state.subtitle}</Info>
+          </Content>
+        </Container>
       </Clear>
     )
   }
@@ -115,12 +98,4 @@ const Info = styled.Text`
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
-`
-
-const RouteContainer = styled.View`
-  padding: 10px;
-  padding-bottom: 0px;
-  background-color: #aaa;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
 `
