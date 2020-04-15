@@ -53,16 +53,18 @@ export default class Map extends Component {
         errorMessage: 'Permission to access location was denied',
       })
     }
-    Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged)
+    this.setState({ mountedLocation: Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged) })
   }
 
   locationChanged = (location) => {
     this.setState({ location })
   }
 
-  // componentWillUnmount() {
-  // Location.watchPositionAsync must be turned off or somehow unmounted
-  // }
+  componentWillUnmount() {
+    // Location.watchPositionAsync must be turned off or somehow unmounted
+    this.state.mountedLocation._55.remove()
+    // console.log(this.state.mountedLocation._55.remove())
+  }
 
   render() {
     let userLocation = (

@@ -78,7 +78,7 @@ export default class RouteExtension extends Component {
         errorMessage: 'Permission to access location was denied',
       })
     }
-    Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged)
+    this.setState({ mountedLocation: Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged) })
   }
 
   locationChanged = (location) => {
@@ -87,6 +87,10 @@ export default class RouteExtension extends Component {
 
   closeModal = () => {
     this.setState({ isModalVisible: false })
+  }
+
+  componentWillUnmount() {
+    this.state.mountedLocation._55.remove()
   }
 
   render() {

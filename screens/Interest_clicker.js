@@ -16,7 +16,7 @@ function GoToButton({ App }) {
       onPress={() => {
         axios
           .post('https://citytrip.trifall.net/api/CategoryAdding/' + global.userData.user.id.toString(10), { categories: global.cards } )
-          .then(response => {console.log(response.data), global.userData = response.data})
+          .then(response => {global.userData = response.data})
           .catch(error => console.log("Error:", error))
         navigation.navigate("Loading")
       }}

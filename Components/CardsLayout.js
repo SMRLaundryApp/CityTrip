@@ -67,7 +67,7 @@ function filterCategories() {
 
 export default class CardsLayout extends Component {
   state = {
-    location: { coords: { latitude: 52.193818, longitude: 4.435738 } },
+    location: { coords: { latitude: undefined, longitude: undefined } },
   }
 
   constructor(props) {
@@ -89,11 +89,15 @@ export default class CardsLayout extends Component {
         errorMessage: 'Permission to access location was denied',
       })
     }
-    Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged)
+    this.setState({ mountedLocation: Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged) })
   }
 
   locationChanged = (location) => {
     this.setState({ location })
+  }
+
+  componentWillUnmount() {
+    this.state.mountedLocation._55.remove()
   }
 
   render() {
@@ -202,7 +206,7 @@ export default class CardsLayout extends Component {
 
 const Layout = styled.View`
   flex-direction: row;
-  margin-bottom: 170px;
+  margin-bottom: 105px;
 `
 
 const ColumnOne = styled.View`
