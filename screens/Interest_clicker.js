@@ -123,7 +123,7 @@ export default class Interests extends Component {
             <Interest_card
               image={'https://images1.persgroep.net/rcs/CYMrgquSDpMRtfw7TneHCCJdktg/diocontent/70656713/_fitwidth/763?appId=2dc96dd3f167e919913d808324cbfeb2&quality=0.8'}
               title={'Amusement parks'}
-              subtitle={'Rollercoasters | History parks'}
+              subtitle={'Rollercoasters | History parks | Zoo'}
               pressed={this.state.amusementparks}
             />
           </TouchableWithoutFeedback>
