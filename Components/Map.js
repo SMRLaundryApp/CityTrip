@@ -3,6 +3,10 @@ import MapView, { Marker } from 'react-native-maps'
 import userLocationPin from '../assets/userLocation.png'
 import POI_Marker_Windmill from '../assets/POI_Marker_Windmill.png'
 import POI_Marker_Castle from '../assets/POI_Marker_Castle.png'
+import POI_Marker_Placesofworship from '../assets/POI_Marker_Placesofworship.png'
+import POI_Marker_Amusementparks from '../assets/POI_Marker_Amusementparks.png'
+import POI_Marker_Statue from '../assets/POI_Marker_Statue.png'
+import POI_Marker_Food from '../assets/POI_Marker_Food.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
@@ -93,8 +97,12 @@ export default class Map extends Component {
       }
       if (pass) {
         let imagePOI = undefined
-        if      (POI.category[0] === "mills")   {imagePOI = POI_Marker_Windmill}
-        else{ if(POI.category[0] === "castles") {imagePOI = POI_Marker_Castle}}
+        if      (POI.category[0] === "mills")           {imagePOI = POI_Marker_Windmill}
+        else{ if(POI.category[0] === "castles")         {imagePOI = POI_Marker_Castle}
+        else{ if(POI.category[0] === "placesofworship") {imagePOI = POI_Marker_Placesofworship}
+        else{ if(POI.category[0] === "amusementparks")  {imagePOI = POI_Marker_Amusementparks}
+        else{ if(POI.category[0] === "statues")         {imagePOI = POI_Marker_Statue}
+        else{ if(POI.category[0] === "food")            {imagePOI = POI_Marker_Food}}}}}}
         return (
           <Marker
             key={index}
