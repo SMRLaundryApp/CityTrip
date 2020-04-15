@@ -43,7 +43,6 @@ function GoToButton({ App, state }) {
     <TouchableOpacity
       onPress={() => {
         postLogin()
-        // console.log(state.mail, state.password, state.rp)
       }}
     >
       <Butoon>

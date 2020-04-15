@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { TouchableOpacity, ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler'
-import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 import Welcomebar from '../Components/Welcomebar'
 import Interest_card from '../Components/Interest_card'

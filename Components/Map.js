@@ -14,11 +14,8 @@ import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
 
-// TODO: Use the user location from react-native-maps instead of expo-location
-
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
-  // timeInterval : 5000
   distanceInterval: 10,
 }
 
@@ -70,9 +67,7 @@ export default class Map extends Component {
   }
 
   componentWillUnmount() {
-    // Location.watchPositionAsync must be turned off or somehow unmounted
     this.state.mountedLocation._55.remove()
-    // console.log(this.state.mountedLocation)
   }
 
   render() {

@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler'
-import React, { Component } from 'react'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -38,8 +38,6 @@ const TabScreen = () => (
         } else if (route.name === 'Settings') {
           iconName = 'ios-list-box'
         }
-
-        // You can return any component that you like here!
         return <Ionicons name={iconName} size={size} color={color} />
       },
     })}

@@ -1,9 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default ({ navigation }) => (
   <Screen source={require('../assets/test_background.jpg')}>

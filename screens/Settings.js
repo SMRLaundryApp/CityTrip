@@ -42,11 +42,6 @@ export default class Settings extends Component {
 
 const Container = styled.View``
 
-const Message = styled.Text`
-  padding: 100px;
-  text-align: center;
-`
-
 const Butoon = styled.View`
   align-self: center;
   width: 80%;

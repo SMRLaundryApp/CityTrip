@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Linking, Dimensions, Text, TouchableOpacity } from 'react-native'
+import { Linking, Dimensions, TouchableOpacity } from 'react-native'
 import Axios from 'axios'
 
 const axios = require('axios').default
@@ -188,7 +188,6 @@ const InputTitle = styled.Text`
   font-size: 20px;
   font-weight: 400;
   width: 115px;
-  /*text-shadow: 1px 1px 2px #4d4d4d;*/
 `
 
 const Inputfield = styled.TextInput`

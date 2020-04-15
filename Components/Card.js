@@ -5,9 +5,6 @@ import { Dimensions } from 'react-native'
 import Modal from 'react-native-modal'
 import POIPopup from './POIPopup'
 
-const axios = require('axios').default
-const baseURL = 'https://citytrip.trifall.net'
-
 const screenWidth = Dimensions.get('window').width
 const cardWidth = screenWidth / 2 - 20
 const cardHeight = screenWidth / 3 + 78

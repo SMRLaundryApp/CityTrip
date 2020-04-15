@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-//Code used to determine the time of the day, for greetings in the morning/afternoon/evening
-var today = new Date()
-var curHr = today.getHours()
-var moment
-
 function getDayTime() {
   var today = new Date()
   var curHr = today.getHours()
-  var moment
+  var moment = undefined
 
   if (curHr < 12 && curHr >= 6) {
     moment = 'Good morning'

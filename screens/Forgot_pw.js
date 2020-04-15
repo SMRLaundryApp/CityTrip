@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { CheckBox } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
 const axios = require('axios').default

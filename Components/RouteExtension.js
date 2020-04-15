@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import MapView, { Marker, Callout } from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions'
@@ -16,7 +16,6 @@ const screenWidth = Dimensions.get('window').width
 
 const GEOLOCATION_OPTIONS = {
   accuracy: 6,
-  // timeInterval : 5000
   distanceInterval: 10,
 }
 
@@ -112,7 +111,6 @@ export default class RouteExtension extends Component {
       return (
         <Marker
           key={index}
-          // title={pointsOfInterest[route].name}
           pinColor="#19B092"
           coordinate={{
             latitude: pointsOfInterest[route].coords.latitude,
