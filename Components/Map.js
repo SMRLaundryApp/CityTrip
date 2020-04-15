@@ -7,6 +7,9 @@ import POI_Marker_Placesofworship from '../assets/POI_Marker_Placesofworship.png
 import POI_Marker_Amusementparks from '../assets/POI_Marker_Amusementparks.png'
 import POI_Marker_Statue from '../assets/POI_Marker_Statue.png'
 import POI_Marker_Food from '../assets/POI_Marker_Food.png'
+import POI_Marker_Nightlife from '../assets/POI_Marker_Nightlife.png'
+import POI_Marker_Museums from '../assets/POI_Marker_Museums.png'
+import POI_Marker_Architecture from '../assets/POI_Marker_Architecture.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
@@ -102,7 +105,10 @@ export default class Map extends Component {
         else{ if(POI.category[0] === "placesofworship") {imagePOI = POI_Marker_Placesofworship}
         else{ if(POI.category[0] === "amusementparks")  {imagePOI = POI_Marker_Amusementparks}
         else{ if(POI.category[0] === "statues")         {imagePOI = POI_Marker_Statue}
-        else{ if(POI.category[0] === "food")            {imagePOI = POI_Marker_Food}}}}}}
+        else{ if(POI.category[0] === "food")            {imagePOI = POI_Marker_Food}
+        else{ if(POI.category[0] === "nightlife")       {imagePOI = POI_Marker_Nightlife}
+        else{ if(POI.category[0] === "museums")         {imagePOI = POI_Marker_Museums}
+        else{ if(POI.category[0] === "architecture")    {imagePOI = POI_Marker_Architecture}}}}}}}}}
         return (
           <Marker
             key={index}
