@@ -9,15 +9,41 @@ axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
 
 function filterCategories() {
   let userCategories = global.userData.user.categories.map((categoryAPI) => {
-    if       (categoryAPI === '/api/categories/2')  {return ('2')}
-    else {if (categoryAPI === '/api/categories/3')  {return ('3')}
-    else {if (categoryAPI === '/api/categories/4')  {return ('4')}
-    else {if (categoryAPI === '/api/categories/5')  {return ('5')}
-    else {if (categoryAPI === '/api/categories/6')  {return ('6')}
-    else {if (categoryAPI === '/api/categories/7')  {return ('7')}
-    else {if (categoryAPI === '/api/categories/8')  {return ('8')}
-    else {if (categoryAPI === '/api/categories/9')  {return ('9')}
-    else {if (categoryAPI === '/api/categories/10') {return ('10')}}}}}}}}}
+    if (categoryAPI === '/api/categories/2') {
+      return '2'
+    } else {
+      if (categoryAPI === '/api/categories/3') {
+        return '3'
+      } else {
+        if (categoryAPI === '/api/categories/4') {
+          return '4'
+        } else {
+          if (categoryAPI === '/api/categories/5') {
+            return '5'
+          } else {
+            if (categoryAPI === '/api/categories/6') {
+              return '6'
+            } else {
+              if (categoryAPI === '/api/categories/7') {
+                return '7'
+              } else {
+                if (categoryAPI === '/api/categories/8') {
+                  return '8'
+                } else {
+                  if (categoryAPI === '/api/categories/9') {
+                    return '9'
+                  } else {
+                    if (categoryAPI === '/api/categories/10') {
+                      return '10'
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   })
   return userCategories
 }
@@ -31,7 +57,10 @@ function GoToButton({ App, state }) {
     axios
       .post('/login', { login: name, password: pw })
       .then(function (response) {
-        ; (global.userData = response.data), (global.cards = filterCategories()), (global.name = response.data.user.username), navigation.navigate('App')
+        ;(global.userData = response.data),
+          (global.cards = filterCategories()),
+          (global.name = response.data.user.username),
+          navigation.navigate('App')
       })
       .catch(function (error) {
         alert(error)
@@ -60,7 +89,6 @@ export default class SignIn extends Component {
   }
 
   render() {
-
     return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>

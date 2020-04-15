@@ -262,7 +262,7 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Leiden_kunstwerk_st_joris_en_de_draak.jpg"
     },
     "category": ["statues"],
-    "coords": { 
+    "coords": {
       "latitude": 52.158746,
       "longitude": 4.483178
     },
@@ -279,7 +279,7 @@
     "category": ["statues"],
     "coords": {
       "latitude": 52.168436,
-      "longitude": 4.481940 
+      "longitude": 4.48194
     },
     "hyperlink": "https://standbeelden.vanderkrogt.net/object.php?record=ZH33aj",
     "description": "Statue of Herman Boerhaave.\nHerman Boerhaave was a Dutch batanist, chemist, Christian humanist, and physician of European Fame. He was born on 31 December 1668 and died at the age of 69 on 23 September 1738."
@@ -293,8 +293,8 @@
     },
     "category": ["statues"],
     "coords": {
-      "latitude":  52.160605, 
-      "longitude": 4.481960 
+      "latitude": 52.160605,
+      "longitude": 4.48196
     },
     "hyperlink": "https://www.visitleiden.nl/nl/ontdek-leiden/specials/jonge-rembrandt",
     "description": "Statue of Rembrandt van Rijn.\nRembrandt van Rijn was a Dutch draughtsman, painter and printmaker. He was born on 15 July 1606 and died at the age of 63 on 4 October 1669."
@@ -308,7 +308,7 @@
     },
     "category": ["museums", "architecture"],
     "coords": {
-      "latitude":  52.164767, 
+      "latitude": 52.164767,
       "longitude": 4.473077
     },
     "hyperlink": "https://www.naturalis.nl/en",
@@ -323,8 +323,8 @@
     },
     "category": ["architecture"],
     "coords": {
-      "latitude":  52.168724, 
-      "longitude": 4.467902 
+      "latitude": 52.168724,
+      "longitude": 4.467902
     },
     "hyperlink": "https://www.baseclear.com/about-baseclear/our-company/nucleus-building/",
     "description": "The Nucleus building is one of the building within the Leiden Bio Science Park. It's from the company BaseClear."
@@ -338,8 +338,8 @@
     },
     "category": ["museums", "architecture"],
     "coords": {
-      "latitude":  52.162959,
-      "longitude":  4.487565 
+      "latitude": 52.162959,
+      "longitude": 4.487565
     },
     "hyperlink": "https://www.lakenhal.nl/en",
     "description": "The Lakenhal is a museum with history of the city Leiden, art and crafts."
@@ -353,8 +353,8 @@
     },
     "category": ["architecture"],
     "coords": {
-      "latitude":  52.178043, 
-      "longitude": 4.447506 
+      "latitude": 52.178043,
+      "longitude": 4.447506
     },
     "hyperlink": "https://www.rapleiden.nl/gebouw/joop-van-der-reijdenbrug/",
     "description": "The Joop van der Reijdenbrug is a bridge, which crosses the Rhine."
@@ -368,8 +368,8 @@
     },
     "category": ["architecture"],
     "coords": {
-      "latitude":  52.166120, 
-      "longitude": 4.480680 
+      "latitude": 52.16612,
+      "longitude": 4.48068
     },
     "hyperlink": "https://www.levelleiden.nl/nl/home/",
     "description": "Level is a building in Leiden which functions as an office, hotel, restaurant, wellness, rehabilitation hotel and parking garage."
@@ -383,8 +383,8 @@
     },
     "category": ["architecture"],
     "coords": {
-      "latitude":  52.156269,
-      "longitude":  4.489895 
+      "latitude": 52.156269,
+      "longitude": 4.489895
     },
     "hyperlink": "https://nl.wikipedia.org/wiki/Kamerlingh_Onnes_Gebouw",
     "description": "The Kamerlingh Onnes Gebouw is an university building from 1859 in Leiden. The building housed the physics laboratory of Leiden University. After a renovation, the Faculty of Law took up use in 2004."
@@ -398,8 +398,8 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.161506,
-      "longitude":  4.488951 
+      "latitude": 52.161506,
+      "longitude": 4.488951
     },
     "hyperlink": "https://rijksmuseumboerhaave.nl/engels/",
     "description": "At Rijksmuseum Boerhaave you get to discover more about the most important inventions from the history of science in the Netherlands."
@@ -413,8 +413,8 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.159791, 
-      "longitude": 4.484609 
+      "latitude": 52.159791,
+      "longitude": 4.484609
     },
     "hyperlink": "https://www.sieboldhuis.org/en/",
     "description": "The Japan Museum Sieboldhuis offers temporary exhibitions with a variety of Japan-related subjects and the permanent Siebold collection, the most beautiful from old and new Japan.\nPrints, lacquerware, ceramics, fossils, herbaria, prepared animals, coins, clothing, old maps and hundreds of other treasures.\nEverything was collected in Japan between 1823 and 1829 by the doctor Philipp Franz von Siebold."
@@ -428,8 +428,8 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.170553, 
-      "longitude": 4.453760 
+      "latitude": 52.170553,
+      "longitude": 4.45376
     },
     "hyperlink": "https://corpusexperience.nl/en/#!",
     "description": "CORPUS lets you experience a spectacular journey through the human body in 55 minutes.\nThis is unique for the Netherlands - and for the world too. Nowhere else do you get such a special close-up into how a human body functions.\nYou learn all about the body, how it works and how to keep it healthy."
@@ -443,8 +443,8 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.156863, 
-      "longitude": 4.483725 
+      "latitude": 52.156863,
+      "longitude": 4.483725
     },
     "hyperlink": "https://hortusleiden.nl/",
     "description": "The Hortus botanicus of Leiden is the oldest botanical garden of the Netherlands, and one of the oldest in the world."
@@ -458,8 +458,8 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.163325,
-      "longitude":  4.482489 
+      "latitude": 52.163325,
+      "longitude": 4.482489
     },
     "hyperlink": "https://www.volkenkunde.nl/en?gclid=EAIaIQobChMIlfbIvcjn6AIVA6p3Ch3GZgU-EAAYASAAEgI0x_D_BwE",
     "description": "Museum Volkenkunde - the National Museum of Ethnology - is a museum about people. It's housed in a historic building just five minutes' walk from Leiden Central Station."
@@ -473,8 +473,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  52.114494, 
-      "longitude": 4.651653 
+      "latitude": 52.114494,
+      "longitude": 4.651653
     },
     "hyperlink": "https://www.archeon.nl/index.html",
     "description": "In the Archeon you can travel through time.\nYou can roam through the prehistory, get very close to the Romans, discoer Archeologyhouse of South Holland and dive into the Middle Ages."
@@ -488,8 +488,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  52.147518, 
-      "longitude": 4.384285 
+      "latitude": 52.147518,
+      "longitude": 4.384285
     },
     "hyperlink": "https://www.duinrell.com/amusement-park",
     "description": "Duinrell is an amusement park for all ages. It has more than 40 attractions and even a swimmingpool with lots of slides."
@@ -503,8 +503,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  52.141825, 
-      "longitude": 4.650065 
+      "latitude": 52.141825,
+      "longitude": 4.650065
     },
     "hyperlink": "https://www.avifauna.nl/home/",
     "description": "Avifauna is a zoo with maily birds. They get fed and give spectacular demonstrations. You can see the birds flying up close, eating and hunting as they are used to in nature.\nThere are also red pandas, half monkeys and dwarf monkeys."
@@ -518,8 +518,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  51.928184, 
-      "longitude": 4.444015 
+      "latitude": 51.928184,
+      "longitude": 4.444015
     },
     "hyperlink": "https://www.diergaardeblijdorp.nl/en/",
     "description": "Diergaarde Blijdorp is a zoo with a lot of animals."
@@ -533,8 +533,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  52.051881, 
-      "longitude": 4.352819 
+      "latitude": 52.051881,
+      "longitude": 4.352819
     },
     "hyperlink": "https://www.drievliet.nl/",
     "description": "Drievliet is an amusement park with many attractions for the whole family."
@@ -548,8 +548,8 @@
     },
     "category": ["amusementparks"],
     "coords": {
-      "latitude":  52.099522, 
-      "longitude": 4.296952 
+      "latitude": 52.099522,
+      "longitude": 4.296952
     },
     "hyperlink": "https://www.madurodam.nl/en",
     "description": "In Madurodam you can discover what makes the small country of the Netherlands so great. Madurodam is a small city full of beatiful miniatures, playful activities and the best attractions."
@@ -563,8 +563,8 @@
     },
     "category": ["placesofworship"],
     "coords": {
-      "latitude":   52.162052,   
-      "longitude":  4.490665
+      "latitude": 52.162052,
+      "longitude": 4.490665
     },
     "hyperlink": "https://en.wikipedia.org/wiki/Marekerk",
     "description": "Marekerk is a Protestant church in leiden dating from the seventeenth century. It was founded in 1639 and build in 1649."
@@ -578,8 +578,8 @@
     },
     "category": ["placesofworship"],
     "coords": {
-      "latitude":   52.168617,  
-      "longitude":  4.498079 
+      "latitude": 52.168617,
+      "longitude": 4.498079
     },
     "hyperlink": "https://www.icimleiden.nl/",
     "description": "The Imam Malik is a mosque in Leiden."
@@ -593,8 +593,8 @@
     },
     "category": ["placesofworship"],
     "coords": {
-      "latitude":   52.156118,  
-      "longitude":  4.473463 
+      "latitude": 52.156118,
+      "longitude": 4.473463
     },
     "hyperlink": "https://alhijra.nl/",
     "description": "The Al Hijra is a mosque in Leiden."
@@ -608,8 +608,8 @@
     },
     "category": ["placesofworship"],
     "coords": {
-      "latitude":   52.167008,  
-      "longitude":  4.507713 
+      "latitude": 52.167008,
+      "longitude": 4.507713
     },
     "hyperlink": "http://www.mimarsinanleiden.nl/nl/home/",
     "description": "The Mimar Sinan is a mosque in Leiden"
@@ -623,8 +623,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.159254, 
-      "longitude":  4.490252 
+      "latitude": 52.159254,
+      "longitude": 4.490252
     },
     "hyperlink": "https://waagleiden.nl/",
     "description": "Waag is a restaurant based in an old building in Leiden. The Waag was used to weigh and check the goods of traders from different cities."
@@ -638,8 +638,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.157966, 
-      "longitude":  4.490995 
+      "latitude": 52.157966,
+      "longitude": 4.490995
     },
     "hyperlink": "https://www.restaurantcityhall.nl/",
     "description": "City hall is an Italian bar-bistro housed in the ancient monumental city hall of Leiden."
@@ -653,8 +653,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":   52.158332, 
-      "longitude":  4.491993 
+      "latitude": 52.158332,
+      "longitude": 4.491993
     },
     "hyperlink": "https://www.einstein.nu/",
     "description": "Einstein is a café-restaurant located on the canals of Leiden."
@@ -668,8 +668,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.157636, 
-      "longitude": 4.494673 
+      "latitude": 52.157636,
+      "longitude": 4.494673
     },
     "hyperlink": "http://www.thebishop.nl/",
     "description": "Restaurant The Bishop is housed in a 110 year old historic building. The Bisschop is the familiar local and the neighbourhood restaurant with a passion for international cuisine."
@@ -683,8 +683,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.160525, 
-      "longitude": 4.491365 
+      "latitude": 52.160525,
+      "longitude": 4.491365
     },
     "hyperlink": "https://www.fratelli.nl/leiden/",
     "description": "Fratelli Leiden serves luxurious fine Italian dishes."
@@ -698,8 +698,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.158642, 
-      "longitude": 4.490564 
+      "latitude": 52.158642,
+      "longitude": 4.490564
     },
     "hyperlink": "https://www.happytosti.nl/leiden/",
     "description": "At Happy Tosti, the tastiest sandwiches are made and served by employees with an occupational disability."
@@ -713,8 +713,8 @@
     },
     "category": ["food"],
     "coords": {
-      "latitude":  52.153842, 
-      "longitude": 4.489490 
+      "latitude": 52.153842,
+      "longitude": 4.48949
     },
     "hyperlink": "http://www.grandcafedevriend.nl/",
     "description": "Grand Café De Vriend is a grand café based in Leiden."
@@ -728,8 +728,8 @@
     },
     "category": ["castles"],
     "coords": {
-      "latitude":  52.180412, 
-      "longitude": 4.484057 
+      "latitude": 52.180412,
+      "longitude": 4.484057
     },
     "hyperlink": "https://kasteeloudpoelgeest.com/",
     "description": "Oud Poelgeest Castle was the former home of the Dutch scientist Herman Boerhaave. The castle was built in 1668 on the foundations of an earlier construction, in the then popular Dutch Neoclassical style."
@@ -743,8 +743,8 @@
     },
     "category": ["castles"],
     "coords": {
-      "latitude":  52.172759, 
-      "longitude": 4.463199 
+      "latitude": 52.172759,
+      "longitude": 4.463199
     },
     "hyperlink": "https://nl.wikipedia.org/wiki/Kasteel_Endegeest",
     "description": "Castle Endegeest dates from the fourteenth century.\nThe French philosopher René Descartes stayed at the castle from 1641 to 1643.\nHowever, the current castle is considerably younger and was built between 1647 and 1651 by order of Elisabeth van Schouwen van Endegeest and her husband Jacob van Berchem."
@@ -758,8 +758,8 @@
     },
     "category": ["castles"],
     "coords": {
-      "latitude":  52.111356, 
-      "longitude": 4.417433 
+      "latitude": 52.111356,
+      "longitude": 4.417433
     },
     "hyperlink": "https://www.kasteelduivenvoorde.nl/EN",
     "description": "Castle Duivenvoorde is a unique and still inhabited castle and estate, with its roots in the 13th century.\nOnce, a large, square defence tower could be found here. The remnants of this tower can still be seen in the facade of the castle and the Voorhuis (front house).\nIn the late Middle Ages, the need for living space grew, so around the tower, which continued to exist until the 17th several wings arose."
@@ -773,8 +773,8 @@
     },
     "category": ["castles"],
     "coords": {
-      "latitude":  52.266467, 
-      "longitude": 4.539662 
+      "latitude": 52.266467,
+      "longitude": 4.539662
     },
     "hyperlink": "http://kasteelkeukenhof.nl/nl/",
     "description": "The name Keukenhof is derived from Keukenduin that belonged to Slot Teylingen. Adriaen Maertenszoon Block, a former commander of the United East India Company, had his house built in Keukenduin in 1641. The castle did not yet have towers. A design by architect Elie Saraber turned the seventeenth-century house around 1860 into a neo-Gothic castle with different types of towers."
@@ -788,8 +788,8 @@
     },
     "category": ["nightlife"],
     "coords": {
-      "latitude":  52.159465, 
-      "longitude": 4.486279 
+      "latitude": 52.159465,
+      "longitude": 4.486279
     },
     "hyperlink": "https://nextleiden.nl/next-leiden/",
     "description": "The Next is a nightclub in Leiden for students."
@@ -803,8 +803,8 @@
     },
     "category": ["nightlife"],
     "coords": {
-      "latitude":  52.163017, 
-      "longitude": 4.494713 
+      "latitude": 52.163017,
+      "longitude": 4.494713
     },
     "hyperlink": "https://www.facebook.com/COCdeKroon",
     "description": "COC de Kroon is a gaybar located in Leiden."
@@ -818,8 +818,8 @@
     },
     "category": ["nightlife"],
     "coords": {
-      "latitude":  52.163561, 
-      "longitude": 4.485810 
+      "latitude": 52.163561,
+      "longitude": 4.48581
     },
     "hyperlink": "http://rockcafelazarus.nl/kroegen/de-hut-van-ome-henne/",
     "description": "De Hut van Ome Henne is a pub located in Leiden."
@@ -833,8 +833,8 @@
     },
     "category": ["nightlife"],
     "coords": {
-      "latitude":  52.152012, 
-      "longitude": 4.489105 
+      "latitude": 52.152012,
+      "longitude": 4.489105
     },
     "hyperlink": "https://www.facebook.com/MarrakechLoungeLeiden/",
     "description": "Marrakech Lounge is a hookah lounge located in Leiden."
@@ -848,7 +848,7 @@
     },
     "category": ["museums"],
     "coords": {
-      "latitude":  52.15846, 
+      "latitude": 52.15846,
       "longitude": 4.485458
     },
     "hyperlink": "https://www.rmo.nl/en/",

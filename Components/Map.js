@@ -21,15 +21,41 @@ const GEOLOCATION_OPTIONS = {
 
 function filterCategories() {
   let userCategories = global.userData.user.categories.map((categoryAPI) => {
-    if       (categoryAPI === '/api/categories/2')  {return ('statues')}
-    else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
-    else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
-    else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
-    else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
-    else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
-    else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
-    else {if (categoryAPI === '/api/categories/9')  {return ('food')}
-    else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
+    if (categoryAPI === '/api/categories/2') {
+      return 'statues'
+    } else {
+      if (categoryAPI === '/api/categories/3') {
+        return 'architecture'
+      } else {
+        if (categoryAPI === '/api/categories/4') {
+          return 'museums'
+        } else {
+          if (categoryAPI === '/api/categories/5') {
+            return 'amusementparks'
+          } else {
+            if (categoryAPI === '/api/categories/6') {
+              return 'mills'
+            } else {
+              if (categoryAPI === '/api/categories/7') {
+                return 'nightlife'
+              } else {
+                if (categoryAPI === '/api/categories/8') {
+                  return 'placesofworship'
+                } else {
+                  if (categoryAPI === '/api/categories/9') {
+                    return 'food'
+                  } else {
+                    if (categoryAPI === '/api/categories/10') {
+                      return 'castles'
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   })
   return userCategories
 }
@@ -59,7 +85,12 @@ export default class Map extends Component {
         errorMessage: 'Permission to access location was denied',
       })
     }
-    this.setState({ mountedLocation: Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged) })
+    this.setState({
+      mountedLocation: Location.watchPositionAsync(
+        GEOLOCATION_OPTIONS,
+        this.locationChanged
+      ),
+    })
   }
 
   locationChanged = (location) => {
@@ -95,15 +126,41 @@ export default class Map extends Component {
       }
       if (pass) {
         let imagePOI = undefined
-        if      (POI.category[0] === "mills")           {imagePOI = POI_Marker_Windmill}
-        else{ if(POI.category[0] === "castles")         {imagePOI = POI_Marker_Castle}
-        else{ if(POI.category[0] === "placesofworship") {imagePOI = POI_Marker_Placesofworship}
-        else{ if(POI.category[0] === "amusementparks")  {imagePOI = POI_Marker_Amusementparks}
-        else{ if(POI.category[0] === "statues")         {imagePOI = POI_Marker_Statue}
-        else{ if(POI.category[0] === "food")            {imagePOI = POI_Marker_Food}
-        else{ if(POI.category[0] === "nightlife")       {imagePOI = POI_Marker_Nightlife}
-        else{ if(POI.category[0] === "museums")         {imagePOI = POI_Marker_Museums}
-        else{ if(POI.category[0] === "architecture")    {imagePOI = POI_Marker_Architecture}}}}}}}}}
+        if (POI.category[0] === 'mills') {
+          imagePOI = POI_Marker_Windmill
+        } else {
+          if (POI.category[0] === 'castles') {
+            imagePOI = POI_Marker_Castle
+          } else {
+            if (POI.category[0] === 'placesofworship') {
+              imagePOI = POI_Marker_Placesofworship
+            } else {
+              if (POI.category[0] === 'amusementparks') {
+                imagePOI = POI_Marker_Amusementparks
+              } else {
+                if (POI.category[0] === 'statues') {
+                  imagePOI = POI_Marker_Statue
+                } else {
+                  if (POI.category[0] === 'food') {
+                    imagePOI = POI_Marker_Food
+                  } else {
+                    if (POI.category[0] === 'nightlife') {
+                      imagePOI = POI_Marker_Nightlife
+                    } else {
+                      if (POI.category[0] === 'museums') {
+                        imagePOI = POI_Marker_Museums
+                      } else {
+                        if (POI.category[0] === 'architecture') {
+                          imagePOI = POI_Marker_Architecture
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         return (
           <Marker
             key={index}

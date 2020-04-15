@@ -5,15 +5,12 @@ import { useNavigation } from '@react-navigation/native'
 function GoToHomescreen({ App, state }) {
   if (state.timerDone) {
     const navigation = useNavigation()
-    navigation.navigate("App")
+    navigation.navigate('App')
   }
-  return (
-    <Clear />
-  )
+  return <Clear />
 }
 
 export default class Loading extends Component {
-
   state = { timerDone: false }
 
   constructor(props) {
@@ -21,11 +18,12 @@ export default class Loading extends Component {
   }
 
   componentDidMount() {
-    this.timoutHandle = setTimeout(() => {this.setState({timerDone: true})}, 1000)
+    this.timoutHandle = setTimeout(() => {
+      this.setState({ timerDone: true })
+    }, 1000)
   }
 
   render() {
-
     return (
       <Screen source={require('../assets/test_background.jpg')}>
         <Container>

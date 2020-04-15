@@ -87,7 +87,7 @@
     "POIs": [9, 10, 8, 37],
     "region": {
       "latitude": 52.160313,
-      "longitude": 4.490040,
+      "longitude": 4.49004,
       "latitudeDelta": 0.0075,
       "longitudeDelta": 0.0075
     },
@@ -103,7 +103,7 @@
     "POIs": [38, 39, 40],
     "region": {
       "latitude": 52.163996,
-      "longitude": 4.489720,
+      "longitude": 4.48972,
       "latitudeDelta": 0.025,
       "longitudeDelta": 0.025
     },

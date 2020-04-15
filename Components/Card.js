@@ -40,7 +40,7 @@ export default class Card extends Component {
     let titleSize = undefined
     let popup = undefined
 
-    if (this.props.title !== "Add POI") {
+    if (this.props.title !== 'Add POI') {
       card = (
         <TouchableWithoutFeedback
           delayPressIn={5}
@@ -76,8 +76,7 @@ export default class Card extends Component {
           hyperlink={this.props.hyperlink}
         />
       )
-    }
-    else {
+    } else {
       card = (
         <TouchableWithoutFeedback
           delayPressIn={5}
@@ -89,7 +88,12 @@ export default class Card extends Component {
         >
           <Container width={cardWidth} height={cardHeight}>
             <Cover height={this.state.imageHeight}>
-              <Image source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU" }} />
+              <Image
+                source={{
+                  uri:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOMvWBpRMftyw9jBpY5UF4itFNueeEk3osqfYLye028OLQuRGL&usqp=CAU',
+                }}
+              />
             </Cover>
             <Content>
               <Title>{this.props.title}</Title>

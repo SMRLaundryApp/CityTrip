@@ -52,15 +52,41 @@ function sortDistance(info) {
 
 function filterCategories() {
   let userCategories = global.userData.user.categories.map((categoryAPI) => {
-    if       (categoryAPI === '/api/categories/2')  {return ('statues')}
-    else {if (categoryAPI === '/api/categories/3')  {return ('architecture')}
-    else {if (categoryAPI === '/api/categories/4')  {return ('museums')}
-    else {if (categoryAPI === '/api/categories/5')  {return ('amusementparks')}
-    else {if (categoryAPI === '/api/categories/6')  {return ('mills')}
-    else {if (categoryAPI === '/api/categories/7')  {return ('nightlife')}
-    else {if (categoryAPI === '/api/categories/8')  {return ('placesofworship')}
-    else {if (categoryAPI === '/api/categories/9')  {return ('food')}
-    else {if (categoryAPI === '/api/categories/10') {return ('castles')}}}}}}}}}
+    if (categoryAPI === '/api/categories/2') {
+      return 'statues'
+    } else {
+      if (categoryAPI === '/api/categories/3') {
+        return 'architecture'
+      } else {
+        if (categoryAPI === '/api/categories/4') {
+          return 'museums'
+        } else {
+          if (categoryAPI === '/api/categories/5') {
+            return 'amusementparks'
+          } else {
+            if (categoryAPI === '/api/categories/6') {
+              return 'mills'
+            } else {
+              if (categoryAPI === '/api/categories/7') {
+                return 'nightlife'
+              } else {
+                if (categoryAPI === '/api/categories/8') {
+                  return 'placesofworship'
+                } else {
+                  if (categoryAPI === '/api/categories/9') {
+                    return 'food'
+                  } else {
+                    if (categoryAPI === '/api/categories/10') {
+                      return 'castles'
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   })
   return userCategories
 }
@@ -89,7 +115,12 @@ export default class CardsLayout extends Component {
         errorMessage: 'Permission to access location was denied',
       })
     }
-    this.setState({ mountedLocation: Location.watchPositionAsync(GEOLOCATION_OPTIONS, this.locationChanged) })
+    this.setState({
+      mountedLocation: Location.watchPositionAsync(
+        GEOLOCATION_OPTIONS,
+        this.locationChanged
+      ),
+    })
   }
 
   locationChanged = (location) => {
@@ -101,7 +132,7 @@ export default class CardsLayout extends Component {
   }
 
   render() {
-    let pointsOfInterest = require('../data/POIs.json');
+    let pointsOfInterest = require('../data/POIs.json')
 
     let columnOne = undefined
     let columnTwo = undefined
@@ -136,8 +167,9 @@ export default class CardsLayout extends Component {
               POI.coords.latitude,
               POI.coords.longitude
             ).toFixed(2)
-          return [userDistance, POI.id]
-        }})
+            return [userDistance, POI.id]
+          }
+        })
       )
       POIs = POIs[0]
       for (let i = POIs.length; i >= 0; i--) {
@@ -151,7 +183,7 @@ export default class CardsLayout extends Component {
       }
 
       columnOne = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = 0;
+        let userDistance = 0
         for (let i = 0; i < POIs.length; i++) {
           if (POIs[i][1] === sortedPOIs[index]) {
             userDistance = POIs[i][0]
@@ -172,7 +204,7 @@ export default class CardsLayout extends Component {
         }
       })
       columnTwo = sortedPointsOfInterest.map((POI, index) => {
-        let userDistance = 0;
+        let userDistance = 0
         for (let i = 0; i < POIs.length; i++) {
           if (POIs[i][1] === sortedPOIs[index]) {
             userDistance = POIs[i][0]
@@ -197,7 +229,10 @@ export default class CardsLayout extends Component {
     return (
       <Layout>
         {load}
-        <ColumnOne>{addPOI}{columnOne}</ColumnOne>
+        <ColumnOne>
+          {addPOI}
+          {columnOne}
+        </ColumnOne>
         <ColumnTwo>{columnTwo}</ColumnTwo>
       </Layout>
     )

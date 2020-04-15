@@ -27,7 +27,9 @@ function GoToButton({ App, state }) {
         .post('/Users/maker', { username: u_name, email: email, password: pw })
         .then(function (response) {
           if (response.data.user.username === u_name) {
-            ;(global.userData = response.data), console.log("Data:\n", response.data), (global.name = response.data.user.username),
+            ;(global.userData = response.data),
+              console.log('Data:\n', response.data),
+              (global.name = response.data.user.username),
               navigation.navigate('Interest_clicker')
           } else if (response.data.error) {
             alert(response.data.error)
@@ -65,9 +67,8 @@ export default class SignUp extends Component {
   }
 
   render() {
-
     global.cards = []
-    global.userData = {user:{categories:[]}}
+    global.userData = { user: { categories: [] } }
 
     return (
       <Screen source={require('../assets/test_background.jpg')}>

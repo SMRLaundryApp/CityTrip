@@ -21,10 +21,9 @@ export default class Interest_card extends Component {
   }
 
   render() {
-
     if (this.props.pressed !== this.state.pressed) {
-      this.setState({pressed: this.props.pressed})
-      this.setState({bg_color: (this.props.pressed) ? '#19B092' : '#888' })
+      this.setState({ pressed: this.props.pressed })
+      this.setState({ bg_color: this.props.pressed ? '#19B092' : '#888' })
     }
 
     return (

@@ -10,17 +10,20 @@ const screenWidth = Dimensions.get('window').width
 
 export default class POIPopup extends Component {
   state = {
-    POIName: "",
-    POICity: "",
-    POIDescription: "",
-    POIHyperlink: ""
+    POIName: '',
+    POICity: '',
+    POIDescription: '',
+    POIHyperlink: '',
   }
 
   render() {
     let info = undefined
 
-    if (this.props.title !== "Add POI") {
-      let visible = (this.props.hyperlink !== undefined) ? {position:'relative', opacity:1} : {position:'absolute', opacity:0};
+    if (this.props.title !== 'Add POI') {
+      let visible =
+        this.props.hyperlink !== undefined
+          ? { position: 'relative', opacity: 1 }
+          : { position: 'absolute', opacity: 0 }
       info = (
         <Clear>
           <Table>
@@ -39,13 +42,21 @@ export default class POIPopup extends Component {
           </Clear>
         </Clear>
       )
-    }
-    else {
+    } else {
       info = (
         <Clear style={{ marginTop: 5, marginBottom: 4 }}>
           <Table>
-            <InputTitle style={{ marginTop: 5 }} >Location:</InputTitle>
-            <InputTitle style={{ fontSize: 15, marginLeft: 9, marginTop: 8, marginBottom: 5 }}>Current location</InputTitle>
+            <InputTitle style={{ marginTop: 5 }}>Location:</InputTitle>
+            <InputTitle
+              style={{
+                fontSize: 15,
+                marginLeft: 9,
+                marginTop: 8,
+                marginBottom: 5,
+              }}
+            >
+              Current location
+            </InputTitle>
           </Table>
           <Table>
             <InputTitle>Name:</InputTitle>
@@ -71,7 +82,9 @@ export default class POIPopup extends Component {
               style={{ width: screenWidth - 165 }}
               placeholder={'Enter POI description'}
               value={this.state.POIDescription}
-              onChangeText={(POIDescription) => this.setState({ POIDescription })}
+              onChangeText={(POIDescription) =>
+                this.setState({ POIDescription })
+              }
             />
           </Table>
           <Table>
@@ -86,22 +99,56 @@ export default class POIPopup extends Component {
           <Table>
             <InputTitle>Take picture:</InputTitle>
             <TouchableOpacity
-              style={{ height: 30, width: screenWidth - 165, borderRadius: 2, backgroundColor: 'white', alignItems: 'center', marginLeft: 10 }}
+              style={{
+                height: 30,
+                width: screenWidth - 165,
+                borderRadius: 2,
+                backgroundColor: 'white',
+                alignItems: 'center',
+                marginLeft: 10,
+              }}
             >
-              <CameraButton source={{ uri: "https://image.freepik.com/free-icon/camera-symbol_318-1953.jpg" }} />
+              <CameraButton
+                source={{
+                  uri:
+                    'https://image.freepik.com/free-icon/camera-symbol_318-1953.jpg',
+                }}
+              />
             </TouchableOpacity>
           </Table>
           <TouchableOpacity
-            style={{ height: 30, borderRadius: 100, backgroundColor: '#19b092', alignSelf: 'center', padding: 5, paddingHorizontal: 20, margin: 10, marginLeft: 15  }}
+            style={{
+              height: 30,
+              borderRadius: 100,
+              backgroundColor: '#19b092',
+              alignSelf: 'center',
+              padding: 5,
+              paddingHorizontal: 20,
+              margin: 10,
+              marginLeft: 15,
+            }}
             onPress={() => {
-              if (this.state.POIName.length < 1 || this.state.POICity.length < 1 || this.state.POIDescription.length < 1) {
-                alert("You forgot to fill in the POI name, city or description.")
-              }
-              else {
-                Axios
-                .post('/point_of_interests', { name: this.state.POIName, city: this.state.POICity, description: this.state.POIDescription, link: this.state.POIHyperlink })
-                .then(response => {console.log(response.data)})
-                .catch(error => {console.log(error)})
+              if (
+                this.state.POIName.length < 1 ||
+                this.state.POICity.length < 1 ||
+                this.state.POIDescription.length < 1
+              ) {
+                alert(
+                  'You forgot to fill in the POI name, city or description.'
+                )
+              } else {
+                Axios.post('/point_of_interests', {
+                  name: this.state.POIName,
+                  city: this.state.POICity,
+                  description: this.state.POIDescription,
+                  link: this.state.POIHyperlink,
+                })
+                  .then((response) => {
+                    console.log(response.data)
+                  })
+                  .catch((error) => {
+                    console.log(error)
+                  })
               }
             }}
           >
@@ -199,14 +246,14 @@ const Inputfield = styled.TextInput`
   height: 30px;
   border-radius: 2px;
 `
- const CameraButton = styled.Image`
+const CameraButton = styled.Image`
   width: 30px;
   height: 30px;
   border-radius: 100px;
- `
+`
 
- const UploadButton = styled.Text`
+const UploadButton = styled.Text`
   font-size: 15px;
   color: white;
   text-align: center;
- `
+`
