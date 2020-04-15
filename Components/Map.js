@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import MapView, { Marker } from 'react-native-maps'
 import userLocationPin from '../assets/userLocation.png'
+import POI_Marker_Windmill from '../assets/POI_Marker_Windmill.png'
+import POI_Marker_Castle from '../assets/POI_Marker_Castle.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
@@ -63,7 +65,7 @@ export default class Map extends Component {
   componentWillUnmount() {
     // Location.watchPositionAsync must be turned off or somehow unmounted
     this.state.mountedLocation._55.remove()
-    // console.log(this.state.mountedLocation._55.remove())
+    // console.log(this.state.mountedLocation)
   }
 
   render() {
@@ -90,11 +92,15 @@ export default class Map extends Component {
         }
       }
       if (pass) {
+        let imagePOI = undefined
+        if      (POI.category[0] === "mills")   {imagePOI = POI_Marker_Windmill}
+        else{ if(POI.category[0] === "castles") {imagePOI = POI_Marker_Castle}}
         return (
           <Marker
             key={index}
             title={POI.name}
             pinColor="#19B092"
+            image={imagePOI}
             coordinate={{
               latitude: POI.coords.latitude,
               longitude: POI.coords.longitude,
