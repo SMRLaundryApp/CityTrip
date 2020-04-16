@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MapView, { Marker } from 'react-native-maps'
-import userLocationPin from '../assets/userLocation.png'
+import User_Marker from '../assets/User_Marker.png'
 import POI_Marker_Windmill from '../assets/POI_Marker_Windmill.png'
 import POI_Marker_Castle from '../assets/POI_Marker_Castle.png'
 import POI_Marker_Placesofworship from '../assets/POI_Marker_Placesofworship.png'
@@ -105,7 +105,7 @@ export default class Map extends Component {
     let userLocation = (
       <Marker
         title="User location"
-        image={userLocationPin}
+        image={User_Marker}
         coordinate={{
           latitude: this.state.location.coords.latitude,
           longitude: this.state.location.coords.longitude,

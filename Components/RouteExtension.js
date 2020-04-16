@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import MapView, { Marker, Callout } from 'react-native-maps'
 import MapViewDirections from 'react-native-maps-directions'
 import GOOGLE_MAPS_APIKEY from '../private'
-import userLocationPin from '../assets/userLocation.png'
+import User_Marker from '../assets/User_Marker.png'
 import Constants from 'expo-constants'
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
@@ -101,7 +101,7 @@ export default class RouteExtension extends Component {
     let userLocation = (
       <Marker
         title="User location"
-        image={userLocationPin}
+        image={User_Marker}
         coordinate={{
           latitude: this.state.location.coords.latitude,
           longitude: this.state.location.coords.longitude,
