@@ -93,7 +93,7 @@ function filterCategories() {
 
 export default class CardsLayout extends Component {
   state = {
-    location: { coords: { latitude: undefined, longitude: undefined } },
+    location: { coords: { latitude: 52.189527, longitude: 4.435696 } },
   }
 
   constructor(props) {

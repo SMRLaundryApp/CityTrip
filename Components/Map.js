@@ -62,7 +62,7 @@ function filterCategories() {
 
 export default class Map extends Component {
   state = {
-    location: { coords: { latitude: 0, longitude: 0 } },
+    location: { coords: { latitude: 52.189527, longitude: 4.435696 } },
     errorMessage: null,
   }
 
