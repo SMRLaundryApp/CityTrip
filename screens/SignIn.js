@@ -20,6 +20,7 @@ function GoToButton({ App, state }) {
     let pw = state.password
     global.cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10']
     navigation.navigate('App')
+    global.isLoggedIn = true
     // axios
     //   .post('/login', { login: name, password: pw })
     //   .then(function (response) {

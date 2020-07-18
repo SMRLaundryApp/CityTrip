@@ -4,7 +4,6 @@
     "slug": "CityTrip",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": ["ios", "android", "web"],
     "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/logo_citytrip.png",
@@ -17,12 +16,13 @@
       "package": "com.SMR.CityTrip",
       "versionCode": 2
     },
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    }
+    "assetBundlePatterns": ["**/*"]
   }
 }

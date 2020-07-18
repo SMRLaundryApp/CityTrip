@@ -32,6 +32,7 @@ function GoToButton({ App, state }) {
       //         (global.name = response.data.user.username),
       global.name = u_name
       navigation.navigate('Interest_clicker')
+      global.isLoggedIn = true
         //   } else if (response.data.error) {
         //     alert(response.data.error)
         //   }
