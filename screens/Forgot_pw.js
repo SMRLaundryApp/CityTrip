@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
-const axios = require('axios').default
-axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
+// const axios = require('axios').default
+// axios.defaults.baseURL = 'https://citytrip.trifall.net/api'
 
 function GoToButton({ App, state }) {
   const navigation = useNavigation()
@@ -12,14 +12,15 @@ function GoToButton({ App, state }) {
   postForgotPW = () => {
     let email = state.mail
 
-    axios
-      .post('', { email: email })
-      .then(function (response) {
-        console.log(response), navigation.navigate('Login')
-      })
-      .catch(function (error) {
-        alert(error)
-      })
+    // axios
+    //   .post('', { email: email })
+    //   .then(function (response) {
+    //     console.log(response), navigation.navigate('Login')
+    //   })
+    //   .catch(function (error) {
+    //     alert(error)
+    //   })
+    alert("That's stupid of you!")
   }
 
   return (

@@ -23,21 +23,22 @@ function GoToButton({ App, state }) {
     } else if (!email.includes('@')) {
       alert('E-mail address is not an address')
     } else {
-      axios
-        .post('/Users/maker', { username: u_name, email: email, password: pw })
-        .then(function (response) {
-          if (response.data.user.username === u_name) {
-            ;(global.userData = response.data),
-              console.log('Data:\n', response.data),
-              (global.name = response.data.user.username),
-              navigation.navigate('Interest_clicker')
-          } else if (response.data.error) {
-            alert(response.data.error)
-          }
-        })
-        .catch(function (error) {
-          alert(error)
-        })
+      // axios
+      //   .post('/Users/maker', { username: u_name, email: email, password: pw })
+      //   .then(function (response) {
+      //     if (response.data.user.username === u_name) {
+      //       ;(global.userData = response.data),
+      //         console.log('Data:\n', response.data),
+      //         (global.name = response.data.user.username),
+      global.name = u_name
+      navigation.navigate('Interest_clicker')
+        //   } else if (response.data.error) {
+        //     alert(response.data.error)
+        //   }
+        // })
+        // .catch(function (error) {
+        //   alert(error)
+        // })
     }
   }
 

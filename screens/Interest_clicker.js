@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native'
 import Welcomebar from '../Components/Welcomebar'
 import Interest_card from '../Components/Interest_card'
 
-const axios = require('axios').default
+// const axios = require('axios').default
 
 function GoToButton({ App }) {
   const navigation = useNavigation()
@@ -17,16 +17,16 @@ function GoToButton({ App }) {
   return (
     <TouchableOpacity
       onPress={() => {
-        axios
-          .post(
-            'https://citytrip.trifall.net/api/CategoryAdding/' +
-              global.userData.user.id.toString(10),
-            { categories: global.cards }
-          )
-          .then((response) => {
-            global.userData = response.data
-          })
-          .catch((error) => console.log('Error:', error))
+        // axios
+        //   .post(
+        //     'https://citytrip.trifall.net/api/CategoryAdding/' +
+        //       global.userData.user.id.toString(10),
+        //     { categories: global.cards }
+        //   )
+        //   .then((response) => {
+        //     global.userData = response.data
+        //   })
+        //   .catch((error) => console.log('Error:', error))
         navigation.navigate('Loading')
       }}
     >
@@ -213,7 +213,7 @@ export default class Interests extends Component {
           >
             <Interest_card
               image={
-                'https://akosbalogh.com/wp-content/uploads/2015/01/church1.jpg'
+                'https://i0.wp.com/www.princesstafadzwa.com/wp-content/uploads/2016/06/Pretty-Church.jpg?ssl=1'
               }
               title={'Places of Worship'}
               subtitle={'Churches | Synagogues | Mosques | Temples'}
@@ -247,7 +247,7 @@ export default class Interests extends Component {
           >
             <Interest_card
               image={
-                'https://d17sbgss5yk2qq.cloudfront.net/wp-content/uploads/sites/2/2019/08/meiland.jpg'
+                'https://www.shownieuws.nl/wp-content/uploads/sites/2/2019/08/meiland.jpg'
               }
               title={'Castles'}
               subtitle={'Rectangular keep | Shell keep | Concentric castles'}
